@@ -8,7 +8,7 @@ export function renderStart() {
   loadGames.replaceChildren();
   loadGames.textContent = "Start a new season or load an existing game"
   const getSaves = localStorage.getItem("saveGames") ? JSON.parse(localStorage.getItem("saveGames")) : [];
-    
+    loadGames.textContent+=` ${getSaves}`;
     for (let i = 0; i <= 2; i++) {
       if (!getSaves[i]) {
         const newSeason = $n("div", ["load-slot", "empty"], loadGames);
