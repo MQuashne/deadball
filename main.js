@@ -3,6 +3,7 @@ import {colorSetup} from './control/colorControl.js'
 import { DICE } from './dice/dice.js'
 import { gameSetup } from './control/setup.js'
 import Modal from './render/modal.js'
+import {renderStart} from './render/renderStart.js'
 
 const $t = id => document.getElementById(id);
 const $c = id => document.querySelector(`.${id}`);
@@ -26,4 +27,5 @@ export const modal = new Modal;
 
 
 //--TEAM AND COLOR SELECT--
-gameSetup()
+//gameSetup()
+renderStart();

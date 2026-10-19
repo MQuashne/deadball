@@ -6,7 +6,7 @@ import { G } from '../model/game.js'
 //=====================
 
 export function getProspects() {
-  if (G.prospects.length === 0 && G.season==="spring") {
+  if (G.prospects.length === 0 && G.season === "spring") {
     for (let i = 1; i <= 3; i++) {
       let [prospectsOneSet, oppsOneSet] = getTwo(2);
       G.prospects.push(prospectsOneSet);
@@ -28,12 +28,16 @@ export function signPlayer(player, opp) {
     store.update(state => {
       state.lineup.bullpen.push(player);
       state.fullRoster.push(player);
-    }, [["lineup:bullpen:add",player],"lineup:signing"])
+    }, [
+      ["lineup:bullpen:add", player], "lineup:signing"
+    ])
   } else {
     store.update(state => {
       state.lineup.bench.push(player);
       state.fullRoster.push(player);
-    }, [["lineup:bench:add",player],"lineup:signing"]);
+    }, [
+      ["lineup:bench:add", player], "lineup:signing"
+    ]);
   }
   
   store.update(state => {
@@ -61,7 +65,7 @@ export function closeSpringTraining() {
     const g1 = state.schedule.find(ev => ev.id === "G1");
     g1.status = "active";
     
-  }, ["schedule:changed","spring:complete","event:complete","season:changed"]);
+  }, ["schedule:changed", "spring:complete", "event:complete", "season:changed"]);
   
   
   

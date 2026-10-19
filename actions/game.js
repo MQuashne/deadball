@@ -1,7 +1,10 @@
+//back from pitcher to roll button won't move 
+
 import { store } from '../model/store.js'
 import { G } from '../model/game.js'
 import { rollTests } from '../control/rollTest.js'
 import { oppTests } from '../control/oppTest.js'
+import { $n, $t, $c, $a, $cl, on, randInt, hide, show, enable, disable, notifyBox } from '../util.js'
 
 /*
 PROCESSES 
@@ -26,7 +29,7 @@ handling:
  3) 1 die discount on everything and start with 1... [first used]
  start with 1, batter gives 1, have 2. use 2, have 1. batter gives 3, have 4. batter gives 2, have 6. use 5, have 2. 
 */
-
+let win;
 //=============================
 // GAME LIFECYCLE
 //=============================
@@ -43,8 +46,6 @@ export function playBall() {
     process: "hit",
     currentRoll: [],
     currentOutcome: "out",
-    currentModRoll: [],
-    currentModOutcome: "",
     atBat: gameEvent.home,
     inProgress: true,
     outs: 0,
@@ -52,7 +53,7 @@ export function playBall() {
     rerolls: 0,
     rerollAllowed: 99,
     mods: 0,
-    modallowed: 99,
+    modAllowed: 99,
     modsUsed: 0,
     score: [0, 0],
     currentBatterIndex: 0,
@@ -105,7 +106,8 @@ export function playBall() {
   store.update(state => {
     state.game = thisGame;
     state.game.mode = "roll";
-    state.game.process = G.game.home ? "hit" : "field";
+    //state.game.process = G.game.home ? "hit" : "field";
+    state.game.process = "start";
     state.lineup.bench.forEach(pl => pl.available = true);
     state.lineup.bullpen.forEach(pl => pl.available = true);
     state.lineup.order.forEach(pl => pl.available = false);
@@ -116,6 +118,7 @@ export function playBall() {
       state.game.rerolls = 1;
       state.game.mods = 1;
     }
+    $t("roll-surface").style.zIndex = 100;
   }, ["game:startedz"]);
   //firstBatter(getBatter());
   /*if (G.game.home) {
@@ -126,18 +129,23 @@ export function playBall() {
   */
 }
 
-export function checkGameEnd() {
+export function checkGameEnd(inningEnd = true) {
   //Bottom of the 9th or extras
-  const lastOut = (G.game.outs === 3 && G.game.inning.half === 2 && G.game.inning >= 9 && G.game.score[0] !== G.game.score[1]);
+  const lastOut = inningEnd ? (G.game.half === 2 && G.game.inning >= 9 && G.game.score[0] !== G.game.score[1]) : false;
+  console.log("lastout check " + lastOut)
   
   //Top of 9th or extras home lead
-  const homeWin = (G.game.outs === 3 && G.game.inning.half === 1 && G.game.inning >= 9 && G.game.score[1] > G.game.score[0]);
+  const homeWin = inningEnd ? (G.game.half === 1 && G.game.inning >= 9 && G.game.score[1] > G.game.score[0]) : false;
+  console.log("homeWin check " + homeWin)
   
   //Walk off in bottom of 9th
-  const walkOff = (G.game.inning.half === 2 && G.game.inning >= 9 && G.game.score[1] > G.game.score[0]);
+  const walkOff = (G.game.half === 2 && G.game.inning >= 9 && G.game.score[1] > G.game.score[0]);
+  console.log("walkOff check " + walkOff)
   
   if (lastOut || homeWin || walkOff) {
-    endGame();
+   win = ((G.game.home && G.game.score[1]>G.game.score[0]) || (!G.game.home && G.game.score[0]>G.game.score[1]));
+   store.emit("game:finished",win);
+   
     return true;
   } else {
     return false;
@@ -145,7 +153,24 @@ export function checkGameEnd() {
 }
 
 export function endGame() {
-  
+  const thisEvent = G.schedule.find(ev => ev.status === "active");
+  const nextEvent = G.schedule[G.schedule.findIndex(ev => ev.status === "active")+1];
+  if (win){
+    thisEvent.num < 3 ? G.seasonPoints++ : G.seasonPoints+=2;
+    G.wins++;
+  } else {
+    G.losses++;
+  }
+  thisEvent.status="past";
+  thisEvent.result = win ? "W" : "L";
+  nextEvent.status="active";
+  if (nextEvent.type==="game") G.gameNum++;
+  G.game.inProgress=false;
+  //make event past
+  //set event result
+  //determine next event
+  //activate next event (next game for now)
+  //reset gameboard
 }
 
 //=============================
@@ -174,8 +199,9 @@ export function startOffHalf() {
 }
 
 export function endOffHalf() {
-  const gameEnd = checkGameEnd();
+  const gameEnd = checkGameEnd(true);
   if (gameEnd) { return; }
+  store.emit("half:end")
   store.update(state => {
     state.game.outs = 0;
     state.game.runners = [];
@@ -184,19 +210,28 @@ export function endOffHalf() {
       state.game.inning++;
     };
   });
+  console.log(G)
   startDefHalf();
 }
 
 export function endDefHalf(runs) {
-  const gameEnd = checkGameEnd();
+  const gameEnd = checkGameEnd(true);
   if (gameEnd) { return; }
   store.update(state => {
-    state.game.home ? state.game.score[0] += runs : state.game.score[1] += runs;
+    if (!state.game.home) {
+      state.game.scoreboard[G.game.inning-1][1].runs+=runs;
+      state.game.score[1] += runs;
+    } else {
+      state.game.scoreboard[G.game.inning-1][0].runs+=runs;
+      state.game.score[0] += runs;
+    }
+    store.emit("half:end")
     state.game.half = 2 - (state.game.half - 1);
     if (state.game.half === 1) {
       state.game.inning++;
     };
   }, ["score:changed"])
+  console.log(G)
   startOffHalf();
 }
 
@@ -209,22 +244,28 @@ export function startDefHalf() {
     state.game.pitchAdd = "";
     state.game.rerollAllowed = 99;
     state.game.atBat = false;
-  })
-  store.emit("inning:defense");
+  }, ["inning:defense"])
 }
 
 //=============================
-// BATTER MANAGEMENT
+// BATTER MANAGEMENTppppnnx_
 //=============================
 
-export function firstBatter(player) {
+export function setLeadoff(i) {
   store.update(state => {
-    state.game.runners.push({ player: player, location: 0 });
-    state.game.dice += player.dice;
-    state.game.rerolls += player.reroll;
-    state.game.mods += player.modifier;
-    state.game.mode = "roll";
+    state.game.currentBatterIndex = i;
+    state.game.mode = "outcome";
   });
+}
+
+export function firstBatter(player) {
+  /* store.update(state => {
+     state.game.runners.push({ player: player, location: 0 });
+     state.game.dice += player.dice;
+     state.game.rerolls += player.reroll;
+     state.game.mods += player.modifier;
+     state.game.mode = "roll";
+   });*/
 }
 
 export function subBatter(subOut, subIn) {
@@ -270,7 +311,7 @@ export function advanceRunners(lastPlay) {
     if (lastPlay === "BB") {
       advanceOnWalk(runners, batter);
     } else if (lastPlay === "SAC") {
-      advanceOnSac(runners, batter);
+      advanceOnSac(runners);
     } else {
       //It's a hit or we're in running mode 
       advanceOnHit(state, runners, lastPlay);
@@ -298,12 +339,17 @@ function advanceOnWalk(runners, batter) {
   //setTimeout(() => nextBatter(),1000);
 }
 
-function advanceOnSac(runners, batter) {
-  runners.forEach((r) => {
-    if (r.location > 0) r.location++;
-  });
-  //setTimeout(() =>playerOut(batter.player),1000);
-  
+function advanceOnSac(runners) {
+  if (runners.length === 1) {
+    playerOut(getBatter())
+  } else {
+    if (G.game.outs < 2) {
+      runners.forEach((r) => {
+        if (r.location > 0) r.location++;
+      });
+    }
+    setTimeout(() => playerOut(getBatter()), 1200);
+  }
 }
 
 const ADVANCE_BY = { "1B": 1, "2B": 2, "3B": 3, "HR": 4, extraBases: 1 };
@@ -326,7 +372,7 @@ function maybeEnterRunMode(state, lastPlay) {
   const runnersOnBase = state.game.runners.filter(r => r.location < 4).length;
   if (isHit && runnersOnBase >= 2) {
     state.game.mode = "run";
-  } else {
+  } else if (lastPlay !== "SAC") {
     setTimeout(() => nextBatter(), 1000);
   }
 }
@@ -338,14 +384,15 @@ function maybeEnterRunMode(state, lastPlay) {
 export function playerOut(outPlayer) {
   const runnerIndex = G.game.runners.findIndex(r => r.player === outPlayer);
   const runnerLocation = G.game.runners[runnerIndex].location;
-  
+  console.log(G.game.runners)
   store.update(state => {
     state.game.runners.splice(runnerIndex, 1);
+    
     state.game.outs++;
     state.game.process = "hit";
     state.game.mode = "roll";
   }, ["player:out", outPlayer]);
-  
+  console.log(G.game.runners)
   if (runnerLocation === 0) {
     store.emit("batter:out", outPlayer);
     if (G.game.outs <= 3) {
@@ -364,8 +411,10 @@ export function allRunnersOut() {
     store.update(state => {
       state.game.runners = [];
       state.game.outs += playerCount;
-    }, ["batter:out"])
+    }, ["batter:out"]);
+    nextBatter();
   } else {
+    nextBatter();
     endOffHalf();
   }
 }
@@ -375,9 +424,15 @@ export function runScored(runner) {
   if (runnerIndex < 0) return;
   store.update(state => {
     state.game.runners.splice(runnerIndex, 1);
-    state.game.home === true ? state.game.score[1]++ : state.game.score[0]++
+    if (state.game.home) {
+      state.game.scoreboard[G.game.inning-1][1].runs++;
+      state.game.score[1]++
+    } else {
+      state.game.scoreboard[G.game.inning-1][0].runs++;
+      state.game.score[0]++
+    }
   }, ["run:scored"]);
-  const gameEnd = checkGameEnd();
+  const gameEnd = checkGameEnd(false);
   if (gameEnd) { return; }
 }
 
@@ -437,14 +492,12 @@ export function getBatterOutcome(batter, dice) {
   //Shows the potential outcome based on dice and batter 
   const outcomes = batter.outcomes;
   let pass = false;
-  let best = false;
   let outcome;
   for (let i = 0; i < outcomes.length; i++) {
     const result = rollTests[outcomes[i].type](dice, outcomes[i].count, outcomes[i].target);
     if (result === true) {
       outcome = outcomes[i].play;
       pass = true;
-      if (i === 0) best = true
       break;
     }
   }
@@ -521,6 +574,16 @@ export function changeProcess(process) {
     state.game.process = process;
   }, ["process:changed"]);
 }
+export function changeProcessMode(process, mode) {
+  store.update(state => {
+    state.game.process = process;
+    state.game.mode = mode;
+  }, [
+    ["process:changed"],
+    ["mode:changed"]
+  ]);
+}
+
 
 //=============================
 // SPECIAL CASES

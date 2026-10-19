@@ -1,5 +1,5 @@
 import { $n, $t, $c, $a, on, randInt } from '../util.js'
-import { brandColors } from './brandColors.js'
+import { teams } from '../model/teams.js'
 
 function $sao(element, attributes) {
   Object.entries(attributes).forEach(([key, value]) => {
@@ -23,6 +23,9 @@ function randBt(min, max) {
 
 let oppCardInstance=0
 export function buildOpp(team) {
+ 
+ const pTeam = teams.find((t) => t.code===team.code);
+ 
   const uid=`${team.id}-${++oppCardInstance}`
 
   /*---------
@@ -54,13 +57,10 @@ export function buildOpp(team) {
   // 6. Return black or white based on the CSS specification cutoff
   return luminance > 0.1791 ? '#000000' : '#ffffff';
 }
-  
 
-// const tp = rootStyles.getPropertyValue('--tp').trim();
-//  const ts = rootStyles.getPropertyValue('--ts').trim();
 
-const tp = brandColors[team.code].tp
-const ts = brandColors[team.code].ts
+const tp = pTeam.tp;
+const ts = pTeam.ts;
 
 const tpText = getContrastColor(tp);
 const tsText = getContrastColor(ts);

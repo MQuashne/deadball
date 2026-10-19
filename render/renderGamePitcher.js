@@ -10,20 +10,8 @@ import { viewCard, viewOpp } from './modals/viewCard.js'
 import { DICE } from '../dice/dice.js'
 import { teams } from '../model/teams.js'
 import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
-
-const diceInput = $t("dice-input-border");
 const pitcherCard = $t("pitcher-card");
-const oppCard = $t("opp-card");
-const leagueSelect = $t("league-select")
-const teamSelect = $t("team-select");
-const uniSelect = $t("uni-select");
 const offerPitcher = $t("offer-pitcher");
-const defenseDisplay = $t("defense-display");
-const defenseOutcome = $t("defense-outcome");
-const diceCount = $t("dice-input-count");
-const oppRoll = $t("opp-roll");
-const oppRollBtn = $t("opp-roll-btn");
-let defThrow;
 
 const PITCH_ACTION = {
   rerollOne: () => pitchReroll(1),

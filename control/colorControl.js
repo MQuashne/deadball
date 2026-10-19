@@ -2,11 +2,10 @@ import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/asse
 import { DICE } from '../dice/dice.js'
 import { G } from '../model/game.js'
 import { renderSpringTraining } from '../render/renderSpringTraining.js'
-import {renderCover} from '../render/renderGameday.js'
+import { renderCover } from '../render/renderGameday.js'
 import { allPlayers } from '../control/setup.js'
 import { buildCard } from '../render/buildCard.js'
 import { $n, $t, $c, $a, $cl, on, randInt, findKey } from '../util.js'
-import { brandColors } from '../render/brandColors.js'
 import { opponents } from '../model/opponents.js'
 import { teams, leagues } from '../model/teams.js'
 
@@ -60,15 +59,22 @@ export function colorSetup(box) {
       }
     })
     popUniPicker(team, box);
-    renderCover();
+    if (G.season === "season" || G.season === "playoffs") {
+      renderCover();
+    }
   });
   
   uniSelects.forEach(us => {
     on(us, 'input', (e) => {
-  let uni = evergreenJerseys[leagueSelect.value][teamSelect.value][e.target.value];
-  let team = teamSelect.value;
-  setColors(uni, box, team);
-})
+      let uni = evergreenJerseys[leagueSelect.value][teamSelect.value][e.target.value];
+      let team = teamSelect.value;
+      
+      uniSelects.forEach(selector => {
+        selector.selectedIndex = e.target.selectedIndex
+      })
+      setColors(uni, box, team);
+      
+    })
   })
   
 }
@@ -99,9 +105,40 @@ function popUniPicker(team, box) {
   
 }
 
+function showUniPalette() {
+  $t("uniform-palette").replaceChildren();
+  const league = leagueSelect.value;
+  const team = teamSelect.value;
+  const unis = evergreenJerseys[league][team];
+  Object.entries(unis).forEach(([uni, data]) => {
+    
+    const die = document.createElement('div');
+    die.className = 'palette-die-box';
+    const dieShow = document.createElement('div');
+    dieShow.className = 'die-show';
+    const dieLabel = document.createElement('div');
+    dieLabel.className = 'die-label';
+    dieLabel.textContent = uni;
+    
+    
+    if (data.stripe) {
+      die.style.background = `linear-gradient(90deg,${data.jersey} 0%, ${data.jersey} 5%, ${data.stripe}a0 6%, ${data.jersey} 7%, ${data.jersey} 35%, ${data.stripe}a0 36%, ${data.jersey} 37%, ${data.jersey} 65%, ${data.stripe}a0 66%, ${data.jersey} 67%, ${data.jersey} 95%, ${data.stripe}a0 96%, ${data.jersey} 97%, ${data.jersey} 100%)`;
+    } else {
+      die.style.background = data.jersey;
+    }
+    die.style.color = data.text;
+    die.style.webkitTextStroke = `2px ${data.outline}`;
+    die.style.paintOrder = "stroke fill"
+    die.textContent = "8"
+    dieShow.appendChild(die);
+    dieShow.appendChild(dieLabel);
+    $t("uniform-palette").appendChild(dieShow);
+  });
+}
+
 function setColors(uni, box) {
   const empty = "";
-  
+  showUniPalette();
   if (uni.stripe === "" || uni.stripe === uni.jersey) {
     document.documentElement.style.setProperty('--die-bg-color', uni.jersey);
   } else {
@@ -130,85 +167,6 @@ function setColors(uni, box) {
   DICE.set_color('outline', uni.outline ||= uni.jersey);
   box.start_throw((notation) => [1, 2, 3, 4, 5, 6]);
 }
-
-function getContrastColor(hexColor) {
-  /*
-  const cleanHex = hexColor.replace(/^#/, '');
-  
-  const r8 = parseInt(cleanHex.substring(0, 2), 16);
-  const g8 = parseInt(cleanHex.substring(2, 4), 16);
-  const b8 = parseInt(cleanHex.substring(4, 6), 16);
-  
-  const rgbDecimals = [r8, g8, b8].map(val => val / 255);
-  
-  const [r, g, b] = rgbDecimals.map(s => {
-    return s <= 0.03928 ?
-      s / 12.92 :
-      Math.pow((s + 0.055) / 1.055, 2.4);
-  });
-  
-  const luminance = 0.2126 * r + 0.7152 * g + 0.0722 * b;
-  
-  return luminance > 0.1791 ? '#000000' : '#ffffff';
-  */
-}
-
-function getDarkerColor(hex1, hex2) {
-  /*
-    const getLuminance = (hex) => {
-      const cleanHex = hex.replace('#', '');
-      
-      const r = parseInt(cleanHex.substring(0, 2), 16);
-      const g = parseInt(cleanHex.substring(2, 4), 16);
-      const b = parseInt(cleanHex.substring(4, 6), 16);
-      
-      return 0.2126 * r + 0.7152 * g + 0.0722 * b;
-    };
-    
-    const lum1 = getLuminance(hex1);
-    const lum2 = getLuminance(hex2);
-    
-   
-    
-    return lum1 < lum2 ? hex1 : hex2;*/
-}
-
-export function initTeamColors(teams) {
-  /*teams.forEach((team) => {
-    team.td = getDarkerColor(team.tp, team.ts);
-    team.tl = team.td===team.ts ? team.tp : team.ts;
-    team.tpText = getContrastColor(team.tp);
-    team.tsText = getContrastColor(team.ts);
-    team.lbgText = getContrastColor(team.tp);
-    team.lbgText = team.lbg === "#FFFFFF" ? team.ts : getContrastColor(team.lbg);
-  })
-  return teams*/
-}
-
-
-export function getTeamColors(code) {
-  /*const tp = brandColors[code].tp;
-  const ts = brandColors[code].ts;
-  const td = getDarkerColor(tp, ts);
-  const lbg = brandColors[code].lbg;
-  const tpText = getContrastColor(tp);
-  const tsText = getContrastColor(ts);
-  const lbgText = lbg === "#FFFFFF" ? ts : getContrastColor(lbg);
-  
-  const tc = {
-    tp,
-    ts,
-    td,
-    lbg,
-    tpText,
-    tsText,
-    lbgText
-  }
-  
-  return tc*/
-}
-
-
 
 
 function adjustTeams() {

@@ -2,12 +2,16 @@ import { $n, $t, $c, on, $cl } from '../util.js'
 import { G } from '../model/game.js'
 import { renderSpringTraining } from './renderSpringTraining.js'
 import { store } from '../model/store.js'
+import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
 
 const calendar = document.getElementById("calendar-body");
 const eNav = $t("event-nav");
 const pastEvents = $t("past-events");
 const nextEvent = $t("next-event");
 const upcomingEvents = $t("upcoming-events");
+const heroWeek=$t("hero-week");
+const heroRecord=$t("hero-record");
+const heroSP=$t("hero-season-points")
 
 export function initCalendar() {
   
@@ -38,6 +42,7 @@ export function renderCalendar() {
     if (page.type === "game") {
       newEv.title.textContent = `${page.home===false ? "at" : "vs"} ${page.title}`;
       G.opponents[page.num] ? newEv.spot.src=`public/assets/spot/${G.opponents[page.num].code}.svg` : "";
+ 
     } else {
       newEv.title.textContent = page.title
     }
@@ -54,5 +59,9 @@ export function renderCalendar() {
         break;
     }
     //calendar.append(newEv.root);
-  })
+  });
+  
+  heroRecord.textContent=`${G.wins} - ${G.losses}`;
+  heroWeek.textContent=G.schedule.find((e) => e.status==="active").description;
+  heroSP.textContent=`${G.seasonPoints} SP`
 }

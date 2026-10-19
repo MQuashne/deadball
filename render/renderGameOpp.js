@@ -12,16 +12,10 @@ import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/asse
 const diceInput = $t("dice-input-border");
 const pitcherCard = $t("pitcher-card");
 const oppCard = $t("opp-card");
-const leagueSelect = $t("league-select")
-const teamSelect = $t("team-select");
-const uniSelect = $t("uni-select");
+
 const offerPitcher = $t("offer-pitcher");
-const defenseDisplay = $t("defense-display");
 const defenseOutcome = $t("defense-outcome");
 const diceCount = $t("dice-input-count");
-const oppRoll = $t("opp-roll");
-const oppRollBtn = $t("opp-roll-btn");
-const mainRollBtn = $t("main-roll-btn");
 const notifyBox = $t("notification");
 let oppUni;
 let defDiceCount;
@@ -30,7 +24,7 @@ let defDiceCount;
 export function initOpp() {
   
   oppUni = G.game.home ? evergreenJerseys[oppTeam.league][oppTeam.code]["Away"] : evergreenJerseys[oppTeam.league][oppTeam.code]["Home"];
-  
+ 
   
   if (oppUni.stripe === "" || oppUni.stripe === oppUni.jersey) {
     document.documentElement.style.setProperty('--opp-die-bg-color', oppUni.jersey);
@@ -43,6 +37,10 @@ export function initOpp() {
   
   oppCard.replaceChildren();
   oppCard.append(buildOpp(G.game.opponent));
+  
+  on(oppCard,"click",() => {
+    viewOpp(G.game.opponent)
+  });
   
   on(defenseOutcome, "click", () => {
     const runs = Number(defenseOutcome.textContent[0]);

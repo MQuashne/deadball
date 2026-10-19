@@ -5,7 +5,7 @@
     
     
     //TESTING ONLY
-    G.season = "season";
+   /* G.season = "season";
     const signings = G.tier2Deck.splice(0, 3);
     signings.forEach((fng) => {
       if (fng.fatigue) {
@@ -29,5 +29,5 @@
       }
     }
     G.schedule.find(event => event.id === `springTraining`).status = "past";
-    
+    */
   }

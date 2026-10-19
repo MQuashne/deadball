@@ -5,11 +5,6 @@ import { getOpponentOutcome, changeMode } from '../actions/game.js'
 import { plays, gamebox, selectedDice, renderGame } from './renderGame.js'
 const rollDisplay = $t('roll-display');
 const outcomeDisplay = $t('roll-outcome');
-const scRerollCount = $t("scoreboard-reroll-count");
-const rollButton = $t('roll-btn');
-const offerReroll = $t('offer-reroll');
-const rerollConfirm = $t("reroll-confirm");
-const rerollBack = $t("roll-back");
 const gameRoller = $t('gameRoller');
 const mainRollBtn = $t("main-roll-btn");
 //let selectedDice = [];

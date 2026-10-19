@@ -15,6 +15,17 @@
 
 <body>
   <div id="page">
+    <div id="start-screen" class="">
+      <img id="start-logo" src="./public/assets/StartLogo.png">
+      <!--
+      <button id="new-game" class="btn btn-gold btn-pulse">NEW SEASON</button>
+      -->
+      <div id="load-games">
+        Start a new season or load an existing game
+        <div id="game-slot-1" class="load-slot empty"></div>
+        <div id="game-slot-1" class="load-slot empty"></div>
+      </div>
+    </div>
     <div class="game-header-outer">
       <div class="game-header">
         <div class="header-layer-2">
@@ -55,6 +66,7 @@
           </div>
           <div class="cal-sect" id="upcoming-events"></div>
         </div>
+        
       </div>
       <!-- LINEUP SCREEN -->
       
@@ -79,31 +91,61 @@
       
       <!-- TEAM SETUP SCREEN -->
       
-      <div id="team-setup-content" class="main-content lawn-stripes hidden">
+      <div id="team-setup-content" class="main-content hidden">
         
-        <div id="team-heading" class="section-heading hidden">Your Team</div>
-        <div class="section-subheading">"This is us, skipper."</div>
-        <div class="form-group">
-          <div class="form-label">League</div>
-          <select id='league-select' class="form-select">
-            <option value="">--Choose One</option>
-          </select>
+        <div id="team-heading" class="section-heading">TEAM SETUP</div>
+        <div class="game-options-select">
+          <div class="section-subheading">Select a Team</div>
+          <div class="form-group">
+            <div class="form-label">League</div>
+            <select id='league-select' class="form-select">
+              <option value="">--Choose One</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div class="form-label">Team</div>
+            <select id='team-select' class="form-select">
+              <option value="">--Choose One</option>
+            </select>
+          </div>
+          <div class="form-group hidden">
+            <div class="form-label">Uniform</div>
+            <select id='uni-select' class="form-select">
+              <option value="">--Choose One</option>
+            </select>
+          </div>
+          <div id="uniform-palette"></div>
         </div>
-        <div class="form-group">
-          <div class="form-label">Team</div>
-          <select id='team-select' class="form-select">
-            <option value="">--Choose One</option>
-          </select>
+        <div class="game-options-select">
+          <div class="section-subheading">Game Settings</div>
+          <div class="form-group">
+            <div class="form-label">Difficulty</div>
+            <select id='team-select' class="form-select">
+              <option value="Rookie">Rookie</option>
+              <option value="Veteran">Veteran</option>
+              <option value="Hall-of-Famer">Hall-of-Famer</option>
+              <option value="GOAT">G.O.A.T.</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <div>
+              <label class="form-check">
+                <input type="checkbox" id='hittingCoach' name='hittingCoach' class="form-checkbox">
+                Hitting Coach</label>
+            </div>
+            <div>
+              <label class="form-check">
+                <input type="checkbox" id='pitchingCoach' name='pitchingCoach' class="form-checkbox">
+                Pitching Coach</label>
+            </div>
+          </div>
         </div>
-        <div class="form-group">
-          <div class="form-label">Uniform</div>
-          <select id='uni-select' class="form-select">
-            <option value="">--Choose One</option>
-          </select>
-        </div>
+        <!--
         <div class='die-box'>8</div>
-        <button id="roll">Roll</button>
-        <div id="diceRoller"></div>
+        -->
+        <button id="start-game" class="btn btn-team">START GAME</button>
+        <button id="roll" class="hidden">Roll</button>
+        <div id="diceRoller" class="hidden"></div>
       </div>
       <!-- absolutely positionned behind #diceRollerUI -->
       <!-- dice_box gets created here 
@@ -195,8 +237,12 @@
           <button class="btn btn-team" id="btn-play-ball">SUBMIT LINEUP & PLAY BALL</button>
         </div>
         <div id="gameplay-content" class="hidden">
+          <div id="lead-off-cover" class="screen-cover">Roll to determine your lead-off batter</div>
           <div id="sub-cover" class="hidden"> Select a player to substitute
             <button id="sub-cancel" class="btn btn-team">Cancel</button>
+          </div>
+          <div id="scoreboard-cover" class="screen-cover hidden">
+            <button id="scoreboard-next-btn" class="btn btn-team btn-pulse">NEXT</button>
           </div>
           <div id="scorebug-zone" class="board-zone">
             <div id="scorebug-surface" class="game-surface">
@@ -209,6 +255,12 @@
               <div id="game-home-score" class="game-score game-home"></div>
               <div id="game-home-logo" class="game-logo game-home">
                 <img id="home-score-logo">
+              </div>
+              <div id="scoreboard-inning">
+                <div class="inning-arrow" id="inning-top">▲</div>
+                <div class="inning-arrow" id="inning-bottom">▼</div>
+                <div id="inning-num">7</div>
+                
               </div>
               <div id="process-mode"></div>
             </div>
@@ -241,11 +293,13 @@
                 </svg>
               </div>
               <div id="scoreboard-mod-count" class="scoreboard-resource-count">0</div>
+              <!--
               <div id="scoreboard-inning">
                 <div class="inning-arrow inning-off" id="inning-top">▲</div>
                 <div id="inning-num">7</div>
                 <div class="inning-arrow inning-on" id="inning-bottom">▼</div>
               </div>
+              -->
               <div id="out-count">
                 <div id="out-label">OUTS</div>
                 <div id="out-pips">
@@ -270,6 +324,9 @@
           </div>
           <div id="roll-zone" class="board-zone">
             <div id="roll-surface" class="game-surface">
+              <div id="due-up">
+                
+              </div>
               <div id="main-roll" class="hidden">
                 
               </div>
@@ -384,6 +441,39 @@
   
   <!-- HTML TEMPLATES -->
   
+  <!-- LOAD GAMES -->
+  
+  <!--
+  
+  _______________________________
+       |team
+  logo |
+  _____|_event__|__SP_|_saved dt/tm_| LOAD
+  
+  
+  -->
+  
+  
+  <template id="saved-game-template">
+    <div class="load-slot">
+      <div class="load-spot-box" data-part="spot-box">
+        <img class="load-spot" data-part="spot">
+      </div>
+      <div class="load-body" data-part="body">
+        <div class="load-title" data-part="title">
+        </div>
+        <div class="load-details" data-part="details">
+          <div class="load-schedule load-detail" data-part="schedule"></div>
+          <div class="load-sp load-detail" data-part="sp"></div>
+          <div class="load-saved load-detail" data-part="saved"></div>
+        </div>
+      </div>
+      <button class="trash-btn" data-part="button"><span class="material-symbols-outlined">
+          delete
+        </span></button>
+    </div>
+  </template>
+  
   <!-- CALENDAR EVENT -->
   
   <template id="calendar-event-template">
@@ -451,6 +541,9 @@
       </div>
     </div>
   </template>
+  
+  
+  
   
   <!-- LINEUP -->
   

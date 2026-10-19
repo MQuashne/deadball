@@ -205,8 +205,6 @@ function getContrastColor(hexColor) {
   const lbgText = pTeam.lbgText;
 
   
-  //const {tp,ts,td,lbg,tpText,tsText,lbgText} = getTeamColors(pTeam);
-  
   
   const tierText = getContrastColor(tierColor);
   

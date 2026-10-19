@@ -10,6 +10,9 @@ export const G = {
   league:[],
   opponents:[],
   fullRoster:[],
+  wins:0,
+  losses:0,
+  seasonPoints:0,
   lineup:{ //All made of player objects
     order:[],
     pitcher:{},
@@ -29,6 +32,7 @@ export const G = {
   gameNum: 1,
   signRound:-1, //minor phase
   prospects:[], //potential player onjects
+  opps:[],
   game: { //single game
     home: true,
     mode:"roll",

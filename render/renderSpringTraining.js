@@ -6,6 +6,7 @@ import { buildOpp } from './buildOpp.js'
 import { viewCard, viewOpp } from './modals/viewCard.js'
 import { allPlayers } from '../control/setup.js'
 import {initLineup} from './renderLineup.js';
+import {renderCover} from './renderGameday.js'
 import { getProspects, nextRound, signPlayer, closeSpringTraining } from '../actions/springTraining.js'
 
 //All elements used
@@ -116,6 +117,7 @@ export function initSpringTraining() {
     $t("event-nav-label").textContent = "GAME 1";
     
     //Open gameday content
+    renderCover();
     $t("gameday").classList.remove("hidden")
     initLineup();
   })

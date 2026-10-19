@@ -145,7 +145,14 @@ export function initLineup() {
       } else return;
     } else return;
   })
-  
+}
+
+export function renderLineup(){
+  table.replaceChildren();
+  bench.replaceChildren();
+  bullpen.replaceChildren();
+  startingPitcher.replaceChildren();
+  initLineup();
 }
 
 function updateButtons() {

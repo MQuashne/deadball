@@ -37,9 +37,13 @@ export const rollTests = {
     return false;
   },
   value: (dice, count, target) => {
-    const valCount = dice.filter(res => res >= target).length;
+    const valCount = dice.filter(res => res === target).length;
     return valCount >= count
   },
+  over: (dice, count, target) => {
+  const valCount = dice.filter(res => res >= target).length;
+  return valCount >= count
+},
   pairs: (dice, count, target) => {
     const counts = {};
     for (const num of dice) {

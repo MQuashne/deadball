@@ -2,24 +2,23 @@ import { players } from '../model/players.js'
 import { pitchers } from '../model/pitchers.js'
 import { opponents } from '../model/opponents.js'
 import { G } from '../model/game.js'
-import { initCalendar } from '../render/renderCalendarEvents.js'
+import { initCalendar, renderCalendar } from '../render/renderCalendarEvents.js'
 
 import { renderSpringTraining, initSpringTraining } from '../render/renderSpringTraining.js'
 
-import { initLineup } from '../render/renderLineup.js'
+import { initLineup, renderLineup } from '../render/renderLineup.js'
 
-import { renderCover,initCover } from '../render/renderGameday.js'
+import { renderCover, initCover } from '../render/renderGameday.js'
 
 import { initNav, renderNav } from '../render/renderNav.js'
-import { $n, $t, $c, $a, on, findKey, loadCard, randInt } from '../util.js'
+import { $n, $t, $c, $a, on, findKey, loadCard, randInt, hide, show } from '../util.js'
 import { buildCard } from '../render/buildCard.js'
 import { buildOpp } from '../render/buildOpp.js'
 import Modal from '../render/modal.js'
-import { colorSetup, getTeamColors } from './colorControl.js'
+import { colorSetup } from './colorControl.js'
 import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
 import { teams, leagues } from '../model/teams.js'
 import { endSpring } from './phase.js'
-import { brandColors } from '../render/brandColors.js'
 import { initGame } from '../render/renderGame.js'
 import { DICE } from '../dice/dice.js'
 import { setTest } from './testState.js'
@@ -35,12 +34,11 @@ function shuffle(array) {
   }
 };
 
-export function gameSetup() {
-  document.documentElement.dataset.team = teams[Math.floor(Math.random()*teams.length)].code;
+export function gameSetup(slot) {
+  document.documentElement.dataset.team = teams[Math.floor(Math.random() * teams.length)].code;
   G.myTeam = document.documentElement.dataset.team;
   G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team)
   $t('header-team-name').textContent = `${G.thisTeam.city} ${G.thisTeam.name}`;
-  const myColors = getTeamColors(G.myTeam);
   
   const root = document.documentElement;
   root.style.setProperty('--td', G.thisTeam.td);
@@ -78,25 +76,46 @@ export function gameSetup() {
   
   G.lineup.order.forEach((player) => player.team = G.thisTeam.code);
   G.lineup.pitcher.team = G.thisTeam.code;
-  G.fullRoster=[...G.lineup.order, G.lineup.pitcher,...G.lineup.bench,...G.lineup.bullpen];
+  G.fullRoster = [...G.lineup.order, G.lineup.pitcher, ...G.lineup.bench, ...G.lineup.bullpen];
   
+  G.saveDate = new Intl.DateTimeFormat('en-US', {
+    dateStyle: 'short'
+  }).format(new Date());
+  //let getSaves =[];
+  const getSaves = JSON.parse(localStorage.getItem("saveGames"));
+  getSaves.push(G);
+  localStorage.setItem("saveGames", JSON.stringify(getSaves))
+  //const getBack=localStorage.getItem("saveGames")
+  // console.log(JSON.parse(getBack))
   
-  
-
   //G.fullRoster=[...G.lineup.order, G.lineup.pitcher,...G.lineup.bench,...G.lineup.bullpen];
   
   setTest();
   //Set up nav buttons
   initNav();
   initCalendar();
-  initSpringTraining();
+  //  initSpringTraining();
   initCover();
+  initGame();
   
   if (G.season === "spring") {
     initSpringTraining();
   }
   
-  initLineup();
-  renderCover();
+  //  initLineup();
+  //renderCover();
+  $t("team-nav").click();
+  hide($t("game-nav"));
+  on($t("start-game"), "click", () => {
+    $t("schedule-nav").click();
+    show($t("game-nav"));
+    hide($t("start-game"));
+  })
+}
 
+export function renderApp() {
+  renderCalendar();
+  renderLineup();
+  renderNav();
+  renderCover();
 }

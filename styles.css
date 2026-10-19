@@ -21,14 +21,17 @@
    ========================================================================== */
 
 :root {
-    --ref-w: 393;          /* design width in CSS px (iPhone 14 Pro) */
-    --max-aspect: 0.62;    /* widest the stage may be, as width / height.
+    --ref-w: 393;
+    /* design width in CSS px (iPhone 14 Pro) */
+    --max-aspect: 0.62;
+    /* widest the stage may be, as width / height.
                               Phones stay full-width; anything wider
                               (tablet, desktop) gets black side bars. */
     --stage-w: min(100vw, calc(100dvh * var(--max-aspect)));
     --stage-h: 100dvh;
-    --u: calc(var(--stage-w) / var(--ref-w));   /* 1 design px, if you ever need it */
-
+    --u: calc(var(--stage-w) / var(--ref-w));
+    /* 1 design px, if you ever need it */
+    
     --die-bg-color: linear-gradient(90deg, white 0%, white 5%, #E81828a0 6%, white 7%, white 35%, #E81828a0 36%, white 37%, white 65%, #E81828a0 66%, white 67%, white 95%, #E81828a0 96%, white 97%, white 100%);
     --die-font-color: #E81828;
     --die-outline-color: #ffffff;
@@ -36,9 +39,9 @@
        semicolons, so it is ONE broken value and --opp-die-font-color,
        --opp-die-outline-color and --team-back are never actually defined. */
     --opp-die-bg-color: #000000;
-        --opp-die-font-color:#000000;
-        --opp-die-outline-color:#000000;
-        --team-back: #FFFFFF;
+    --opp-die-font-color: #000000;
+    --opp-die-outline-color: #000000;
+    --team-back: #FFFFFF;
     --grass: #618240;
     --grass-lt: oklch(from var(--grass) calc(l + 0.035) c h);
     --cream: #f5f0e0;
@@ -51,12 +54,17 @@
     --wood-light: #9b6032;
     --gold: #c9a84c;
     --gold-light: #e8c97a;
+    --green-deep: #0f2218;
+    --green-dark: #1c3a28;
     --green: #2D5A3D;
     --green-light: #3d7a52;
     --red: #8b2020;
     --red-light: #a82525;
     --blue: #2a3d62;
     --blue-light: #3a5585;
+    --start-gold: #fdbb01;
+    --start-gold-dark: #f39f00;
+    --start-blue: #031b33;
     
     --shadow-sm: 0 2px 6px rgba(0, 0, 0, 0.35);
     --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3);
@@ -80,6 +88,11 @@
     src: url("https://www.mlbstatic.com/mlb.com/fonts/proxima-nova-regular.woff2")
 }
 
+@font-face {
+    font-family: 'Proxima Nova Bold';
+    src: url("https://www.mlbstatic.com/mlb.com/fonts/proxima-nova-bold.woff2")
+}
+
 * {
     box-sizing: border-box;
 }
@@ -88,7 +101,8 @@ html {
     /* The scaling trick: rem now means "16 design px, scaled to the stage".
        On an iPhone 14 Pro this is exactly 16px, same as before. */
     font-size: calc(16 * var(--u));
-    -webkit-text-size-adjust: 100%;   /* stop iOS from inflating text on its own */
+    -webkit-text-size-adjust: 100%;
+    /* stop iOS from inflating text on its own */
 }
 
 html,
@@ -103,7 +117,8 @@ body {
 }
 
 body {
-    background: #000;   /* shows in the side bars on tablet / desktop */
+    background: #000;
+    /* shows in the side bars on tablet / desktop */
 }
 
 /* THE STAGE
@@ -151,7 +166,8 @@ h3 {
 #page {
     display: grid;
     grid-template-rows: auto 1fr auto;
-    margin: 0 auto;             /* centre the stage horizontally */
+    margin: 0 auto;
+    /* centre the stage horizontally */
     overflow: hidden;
     box-sizing: border-box;
 }
@@ -170,7 +186,7 @@ h3 {
     background-image:
         /*radial-gradient(circle, var(--tp) 0%, var(--tp-dark) 100%),*/
         url('public/assets/stadiumBG.jpeg');
-    background-blend-mode: color-dodge;
+    /* background-blend-mode: color-dodge;*/
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center bottom;
@@ -244,7 +260,8 @@ h3 {
 
 .front-office-header {
     width: 100%;
-    height: 10cqh;             /* was 10vh */
+    height: 10cqh;
+    /* was 10vh */
 }
 
 /* GAME HEADER */
@@ -331,11 +348,12 @@ h3 {
 
 
 #diceRoller {
-    height: 28%;
-    width: 100%;
+    height: 18%;
+    width: 80%;
     margin-top: 1.5rem;
     z-index: 9;
     overflow: hidden;
+    border:1px solid red;
 }
 
 /* CHECK: a 3000x300px canvas is fixed-pixel and will not scale. If your dice
@@ -379,7 +397,8 @@ h3 {
 }
 
 #reference img {
-    width: 9.375rem;           /* was 150px */
+    width: 9.375rem;
+    /* was 150px */
 }
 
 .card {}
@@ -389,17 +408,21 @@ h3 {
     flex-direction: row;
     
     overflow: scroll;
-    height: 12.5rem;           /* was 200px */
+    height: 12.5rem;
+    /* was 200px */
     background: #CCCCCC;
     /* TODO: was "border: 1 px solid #AAAAAA;" (space = invalid, never applied) */
-    border-radius: 1.25rem;    /* was 20px */
-    gap: 0.625rem;             /* was 10px */
+    border-radius: 1.25rem;
+    /* was 20px */
+    gap: 0.625rem;
+    /* was 10px */
     align-items: center;
 }
 
 .lineup-card {
     height: 100%;
-    border-radius: 0.5rem;     /* was 8px */
+    border-radius: 0.5rem;
+    /* was 8px */
     overflow: hidden;
     flex-shrink: 0;
     position: relative;
@@ -408,13 +431,15 @@ h3 {
 
 .lineup-card-placeholder {
     height: 100%;
-    border-radius: 0.5rem;     /* was 8px */
+    border-radius: 0.5rem;
+    /* was 8px */
     overflow: hidden;
     flex-shrink: 0;
     position: relative;
     aspect-ratio: 5 / 7;
     color: #FFFFFF80;
-    border: 0.1875rem dashed #FFFFFFD0;   /* was 3px */
+    border: 0.1875rem dashed #FFFFFFD0;
+    /* was 3px */
 }
 
 .lineup-card svg {
@@ -429,10 +454,31 @@ h3 {
     animation-delay: calc(var(--i, 0) * 100ms);
 }
 
+#team-setup-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+}
+
+.game-options-select {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width:95%;
+    background:#000000D0;
+    border:2px solid var(--ts);
+    border-radius:5cqw;
+    padding:0.5rem;
+    margin:0.5rem;
+}
+
 .form-group {
     display: flex;
     flex-direction: column;
     gap: 0.36rem;
+    width: 80%;
 }
 
 .form-label {
@@ -443,10 +489,12 @@ h3 {
 }
 
 .form-input,
-.form-select {
+.form-select{
+    appearance:none;
     background: rgba(0, 0, 0, 0.75);
     border: 1.5px solid rgba(245, 240, 224, 0.16);
-    border-radius: 0.1875rem;  /* was 3px */
+    border-radius: 0.1875rem;
+    /* was 3px */
     padding: 0.5rem 0.5rem;
     font-family: "Proxima Nova";
     font-size: 0.9rem;
@@ -457,8 +505,9 @@ h3 {
     text-align: center;
 }
 
+
 .form-input:focus,
-.form-select:focus {
+.form-select:focus{
     border-color: var(--ts);
 }
 
@@ -472,6 +521,126 @@ h3 {
 
 .form-select option {
     background: #1c2030;
+}
+
+/*------------*/
+
+.form-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
+    position: relative;
+    flex-shrink: 0;
+    width: 1.125rem;
+    height: 1.125rem;
+    margin: 0;
+    background: rgba(0, 0, 0, 0.75);
+    border: 1.5px solid rgba(245, 240, 224, 0.16);
+    border-radius: 0.1875rem;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.15s, background 0.15s;
+}
+
+.form-checkbox:hover {
+    border-color: rgba(245, 240, 224, 0.32);
+}
+
+.form-checkbox:focus-visible {
+    border-color: var(--ts);
+}
+
+.form-checkbox:checked {
+    border-color: var(--ts);
+    background: var(--ts);
+}
+
+/* checkmark */
+.form-checkbox::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 45%;
+    width: 0.3rem;
+    height: 0.55rem;
+    border: solid #000;
+    border-width: 0 2px 2px 0;
+    transform: translate(-50%, -50%) rotate(45deg) scale(0);
+    transition: transform 0.12s ease;
+}
+
+.form-checkbox:checked::after {
+    transform: translate(-50%, -50%) rotate(45deg) scale(1);
+}
+
+.form-checkbox:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+.form-check {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: "Proxima Nova";
+    font-size: 0.9rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+/*---------*/
+
+#uniform-palette {
+    display: flex;
+    gap: 1.5%;
+    flex-wrap: wrap;
+    width:95%;
+    justify-content:center;
+    margin:3% 0;
+}
+
+.die-show {
+    display: flex;
+    flex-direction: column;
+   max-width:15%;
+   flex-shrink:1;
+  flex-grow:1;
+   container-type:inline-size;
+}
+
+.palette-die-box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ffffff;
+    font-size: 80cqw;
+    font-family: "BaseballClubSolid";
+    font-weight: 100;
+    color: #ffffff;
+    -webkit-text-stroke: 0.2px transparent;
+    border: 1px solid #aaaaaa;
+    
+}
+
+.palette-die-box::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(at 5% 5%, #ffffff80 0%, #ffffff00 80%);
+}
+
+.die-label {
+    font-family: Consolas, monospace;
+    font-size: 0.6rem;
+    width: 100%;
+    color:white;
 }
 
 
@@ -599,11 +768,13 @@ h3 {
 #p {
     display: flex;
     flex-direction: row;
-    gap: 0.3125rem;            /* was 5px */
+    gap: 0.3125rem;
+    /* was 5px */
 }
 
 .sw {
-    height: 2.5rem;            /* was 40px */
+    height: 2.5rem;
+    /* was 40px */
     width: 2.5rem;
 }
 
@@ -634,18 +805,21 @@ h3 {
 #a {
     display: flex;
     flex-direction: row;
-    gap: 0.3125rem;            /* was 5px */
+    gap: 0.3125rem;
+    /* was 5px */
 }
 
 .section-heading {
     font-family: 'Oswald', serif;
-    font-size: 1.3rem;
+    font-size: 1.7rem;
     font-weight: 600;
-    color: var(--ink-faded);
+    color: white;
     width: 100%;
     padding: 2% 0;
     display: flex;
     align-items: center;
+    justify-content:center;
+    text-align:center;
 }
 
 .section-heading-white {
@@ -655,6 +829,8 @@ h3 {
 .section-subheading {
     font-family: "Oswald";
     margin-bottom: 3%;
+    color: white;
+    font-size:1.3rem;
 }
 
 .instructions {
@@ -688,6 +864,7 @@ h3 {
     font-family: "Proxima Nova";
     font-weight: 600;
     font-size: 0.8em;
+    text-align: center;
 }
 
 #calendar-body {
@@ -793,8 +970,10 @@ h3 {
 
 
 #insert {
-    width: 30cqw;                          /* was 30vw */
-    height: calc(30cqw * 3.5 / 2.5);       /* was 30vw */
+    width: 30cqw;
+    /* was 30vw */
+    height: calc(30cqw * 3.5 / 2.5);
+    /* was 30vw */
     display: flex;
 }
 
@@ -839,10 +1018,12 @@ h3 {
 
 /*SPRING TRAINING*/
 .trough-outer {
-    border-radius: 0.625rem;   /* was 10px */
+    border-radius: 0.625rem;
+    /* was 10px */
     padding: 0.2rem 0.2rem 0.2rem;
     position: relative;
-    height: 30cqh;             /* was 30vh */
+    height: 30cqh;
+    /* was 30vh */
     min-width: 0;
     display: flex;
 }
@@ -850,9 +1031,11 @@ h3 {
 .trough-outer::before {
     content: '';
     position: absolute;
-    inset: 0.5rem;             /* was 8px */
+    inset: 0.5rem;
+    /* was 8px */
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0.25rem;    /* was 4px */
+    border-radius: 0.25rem;
+    /* was 4px */
     pointer-events: none;
 }
 
@@ -870,7 +1053,8 @@ h3 {
 
 .trough-felt {
     background: linear-gradient(180deg, var(--tp-deep), var(--tp-dark));
-    border-radius: 0.375rem;   /* was 6px */
+    border-radius: 0.375rem;
+    /* was 6px */
     padding: 2% 0.65rem 2%;
     transition: background 0.35s ease;
     height: 100%;
@@ -907,7 +1091,8 @@ h3 {
 @keyframes slideIn {
     to {
         opacity: 1;
-        max-width: 18.75rem;   /* was 300px */
+        max-width: 18.75rem;
+        /* was 300px */
         /* Set to a safe max-width or let flexbox handle it */
         transform: translateX(0);
     }
@@ -932,14 +1117,16 @@ h3 {
 
 .lineup-slot.on {
     opacity: 1;
-    max-width: 18.75rem;       /* was 300px */
+    max-width: 18.75rem;
+    /* was 300px */
 }
 
 .slot-label {
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.5rem;
     letter-spacing: 0.08em;
-    height: 0.6875rem;         /* was 11px */
+    height: 0.6875rem;
+    /* was 11px */
 }
 
 
@@ -954,7 +1141,8 @@ h3 {
     letter-spacing: 0.13em;
     text-transform: uppercase;
     padding: 0.6rem 1.3rem;
-    border-radius: 0.1875rem;  /* was 3px */
+    border-radius: 0.1875rem;
+    /* was 3px */
     border: none;
     cursor: pointer;
     transition: transform 0.12s, box-shadow 0.12s, background-color 0.35s, border-color 0.35s, color 0.3s;
@@ -963,7 +1151,8 @@ h3 {
 }
 
 .btn-wood {
-    background: linear-gradient(115deg, var(--tp) 10%, var(--ts) calc(10% + 1px), var(--ts) 15%, #caa472 calc(15% + 1px), #caa472 100%);
+    /*background: linear-gradient(115deg, var(--tp) 10%, var(--ts) calc(10% + 1px), var(--ts) 15%, #caa472 calc(15% + 1px), #caa472 100%);*/
+    background: #caa472;
     color: var(--tp);
     box-shadow: 0 3px 0 var(--wood-dark), var(--shadow-sm);
 }
@@ -976,12 +1165,26 @@ h3 {
     transform: translateY(2px);
 }
 
+.btn-gold {
+    background: var(--start-gold);
+    color: var(--start-blue);
+    box-shadow: 0 3px 0 var(--start-gold-dark), var(--shadow-sm);
+}
+
+.btn-gold:hover {
+    transform: translateY(-1px);
+}
+
+.btn-gold:active {
+    transform: translateY(2px);
+}
+
 .btn-team {
     background: linear-gradient(170deg, var(--tp-light), var(--tp));
     color: var(--tp-text);
     box-shadow: 0 3px 0 var(--tp-dark), var(--shadow-sm);
     pointer-events: auto;
-    border:none;
+    border: none;
 }
 
 .btn-team:hover {
@@ -1054,13 +1257,15 @@ h3 {
 
 .card-scene.signed {
     opacity: 0.995;
-    transform: translateY(-100cqw);   /* was -100vw */
+    transform: translateY(-100cqw);
+    /* was -100vw */
     transition: transform 0.5s, opacity 0.5s;
 }
 
 .card-scene.sched {
     opacity: 0.995;
-    transform: translateY(70cqw);     /* was 70vw */
+    transform: translateY(70cqw);
+    /* was 70vw */
     transition: transform 0.5s, opacity 0.5s;
 }
 
@@ -1308,7 +1513,8 @@ h3 {
     letter-spacing: 0.1em;
     text-transform: uppercase;
     padding: 0.22rem 0.58rem;
-    border-radius: 0.125rem;   /* was 2px */
+    border-radius: 0.125rem;
+    /* was 2px */
     display: inline-block;
     transition: background 0.35s, color 0.35s, border-color 0.35s;
     background: var(--ts);
@@ -1354,6 +1560,45 @@ h3 {
 /*========================
 GAME BOARD
 ========================*/
+
+/*LEADOFF ROLLER*/
+.screen-cover {
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+    z-index: 25;
+    background: #000000e0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "Oswald";
+    font-size: 1.2rem;
+    text-align: center;
+    text-transform: uppercase;
+    color: white;
+    gap: 2rem;
+    padding-bottom: 80%;
+}
+
+#due-up {
+    width: 90%;
+    height: 60%;
+    margin-top: 6%;
+    position: absolute;
+    align-self: center;
+    justify-self: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2%;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#due-up button {
+    padding: 0.3rem 1.5rem;
+    
+}
+
 
 /* BOARD*/
 #gameplay-content {
@@ -1408,11 +1653,11 @@ GAME BOARD
     
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows:100%;
+    grid-template-rows: 100%;
     align-items: center;
     justify-content: center;
     grid-template-areas:
-        "back-btn away-logo away-score home-score home-logo .";
+        "back-btn away-logo away-score home-score home-logo inning";
     position: relative;
 }
 
@@ -1437,6 +1682,7 @@ GAME BOARD
     height: 100%;
     width: 100%;
 }
+
 #away-score-logo {
     object-fit: contain;
 }
@@ -1453,6 +1699,22 @@ GAME BOARD
     justify-self: center;
 }
 
+#scoreboard-inning {
+    grid-area: inning;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: var(--tp-text);
+    font-family: "Oswald";
+    font-size: 1.3rem;
+    gap: 0.5rem
+}
+
+.inning-arrow {
+    font-size: 0.75rem;
+}
+
 .game-home {}
 
 .game-away {}
@@ -1464,8 +1726,8 @@ GAME BOARD
     font-weight: 800;
     text-shadow: 0.05rem 0.05rem 0.1rem #000;
     background-clip: padding-box;
-    line-height:1;
-    display:flex;
+    line-height: 1;
+    display: flex;
     justify-content: center;
     align-items: center;
     
@@ -1482,7 +1744,7 @@ GAME BOARD
 .game-logo img {
     object-fit: contain;
     aspect-ratio: 1/1;
-    height:100%;
+    height: 100%;
 }
 
 
@@ -1556,16 +1818,7 @@ GAME BOARD
     grid-area: mod;
 }
 
-#scoreboard-inning {
-    grid-area: inning;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    color: var(--tp-text);
-    font-family: "Oswald";
-    font-size: 1.3rem;
-}
+
 
 .inning-off {
     visibility: hidden;
@@ -1740,7 +1993,8 @@ GAME BOARD
 .roll-display {
     text-align: center;
     position: absolute;
-    width: 80cqw;              /* was 80vw */
+    width: 80cqw;
+    /* was 80vw */
     flex-direction: column;
     justify-content: center;
     top: 50%;
@@ -1831,6 +2085,7 @@ GAME BOARD
     z-index: 7;
     gap: 1.5em;
 }
+
 /* BUTTONS */
 #action-zone {
     grid-area: buttons;
@@ -1966,17 +2221,17 @@ GAME BOARD
     grid-row: 1 / 5;
     z-index: 20;
     background: #000000e0;
-    display:flex;
-    flex-direction:column;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-family:"Oswald";
-    font-size:1.2rem;
+    font-family: "Oswald";
+    font-size: 1.2rem;
     text-align: center;
     text-transform: uppercase;
     color: white;
     gap: 2rem;
-    padding-top:50%;
+    padding-top: 50%;
 }
 
 .sub-modal-container {
@@ -2007,9 +2262,9 @@ GAME BOARD
     align-items: center;
 }
 
-.sub-modal-action button{
-    font-size:1.2rem;
-    font-family:"Oswald";
+.sub-modal-action button {
+    font-size: 1.2rem;
+    font-family: "Oswald";
 }
 
 .mod-dialog {
@@ -2029,7 +2284,8 @@ GAME BOARD
 }
 
 .mod-trough-outer {
-    border-radius: 0.625rem;   /* was 10px */
+    border-radius: 0.625rem;
+    /* was 10px */
     padding: 0.2rem 0.2rem 0.2rem;
     position: relative;
     width: calc(90cqw - 0.4rem);
@@ -2043,14 +2299,16 @@ GAME BOARD
     position: absolute;
     inset: 0.7rem;
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 0.25rem;    /* was 4px */
+    border-radius: 0.25rem;
+    /* was 4px */
     pointer-events: none;
 }
 
 .mod-trough {
     /*background: linear-gradient(180deg, var(--tp-deep), var(--tp-dark));*/
     box-shadow: 0.5cqw 0.5cqw 1.5cqw #00000080 inset;
-    border-radius: 0.375rem;   /* was 6px */
+    border-radius: 0.375rem;
+    /* was 6px */
     padding: 2% 0.65rem 2%;
     height: 90%;
     width: 100%;
@@ -2104,7 +2362,8 @@ GAME BOARD
 
 .btn-glass {
     background: rgba(0, 0, 0, 0.19);
-    border-radius: 1rem;       /* was 16px */
+    border-radius: 1rem;
+    /* was 16px */
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(8.1px);
     -webkit-backdrop-filter: blur(8.1px);
@@ -2217,11 +2476,12 @@ GAME BOARD
     display: flex;
     justify-content: center;
     align-items: center;
-    z-index:21;
+    z-index: 21;
 }
-#pitcher-card.active{
-      border:2px solid gold;
-      animation: pulseSmall 1s infinite;
+
+#pitcher-card.active {
+    border: 2px solid gold;
+    animation: pulseSmall 1s infinite;
     
 }
 
@@ -2373,5 +2633,210 @@ GAME BOARD
 }
 
 .bat-coach {
-    color:#FFFF00; !important
+    color: #FFFF00 !important;
+}
+
+#scoreboard {
+    overflow-x: auto;
+    background: var(--green-dark);
+    color: white;
+    font-family: Oswald;
+    width: 90%;
+    /*height:100%;*/
+    position: relative;
+    padding: 0.5rem;
+    box-shadow: 0.05rem 0.05rem 0.1rem 0.05rem var(--green) inset;
+}
+
+.sb-grid {
+    display: grid;
+    grid-template-columns: 5rem repeat(9, 1fr) 1.2fr;
+    gap: 0.5rem;
+    padding: 0.1rem 0.08rem;
+}
+
+.sb-hcell {
+    height: 1.8rem;
+    width: 1.8rem;
+    font-size: 0.8rem;
+    text-align: center;
+    padding: 0.1rem 0.08rem;
+}
+
+.sb-cell {
+    height: 1.8rem;
+    width: 1.8rem;
+    background: var(--green-dark);
+    box-shadow: 0 0 0.3rem 0.05rem black inset;
+    font-size: 1rem;
+    text-align: center;
+    padding: 0.1rem 0.08rem;
+}
+
+.sb-hcell.left {
+    font-size: 0.8rem;
+    text-align: left;
+    padding: 0.1rem 0.1rem;
+    width: 100%;
+}
+
+.sb-hcell.total {
+    margin: 0 0.5rem;
+}
+
+.sb-cell.total {
+    margin: 0 0.5rem;
+}
+
+.sb-cell.left {
+    font-size: 1rem;
+    text-align: left;
+    padding: 0.1rem 0.08rem;
+    background: var(--green-dark);
+    width: 100%;
+    box-shadow: none;
+    container-type: inline-size;
+}
+
+.sb-cell.left span {
+    font-size: clamp(0.3rem, 17cqi, 1rem);
+    white-space: nowrap;
+}
+
+.sb-cell.active {
+    color: #FFD000;
+}
+
+.sb-hcell.active {
+    color: #FFD000;
+}
+
+#start-screen {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    z-index: 500;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    background-image: url('public/assets/stadiumBG.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    color: white;
+    font-family: Oswald;
+    padding: 20% 0;
+}
+
+#start-screen.tuck {
+    transform: translateY(120%);
+    transition: all 0.3s ease-in;
+}
+
+#load-games {
+    background-color: #000000a0;
+    width: 80%;
+    height: 50%;
+    border-radius: 10%;
+    border: 2px solid var(--start-gold);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    container-type: inline-size;
+}
+
+#start-logo {
+    width: 75%;
+    max-height: 30%;
+}
+
+.load-slot {
+    width: 95cqw;
+    border-radius: 5cqw;
+    height: 25%;
+    background: linear-gradient(#ffffff, #d9d9db);
+    margin: 2%;
+    display: flex;
+}
+
+.load-slot.empty {
+    background: var(--start-gold);
+    color: var(--start-blue);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+}
+
+.load-spot-box {
+    height: 100%;
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.load-spot {
+    height: 85%;
+    object-fit: contain;
+}
+
+.load-body {
+    height: 100%;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    color: var(--start-blue);
+}
+
+.load-details {
+    display: flex;
+    height: 50%;
+    align-items: center;
+    border-top: 1px solid var(--start-blue);
+    justify-content: space-between;
+}
+
+.load-detail {
+    font-family: "Proxima Nova";
+    font-size: 0.7rem;
+    flex-grow: 1;
+}
+
+.load-schedule {
+    text-align: left;
+    border-right: 1px solid var(--start-blue);
+}
+
+.load-sp {
+    text-align: center;
+    border-right: 1px solid var(--start-blue);
+}
+
+.load-saved {
+    text-align: center;
+}
+
+.load-title {
+    font-family: Oswald;
+    font-size: 1rem;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    color: var(--start-blue);
+    overflow: hidden;
+}
+
+.trash-btn {
+    appearance: none;
+    background: #00000000;
+    border: none;
+    color: var(--start-blue);
+    
 }

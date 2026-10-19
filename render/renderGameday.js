@@ -11,10 +11,7 @@ import { playBall } from '../actions/game.js'
 
 export function initCover() {
   on($t("btn-play-ball"), "click", () => {
-  //playBall();
-  initGame();
   playBall();
-  
   $t("gameday-cover").classList.add("hidden");
   $t("gameplay-content").classList.remove("hidden")
 })
@@ -25,9 +22,15 @@ export function renderCover() {
   const homeLogo = $t("logo-home");
   const logos = $t("logos");
   const uniSelectGD = $t("uni-select-gameday")
+  const matchupTeams=$t("matchup-teams");
+  const oppTeam=teams.find(t => t.code === G.opponents[G.gameNum - 1].code);
   
-  const homeTeam = G.game.home === true ? G.thisTeam : teams.find(t => t.code === G.opponents[G.gameNum - 1].code);
-  const awayTeam = G.game.home === false ? G.thisTeam : teams.find(t => t.code === G.opponents[G.gameNum - 1].code);
+  const homeTeam = G.game.home ? G.thisTeam : oppTeam;
+ const awayTeam = G.game.home ? oppTeam : G.thisTeam;
+  
+  matchupTeams.style.fontSize = "1.2rem";
+  matchupTeams.style.texaAlign = "center";
+  matchupTeams.innerHTML=`${awayTeam.city} <span style="font-family:proxima nova bold;">${awayTeam.name}</span><br><span style="font-size:1.2rem;">@</span><br>${homeTeam.city} <span style="font-family:proxima nova bold;">${homeTeam.name}</span>`
   
   awayLogo.src = `public/assets/logos/${awayTeam.tpLogo}.svg`;
   

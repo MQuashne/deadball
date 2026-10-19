@@ -5,32 +5,41 @@ import { store } from '../model/store.js'
 import { buildCard, buildDie, buildReRoll, buildMod } from './buildCard.js'
 import { buildOpp } from './buildOpp.js'
 import { viewCard, viewOpp } from './modals/viewCard.js'
-import { playerOut, allRunnersOut, endOffHalf, firstBatter, endOffenseRoll, endDefenseRoll, startDefHalf, getBatterOutcome, getOpponentOutcome, advanceRunners, nextBatter, runScored, endDefHalf, changeMode, changeProcess, applyMods, specialBatterThrow, fatiguePitcher, addCoachDie } from '../actions/game.js'
+import { playerOut, allRunnersOut, startOffHalf, startDefHalf, endOffHalf, firstBatter, endOffenseRoll, endDefenseRoll, getBatterOutcome, getOpponentOutcome, advanceRunners, nextBatter, runScored, endDefHalf, endGame, changeMode, changeProcess, changeProcessMode, applyMods, specialBatterThrow, fatiguePitcher, addCoachDie, setLeadoff } from '../actions/game.js'
 import { DICE } from '../dice/dice.js'
 import { teams } from '../model/teams.js'
-import { allPlayers } from '../control/setup.js'
+import { allPlayers, renderApp } from '../control/setup.js'
 import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
 import { initMods, modScreen, modResult, modsUsed } from './renderGameMods.js'
 import { initReroll, rerollScreen, remainingDice, remainingPlay } from './renderGameReroll.js'
 import { initOpp, defenseHalf, opponentThrow } from './renderGameOpp.js'
 import { initPitcher } from './renderGamePitcher.js'
 import { subCard } from './renderGameSub.js'
+import { buildBar } from './buildLineupBar.js'
+import { scoreboardTable } from './renderScoreboard.js'
 
 
 //=============================
 // DOM AND CONSTANTS
 //=============================
 
-const root = document.documentElement;
+
+//STARTING
+const leadoffCover = $t("lead-off-cover");
+const scoreboardCover = $t("scoreboard-cover");
+const scoreboardNextBtn = $t("scoreboard-next-btn")
+
 
 // SURFACES
 const batterSurface = $t("batter-surface");
 const orderSurface = $t("order-surface");
-const scoreboardSurface = $t("scoreboard-surface");
 
 //DISPLAYS
 // --debug
-const processMode = $t("process-mode")
+const processMode = $t("process-mode");
+
+// --due up
+const dueUp = $t("due-up");
 
 // --score bug
 const logoAwayDiv = $t("game-away-logo");
@@ -50,9 +59,11 @@ const scInningNum = $t("inning-num");
 const scInningTop = $t("inning-top");
 const scInningBottom = $t("inning-bottom");
 
+// --inning-scoreboard
+const scoreboard = $t("scoreboard-con");
+
 // --rolling
 const rollDisplay = $t('roll-display');
-const rollOptions = $t("roll-options");
 
 // --substitute
 const subCover = $t("sub-cover");
@@ -63,17 +74,13 @@ const outcomeDisplay = $t('roll-outcome');
 const offerReroll = $t('offer-reroll');
 const offerModifier = $t('offer-modifier');
 const offerPitcher = $t("offer-pitcher");
-const defenseOutcome = $t("defense-outcome");
 const mainRollBtn = $t("main-roll-btn");
 const outButton = $t('main-out-btn');
-const modPlay = $t("mod-play");
 const rollBackBtn = $t("roll-back");
 const offerBases = $t("offer-bases");
 const continueBtn = $t("continue-btn");
 
 // --action bar buttons
-const rollButton = $t('roll-btn');
-
 const bbButton = $t('bb-btn');
 const sacButton = $t('sac-btn');
 const singleButton = $t('1b-btn');
@@ -82,7 +89,6 @@ const tripleButton = $t('3b-btn');
 const hrButton = $t('hr-btn');
 const subButton = $t('sub-btn');
 const coachDieButton = $t('coach-die-btn');
-const subCancelButton = $t('sub-cancel');
 
 // --other buttons
 const scheduleNav = $t('schedule-nav');
@@ -105,7 +111,6 @@ const modOverlay = $t("mod-overlay");
 
 // --baserunning
 const runnerChoiceOverlay = $t("runner-choice-overlay");
-const rerollOverlay = $t("reroll-overlay");
 
 // --notification
 //const notifyBox = $t("notification");
@@ -114,13 +119,6 @@ const rerollOverlay = $t("reroll-overlay");
 // --cards
 const pitcherCard = $t("pitcher-card");
 const oppCard = $t("opp-card");
-
-
-
-//EXTERNAL REFERENCES
-const leagueSelect = $t("league-select")
-const teamSelect = $t("team-select");
-const uniSelect = $t("uni-select");
 
 export const plays = {
   "out": "Out",
@@ -138,6 +136,9 @@ export const plays = {
 //=============================
 
 const VIEW_CONFIG = {
+  "start:roll": { visible: [mainRollBtn] },
+  "start:outcome": { visible: [outcomeDisplay] },
+  
   "hit:roll": { visible: [mainRollBtn, outButton, diceInput] },
   "hit:outcome": { visible: [outcomeDisplay, offerReroll, offerModifier] },
   "hit:mod": { visible: [outcomeDisplay, rollBackBtn, modOverlay] },
@@ -182,6 +183,7 @@ const ROLL_MAP = {
   "field:roll": () => opponentThrow(),
   "pitch:reroll": () => reThrow(),
   "field:reroll": () => reThrow(),
+  "start:roll": () => throwLeadoff(),
   
 }
 
@@ -195,7 +197,8 @@ const OUTCOME_MAP = {
   "field:outcome": () => oppOutcome(),
   "pitch:outcome": () => oppOutcome(),
   "pitch:mod": () => modOutcome(),
-  "field:mod": () => modOutcome()
+  "field:mod": () => modOutcome(),
+  "start:outcome": () => startInning()
   
 }
 
@@ -227,7 +230,6 @@ export function initGame() {
   //-------------------
   // DOM SETUP
   //-------------------
-  
   //----- RESIZING OBSERVER FOR DICE BOX 
   const ro = new ResizeObserver(entries => {
     for (const entry of entries) {
@@ -349,8 +351,7 @@ export function initGame() {
   })
   
   on(offerBases, "click", () => {
-    changeProcess("run");
-    changeMode("roll");
+    changeProcessMode("run", "roll");
     rollBackBtn.classList.remove("display-shift");
     diceCount.textContent = 0;
     updateGameButtons();
@@ -380,7 +381,8 @@ export function initGame() {
   
   on(tripleButton, "click", () => {
     //rollResult holds the originals
-    $t("notification").classList.add("showing");
+    //$t("notification").classList.add("showing");
+    store.emit("game:started")
   });
   
   on(hrButton, "click", () => {
@@ -394,14 +396,32 @@ export function initGame() {
   
   on(coachDieButton, "click", () => {
     addCoachDie();
-  })
+  });
   
+  on(scoreboardNextBtn, "click", () => {
+    hide(scoreboardCover);
+    $t("scoreboard").remove();
+    if (!G.game.inprogress) {
+      endGame();
+      $t("gameday-cover").classList.remove("hidden");
+      $t("gameplay-content").classList.add("hidden")
+      renderApp();
+    }
+  })
   
   //------DEFENSE BUTTONS
   
+  store.on("game:startedz", () => {
+    
+    rollerMyTeam();
+    [...$a('roll-el')].forEach(el => { hide(el); });
+    mainRollBtn.classList.remove("hidden");
+    show(leadoffCover);
+  })
+  
+  
   //CH:ROLLSUBS
   store.on("game:started", () => {
-    console.log("here")
     homeTeam = G.game.home === true ? G.thisTeam : teams.find(t => t.code === G.game.opponent.code);
     awayTeam = G.game.home === false ? G.thisTeam : teams.find(t => t.code === G.game.opponent.code);
     oppTeam = teams.find(t => t.code === G.game.opponent.code)
@@ -416,22 +436,26 @@ export function initGame() {
     mode = "roll";
     defThrow = 0;
     pitcherRemove = false;
-    batter;
-    selectedRunner;
     
     diceCount.textContent = 0;
-    //addBatter();
-    firstBatter(batter);
+    addBatter();
+    //firstBatter(getBatter());
     addOrder();
     addPitcher();
     initMods();
     initReroll();
     initOpp();
     initPitcher();
+    
+    if (G.game.atBat) {
+      startOffHalf();
+    } else {
+      startDefHalf();
+    }
     renderGame();
   })
   
-  store.on("mode:changed", () => {
+  store.on("process:changed", () => {
     renderGame();
   });
   
@@ -481,7 +505,9 @@ export function initGame() {
   });
   
   store.on("runners:advanced", ({ lastPlay }) => {
-    renderGame();
+    if (lastPlay !== "SAC") {
+      renderGame()
+    };
   })
   
   //===================
@@ -490,13 +516,7 @@ export function initGame() {
   //CH:INNINGCHANGE
   
   store.on("inning:offense", () => {
-    let uni = evergreenJerseys[G.thisTeam.league][G.thisTeam.code][G.thisTeam.uni];
-    DICE.set_color('dice', uni.jersey);
-    DICE.set_color('label', uni.text);
-    DICE.set_color('stripe', uni.stripe ||= uni.jersey);
-    DICE.set_color('outline', uni.outline ||= uni.jersey);
-    diceInput.querySelector(".die-box").classList.remove("opp-die");
-    $t("roll-surface").style.backgroundImage = `url("public/assets/logos/${G.thisTeam.code}.svg"), linear-gradient(90deg,oklch(from ${G.thisTeam.ts} calc(l - 0.12) c h),oklch(from ${G.thisTeam.ts} calc(l - 0.12) c h)) `;
+    rollerMyTeam();
     diceCount.textContent = 0;
     gamebox.clear();
     renderGame();
@@ -504,6 +524,17 @@ export function initGame() {
   
   store.on("inning:defense", () => {
     defenseHalf();
+  });
+  
+  store.on("half:end", (result) => {
+    scoreboardCover.prepend(scoreboardTable(homeTeam, awayTeam));
+    show(scoreboardCover);
+  });
+  
+  store.on("game:finished", (win) => {
+    scoreboardCover.prepend(scoreboardTable(homeTeam, awayTeam));
+    scoreboardCover.append(`${G.thisTeam.name} ${win ? "WIN!" : "LOSE"} `)
+    show(scoreboardCover);
   })
   
   store.on("pitcher:sub", () => {
@@ -596,9 +627,9 @@ function renderScoreboard() {
   scRerollCount.textContent = G.game.rerolls;
   scModCount.textContent = G.game.mods;
   scInningNum.textContent = G.game.inning;
-  G.game.half === 1 ? scInningTop.classList.remove("inning-off") : scInningTop.classList.add("inning-off")
+  G.game.half === 1 ? scInningTop.classList.remove("hidden") : scInningTop.classList.add("hidden")
   
-  G.game.half === 1 ? scInningBottom.classList.add("inning-off") : scInningBottom.classList.remove("inning-off")
+  G.game.half === 1 ? scInningBottom.classList.add("hidden") : scInningBottom.classList.remove("hidden")
   
   for (let i = 0; i < 2; i++) {
     const outPips = $a("out-pip");
@@ -732,7 +763,6 @@ function updateRollButton() {
     }
   }
   
-  
   //Curtis Garcia
   if (getBatter().id === "011" && G.game.process === "hit") {
     const runnerCount = G.game.runners.length - 1;
@@ -740,6 +770,10 @@ function updateRollButton() {
       mainRollBtn.textContent = `+${runnerCount}D, Out`
     } else { mainRollBtn.textContent = `+${runnerCount}D, Walk` };
     mainRollBtn.disabled = false;
+  }
+  
+  if (G.game.process === "field") {
+    mainRollBtn.textContent = "Roll"
   }
   
 }
@@ -791,8 +825,19 @@ function reThrow() {
       } else if (G.game.process === "field") {
         endDefenseRoll(notation.result);
       }
+      selectedDice = [];
     }
   );
+}
+
+function throwLeadoff() {
+  gamebox.setDice("1d10");
+  gamebox.start_throw(() => hide([...$a("main-roll")]), (notation) => {
+    setLeadoff(Math.max(notation.result[0], 2) - 2);
+    showDueUp();
+    //outcomeDisplay.textContent = "PLAY BALL";
+    //show(outcomeDisplay)
+  });
 }
 
 //================
@@ -843,7 +888,12 @@ function oppOutcome() {
   }
   notifyBox.close();
   gamebox.clear();
-  
+}
+
+function startInning() {
+  hide(leadoffCover);
+  gamebox.clear();
+  store.emit("game:started");
 }
 
 function renderRunnerChoice() {
@@ -883,7 +933,7 @@ function addBatter() {
 function addOrder() {
   orderSurface.replaceChildren();
   for (let i = 1; i < 9; i++) {
-    const orderNum = G.game.currentBatterIndex + i > 8 ? G.game.currentBatterIndex + i - 8 : G.game.currentBatterIndex + i;
+    const orderNum = G.game.currentBatterIndex + i > 8 ? G.game.currentBatterIndex + i - 9 : G.game.currentBatterIndex + i;
     const orderCard = $n("div", ["lineup-card", "card"], orderSurface);
     orderCard.dataset.pid = G.lineup.order[orderNum].id;
     orderCard.style.viewTransitionName = `lc-${orderNum}`;
@@ -911,3 +961,32 @@ const hasSet = (array, must) => {
   }
   return false;
 };
+
+function rollerMyTeam() {
+  let uni = evergreenJerseys[G.thisTeam.league][G.thisTeam.code][G.thisTeam.uni];
+  DICE.set_color('dice', uni.jersey);
+  DICE.set_color('label', uni.text);
+  DICE.set_color('stripe', uni.stripe ||= uni.jersey);
+  DICE.set_color('outline', uni.outline ||= uni.jersey);
+  diceInput.querySelector(".die-box").classList.remove("opp-die");
+  $t("roll-surface").style.backgroundImage = `url("public/assets/logos/${G.thisTeam.code}.svg"), linear-gradient(90deg,oklch(from ${G.thisTeam.ts} calc(l - 0.12) c h),oklch(from ${G.thisTeam.ts} calc(l - 0.12) c h)) `;
+}
+
+function showDueUp() {
+  console.log("shown")
+  for (let i = 0; i < 3; i++) {
+    const orderNum = G.game.currentBatterIndex + i > 8 ? G.game.currentBatterIndex + i - 8 : G.game.currentBatterIndex + i;
+    const playerBar = buildBar(G.lineup.order[orderNum]);
+    playerBar.querySelector(".lineup-buttons").classList.add("hidden");
+    dueUp.append(playerBar);
+  }
+  const startInningBtn = $n("button", ["btn", "btn-team", "btn-pulse"], dueUp);
+  startInningBtn.textContent = "START INNING";
+  on(startInningBtn, "click", () => {
+    startInning();
+    hide(dueUp);
+    $t("roll-surface").style.zIndex = 0;
+    dueUp.replaceChildren();
+  });
+  show(dueUp);
+}
