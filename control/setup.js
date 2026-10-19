@@ -35,6 +35,8 @@ function shuffle(array) {
 };
 
 export function gameSetup(slot) {
+  
+  console.log("setting up")
   document.documentElement.dataset.team = teams[Math.floor(Math.random() * teams.length)].code;
   G.myTeam = document.documentElement.dataset.team;
   G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team)
@@ -82,7 +84,7 @@ export function gameSetup(slot) {
     dateStyle: 'short'
   }).format(new Date());
   //let getSaves =[];
-  const getSaves = JSON.parse(localStorage.getItem("saveGames"));
+  const getSaves = localStorage.getItem("saveGames") ? JSON.parse(localStorage.getItem("saveGames")) : [];
   getSaves.push(G);
   localStorage.setItem("saveGames", JSON.stringify(getSaves))
   //const getBack=localStorage.getItem("saveGames")

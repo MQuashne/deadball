@@ -153,8 +153,8 @@ function setColors(uni, box) {
   document.documentElement.style.setProperty('--tl-text', G.thisTeam.tlText);
   
   
-  $t("game-header-logo").src = `public/assets/logos/${G.thisTeam.tpLogo}.svg`;
-  $t("hero-spot").src = `public/assets/spot/${G.thisTeam.code}.svg`;
+  $t("game-header-logo").src = `./public/assets/logos/${G.thisTeam.tpLogo}.svg`;
+  $t("hero-spot").src = `./public/assets/spot/${G.thisTeam.code}.svg`;
   
   
   
