@@ -353,7 +353,7 @@ h3 {
     margin-top: 1.5rem;
     z-index: 9;
     overflow: hidden;
-    border:1px solid red;
+    border: 1px solid red;
 }
 
 /* CHECK: a 3000x300px canvas is fixed-pixel and will not scale. If your dice
@@ -388,6 +388,37 @@ h3 {
     width: 100%;
     height: 100%;
     background: radial-gradient(at 5% 5%, #ffffff80 0%, #ffffff00 80%);
+}
+
+.d20-die {
+    position: relative;
+    width: 20cqw;
+    height: 20cqw;
+    background: var(--die-bg-color);
+    /* Outer regular hexagon layout */
+    clip-path: polygon(50% 0%, 100% 28%, 100% 72%, 50% 100%, 0% 72%, 0% 28%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14cqw;
+    font-family: "BaseballClubSolid";
+    color: var(--die-font-color);
+    -webkit-text-stroke: 0.7px var(--die-outline-color);
+    border: 1px solid #aaaaaa;
+}
+
+/* Inner face of the d20 */
+.d20-die::before {
+    content: '';
+    position: absolute;
+    top: 28%;
+    /* Aligns perfectly with the outer hexagon vertices */
+    width: 100%;
+    height: 44%;
+    background: var(--die-bg-color);
+    /* Slightly darker shade for depth */
+    /* Downward facing center triangle */
+    clip-path: polygon(0% 0%, 100% 0%, 50% 100%);
 }
 
 .die-box.opp-die {
@@ -458,7 +489,7 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content:flex-start;
+    justify-content: flex-start;
 }
 
 .game-options-select {
@@ -466,12 +497,12 @@ h3 {
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
-    width:95%;
-    background:#000000D0;
-    border:2px solid var(--ts);
-    border-radius:5cqw;
-    padding:0.5rem;
-    margin:0.5rem;
+    width: 95%;
+    background: #000000D0;
+    border: 2px solid var(--ts);
+    border-radius: 5cqw;
+    padding: 0.5rem;
+    margin: 0.5rem;
 }
 
 .form-group {
@@ -489,8 +520,8 @@ h3 {
 }
 
 .form-input,
-.form-select{
-    appearance:none;
+.form-select {
+    appearance: none;
     background: rgba(0, 0, 0, 0.75);
     border: 1.5px solid rgba(245, 240, 224, 0.16);
     border-radius: 0.1875rem;
@@ -507,7 +538,7 @@ h3 {
 
 
 .form-input:focus,
-.form-select:focus{
+.form-select:focus {
     border-color: var(--ts);
 }
 
@@ -594,18 +625,18 @@ h3 {
     display: flex;
     gap: 1.5%;
     flex-wrap: wrap;
-    width:95%;
-    justify-content:center;
-    margin:3% 0;
+    width: 95%;
+    justify-content: center;
+    margin: 3% 0;
 }
 
 .die-show {
     display: flex;
     flex-direction: column;
-   max-width:15%;
-   flex-shrink:1;
-  flex-grow:1;
-   container-type:inline-size;
+    max-width: 15%;
+    flex-shrink: 1;
+    flex-grow: 1;
+    container-type: inline-size;
 }
 
 .palette-die-box {
@@ -640,7 +671,7 @@ h3 {
     font-family: Consolas, monospace;
     font-size: 0.6rem;
     width: 100%;
-    color:white;
+    color: white;
 }
 
 
@@ -818,8 +849,8 @@ h3 {
     padding: 2% 0;
     display: flex;
     align-items: center;
-    justify-content:center;
-    text-align:center;
+    justify-content: center;
+    text-align: center;
 }
 
 .section-heading-white {
@@ -830,7 +861,7 @@ h3 {
     font-family: "Oswald";
     margin-bottom: 3%;
     color: white;
-    font-size:1.3rem;
+    font-size: 1.3rem;
 }
 
 .instructions {
@@ -1605,14 +1636,14 @@ GAME BOARD
     /* size + centring come from the shared STAGE rule near the top
        (was: width: 100vw; height: 100dvh; max-width: 100vw; top/left: 0) */
     display: grid;
-    grid-template-rows: 9% 28% 28% 7% 28%;
-    grid-template-columns: 2.5fr 4fr;
+    grid-template-rows: 9% 25% 30% 7% 29%;
+    grid-template-columns: 2.5fr 1.5fr 2.5fr;
     grid-template-areas:
-        "scorebug scorebug"
-        "resources field"
-        "dice dice"
-        "buttons buttons"
-        "batter lineup";
+        "scorebug scorebug scorebug"
+        "resources field field"
+        "dice dice dice"
+        "buttons buttons buttons"
+        "batter lineup lineup";
     z-index: 100;
     background-image: repeating-linear-gradient(25deg, #B0864Ca0, #995D27a0, #754414a0, #B0864Ca0, #A37236a0), url("public/assets/planks.jpeg");
     background-size: contain;
@@ -1890,11 +1921,13 @@ GAME BOARD
 }
 
 #infield {
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 80%;
     aspect-ratio: 1 / 1;
     object-fit: contain;
     grid-area: control;
+    margin-top: 20%;
+    margin-left: 10%;
 }
 
 #runners {
@@ -1917,8 +1950,8 @@ GAME BOARD
 }
 
 .runner {
-    width: 6%;
-    height: 6%;
+    width: 4.8%;
+    height: 4.8%;
     border-radius: 50%;
     background: var(--die-bg-color);
     position: absolute;
@@ -1929,7 +1962,7 @@ GAME BOARD
     -webkit-text-stroke: 0.7px var(--die-outline-color);
     paint-order: stroke fill;
     font-family: "BaseballClubSolid";
-    font-size: 0.55rem;
+    font-size: 0.44rem;
     text-align: center;
     offset-path: url(#basePath);
     offset-distance: 0%;

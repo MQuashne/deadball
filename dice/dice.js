@@ -94,6 +94,8 @@
  *   call, not once per retry. Falls back to hard_reset() + box.on_stuck if
  *   still failing after 3 total attempts. Also dropped some inert dead code
  *   (the commented-out playSound loop's now-unused numDice calculation).
+ *  * - per-die color palettes: box.setPalettes([...]) assigns a palette by notation position; dice without one use the
+ *   shared defaults from set_color(). Materials are cached per (type + palette).
  */
 
 
@@ -105,7 +107,7 @@ export const DICE = (function() {
     
     var vars = { //todo: make these configurable on init
         frame_rate: 1 / 60,
-        scale: 100, //dice size
+        scale: 35, //dice size
         
         material_options: {
             specular: 0x172022,
@@ -218,6 +220,8 @@ export const DICE = (function() {
     // @param container element to contain canvas; canvas will fill container
     that.dice_box = function(container) {
         this.dices = [];
+        this.palettes = [];
+        //per-die color palettes, indexed by notation position
         this.diceToRoll = ''; //user input
         this.container = container;
         this._build(container);
@@ -351,6 +355,7 @@ export const DICE = (function() {
             this.renderer.domElement.parentNode.removeChild(this.renderer.domElement);
         }
         this.camera = undefined; // so nothing tries to render mid-rebuild
+        clear_material_cache(); 
         this._build(this.container);
     }
     
@@ -378,7 +383,7 @@ export const DICE = (function() {
             this._watchdog = undefined;
         }
     }
-
+    
     
     // called on init and window resize
     that.dice_box.prototype.reinit = function(container) {
@@ -393,7 +398,7 @@ export const DICE = (function() {
         this.w = this.cw;
         this.h = this.ch;
         this.aspect = Math.min(this.cw / this.w, this.ch / this.h);
-        vars.scale = Math.sqrt(this.w * this.w + this.h * this.h) / 9;
+        //vars.scale = Math.sqrt(this.w * this.w + this.h * this.h) / 9;
         //console.log('scale = ' + vars.scale);
         
         this.renderer.setSize(this.cw * 2, this.ch * 2);
@@ -478,6 +483,21 @@ export const DICE = (function() {
         this.diceToRoll = diceToRoll;
     }
     
+    // @param palettes - array indexed by notation position (the same index hold() uses).
+    // Each entry is { dice, label, stripe, outline } or a uniform object { jersey, text, stripe, outline };
+    // null/undefined entries use the shared defaults from DICE.set_color().
+    // @example box.setDice("1d100+1d10+1d12");
+    //          box.setPalettes([homeUni, homeUni, awayUni]);
+    that.dice_box.prototype.setPalettes = function(palettes) {
+        this.palettes = palettes ? palettes.slice() : [];
+    }
+    
+    // set the palette for a single notation position
+    that.dice_box.prototype.setPalette = function(index, palette) {
+        this.palettes[index] = palette;
+    }
+    
+    
     //call this to roll dice programatically or from click
     that.dice_box.prototype.start_throw = function(before_roll, after_roll) {
         var box = this;
@@ -533,6 +553,15 @@ export const DICE = (function() {
             vector.y /= dist;
             //TODO: how do large numbers of vectors affect performance?
             var vectors = box.generate_vectors(notation, vector, boost);
+            
+            // Tag each vector with its position in the full notation so palettes follow the right die
+            var rollIndices = [];
+            for (var ri = 0; ri < notation.set.length; ri++) {
+                //if (!heldValues.hasOwnProperty(ri))
+                rollIndices.push(ri);
+            }
+            vectors.forEach(function(v, k) { v.notation_index = rollIndices[k]; });
+            
             box.rolling = true;
             box._start_watchdog();
             
@@ -615,9 +644,12 @@ export const DICE = (function() {
     // and by search_dice_by_mouse/set_dice_selected so a UI can let the player
     // tap dice to pick which ones to reroll.
     that.dice_box.prototype.create_dice = function(type, pos, velocity, angle, axis, notation_index) {
-        var dice = threeD_dice['create_' + type]();
+        var palette = resolve_palette(this.palettes[notation_index]);
+        //TODO COME BACK HERE 
+        var dice = threeD_dice['create_' + type](palette);
         dice.castShadow = true;
         dice.dice_type = type;
+        dice.palette = palette;
         dice.notation_index = notation_index;
         dice.userData = { notation_index: notation_index, dice_type: type };
         dice.body = new CANNON.RigidBody(CONSTS.dice_mass[type],
@@ -819,11 +851,15 @@ export const DICE = (function() {
         
         // Stop the dice reacting to the physics world while they glide into place.
         this.dices.forEach(function(d) {
-            if (d.body) { d.body.velocity.set(0, 0, 0); d.body.angularVelocity.set(0, 0, 0); }
+            if (d.body) {
+                d.body.velocity.set(0, 0, 0);
+                d.body.angularVelocity.set(0, 0, 0);
+            }
         });
         
         var lineup_id = (this._lineup_id = (this._lineup_id || 0) + 1);
         var startTime = null;
+        
         function ease(t) { return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t; } //easeInOutQuad
         
         function step(ts) {
@@ -851,7 +887,7 @@ export const DICE = (function() {
         }
         requestAnimationFrame(step);
     }
-
+    
     
     that.dice_box.prototype.clear = function() {
         this.running = false;
@@ -859,6 +895,7 @@ export const DICE = (function() {
         var dice;
         while (dice = this.dices.pop()) {
             this.scene.remove(dice);
+            release_dice(dice)
             if (dice.body) this.world.remove(dice.body);
         }
         if (this.pane) this.scene.remove(this.pane);
@@ -887,6 +924,7 @@ export const DICE = (function() {
         this.dices.forEach(function(d) {
             if (notation_indices.indexOf(d.notation_index) !== -1) {
                 box.scene.remove(d);
+                release_dice(dice)
                 if (d.body) box.world.remove(d.body);
             }
             else kept.push(d);
@@ -961,12 +999,16 @@ export const DICE = (function() {
         target = Math.max(range[0], Math.min(range[1], target));
         if (target === current) return current; // already at the limit; nothing to change
         
-        var raw_current = current, raw_target = target;
+        var raw_current = current,
+            raw_target = target;
         // shift_dice_faces expects the raw 0-9 "tens digit" for d100, not the
         // x10 display value get_dice_value returns (e.g. 40, not 4) — convert
         // so d100 mods land on the right face. d10's "10 displays as 0" quirk
         // is already handled inside shift_dice_faces itself.
-        if (dice.dice_type === 'd100') { raw_current = current / 10; raw_target = target / 10; }
+        if (dice.dice_type === 'd100') {
+            raw_current = current / 10;
+            raw_target = target / 10;
+        }
         shift_dice_faces(dice, raw_target, raw_current);
         
         if (this.last_notation) {
@@ -1106,16 +1148,16 @@ export const DICE = (function() {
         this.__animate(this.running);
     }
     
-    that.dice_box.prototype.search_dice_by_mouse = function(ev,rect) {
+    that.dice_box.prototype.search_dice_by_mouse = function(ev, rect) {
         var m = $t.get_mouse_coords(ev);
         var intersects = (new THREE.Raycaster(this.camera.position,
-            (new THREE.Vector3((m.x - this.cw-rect.x) / this.aspect,
-                1 - (m.y - this.ch-rect.y) / this.aspect, this.w / 9))
+            (new THREE.Vector3((m.x - this.cw - rect.x) / this.aspect,
+                1 - (m.y - this.ch - rect.y) / this.aspect, this.w / 9))
             .sub(this.camera.position).normalize())).intersectObjects(this.dices);
         // Returns the actual die mesh (not just userData) so a UI layer can
         // pass it straight into set_dice_selected()/reroll(). dice.notation_index
         // and dice.dice_type are also readable directly off the returned object.
-       
+        
         if (intersects.length) return intersects[0].object;
     }
     
@@ -1189,9 +1231,8 @@ export const DICE = (function() {
         else if (type === 'stripe') vars.stripe_color = hex;
         else if (type === 'outline') vars.outline_color = hex;
         // force regeneration on next roll
-        delete threeD_dice.dice_material;
-        delete threeD_dice.d4_material;
-        delete threeD_dice.d100_material;
+        clear_material_cache();
+        
     }
     
     
@@ -1200,61 +1241,68 @@ export const DICE = (function() {
     // dice geometries
     let threeD_dice = {};
     
-    threeD_dice.create_d4 = function() {
-        if (!this.d4_geometry) this.d4_geometry = create_d4_geometry(vars.scale * 1.2);
-        if (!this.d4_material) this.d4_material = new THREE.MeshFaceMaterial(
-            create_d4_materials(vars.scale / 2, vars.scale * 2, CONSTS.d4_labels[0]));
-        return new THREE.Mesh(this.d4_geometry, this.d4_material);
+    function resolve_palette(p) {
+        if (!p) return { dice: vars.dice_color, label: vars.label_color, stripe: vars.stripe_color, outline: vars.outline_color };
+        var dice = p.dice || p.jersey || vars.dice_color;
+        return {
+            dice: dice,
+            label: p.label || p.text || vars.label_color,
+            stripe: p.stripe || dice,
+            outline: p.outline || dice
+        };
     }
     
-    threeD_dice.create_d6 = function() {
-        if (!this.d6_geometry) this.d6_geometry = create_d6_geometry(vars.scale * 1.1);
-        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
-            create_dice_materials(CONSTS.standart_d20_dice_face_labels, vars.scale / 2, 0.9));
-        return new THREE.Mesh(this.d6_geometry, this.dice_material);
+    var geom_cache = {},
+        material_cache = {};
+    
+    function palette_key(p) { return [p.dice, p.label, p.stripe, p.outline].join('|'); }
+    
+    function cached_geometry(name, build) {
+        return geom_cache[name] || (geom_cache[name] = build());
     }
     
-    threeD_dice.create_d8 = function() {
-        if (!this.d8_geometry) this.d8_geometry = create_d8_geometry(vars.scale);
-        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
-            create_dice_materials(CONSTS.standart_d20_dice_face_labels, vars.scale / 2, 1.4));
-        return new THREE.Mesh(this.d8_geometry, this.dice_material);
+    function cached_materials(key, build) {
+        return material_cache[key] || (material_cache[key] = new THREE.MeshFaceMaterial(build()));
     }
     
-    threeD_dice.create_d9 = function() {
-        if (!this.d10_geometry) this.d10_geometry = create_d10_geometry(vars.scale * 0.9);
-        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
-            create_dice_materials(CONSTS.standart_d20_dice_face_labels, vars.scale / 2, 1.0));
-        return new THREE.Mesh(this.d10_geometry, this.dice_material);
+    function clear_material_cache() {
+        for (var k in material_cache) {
+            (material_cache[k].materials || []).forEach(function(m) {
+                if (m.map) m.map.dispose();
+                m.dispose();
+            });
+        }
+        material_cache = {};
     }
     
-    threeD_dice.create_d10 = function() {
-        if (!this.d10_geometry) this.d10_geometry = create_d10_geometry(vars.scale * 0.9);
-        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
-            create_dice_materials(CONSTS.standart_d20_dice_face_labels, vars.scale / 2, 1.0));
-        return new THREE.Mesh(this.d10_geometry, this.dice_material);
+    function release_dice(d) {
+        if (d.geometry && d.geometry._owned) d.geometry.dispose(); // per-die clones from shift_dice_faces
+        if (d._selection_outline && d._selection_outline.material) d._selection_outline.material.dispose();
     }
     
-    threeD_dice.create_d12 = function() {
-        if (!this.d12_geometry) this.d12_geometry = create_d12_geometry(vars.scale * 0.9);
-        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
-            create_dice_materials(CONSTS.standart_d20_dice_face_labels, vars.scale / 2, 1.0));
-        return new THREE.Mesh(this.d12_geometry, this.dice_material);
+    function make_standard(type, geom_name, geom_fn, labels, margin, p) {
+        var geom = cached_geometry(geom_name, geom_fn);
+        var mat = cached_materials(type + '|' + palette_key(p), function() {
+            return create_dice_materials(labels, vars.scale / 2, margin, p);
+        });
+        return new THREE.Mesh(geom, mat);
     }
     
-    threeD_dice.create_d20 = function() {
-        if (!this.d20_geometry) this.d20_geometry = create_d20_geometry(vars.scale);
-        if (!this.dice_material) this.dice_material = new THREE.MeshFaceMaterial(
-            create_dice_materials(CONSTS.standart_d20_dice_face_labels, vars.scale / 2, 1.2));
-        return new THREE.Mesh(this.d20_geometry, this.dice_material);
-    }
-    
-    threeD_dice.create_d100 = function() {
-        if (!this.d10_geometry) this.d10_geometry = create_d10_geometry(vars.scale * 0.9);
-        if (!this.d100_material) this.d100_material = new THREE.MeshFaceMaterial(
-            create_dice_materials(CONSTS.standart_d100_dice_face_labels, vars.scale / 2, 1.5));
-        return new THREE.Mesh(this.d10_geometry, this.d100_material);
-    }
+    threeD_dice.create_d4 = function(p) {
+        var geom = cached_geometry('d4', function() { return create_d4_geometry(vars.scale * 1.2); });
+        var mat = cached_materials('d4|0|' + palette_key(p), function() {
+            return create_d4_materials(vars.scale / 2, vars.scale * 2, CONSTS.d4_labels[0], p);
+        });
+        return new THREE.Mesh(geom, mat);
+    };
+    var L20 = CONSTS.standart_d20_dice_face_labels;
+    threeD_dice.create_d6 = function(p) { return make_standard('d6', 'd6', function() { return create_d6_geometry(vars.scale * 1.1); }, L20, 0.9, p); };
+    threeD_dice.create_d8 = function(p) { return make_standard('d8', 'd8', function() { return create_d8_geometry(vars.scale); }, L20, 1.4, p); };
+    threeD_dice.create_d9 = function(p) { return make_standard('d9', 'd10', function() { return create_d10_geometry(vars.scale * 0.9); }, L20, 1.0, p); };
+    threeD_dice.create_d10 = function(p) { return make_standard('d10', 'd10', function() { return create_d10_geometry(vars.scale * 0.9); }, L20, 1.0, p); };
+    threeD_dice.create_d12 = function(p) { return make_standard('d12', 'd12', function() { return create_d12_geometry(vars.scale * 0.9); }, L20, 1.0, p); };
+    threeD_dice.create_d20 = function(p) { return make_standard('d20', 'd20', function() { return create_d20_geometry(vars.scale); }, L20, 1.2, p); };
+    threeD_dice.create_d100 = function(p) { return make_standard('d100', 'd10', function() { return create_d10_geometry(vars.scale * 0.9); }, CONSTS.standart_d100_dice_face_labels, 1.5, p); };
     
     //pinstripes
     function draw_pinstripes(context, size, base_color, stripe_color) {
@@ -1276,7 +1324,8 @@ export const DICE = (function() {
     }
     
     
-    function create_dice_materials(face_labels, size, margin) {
+    function create_dice_materials(face_labels, size, margin, p) {
+        
         function create_text_texture(text, color, back_color) {
             if (text == undefined) return null;
             var canvas = document.createElement("canvas");
@@ -1289,11 +1338,14 @@ export const DICE = (function() {
             context.font = ts / (1 + 2 * margin) + "pt BaseballClubSolid";
             //context.fillStyle = back_color;
             //context.fillRect(0, 0, canvas.width, canvas.height);
-            draw_pinstripes(context, canvas.width, back_color, vars.stripe_color);
+            //draw_pinstripes(context, canvas.width, back_color, vars.stripe_color);
+            draw_pinstripes(context, canvas.width, p.dice, p.stripe);
             context.textAlign = "center";
             context.textBaseline = "middle";
-            context.fillStyle = color;
-            context.strokeStyle = vars.outline_color;
+            //context.fillStyle = color;
+            context.fillStyle = p.label;
+            //context.strokeStyle = vars.outline_color;
+            context.strokeStyle = p.outline;
             context.lineWidth = Math.max(8, ts / 34); // scales with the resolution above instead of a fixed value
             context.strokeText(text, canvas.width / 2, canvas.height / 2);
             context.fillText(text, canvas.width / 2, canvas.height / 2);
@@ -1311,7 +1363,7 @@ export const DICE = (function() {
         return materials;
     }
     
-    function create_d4_materials(size, margin, labels) {
+    function create_d4_materials(size, margin, labels, p) {
         function create_d4_text(text, color, back_color) {
             var canvas = document.createElement("canvas");
             var context = canvas.getContext("2d");
@@ -1320,11 +1372,11 @@ export const DICE = (function() {
             var ts = calc_label_resolution(size + margin, 4);
             canvas.width = canvas.height = ts;
             context.font = (ts - margin) * 0.5 + "pt BaseballClubSolid";
-            context.fillStyle = back_color;
+            context.fillStyle = p.dice;
             context.fillRect(0, 0, canvas.width, canvas.height);
             context.textAlign = "center";
             context.textBaseline = "middle";
-            context.fillStyle = color;
+            context.fillStyle = p.label;
             for (var i in text) {
                 context.fillText(text[i], canvas.width / 2,
                     canvas.height / 2 - ts * 0.3);
@@ -1537,7 +1589,8 @@ export const DICE = (function() {
         for (var i = 0; i < dices.length; ++i) {
             var body = dices[i].body;
             if (!body) continue;
-            var p = body.position, q = body.quaternion;
+            var p = body.position,
+                q = body.quaternion;
             if (!isFinite(p.x) || !isFinite(p.y) || !isFinite(p.z) ||
                 !isFinite(q.x) || !isFinite(q.y) || !isFinite(q.z) || !isFinite(q.w)) {
                 return true;
@@ -1571,6 +1624,7 @@ export const DICE = (function() {
     function pulse_dice(box, dice, duration_ms) {
         duration_ms = duration_ms || 220;
         var startTime = null;
+        
         function step(ts) {
             if (!startTime) startTime = ts;
             var t = Math.min(1, (ts - startTime) / duration_ms);
@@ -1589,7 +1643,7 @@ export const DICE = (function() {
     function rnd() {
         return Math.random();
     }
-
+    
     
     function create_shape(vertices, faces, radius) {
         var cv = new Array(vertices.length),
@@ -1751,7 +1805,8 @@ export const DICE = (function() {
     // compute_upright_correction (which way that face's label should turn).
     function find_up_face(dice) {
         var vector = new THREE.Vector3(0, 0, dice.dice_type == 'd4' ? -1 : 1);
-        var closest_face, closest_index = -1, closest_angle = Math.PI * 2;
+        var closest_face, closest_index = -1,
+            closest_angle = Math.PI * 2;
         for (var i = 0, l = dice.geometry.faces.length; i < l; ++i) {
             var face = dice.geometry.faces[i];
             if (face.materialIndex == 0) continue;
@@ -1794,11 +1849,15 @@ export const DICE = (function() {
         var face = geometry.faces[faceIndex];
         var uvs = geometry.faceVertexUvs[0] && geometry.faceVertexUvs[0][faceIndex];
         if (!face || !uvs) return null;
-        var pa = geometry.vertices[face.a], pb = geometry.vertices[face.b], pc = geometry.vertices[face.c];
+        var pa = geometry.vertices[face.a],
+            pb = geometry.vertices[face.b],
+            pc = geometry.vertices[face.c];
         var e1 = new THREE.Vector3().subVectors(pb, pa);
         var e2 = new THREE.Vector3().subVectors(pc, pa);
-        var du1 = uvs[1].x - uvs[0].x, dv1 = uvs[1].y - uvs[0].y;
-        var du2 = uvs[2].x - uvs[0].x, dv2 = uvs[2].y - uvs[0].y;
+        var du1 = uvs[1].x - uvs[0].x,
+            dv1 = uvs[1].y - uvs[0].y;
+        var du2 = uvs[2].x - uvs[0].x,
+            dv2 = uvs[2].y - uvs[0].y;
         var denom = du1 * dv2 - du2 * dv1;
         if (Math.abs(denom) < 1e-8) return null; //degenerate UV triangle, nothing sane to derive
         var r = 1 / denom;
@@ -1855,6 +1914,7 @@ export const DICE = (function() {
         if (!(value >= r[0] && value <= r[1])) return;
         var num = value - res;
         var geom = dice.geometry.clone();
+        geom._owned = true;
         for (var i = 0, l = geom.faces.length; i < l; ++i) {
             var matindex = geom.faces[i].materialIndex;
             if (matindex == 0) continue;
@@ -1865,9 +1925,11 @@ export const DICE = (function() {
         }
         if (dice.dice_type == 'd4' && num != 0) {
             if (num < 0) num += 4;
-            dice.material = new THREE.MeshFaceMaterial(
-                create_d4_materials(vars.scale / 2, vars.scale * 2, CONSTS.d4_labels[num]));
+            dice.material = cached_materials('d4|' + num + '|' + palette_key(dice.palette), function() {
+                return create_d4_materials(vars.scale / 2, vars.scale * 2, CONSTS.d4_labels[num], dice.palette);
+            });
         }
+        if (dice.geometry._owned) dice.geometry.dispose();
         dice.geometry = geom;
     }
     

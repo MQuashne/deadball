@@ -15,17 +15,19 @@
 
 <body>
   <div id="page">
+    <!--
     <div id="start-screen" class="">
       <img id="start-logo" src="./public/assets/StartLogo.png">
       <!--
       <button id="new-game" class="btn btn-gold btn-pulse">NEW SEASON</button>
-      -->
+      
       <div id="load-games">
         Start a new season or load an existing game
         <div id="game-slot-1" class="load-slot empty"></div>
         <div id="game-slot-1" class="load-slot empty"></div>
       </div>
     </div>
+    -->
     <div class="game-header-outer">
       <div class="game-header">
         <div class="header-layer-2">
@@ -42,7 +44,7 @@
       
       
       
-      <!-- CALENDAR SCREEN -->
+      <!-- CALENDAR SCREEN 
       
       <div id="cal-content" class="main-content">
         <div id="calendar-hero" class="section-hero">
@@ -68,7 +70,7 @@
         </div>
         
       </div>
-      <!-- LINEUP SCREEN -->
+      <!-- LINEUP SCREEN 
       
       <div id="lineup-content" class="main-content hidden">
         <div id="lineup-heading" class="section-heading">Lineup</div>
@@ -90,7 +92,7 @@
       </div>
       
       <!-- TEAM SETUP SCREEN -->
-      
+      <!--
       <div id="team-setup-content" class="main-content hidden">
         
         <div id="team-heading" class="section-heading">TEAM SETUP</div>
@@ -143,6 +145,7 @@
         <!--
         <div class='die-box'>8</div>
         -->
+      <!--
         <button id="start-game" class="btn btn-team">START GAME</button>
         <button id="roll" class="hidden">Roll</button>
         <div id="diceRoller" class="hidden"></div>
@@ -154,7 +157,7 @@
     </div>
     
     <!-- SPRING TRAINING/ROSTER BUILDING SCREEN -->
-      
+      <!--
       <div id="spring-training-content" class="main-content lawn-stripes hidden">
         <div class="accordion-sec" id="st-title-sec">
           <div class="accordion-content">
@@ -214,9 +217,10 @@
           </div>
         </div>
       </div>
-      
+      -->
       <!-- GAME SCREEN -->
-      <div id="gameday" class="main-content hidden">
+      <div id="gameday" class="main-content">
+        <!--
         <div id="gameday-cover">
           <div id="logos">
             <img id="logo-away" class="cover-logo" />
@@ -236,7 +240,9 @@
           </div>
           <button class="btn btn-team" id="btn-play-ball">SUBMIT LINEUP & PLAY BALL</button>
         </div>
-        <div id="gameplay-content" class="hidden">
+        -->
+        <div id="gameplay-content">
+          <!--
           <div id="lead-off-cover" class="screen-cover">Roll to determine your lead-off batter</div>
           <div id="sub-cover" class="hidden"> Select a player to substitute
             <button id="sub-cancel" class="btn btn-team">Cancel</button>
@@ -244,6 +250,8 @@
           <div id="scoreboard-cover" class="screen-cover hidden">
             <button id="scoreboard-next-btn" class="btn btn-team btn-pulse">NEXT</button>
           </div>
+          
+          -->
           <div id="scorebug-zone" class="board-zone">
             <div id="scorebug-surface" class="game-surface">
               <div id="game-back" class="material-symbols-outlined">arrow_back_ios_new</div>
@@ -262,51 +270,20 @@
                 <div id="inning-num">7</div>
                 
               </div>
-              <div id="process-mode"></div>
-            </div>
-          </div>
-          <div id="scoreboard-zone" class="board-zone">
-            <div id="scoreboard-surface" class="game-surface">
-              <div id="pitcher-card" class="hidden roll-el"></div>
-              <div id="scoreboard-title">RESOURCES</div>
-              <div id="scoreboard-dice" class="scoreboard-resource-symbol">
-                <svg class="icon" width="80%">
-                  <use href="#dice-svg"></use>
-                </svg>
-              </div>
-              <div id="scoreboard-dice-count" class="scoreboard-resource-count">0</div>
-              <div id="scoreboard-reroll" class="scoreboard-resource-symbol">
-                <svg width="80%" height="80%" viewBox="0 0 22 22" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid meet" data-part="svg">
-                  <g viewBox="0 0 22 22">
-                    <circle cx="11" cy="11" r="11" style="fill: rgb(0, 148, 0); stroke: black; stroke-width: 1;"></circle>
-                    <path d="M 15.5 6.5 a 6.25 6.25 0 1 0 0 9" style="stroke: rgb(255, 255, 255); stroke-width: 2.5; fill: transparent;"></path>
-                    <path d="M 15.5 6.5 l 1 -1 l 0.75 3.25 l -3.5 -0.5 z" style="stroke: white; stroke-width: 2.5; fill: transparent;"></path>
-                  </g>
-                </svg>
-              </div>
-              <div id="scoreboard-reroll-count" class="scoreboard-resource-count">0</div>
-              <div id="scoreboard-mod" class="scoreboard-resource-symbol">
-                <svg width="80%" height="80%" viewBox="0 0 23 23" xmlns="http://www.w3.org/2000/svg" data-part="svg">
-                  <g viewBox="0 0 23 23">
-                    <rect x="0" y="0" width="23" height="23" rx="2" ry="2" style="stroke: black; stroke-width: 1; fill: rgb(255, 239, 0);"></rect><text x="12.5" y="18" style="font-size: 18px; font-family: &quot;Helvetica Neue&quot;, Arial; font-weight: 700; text-align: center; text-anchor: middle; fill: black;">±1</text>
-                  </g>
-                </svg>
-              </div>
-              <div id="scoreboard-mod-count" class="scoreboard-resource-count">0</div>
-              <!--
-              <div id="scoreboard-inning">
-                <div class="inning-arrow inning-off" id="inning-top">▲</div>
-                <div id="inning-num">7</div>
-                <div class="inning-arrow inning-on" id="inning-bottom">▼</div>
-              </div>
-              -->
-              <div id="out-count">
+                            <div id="out-count">
                 <div id="out-label">OUTS</div>
                 <div id="out-pips">
                   <div class="out-pip out-on"></div>
                   <div class="out-pip out-off"></div>
                 </div>
               </div>
+              <div id="process-mode"></div>
+            </div>
+          </div>
+          <div id="scoreboard-zone" class="board-zone">
+            <div id="scoreboard-surface" class="game-surface">
+              <div class="board-first-Name">Alfonso</div>
+              <div class="board-last-name">Ribiero</div>
             </div>
           </div>
           <div id="field-zone" class="board-zone">
@@ -330,12 +307,7 @@
               <div id="main-roll" class="hidden">
                 
               </div>
-              <div id="opp-roll" class="hidden">
-                
-              </div>
               <div id="roll-fix" class="material-symbols-outlined">reset_wrench</div>
-              <div id="runner-choice-overlay"></div>
-              <div id="reroll-overlay hidden roll-el"></div>
               <div id="roll-display" class="roll-display">
                 <div id="display-row-1">
                   
@@ -372,15 +344,6 @@
               </div>
               
               <div id="gameRoller"></div>
-            </div>
-            <div id="dice-input-border" class="roll-el">
-              <div id="dice-input">
-                <div id="dice-input-symbol" class="die-box">1
-                </div>
-                <button id="dice-down" class="dice-adj">▼</button>
-                <div id="dice-input-count">3</div>
-                <button id="dice-up" class="dice-adj">▲</button>
-              </div>
             </div>
             
           </div>
