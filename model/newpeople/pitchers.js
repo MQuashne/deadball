@@ -1,6 +1,8 @@
 export const pitchers = [
   {
     "name": "Eduardo Rodríguez",
+    "first": "Eduardo",
+    "last": "Rodríguez",
     "num": 57,
     "personId": "593958",
     "team": "ARI",
@@ -19,6 +21,8 @@ export const pitchers = [
   },
   {
     "name": "Merrill Kelly",
+    "first": "Merrill",
+    "last": "Kelly",
     "num": 29,
     "personId": "518876",
     "team": "ARI",
@@ -37,6 +41,8 @@ export const pitchers = [
   },
   {
     "name": "Brandon Pfaadt",
+    "first": "Brandon",
+    "last": "Pfaadt",
     "num": 32,
     "personId": "694297",
     "team": "ARI",
@@ -55,6 +61,8 @@ export const pitchers = [
   },
   {
     "name": "Zack Littell",
+    "first": "Zack",
+    "last": "Littell",
     "num": 46,
     "personId": "641793",
     "team": "ARI",
@@ -73,6 +81,8 @@ export const pitchers = [
   },
   {
     "name": "Michael Soroka",
+    "first": "Michael",
+    "last": "Soroka",
     "num": 34,
     "personId": "647336",
     "team": "ARI",
@@ -91,6 +101,8 @@ export const pitchers = [
   },
   {
     "name": "Zac Gallen",
+    "first": "Zac",
+    "last": "Gallen",
     "num": 23,
     "personId": "668678",
     "team": "ARI",
@@ -109,6 +121,8 @@ export const pitchers = [
   },
   {
     "name": "Ryne Nelson",
+    "first": "Ryne",
+    "last": "Nelson",
     "num": 19,
     "personId": "669194",
     "team": "ARI",
@@ -127,6 +141,8 @@ export const pitchers = [
   },
   {
     "name": "Taylor Clarke",
+    "first": "Taylor",
+    "last": "Clarke",
     "num": 45,
     "personId": "664199",
     "team": "ARI",
@@ -148,6 +164,8 @@ export const pitchers = [
   },
   {
     "name": "Kevin Ginkel",
+    "first": "Kevin",
+    "last": "Ginkel",
     "num": 37,
     "personId": "656464",
     "team": "ARI",
@@ -166,6 +184,8 @@ export const pitchers = [
   },
   {
     "name": "Jonathan Loáisiga",
+    "first": "Jonathan",
+    "last": "Loáisiga",
     "num": 43,
     "personId": "642528",
     "team": "ARI",
@@ -186,6 +206,8 @@ export const pitchers = [
   },
   {
     "name": "Juan Morillo",
+    "first": "Juan",
+    "last": "Morillo",
     "num": 62,
     "personId": "666661",
     "team": "ARI",
@@ -206,6 +228,8 @@ export const pitchers = [
   },
   {
     "name": "Dennis Santana",
+    "first": "Dennis",
+    "last": "Santana",
     "num": 59,
     "personId": "642701",
     "team": "ARI",
@@ -226,6 +250,8 @@ export const pitchers = [
   },
   {
     "name": "Brandyn Garcia",
+    "first": "Brandyn",
+    "last": "Garcia",
     "num": 55,
     "personId": "805299",
     "team": "ARI",
@@ -248,6 +274,8 @@ export const pitchers = [
   },
   {
     "name": "Mitch Bratt",
+    "first": "Mitch",
+    "last": "Bratt",
     "num": 60,
     "personId": "683352",
     "team": "ARI",
@@ -268,6 +296,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Thompson",
+    "first": "Ryan",
+    "last": "Thompson",
     "num": 81,
     "personId": "657044",
     "team": "ARI",
@@ -286,6 +316,8 @@ export const pitchers = [
   },
   {
     "name": "José Cabrera",
+    "first": "José",
+    "last": "Cabrera",
     "num": 53,
     "personId": "703615",
     "team": "ARI",
@@ -304,6 +336,8 @@ export const pitchers = [
   },
   {
     "name": "Kohl Drake",
+    "first": "Kohl",
+    "last": "Drake",
     "num": 58,
     "personId": "684442",
     "team": "ARI",
@@ -322,6 +356,8 @@ export const pitchers = [
   },
   {
     "name": "Drey Jameson",
+    "first": "Drey",
+    "last": "Jameson",
     "num": 20,
     "personId": "686753",
     "team": "ARI",
@@ -342,6 +378,8 @@ export const pitchers = [
   },
   {
     "name": "Gerardo Carrillo",
+    "first": "Gerardo",
+    "last": "Carrillo",
     "num": 68,
     "personId": "672629",
     "team": "ARI",
@@ -363,6 +401,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Martínez",
+    "first": "Justin",
+    "last": "Martínez",
     "num": 63,
     "personId": "679885",
     "team": "ARI",
@@ -384,6 +424,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Hoffmann",
+    "first": "Andrew",
+    "last": "Hoffmann",
     "num": 1,
     "personId": "694851",
     "team": "ARI",
@@ -404,6 +446,8 @@ export const pitchers = [
   },
   {
     "name": "Corbin Burnes",
+    "first": "Corbin",
+    "last": "Burnes",
     "num": 39,
     "personId": "669203",
     "team": "ARI",
@@ -422,6 +466,8 @@ export const pitchers = [
   },
   {
     "name": "Derek Law",
+    "first": "Derek",
+    "last": "Law",
     "num": 38,
     "personId": "571882",
     "team": "ARI",
@@ -440,6 +486,8 @@ export const pitchers = [
   },
   {
     "name": "Juan Burgos",
+    "first": "Juan",
+    "last": "Burgos",
     "num": 52,
     "personId": "686228",
     "team": "ARI",
@@ -458,6 +506,8 @@ export const pitchers = [
   },
   {
     "name": "Blake Walston",
+    "first": "Blake",
+    "last": "Walston",
     "num": 48,
     "personId": "686796",
     "team": "ARI",
@@ -476,6 +526,8 @@ export const pitchers = [
   },
   {
     "name": "Kade Strowd",
+    "first": "Kade",
+    "last": "Strowd",
     "num": 24,
     "personId": "669704",
     "team": "ARI",
@@ -494,6 +546,8 @@ export const pitchers = [
   },
   {
     "name": "Jeffrey Springs",
+    "first": "Jeffrey",
+    "last": "Springs",
     "num": 59,
     "personId": "605488",
     "team": "ATH",
@@ -512,6 +566,8 @@ export const pitchers = [
   },
   {
     "name": "J.T. Ginn",
+    "first": "J.T.",
+    "last": "Ginn",
     "num": 35,
     "personId": "669372",
     "team": "ATH",
@@ -530,6 +586,8 @@ export const pitchers = [
   },
   {
     "name": "Jacob Lopez",
+    "first": "Jacob",
+    "last": "Lopez",
     "num": 57,
     "personId": "682052",
     "team": "ATH",
@@ -550,6 +608,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Perkins",
+    "first": "Jack",
+    "last": "Perkins",
     "num": 50,
     "personId": "678022",
     "team": "ATH",
@@ -571,6 +631,8 @@ export const pitchers = [
   },
   {
     "name": "Gage Jump",
+    "first": "Gage",
+    "last": "Jump",
     "num": 61,
     "personId": "695611",
     "team": "ATH",
@@ -591,6 +653,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Medina",
+    "first": "Luis",
+    "last": "Medina",
     "num": 46,
     "personId": "665622",
     "team": "ATH",
@@ -613,6 +677,8 @@ export const pitchers = [
   },
   {
     "name": "Hogan Harris",
+    "first": "Hogan",
+    "last": "Harris",
     "num": 36,
     "personId": "663687",
     "team": "ATH",
@@ -635,6 +701,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Severino",
+    "first": "Luis",
+    "last": "Severino",
     "num": 40,
     "personId": "622663",
     "team": "ATH",
@@ -655,6 +723,8 @@ export const pitchers = [
   },
   {
     "name": "José Suarez",
+    "first": "José",
+    "last": "Suarez",
     "num": 54,
     "personId": "660761",
     "team": "ATH",
@@ -675,6 +745,8 @@ export const pitchers = [
   },
   {
     "name": "Elvis Alvarado",
+    "first": "Elvis",
+    "last": "Alvarado",
     "num": 37,
     "personId": "665660",
     "team": "ATH",
@@ -696,6 +768,8 @@ export const pitchers = [
   },
   {
     "name": "Mason Barnett",
+    "first": "Mason",
+    "last": "Barnett",
     "num": 63,
     "personId": "686930",
     "team": "ATH",
@@ -716,6 +790,8 @@ export const pitchers = [
   },
   {
     "name": "Brady Basso",
+    "first": "Brady",
+    "last": "Basso",
     "num": 66,
     "personId": "669620",
     "team": "ATH",
@@ -734,6 +810,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Sterner",
+    "first": "Justin",
+    "last": "Sterner",
     "num": 60,
     "personId": "686993",
     "team": "ATH",
@@ -752,6 +830,8 @@ export const pitchers = [
   },
   {
     "name": "Chris Roycroft",
+    "first": "Chris",
+    "last": "Roycroft",
     "num": 56,
     "personId": "688297",
     "team": "ATH",
@@ -773,6 +853,8 @@ export const pitchers = [
   },
   {
     "name": "Scott Blewett",
+    "first": "Scott",
+    "last": "Blewett",
     "num": 49,
     "personId": "656240",
     "team": "ATH",
@@ -791,6 +873,8 @@ export const pitchers = [
   },
   {
     "name": "Seth Johnson",
+    "first": "Seth",
+    "last": "Johnson",
     "num": 52,
     "personId": "686751",
     "team": "ATH",
@@ -812,6 +896,8 @@ export const pitchers = [
   },
   {
     "name": "Mark Leiter Jr.",
+    "first": "Mark",
+    "last": "Leiter Jr.",
     "num": 38,
     "personId": "643410",
     "team": "ATH",
@@ -832,6 +918,8 @@ export const pitchers = [
   },
   {
     "name": "Scott Barlow",
+    "first": "Scott",
+    "last": "Barlow",
     "num": 58,
     "personId": "605130",
     "team": "ATH",
@@ -852,6 +940,8 @@ export const pitchers = [
   },
   {
     "name": "Geoff Hartlieb",
+    "first": "Geoff",
+    "last": "Hartlieb",
     "num": 31,
     "personId": "664129",
     "team": "ATH",
@@ -872,6 +962,8 @@ export const pitchers = [
   },
   {
     "name": "Drew Rom",
+    "first": "Drew",
+    "last": "Rom",
     "num": 39,
     "personId": "680723",
     "team": "ATH",
@@ -890,6 +982,8 @@ export const pitchers = [
   },
   {
     "name": "Kade Morris",
+    "first": "Kade",
+    "last": "Morris",
     "num": 67,
     "personId": "695034",
     "team": "ATH",
@@ -908,6 +1002,8 @@ export const pitchers = [
   },
   {
     "name": "Hayden Juenger",
+    "first": "Hayden",
+    "last": "Juenger",
     "num": 58,
     "personId": "696522",
     "team": "ATH",
@@ -928,6 +1024,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Morales",
+    "first": "Luis",
+    "last": "Morales",
     "num": 19,
     "personId": "806960",
     "team": "ATH",
@@ -948,6 +1046,8 @@ export const pitchers = [
   },
   {
     "name": "Yunior Tur",
+    "first": "Yunior",
+    "last": "Tur",
     "num": 70,
     "personId": "814305",
     "team": "ATH",
@@ -968,6 +1068,8 @@ export const pitchers = [
   },
   {
     "name": "Joe Rock",
+    "first": "Joe",
+    "last": "Rock",
     "num": 30,
     "personId": "697812",
     "team": "ATH",
@@ -989,6 +1091,8 @@ export const pitchers = [
   },
   {
     "name": "Joey Estes",
+    "first": "Joey",
+    "last": "Estes",
     "num": 68,
     "personId": "683155",
     "team": "ATH",
@@ -1007,6 +1111,8 @@ export const pitchers = [
   },
   {
     "name": "Taylor Rashi",
+    "first": "Taylor",
+    "last": "Rashi",
     "num": 65,
     "personId": "688497",
     "team": "ATH",
@@ -1025,6 +1131,8 @@ export const pitchers = [
   },
   {
     "name": "Michael Kelly",
+    "first": "Michael",
+    "last": "Kelly",
     "num": 49,
     "personId": "547184",
     "team": "ATH",
@@ -1043,6 +1151,8 @@ export const pitchers = [
   },
   {
     "name": "Brooks Kriske",
+    "first": "Brooks",
+    "last": "Kriske",
     "num": 48,
     "personId": "621139",
     "team": "ATH",
@@ -1061,6 +1171,8 @@ export const pitchers = [
   },
   {
     "name": "Ben Bowden",
+    "first": "Ben",
+    "last": "Bowden",
     "num": 62,
     "personId": "641386",
     "team": "ATH",
@@ -1079,6 +1191,8 @@ export const pitchers = [
   },
   {
     "name": "Chris Sale",
+    "first": "Chris",
+    "last": "Sale",
     "num": 51,
     "personId": "519242",
     "team": "ATL",
@@ -1100,6 +1214,8 @@ export const pitchers = [
   },
   {
     "name": "Grant Holmes",
+    "first": "Grant",
+    "last": "Holmes",
     "num": 66,
     "personId": "656550",
     "team": "ATL",
@@ -1118,6 +1234,8 @@ export const pitchers = [
   },
   {
     "name": "Bryce Elder",
+    "first": "Bryce",
+    "last": "Elder",
     "num": 55,
     "personId": "693821",
     "team": "ATL",
@@ -1136,6 +1254,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Mahle",
+    "first": "Tyler",
+    "last": "Mahle",
     "num": 54,
     "personId": "641816",
     "team": "ATL",
@@ -1154,6 +1274,8 @@ export const pitchers = [
   },
   {
     "name": "Martín Pérez",
+    "first": "Martín",
+    "last": "Pérez",
     "num": 33,
     "personId": "527048",
     "team": "ATL",
@@ -1172,6 +1294,8 @@ export const pitchers = [
   },
   {
     "name": "Brent Suter",
+    "first": "Brent",
+    "last": "Suter",
     "num": 39,
     "personId": "608718",
     "team": "ATL",
@@ -1192,6 +1316,8 @@ export const pitchers = [
   },
   {
     "name": "Reynaldo López",
+    "first": "Reynaldo",
+    "last": "López",
     "num": 40,
     "personId": "625643",
     "team": "ATL",
@@ -1210,6 +1336,8 @@ export const pitchers = [
   },
   {
     "name": "Didier Fuentes",
+    "first": "Didier",
+    "last": "Fuentes",
     "num": 72,
     "personId": "800311",
     "team": "ATL",
@@ -1231,6 +1359,8 @@ export const pitchers = [
   },
   {
     "name": "JR Ritchie",
+    "first": "JR",
+    "last": "Ritchie",
     "num": 60,
     "personId": "702275",
     "team": "ATL",
@@ -1251,6 +1381,8 @@ export const pitchers = [
   },
   {
     "name": "Dylan Lee",
+    "first": "Dylan",
+    "last": "Lee",
     "num": 52,
     "personId": "669276",
     "team": "ATL",
@@ -1271,6 +1403,8 @@ export const pitchers = [
   },
   {
     "name": "Raisel Iglesias",
+    "first": "Raisel",
+    "last": "Iglesias",
     "num": 26,
     "personId": "628452",
     "team": "ATL",
@@ -1289,6 +1423,8 @@ export const pitchers = [
   },
   {
     "name": "Dylan Dodd",
+    "first": "Dylan",
+    "last": "Dodd",
     "num": 46,
     "personId": "689266",
     "team": "ATL",
@@ -1307,6 +1443,8 @@ export const pitchers = [
   },
   {
     "name": "Spencer Strider",
+    "first": "Spencer",
+    "last": "Strider",
     "num": 99,
     "personId": "675911",
     "team": "ATL",
@@ -1328,6 +1466,8 @@ export const pitchers = [
   },
   {
     "name": "Víctor Mederos",
+    "first": "Víctor",
+    "last": "Mederos",
     "num": 58,
     "personId": "682989",
     "team": "ATL",
@@ -1346,6 +1486,8 @@ export const pitchers = [
   },
   {
     "name": "Robert Suarez",
+    "first": "Robert",
+    "last": "Suarez",
     "num": 75,
     "personId": "663158",
     "team": "ATL",
@@ -1366,6 +1508,8 @@ export const pitchers = [
   },
   {
     "name": "AJ Smith-Shawver",
+    "first": "AJ",
+    "last": "Smith-Shawver",
     "num": 32,
     "personId": "700363",
     "team": "ATL",
@@ -1386,6 +1530,8 @@ export const pitchers = [
   },
   {
     "name": "Ray Kerr",
+    "first": "Ray",
+    "last": "Kerr",
     "num": 62,
     "personId": "678061",
     "team": "ATL",
@@ -1406,6 +1552,8 @@ export const pitchers = [
   },
   {
     "name": "Carlos Carrasco",
+    "first": "Carlos",
+    "last": "Carrasco",
     "num": 59,
     "personId": "471911",
     "team": "ATL",
@@ -1426,6 +1574,8 @@ export const pitchers = [
   },
   {
     "name": "Bailey Falter",
+    "first": "Bailey",
+    "last": "Falter",
     "num": 70,
     "personId": "663559",
     "team": "ATL",
@@ -1446,6 +1596,8 @@ export const pitchers = [
   },
   {
     "name": "Danny Young",
+    "first": "Danny",
+    "last": "Young",
     "num": 3,
     "personId": "664849",
     "team": "ATL",
@@ -1467,6 +1619,8 @@ export const pitchers = [
   },
   {
     "name": "Elieser Hernández",
+    "first": "Elieser",
+    "last": "Hernández",
     "num": 57,
     "personId": "622694",
     "team": "ATL",
@@ -1487,6 +1641,8 @@ export const pitchers = [
   },
   {
     "name": "Owen Murphy",
+    "first": "Owen",
+    "last": "Murphy",
     "num": 73,
     "personId": "702566",
     "team": "ATL",
@@ -1505,6 +1661,8 @@ export const pitchers = [
   },
   {
     "name": "Hurston Waldrep",
+    "first": "Hurston",
+    "last": "Waldrep",
     "num": 64,
     "personId": "694462",
     "team": "ATL",
@@ -1526,6 +1684,8 @@ export const pitchers = [
   },
   {
     "name": "James Karinchak",
+    "first": "James",
+    "last": "Karinchak",
     "num": 0,
     "personId": "675916",
     "team": "ATL",
@@ -1544,6 +1704,8 @@ export const pitchers = [
   },
   {
     "name": "Joel Payamps",
+    "first": "Joel",
+    "last": "Payamps",
     "num": 34,
     "personId": "606303",
     "team": "ATL",
@@ -1562,6 +1724,8 @@ export const pitchers = [
   },
   {
     "name": "Ian Hamilton",
+    "first": "Ian",
+    "last": "Hamilton",
     "num": 71,
     "personId": "641656",
     "team": "ATL",
@@ -1580,6 +1744,8 @@ export const pitchers = [
   },
   {
     "name": "Rolddy Muñoz",
+    "first": "Rolddy",
+    "last": "Muñoz",
     "num": 67,
     "personId": "691548",
     "team": "ATL",
@@ -1598,6 +1764,8 @@ export const pitchers = [
   },
   {
     "name": "Blake Burkhalter",
+    "first": "Blake",
+    "last": "Burkhalter",
     "num": 76,
     "personId": "686628",
     "team": "ATL",
@@ -1616,6 +1784,8 @@ export const pitchers = [
   },
   {
     "name": "Shane Baz",
+    "first": "Shane",
+    "last": "Baz",
     "num": 34,
     "personId": "669358",
     "team": "BAL",
@@ -1634,6 +1804,8 @@ export const pitchers = [
   },
   {
     "name": "Trevor Rogers",
+    "first": "Trevor",
+    "last": "Rogers",
     "num": 28,
     "personId": "669432",
     "team": "BAL",
@@ -1652,6 +1824,8 @@ export const pitchers = [
   },
   {
     "name": "Brandon Young",
+    "first": "Brandon",
+    "last": "Young",
     "num": 63,
     "personId": "687064",
     "team": "BAL",
@@ -1670,6 +1844,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Bradish",
+    "first": "Kyle",
+    "last": "Bradish",
     "num": 38,
     "personId": "680694",
     "team": "BAL",
@@ -1690,6 +1866,8 @@ export const pitchers = [
   },
   {
     "name": "Chris Bassitt",
+    "first": "Chris",
+    "last": "Bassitt",
     "num": 40,
     "personId": "605135",
     "team": "BAL",
@@ -1708,6 +1886,8 @@ export const pitchers = [
   },
   {
     "name": "Rico Garcia",
+    "first": "Rico",
+    "last": "Garcia",
     "num": 50,
     "personId": "670329",
     "team": "BAL",
@@ -1726,6 +1906,8 @@ export const pitchers = [
   },
   {
     "name": "Albert Suárez",
+    "first": "Albert",
+    "last": "Suárez",
     "num": 49,
     "personId": "544150",
     "team": "BAL",
@@ -1744,6 +1926,8 @@ export const pitchers = [
   },
   {
     "name": "Anthony Nunez",
+    "first": "Anthony",
+    "last": "Nunez",
     "num": 66,
     "personId": "689296",
     "team": "BAL",
@@ -1764,6 +1948,8 @@ export const pitchers = [
   },
   {
     "name": "Grant Wolfram",
+    "first": "Grant",
+    "last": "Wolfram",
     "num": 48,
     "personId": "664991",
     "team": "BAL",
@@ -1784,6 +1970,8 @@ export const pitchers = [
   },
   {
     "name": "Yennier Cano",
+    "first": "Yennier",
+    "last": "Cano",
     "num": 78,
     "personId": "666974",
     "team": "BAL",
@@ -1804,6 +1992,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Kittredge",
+    "first": "Andrew",
+    "last": "Kittredge",
     "num": 39,
     "personId": "552640",
     "team": "BAL",
@@ -1822,6 +2012,8 @@ export const pitchers = [
   },
   {
     "name": "Alex Hoppe",
+    "first": "Alex",
+    "last": "Hoppe",
     "num": 26,
     "personId": "695380",
     "team": "BAL",
@@ -1842,6 +2034,8 @@ export const pitchers = [
   },
   {
     "name": "Trey Gibson",
+    "first": "Trey",
+    "last": "Gibson",
     "num": 43,
     "personId": "694346",
     "team": "BAL",
@@ -1862,6 +2056,8 @@ export const pitchers = [
   },
   {
     "name": "Cade Povich",
+    "first": "Cade",
+    "last": "Povich",
     "num": 37,
     "personId": "700249",
     "team": "BAL",
@@ -1880,6 +2076,8 @@ export const pitchers = [
   },
   {
     "name": "Josh Walker",
+    "first": "Josh",
+    "last": "Walker",
     "num": 61,
     "personId": "677020",
     "team": "BAL",
@@ -1898,6 +2096,8 @@ export const pitchers = [
   },
   {
     "name": "Cam Sanders",
+    "first": "Cam",
+    "last": "Sanders",
     "num": 73,
     "personId": "676742",
     "team": "BAL",
@@ -1919,6 +2119,8 @@ export const pitchers = [
   },
   {
     "name": "Keegan Akin",
+    "first": "Keegan",
+    "last": "Akin",
     "num": 45,
     "personId": "669211",
     "team": "BAL",
@@ -1937,6 +2139,8 @@ export const pitchers = [
   },
   {
     "name": "Dietrich Enns",
+    "first": "Dietrich",
+    "last": "Enns",
     "num": 71,
     "personId": "608650",
     "team": "BAL",
@@ -1957,6 +2161,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Helsley",
+    "first": "Ryan",
+    "last": "Helsley",
     "num": 21,
     "personId": "664854",
     "team": "BAL",
@@ -1979,6 +2185,8 @@ export const pitchers = [
   },
   {
     "name": "Luis De León",
+    "first": "Luis",
+    "last": "De León",
     "num": 81,
     "personId": "801725",
     "team": "BAL",
@@ -1997,6 +2205,8 @@ export const pitchers = [
   },
   {
     "name": "Yaramil Hiraldo",
+    "first": "Yaramil",
+    "last": "Hiraldo",
     "num": 76,
     "personId": "682274",
     "team": "BAL",
@@ -2015,6 +2225,8 @@ export const pitchers = [
   },
   {
     "name": "Cameron Foster",
+    "first": "Cameron",
+    "last": "Foster",
     "num": 65,
     "personId": "671382",
     "team": "BAL",
@@ -2033,6 +2245,8 @@ export const pitchers = [
   },
   {
     "name": "Zach Eflin",
+    "first": "Zach",
+    "last": "Eflin",
     "num": 24,
     "personId": "621107",
     "team": "BAL",
@@ -2051,6 +2265,8 @@ export const pitchers = [
   },
   {
     "name": "Nick Raquet",
+    "first": "Nick",
+    "last": "Raquet",
     "num": 72,
     "personId": "675919",
     "team": "BAL",
@@ -2069,6 +2285,8 @@ export const pitchers = [
   },
   {
     "name": "Félix Bautista",
+    "first": "Félix",
+    "last": "Bautista",
     "num": 74,
     "personId": "642585",
     "team": "BAL",
@@ -2087,6 +2305,8 @@ export const pitchers = [
   },
   {
     "name": "Jose Espada",
+    "first": "Jose",
+    "last": "Espada",
     "num": 70,
     "personId": "664744",
     "team": "BAL",
@@ -2105,6 +2325,8 @@ export const pitchers = [
   },
   {
     "name": "Cameron Weston",
+    "first": "Cameron",
+    "last": "Weston",
     "num": 74,
     "personId": "687721",
     "team": "BAL",
@@ -2123,6 +2345,8 @@ export const pitchers = [
   },
   {
     "name": "Sonny Gray",
+    "first": "Sonny",
+    "last": "Gray",
     "num": 54,
     "personId": "543243",
     "team": "BOS",
@@ -2141,6 +2365,8 @@ export const pitchers = [
   },
   {
     "name": "Payton Tolle",
+    "first": "Payton",
+    "last": "Tolle",
     "num": 70,
     "personId": "801139",
     "team": "BOS",
@@ -2161,6 +2387,8 @@ export const pitchers = [
   },
   {
     "name": "Ranger Suarez",
+    "first": "Ranger",
+    "last": "Suarez",
     "num": 55,
     "personId": "624133",
     "team": "BOS",
@@ -2179,6 +2407,8 @@ export const pitchers = [
   },
   {
     "name": "Brayan Bello",
+    "first": "Brayan",
+    "last": "Bello",
     "num": 66,
     "personId": "678394",
     "team": "BOS",
@@ -2199,6 +2429,8 @@ export const pitchers = [
   },
   {
     "name": "Jake Bennett",
+    "first": "Jake",
+    "last": "Bennett",
     "num": 64,
     "personId": "687562",
     "team": "BOS",
@@ -2219,6 +2451,8 @@ export const pitchers = [
   },
   {
     "name": "Patrick Sandoval",
+    "first": "Patrick",
+    "last": "Sandoval",
     "num": 43,
     "personId": "663776",
     "team": "BOS",
@@ -2239,6 +2473,8 @@ export const pitchers = [
   },
   {
     "name": "Jovani Morán",
+    "first": "Jovani",
+    "last": "Morán",
     "num": 47,
     "personId": "663558",
     "team": "BOS",
@@ -2260,6 +2496,8 @@ export const pitchers = [
   },
   {
     "name": "Greg Weissert",
+    "first": "Greg",
+    "last": "Weissert",
     "num": 57,
     "personId": "669711",
     "team": "BOS",
@@ -2278,6 +2516,8 @@ export const pitchers = [
   },
   {
     "name": "Garrett Whitlock",
+    "first": "Garrett",
+    "last": "Whitlock",
     "num": 22,
     "personId": "676477",
     "team": "BOS",
@@ -2299,6 +2539,8 @@ export const pitchers = [
   },
   {
     "name": "Aroldis Chapman",
+    "first": "Aroldis",
+    "last": "Chapman",
     "num": 44,
     "personId": "547973",
     "team": "BOS",
@@ -2320,6 +2562,8 @@ export const pitchers = [
   },
   {
     "name": "Erik Miller",
+    "first": "Erik",
+    "last": "Miller",
     "num": 67,
     "personId": "669062",
     "team": "BOS",
@@ -2341,6 +2585,8 @@ export const pitchers = [
   },
   {
     "name": "Tyron Guerrero",
+    "first": "Tyron",
+    "last": "Guerrero",
     "num": 41,
     "personId": "594027",
     "team": "BOS",
@@ -2361,6 +2607,8 @@ export const pitchers = [
   },
   {
     "name": "Alec Gamboa",
+    "first": "Alec",
+    "last": "Gamboa",
     "num": 68,
     "personId": "687941",
     "team": "BOS",
@@ -2379,6 +2627,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Slaten",
+    "first": "Justin",
+    "last": "Slaten",
     "num": 63,
     "personId": "686580",
     "team": "BOS",
@@ -2399,6 +2649,8 @@ export const pitchers = [
   },
   {
     "name": "Garrett Crochet",
+    "first": "Garrett",
+    "last": "Crochet",
     "num": 35,
     "personId": "676979",
     "team": "BOS",
@@ -2419,6 +2671,8 @@ export const pitchers = [
   },
   {
     "name": "Danny Coulombe",
+    "first": "Danny",
+    "last": "Coulombe",
     "num": 67,
     "personId": "543056",
     "team": "BOS",
@@ -2439,6 +2693,8 @@ export const pitchers = [
   },
   {
     "name": "Raymond Burgos",
+    "first": "Raymond",
+    "last": "Burgos",
     "num": 79,
     "personId": "670103",
     "team": "BOS",
@@ -2459,6 +2715,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Samaniego",
+    "first": "Tyler",
+    "last": "Samaniego",
     "num": 78,
     "personId": "701719",
     "team": "BOS",
@@ -2477,6 +2735,8 @@ export const pitchers = [
   },
   {
     "name": "Zack Kelly",
+    "first": "Zack",
+    "last": "Kelly",
     "num": 76,
     "personId": "677161",
     "team": "BOS",
@@ -2495,6 +2755,8 @@ export const pitchers = [
   },
   {
     "name": "Wyatt Olds",
+    "first": "Wyatt",
+    "last": "Olds",
     "num": 75,
     "personId": "681544",
     "team": "BOS",
@@ -2516,6 +2778,8 @@ export const pitchers = [
   },
   {
     "name": "Jedixson Páez",
+    "first": "Jedixson",
+    "last": "Páez",
     "num": 65,
     "personId": "699151",
     "team": "BOS",
@@ -2534,6 +2798,8 @@ export const pitchers = [
   },
   {
     "name": "Eduardo Rivera",
+    "first": "Eduardo",
+    "last": "Rivera",
     "num": 99,
     "personId": "700842",
     "team": "BOS",
@@ -2554,6 +2820,8 @@ export const pitchers = [
   },
   {
     "name": "Tommy Kahnle",
+    "first": "Tommy",
+    "last": "Kahnle",
     "num": 1,
     "personId": "592454",
     "team": "BOS",
@@ -2572,6 +2840,8 @@ export const pitchers = [
   },
   {
     "name": "Johan Oviedo",
+    "first": "Johan",
+    "last": "Oviedo",
     "num": 29,
     "personId": "670912",
     "team": "BOS",
@@ -2590,6 +2860,8 @@ export const pitchers = [
   },
   {
     "name": "Tanner Houck",
+    "first": "Tanner",
+    "last": "Houck",
     "num": 89,
     "personId": "656557",
     "team": "BOS",
@@ -2608,6 +2880,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Uberstine",
+    "first": "Tyler",
+    "last": "Uberstine",
     "num": 4,
     "personId": "700413",
     "team": "BOS",
@@ -2626,6 +2900,8 @@ export const pitchers = [
   },
   {
     "name": "Seth Martinez",
+    "first": "Seth",
+    "last": "Martinez",
     "num": 51,
     "personId": "661527",
     "team": "BOS",
@@ -2644,6 +2920,8 @@ export const pitchers = [
   },
   {
     "name": "Joe La Sorsa",
+    "first": "Joe",
+    "last": "La Sorsa",
     "num": 60,
     "personId": "686747",
     "team": "BOS",
@@ -2662,6 +2940,8 @@ export const pitchers = [
   },
   {
     "name": "Kevin Gausman",
+    "first": "Kevin",
+    "last": "Gausman",
     "num": 12,
     "personId": "592332",
     "team": "CHC",
@@ -2680,6 +2960,8 @@ export const pitchers = [
   },
   {
     "name": "Shota Imanaga",
+    "first": "Shota",
+    "last": "Imanaga",
     "num": 18,
     "personId": "684007",
     "team": "CHC",
@@ -2700,6 +2982,8 @@ export const pitchers = [
   },
   {
     "name": "David Peterson",
+    "first": "David",
+    "last": "Peterson",
     "num": 19,
     "personId": "656849",
     "team": "CHC",
@@ -2718,6 +3002,8 @@ export const pitchers = [
   },
   {
     "name": "Colin Rea",
+    "first": "Colin",
+    "last": "Rea",
     "num": 53,
     "personId": "607067",
     "team": "CHC",
@@ -2736,6 +3022,8 @@ export const pitchers = [
   },
   {
     "name": "Matthew Boyd",
+    "first": "Matthew",
+    "last": "Boyd",
     "num": 16,
     "personId": "571510",
     "team": "CHC",
@@ -2754,6 +3042,8 @@ export const pitchers = [
   },
   {
     "name": "Aaron Civale",
+    "first": "Aaron",
+    "last": "Civale",
     "num": 38,
     "personId": "650644",
     "team": "CHC",
@@ -2774,6 +3064,8 @@ export const pitchers = [
   },
   {
     "name": "Clay Holmes",
+    "first": "Clay",
+    "last": "Holmes",
     "num": 25,
     "personId": "605280",
     "team": "CHC",
@@ -2794,6 +3086,8 @@ export const pitchers = [
   },
   {
     "name": "Javier Assad",
+    "first": "Javier",
+    "last": "Assad",
     "num": 72,
     "personId": "665871",
     "team": "CHC",
@@ -2814,6 +3108,8 @@ export const pitchers = [
   },
   {
     "name": "Edward Cabrera",
+    "first": "Edward",
+    "last": "Cabrera",
     "num": 30,
     "personId": "665795",
     "team": "CHC",
@@ -2834,6 +3130,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Zeferjahn",
+    "first": "Ryan",
+    "last": "Zeferjahn",
     "num": 56,
     "personId": "666171",
     "team": "CHC",
@@ -2855,6 +3153,8 @@ export const pitchers = [
   },
   {
     "name": "Ben Brown",
+    "first": "Ben",
+    "last": "Brown",
     "num": 32,
     "personId": "676962",
     "team": "CHC",
@@ -2873,6 +3173,8 @@ export const pitchers = [
   },
   {
     "name": "Jacob Webb",
+    "first": "Jacob",
+    "last": "Webb",
     "num": 71,
     "personId": "657097",
     "team": "CHC",
@@ -2891,6 +3193,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Rolison",
+    "first": "Ryan",
+    "last": "Rolison",
     "num": 33,
     "personId": "669020",
     "team": "CHC",
@@ -2911,6 +3215,8 @@ export const pitchers = [
   },
   {
     "name": "Caleb Thielbar",
+    "first": "Caleb",
+    "last": "Thielbar",
     "num": 24,
     "personId": "573204",
     "team": "CHC",
@@ -2931,6 +3237,8 @@ export const pitchers = [
   },
   {
     "name": "Trent Thornton",
+    "first": "Trent",
+    "last": "Thornton",
     "num": 49,
     "personId": "663423",
     "team": "CHC",
@@ -2949,6 +3257,8 @@ export const pitchers = [
   },
   {
     "name": "Daniel Palencia",
+    "first": "Daniel",
+    "last": "Palencia",
     "num": 48,
     "personId": "694037",
     "team": "CHC",
@@ -2967,6 +3277,8 @@ export const pitchers = [
   },
   {
     "name": "Drew Pomeranz",
+    "first": "Drew",
+    "last": "Pomeranz",
     "num": 47,
     "personId": "519141",
     "team": "CHC",
@@ -2987,6 +3299,8 @@ export const pitchers = [
   },
   {
     "name": "Phil Maton",
+    "first": "Phil",
+    "last": "Maton",
     "num": 88,
     "personId": "664208",
     "team": "CHC",
@@ -3008,6 +3322,8 @@ export const pitchers = [
   },
   {
     "name": "Ethan Roberts",
+    "first": "Ethan",
+    "last": "Roberts",
     "num": 39,
     "personId": "681799",
     "team": "CHC",
@@ -3028,6 +3344,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Ferguson",
+    "first": "Tyler",
+    "last": "Ferguson",
     "num": 64,
     "personId": "621053",
     "team": "CHC",
@@ -3049,6 +3367,8 @@ export const pitchers = [
   },
   {
     "name": "Jayden Murray",
+    "first": "Jayden",
+    "last": "Murray",
     "num": 70,
     "personId": "681151",
     "team": "CHC",
@@ -3069,6 +3389,8 @@ export const pitchers = [
   },
   {
     "name": "Gavin Hollowell",
+    "first": "Gavin",
+    "last": "Hollowell",
     "num": 46,
     "personId": "668970",
     "team": "CHC",
@@ -3089,6 +3411,8 @@ export const pitchers = [
   },
   {
     "name": "Jordan Wicks",
+    "first": "Jordan",
+    "last": "Wicks",
     "num": 36,
     "personId": "696136",
     "team": "CHC",
@@ -3109,6 +3433,8 @@ export const pitchers = [
   },
   {
     "name": "Riley Martin",
+    "first": "Riley",
+    "last": "Martin",
     "num": 51,
     "personId": "702303",
     "team": "CHC",
@@ -3127,6 +3453,8 @@ export const pitchers = [
   },
   {
     "name": "Cade Horton",
+    "first": "Cade",
+    "last": "Horton",
     "num": 22,
     "personId": "690990",
     "team": "CHC",
@@ -3145,6 +3473,8 @@ export const pitchers = [
   },
   {
     "name": "Corbin Martin",
+    "first": "Corbin",
+    "last": "Martin",
     "num": 38,
     "personId": "656686",
     "team": "CHC",
@@ -3163,6 +3493,8 @@ export const pitchers = [
   },
   {
     "name": "Hunter Harvey",
+    "first": "Hunter",
+    "last": "Harvey",
     "num": 45,
     "personId": "640451",
     "team": "CHC",
@@ -3181,6 +3513,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Wantz",
+    "first": "Andrew",
+    "last": "Wantz",
     "num": 1,
     "personId": "681806",
     "team": "CHC",
@@ -3199,6 +3533,8 @@ export const pitchers = [
   },
   {
     "name": "Vince Velasquez",
+    "first": "Vince",
+    "last": "Velasquez",
     "num": 67,
     "personId": "592826",
     "team": "CHC",
@@ -3217,6 +3553,8 @@ export const pitchers = [
   },
   {
     "name": "Ty Blach",
+    "first": "Ty",
+    "last": "Blach",
     "num": 5,
     "personId": "621389",
     "team": "CHC",
@@ -3235,6 +3573,8 @@ export const pitchers = [
   },
   {
     "name": "Yacksel Ríos",
+    "first": "Yacksel",
+    "last": "Ríos",
     "num": 10,
     "personId": "605441",
     "team": "CHC",
@@ -3253,6 +3593,8 @@ export const pitchers = [
   },
   {
     "name": "Antoine Kelly",
+    "first": "Antoine",
+    "last": "Kelly",
     "num": 62,
     "personId": "681520",
     "team": "CHC",
@@ -3271,6 +3613,8 @@ export const pitchers = [
   },
   {
     "name": "Luke Little",
+    "first": "Luke",
+    "last": "Little",
     "num": 11,
     "personId": "681432",
     "team": "CHC",
@@ -3289,6 +3633,8 @@ export const pitchers = [
   },
   {
     "name": "Sean Burke",
+    "first": "Sean",
+    "last": "Burke",
     "num": 59,
     "personId": "680732",
     "team": "CHW",
@@ -3307,6 +3653,8 @@ export const pitchers = [
   },
   {
     "name": "Anthony Kay",
+    "first": "Anthony",
+    "last": "Kay",
     "num": 18,
     "personId": "641743",
     "team": "CHW",
@@ -3325,6 +3673,8 @@ export const pitchers = [
   },
   {
     "name": "Davis Martin",
+    "first": "Davis",
+    "last": "Martin",
     "num": 65,
     "personId": "663436",
     "team": "CHW",
@@ -3343,6 +3693,8 @@ export const pitchers = [
   },
   {
     "name": "Erick Fedde",
+    "first": "Erick",
+    "last": "Fedde",
     "num": 47,
     "personId": "607200",
     "team": "CHW",
@@ -3363,6 +3715,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Castillo",
+    "first": "Luis",
+    "last": "Castillo",
     "num": 58,
     "personId": "622491",
     "team": "CHW",
@@ -3381,6 +3735,8 @@ export const pitchers = [
   },
   {
     "name": "Sean Newcomb",
+    "first": "Sean",
+    "last": "Newcomb",
     "num": 15,
     "personId": "656794",
     "team": "CHW",
@@ -3401,6 +3757,8 @@ export const pitchers = [
   },
   {
     "name": "Grant Taylor",
+    "first": "Grant",
+    "last": "Taylor",
     "num": 31,
     "personId": "691799",
     "team": "CHW",
@@ -3422,6 +3780,8 @@ export const pitchers = [
   },
   {
     "name": "Trevor Richards",
+    "first": "Trevor",
+    "last": "Richards",
     "num": 43,
     "personId": "670950",
     "team": "CHW",
@@ -3442,6 +3802,8 @@ export const pitchers = [
   },
   {
     "name": "Noah Schultz",
+    "first": "Noah",
+    "last": "Schultz",
     "num": 22,
     "personId": "702273",
     "team": "CHW",
@@ -3460,6 +3822,8 @@ export const pitchers = [
   },
   {
     "name": "Bryan Hudson",
+    "first": "Bryan",
+    "last": "Hudson",
     "num": 60,
     "personId": "663542",
     "team": "CHW",
@@ -3478,6 +3842,8 @@ export const pitchers = [
   },
   {
     "name": "Huascar Brazobán",
+    "first": "Huascar",
+    "last": "Brazobán",
     "num": 50,
     "personId": "623211",
     "team": "CHW",
@@ -3496,6 +3862,8 @@ export const pitchers = [
   },
   {
     "name": "Jordan Hicks",
+    "first": "Jordan",
+    "last": "Hicks",
     "num": 44,
     "personId": "663855",
     "team": "CHW",
@@ -3517,6 +3885,8 @@ export const pitchers = [
   },
   {
     "name": "David Sandlin",
+    "first": "David",
+    "last": "Sandlin",
     "num": 54,
     "personId": "689818",
     "team": "CHW",
@@ -3535,6 +3905,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Schweitzer",
+    "first": "Tyler",
+    "last": "Schweitzer",
     "num": 62,
     "personId": "805326",
     "team": "CHW",
@@ -3553,6 +3925,8 @@ export const pitchers = [
   },
   {
     "name": "Chris Murphy",
+    "first": "Chris",
+    "last": "Murphy",
     "num": 38,
     "personId": "669684",
     "team": "CHW",
@@ -3573,6 +3947,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Davis",
+    "first": "Tyler",
+    "last": "Davis",
     "num": 63,
     "personId": "699823",
     "team": "CHW",
@@ -3593,6 +3969,8 @@ export const pitchers = [
   },
   {
     "name": "Hagen Smith",
+    "first": "Hagen",
+    "last": "Smith",
     "num": 32,
     "personId": "696146",
     "team": "CHW",
@@ -3614,6 +3992,8 @@ export const pitchers = [
   },
   {
     "name": "Jordan Leasure",
+    "first": "Jordan",
+    "last": "Leasure",
     "num": 49,
     "personId": "673929",
     "team": "CHW",
@@ -3632,6 +4012,8 @@ export const pitchers = [
   },
   {
     "name": "Osvaldo Bido",
+    "first": "Osvaldo",
+    "last": "Bido",
     "num": 46,
     "personId": "674370",
     "team": "CHW",
@@ -3652,6 +4034,8 @@ export const pitchers = [
   },
   {
     "name": "Lucas Sims",
+    "first": "Lucas",
+    "last": "Sims",
     "num": 1,
     "personId": "608371",
     "team": "CHW",
@@ -3672,6 +4056,8 @@ export const pitchers = [
   },
   {
     "name": "Shane Smith",
+    "first": "Shane",
+    "last": "Smith",
     "num": 64,
     "personId": "681343",
     "team": "CHW",
@@ -3690,6 +4076,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Gilbert",
+    "first": "Tyler",
+    "last": "Gilbert",
     "num": 40,
     "personId": "656457",
     "team": "CHW",
@@ -3708,6 +4096,8 @@ export const pitchers = [
   },
   {
     "name": "Jonathan Cannon",
+    "first": "Jonathan",
+    "last": "Cannon",
     "num": 48,
     "personId": "686563",
     "team": "CHW",
@@ -3726,6 +4116,8 @@ export const pitchers = [
   },
   {
     "name": "Doug Nikhazy",
+    "first": "Doug",
+    "last": "Nikhazy",
     "num": 2,
     "personId": "680951",
     "team": "CHW",
@@ -3744,6 +4136,8 @@ export const pitchers = [
   },
   {
     "name": "Tanner McDougal",
+    "first": "Tanner",
+    "last": "McDougal",
     "num": 55,
     "personId": "701780",
     "team": "CHW",
@@ -3762,6 +4156,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Abbott",
+    "first": "Andrew",
+    "last": "Abbott",
     "num": 41,
     "personId": "671096",
     "team": "CIN",
@@ -3782,6 +4178,8 @@ export const pitchers = [
   },
   {
     "name": "Brady Singer",
+    "first": "Brady",
+    "last": "Singer",
     "num": 51,
     "personId": "663903",
     "team": "CIN",
@@ -3800,6 +4198,8 @@ export const pitchers = [
   },
   {
     "name": "Chase Burns",
+    "first": "Chase",
+    "last": "Burns",
     "num": 26,
     "personId": "695505",
     "team": "CIN",
@@ -3820,6 +4220,8 @@ export const pitchers = [
   },
   {
     "name": "Rhett Lowder",
+    "first": "Rhett",
+    "last": "Lowder",
     "num": 25,
     "personId": "695076",
     "team": "CIN",
@@ -3838,6 +4240,8 @@ export const pitchers = [
   },
   {
     "name": "Nick Lodolo",
+    "first": "Nick",
+    "last": "Lodolo",
     "num": 40,
     "personId": "666157",
     "team": "CIN",
@@ -3856,6 +4260,8 @@ export const pitchers = [
   },
   {
     "name": "Brock Burke",
+    "first": "Brock",
+    "last": "Burke",
     "num": 49,
     "personId": "656271",
     "team": "CIN",
@@ -3877,6 +4283,8 @@ export const pitchers = [
   },
   {
     "name": "Ron Marinaccio",
+    "first": "Ron",
+    "last": "Marinaccio",
     "num": 5,
     "personId": "676760",
     "team": "CIN",
@@ -3897,6 +4305,8 @@ export const pitchers = [
   },
   {
     "name": "Sam Moll",
+    "first": "Sam",
+    "last": "Moll",
     "num": 50,
     "personId": "594580",
     "team": "CIN",
@@ -3917,6 +4327,8 @@ export const pitchers = [
   },
   {
     "name": "Tejay Antone",
+    "first": "Tejay",
+    "last": "Antone",
     "num": 70,
     "personId": "622088",
     "team": "CIN",
@@ -3935,6 +4347,8 @@ export const pitchers = [
   },
   {
     "name": "Brandon Williamson",
+    "first": "Brandon",
+    "last": "Williamson",
     "num": 55,
     "personId": "682227",
     "team": "CIN",
@@ -3955,6 +4369,8 @@ export const pitchers = [
   },
   {
     "name": "Pierce Johnson",
+    "first": "Pierce",
+    "last": "Johnson",
     "num": 52,
     "personId": "572955",
     "team": "CIN",
@@ -3973,6 +4389,8 @@ export const pitchers = [
   },
   {
     "name": "Julian Garcia",
+    "first": "Julian",
+    "last": "Garcia",
     "num": 57,
     "personId": "670062",
     "team": "CIN",
@@ -3991,6 +4409,8 @@ export const pitchers = [
   },
   {
     "name": "Emilio Pagán",
+    "first": "Emilio",
+    "last": "Pagán",
     "num": 15,
     "personId": "641941",
     "team": "CIN",
@@ -4009,6 +4429,8 @@ export const pitchers = [
   },
   {
     "name": "Tony Santillan",
+    "first": "Tony",
+    "last": "Santillan",
     "num": 64,
     "personId": "663574",
     "team": "CIN",
@@ -4029,6 +4451,8 @@ export const pitchers = [
   },
   {
     "name": "Graham Ashcraft",
+    "first": "Graham",
+    "last": "Ashcraft",
     "num": 23,
     "personId": "668933",
     "team": "CIN",
@@ -4050,6 +4474,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Mey",
+    "first": "Luis",
+    "last": "Mey",
     "num": 47,
     "personId": "682825",
     "team": "CIN",
@@ -4071,6 +4497,8 @@ export const pitchers = [
   },
   {
     "name": "Chase Petty",
+    "first": "Chase",
+    "last": "Petty",
     "num": 61,
     "personId": "695534",
     "team": "CIN",
@@ -4089,6 +4517,8 @@ export const pitchers = [
   },
   {
     "name": "Connor Phillips",
+    "first": "Connor",
+    "last": "Phillips",
     "num": 34,
     "personId": "683175",
     "team": "CIN",
@@ -4109,6 +4539,8 @@ export const pitchers = [
   },
   {
     "name": "Hunter Greene",
+    "first": "Hunter",
+    "last": "Greene",
     "num": 21,
     "personId": "668881",
     "team": "CIN",
@@ -4129,6 +4561,8 @@ export const pitchers = [
   },
   {
     "name": "Jose Franco",
+    "first": "Jose",
+    "last": "Franco",
     "num": 74,
     "personId": "683742",
     "team": "CIN",
@@ -4149,6 +4583,8 @@ export const pitchers = [
   },
   {
     "name": "Zach McCambley",
+    "first": "Zach",
+    "last": "McCambley",
     "num": 62,
     "personId": "685112",
     "team": "CIN",
@@ -4169,6 +4605,8 @@ export const pitchers = [
   },
   {
     "name": "Zach Maxwell",
+    "first": "Zach",
+    "last": "Maxwell",
     "num": 78,
     "personId": "687209",
     "team": "CIN",
@@ -4189,6 +4627,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Nicolas",
+    "first": "Kyle",
+    "last": "Nicolas",
     "num": 6,
     "personId": "693312",
     "team": "CIN",
@@ -4207,6 +4647,8 @@ export const pitchers = [
   },
   {
     "name": "Brandon Leibrandt",
+    "first": "Brandon",
+    "last": "Leibrandt",
     "num": 58,
     "personId": "605335",
     "team": "CIN",
@@ -4225,6 +4667,8 @@ export const pitchers = [
   },
   {
     "name": "Carson Spiers",
+    "first": "Carson",
+    "last": "Spiers",
     "num": 68,
     "personId": "686730",
     "team": "CIN",
@@ -4243,6 +4687,8 @@ export const pitchers = [
   },
   {
     "name": "Kent Emanuel",
+    "first": "Kent",
+    "last": "Emanuel",
     "num": 67,
     "personId": "592288",
     "team": "CIN",
@@ -4261,6 +4707,8 @@ export const pitchers = [
   },
   {
     "name": "Julian Aguiar",
+    "first": "Julian",
+    "last": "Aguiar",
     "num": 8,
     "personId": "687924",
     "team": "CIN",
@@ -4279,6 +4727,8 @@ export const pitchers = [
   },
   {
     "name": "Yunior Marté",
+    "first": "Yunior",
+    "last": "Marté",
     "num": 10,
     "personId": "628708",
     "team": "CIN",
@@ -4297,6 +4747,8 @@ export const pitchers = [
   },
   {
     "name": "Tanner Bibee",
+    "first": "Tanner",
+    "last": "Bibee",
     "num": 28,
     "personId": "676440",
     "team": "CLE",
@@ -4315,6 +4767,8 @@ export const pitchers = [
   },
   {
     "name": "Parker Messick",
+    "first": "Parker",
+    "last": "Messick",
     "num": 77,
     "personId": "800048",
     "team": "CLE",
@@ -4333,6 +4787,8 @@ export const pitchers = [
   },
   {
     "name": "Gavin Williams",
+    "first": "Gavin",
+    "last": "Williams",
     "num": 32,
     "personId": "668909",
     "team": "CLE",
@@ -4353,6 +4809,8 @@ export const pitchers = [
   },
   {
     "name": "Foster Griffin",
+    "first": "Foster",
+    "last": "Griffin",
     "num": 22,
     "personId": "656492",
     "team": "CLE",
@@ -4371,6 +4829,8 @@ export const pitchers = [
   },
   {
     "name": "Joey Cantillo",
+    "first": "Joey",
+    "last": "Cantillo",
     "num": 54,
     "personId": "676282",
     "team": "CLE",
@@ -4391,6 +4851,8 @@ export const pitchers = [
   },
   {
     "name": "Slade Cecconi",
+    "first": "Slade",
+    "last": "Cecconi",
     "num": 44,
     "personId": "677944",
     "team": "CLE",
@@ -4409,6 +4871,8 @@ export const pitchers = [
   },
   {
     "name": "Cade Smith",
+    "first": "Cade",
+    "last": "Smith",
     "num": 36,
     "personId": "671922",
     "team": "CLE",
@@ -4430,6 +4894,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Festa",
+    "first": "Matt",
+    "last": "Festa",
     "num": 52,
     "personId": "670036",
     "team": "CLE",
@@ -4448,6 +4914,8 @@ export const pitchers = [
   },
   {
     "name": "Hunter Gaddis",
+    "first": "Hunter",
+    "last": "Gaddis",
     "num": 33,
     "personId": "683769",
     "team": "CLE",
@@ -4466,6 +4934,8 @@ export const pitchers = [
   },
   {
     "name": "Tim Herrin",
+    "first": "Tim",
+    "last": "Herrin",
     "num": 29,
     "personId": "682120",
     "team": "CLE",
@@ -4486,6 +4956,8 @@ export const pitchers = [
   },
   {
     "name": "Colin Holderman",
+    "first": "Colin",
+    "last": "Holderman",
     "num": 35,
     "personId": "670059",
     "team": "CLE",
@@ -4504,6 +4976,8 @@ export const pitchers = [
   },
   {
     "name": "Erik Sabrowski",
+    "first": "Erik",
+    "last": "Sabrowski",
     "num": 62,
     "personId": "681870",
     "team": "CLE",
@@ -4525,6 +4999,8 @@ export const pitchers = [
   },
   {
     "name": "Craig Yoho",
+    "first": "Craig",
+    "last": "Yoho",
     "num": 23,
     "personId": "684974",
     "team": "CLE",
@@ -4545,6 +5021,8 @@ export const pitchers = [
   },
   {
     "name": "Shawn Armstrong",
+    "first": "Shawn",
+    "last": "Armstrong",
     "num": 43,
     "personId": "542888",
     "team": "CLE",
@@ -4565,6 +5043,8 @@ export const pitchers = [
   },
   {
     "name": "Franco Aleman",
+    "first": "Franco",
+    "last": "Aleman",
     "num": 55,
     "personId": "680916",
     "team": "CLE",
@@ -4586,6 +5066,8 @@ export const pitchers = [
   },
   {
     "name": "Peyton Pallette",
+    "first": "Peyton",
+    "last": "Pallette",
     "num": 3,
     "personId": "688883",
     "team": "CLE",
@@ -4606,6 +5088,8 @@ export const pitchers = [
   },
   {
     "name": "Logan Allen",
+    "first": "Logan",
+    "last": "Allen",
     "num": 26,
     "personId": "671106",
     "team": "CLE",
@@ -4624,6 +5108,8 @@ export const pitchers = [
   },
   {
     "name": "Connor Brogdon",
+    "first": "Connor",
+    "last": "Brogdon",
     "num": 75,
     "personId": "641401",
     "team": "CLE",
@@ -4644,6 +5130,8 @@ export const pitchers = [
   },
   {
     "name": "Daniel Espino",
+    "first": "Daniel",
+    "last": "Espino",
     "num": 41,
     "personId": "682982",
     "team": "CLE",
@@ -4665,6 +5153,8 @@ export const pitchers = [
   },
   {
     "name": "Codi Heuer",
+    "first": "Codi",
+    "last": "Heuer",
     "num": 59,
     "personId": "676051",
     "team": "CLE",
@@ -4683,6 +5173,8 @@ export const pitchers = [
   },
   {
     "name": "Kolby Allard",
+    "first": "Kolby",
+    "last": "Allard",
     "num": 5,
     "personId": "663465",
     "team": "CLE",
@@ -4701,6 +5193,8 @@ export const pitchers = [
   },
   {
     "name": "Austin Peterson",
+    "first": "Austin",
+    "last": "Peterson",
     "num": 49,
     "personId": "804926",
     "team": "CLE",
@@ -4719,6 +5213,8 @@ export const pitchers = [
   },
   {
     "name": "Carlos Hernández",
+    "first": "Carlos",
+    "last": "Hernández",
     "num": 40,
     "personId": "672578",
     "team": "CLE",
@@ -4737,6 +5233,8 @@ export const pitchers = [
   },
   {
     "name": "Tomoyuki Sugano",
+    "first": "Tomoyuki",
+    "last": "Sugano",
     "num": 11,
     "personId": "608372",
     "team": "COL",
@@ -4755,6 +5253,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Freeland",
+    "first": "Kyle",
+    "last": "Freeland",
     "num": 21,
     "personId": "607536",
     "team": "COL",
@@ -4775,6 +5275,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Feltner",
+    "first": "Ryan",
+    "last": "Feltner",
     "num": 18,
     "personId": "663372",
     "team": "COL",
@@ -4793,6 +5295,8 @@ export const pitchers = [
   },
   {
     "name": "Tanner Gordon",
+    "first": "Tanner",
+    "last": "Gordon",
     "num": 29,
     "personId": "685299",
     "team": "COL",
@@ -4811,6 +5315,8 @@ export const pitchers = [
   },
   {
     "name": "Zach Agnos",
+    "first": "Zach",
+    "last": "Agnos",
     "num": 36,
     "personId": "688642",
     "team": "COL",
@@ -4831,6 +5337,8 @@ export const pitchers = [
   },
   {
     "name": "Juan Mejia",
+    "first": "Juan",
+    "last": "Mejia",
     "num": 47,
     "personId": "675848",
     "team": "COL",
@@ -4852,6 +5360,8 @@ export const pitchers = [
   },
   {
     "name": "Brennan Bernardino",
+    "first": "Brennan",
+    "last": "Bernardino",
     "num": 83,
     "personId": "657514",
     "team": "COL",
@@ -4870,6 +5380,8 @@ export const pitchers = [
   },
   {
     "name": "Gabriel Hughes",
+    "first": "Gabriel",
+    "last": "Hughes",
     "num": 43,
     "personId": "687312",
     "team": "COL",
@@ -4888,6 +5400,8 @@ export const pitchers = [
   },
   {
     "name": "Jimmy Herget",
+    "first": "Jimmy",
+    "last": "Herget",
     "num": 44,
     "personId": "623474",
     "team": "COL",
@@ -4908,6 +5422,8 @@ export const pitchers = [
   },
   {
     "name": "Jose Quintana",
+    "first": "Jose",
+    "last": "Quintana",
     "num": 62,
     "personId": "500779",
     "team": "COL",
@@ -4926,6 +5442,8 @@ export const pitchers = [
   },
   {
     "name": "Chase Dollander",
+    "first": "Chase",
+    "last": "Dollander",
     "num": 32,
     "personId": "801403",
     "team": "COL",
@@ -4944,6 +5462,8 @@ export const pitchers = [
   },
   {
     "name": "Jaden Hill",
+    "first": "Jaden",
+    "last": "Hill",
     "num": 0,
     "personId": "677955",
     "team": "COL",
@@ -4964,6 +5484,8 @@ export const pitchers = [
   },
   {
     "name": "Jordan Romano",
+    "first": "Jordan",
+    "last": "Romano",
     "num": 68,
     "personId": "605447",
     "team": "COL",
@@ -4985,6 +5507,8 @@ export const pitchers = [
   },
   {
     "name": "Mason Adams",
+    "first": "Mason",
+    "last": "Adams",
     "num": 38,
     "personId": "690279",
     "team": "COL",
@@ -5003,6 +5527,8 @@ export const pitchers = [
   },
   {
     "name": "Blas Castaño",
+    "first": "Blas",
+    "last": "Castaño",
     "num": 63,
     "personId": "680604",
     "team": "COL",
@@ -5021,6 +5547,8 @@ export const pitchers = [
   },
   {
     "name": "Sean Sullivan",
+    "first": "Sean",
+    "last": "Sullivan",
     "num": 45,
     "personId": "807743",
     "team": "COL",
@@ -5041,6 +5569,8 @@ export const pitchers = [
   },
   {
     "name": "Nick Frasso",
+    "first": "Nick",
+    "last": "Frasso",
     "num": 41,
     "personId": "693308",
     "team": "COL",
@@ -5059,6 +5589,8 @@ export const pitchers = [
   },
   {
     "name": "Mark Manfredi",
+    "first": "Mark",
+    "last": "Manfredi",
     "num": 54,
     "personId": "815081",
     "team": "COL",
@@ -5079,6 +5611,8 @@ export const pitchers = [
   },
   {
     "name": "Keegan Thompson",
+    "first": "Keegan",
+    "last": "Thompson",
     "num": 34,
     "personId": "624522",
     "team": "COL",
@@ -5099,6 +5633,8 @@ export const pitchers = [
   },
   {
     "name": "Valente Bellozo",
+    "first": "Valente",
+    "last": "Bellozo",
     "num": 56,
     "personId": "678368",
     "team": "COL",
@@ -5119,6 +5655,8 @@ export const pitchers = [
   },
   {
     "name": "TJ Shook",
+    "first": "TJ",
+    "last": "Shook",
     "num": 52,
     "personId": "669298",
     "team": "COL",
@@ -5137,6 +5675,8 @@ export const pitchers = [
   },
   {
     "name": "Parker Mushinski",
+    "first": "Parker",
+    "last": "Mushinski",
     "num": 67,
     "personId": "656786",
     "team": "COL",
@@ -5155,6 +5695,8 @@ export const pitchers = [
   },
   {
     "name": "John Brebbia",
+    "first": "John",
+    "last": "Brebbia",
     "num": 4,
     "personId": "605154",
     "team": "COL",
@@ -5173,6 +5715,8 @@ export const pitchers = [
   },
   {
     "name": "Jeff Criswell",
+    "first": "Jeff",
+    "last": "Criswell",
     "num": 46,
     "personId": "676105",
     "team": "COL",
@@ -5191,6 +5735,8 @@ export const pitchers = [
   },
   {
     "name": "Eiberson Castellano",
+    "first": "Eiberson",
+    "last": "Castellano",
     "num": 55,
     "personId": "682769",
     "team": "COL",
@@ -5209,6 +5755,8 @@ export const pitchers = [
   },
   {
     "name": "Welinton Herrera",
+    "first": "Welinton",
+    "last": "Herrera",
     "num": 59,
     "personId": "700327",
     "team": "COL",
@@ -5227,6 +5775,8 @@ export const pitchers = [
   },
   {
     "name": "Blake Adams",
+    "first": "Blake",
+    "last": "Adams",
     "num": 57,
     "personId": "687060",
     "team": "COL",
@@ -5245,6 +5795,8 @@ export const pitchers = [
   },
   {
     "name": "Framber Valdez",
+    "first": "Framber",
+    "last": "Valdez",
     "num": 59,
     "personId": "664285",
     "team": "DET",
@@ -5263,6 +5815,8 @@ export const pitchers = [
   },
   {
     "name": "Keider Montero",
+    "first": "Keider",
+    "last": "Montero",
     "num": 54,
     "personId": "672456",
     "team": "DET",
@@ -5281,6 +5835,8 @@ export const pitchers = [
   },
   {
     "name": "Troy Melton",
+    "first": "Troy",
+    "last": "Melton",
     "num": 52,
     "personId": "675512",
     "team": "DET",
@@ -5299,6 +5855,8 @@ export const pitchers = [
   },
   {
     "name": "Drew Anderson",
+    "first": "Drew",
+    "last": "Anderson",
     "num": 38,
     "personId": "623454",
     "team": "DET",
@@ -5319,6 +5877,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Flaherty",
+    "first": "Jack",
+    "last": "Flaherty",
     "num": 9,
     "personId": "656427",
     "team": "DET",
@@ -5340,6 +5900,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Holton",
+    "first": "Tyler",
+    "last": "Holton",
     "num": 87,
     "personId": "663947",
     "team": "DET",
@@ -5360,6 +5922,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Finnegan",
+    "first": "Kyle",
+    "last": "Finnegan",
     "num": 67,
     "personId": "640448",
     "team": "DET",
@@ -5380,6 +5944,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Kinley",
+    "first": "Tyler",
+    "last": "Kinley",
     "num": 55,
     "personId": "641755",
     "team": "DET",
@@ -5400,6 +5966,8 @@ export const pitchers = [
   },
   {
     "name": "Ty Madden",
+    "first": "Ty",
+    "last": "Madden",
     "num": 36,
     "personId": "680744",
     "team": "DET",
@@ -5418,6 +5986,8 @@ export const pitchers = [
   },
   {
     "name": "Jacob Waguespack",
+    "first": "Jacob",
+    "last": "Waguespack",
     "num": 58,
     "personId": "621097",
     "team": "DET",
@@ -5436,6 +6006,8 @@ export const pitchers = [
   },
   {
     "name": "Jackson Jobe",
+    "first": "Jackson",
+    "last": "Jobe",
     "num": 21,
     "personId": "695549",
     "team": "DET",
@@ -5456,6 +6028,8 @@ export const pitchers = [
   },
   {
     "name": "Kenley Jansen",
+    "first": "Kenley",
+    "last": "Jansen",
     "num": 74,
     "personId": "445276",
     "team": "DET",
@@ -5477,6 +6051,8 @@ export const pitchers = [
   },
   {
     "name": "Enmanuel De Jesus",
+    "first": "Enmanuel",
+    "last": "De Jesus",
     "num": 37,
     "personId": "646241",
     "team": "DET",
@@ -5495,6 +6071,8 @@ export const pitchers = [
   },
   {
     "name": "Drew Sommers",
+    "first": "Drew",
+    "last": "Sommers",
     "num": 51,
     "personId": "805427",
     "team": "DET",
@@ -5516,6 +6094,8 @@ export const pitchers = [
   },
   {
     "name": "Brant Hurter",
+    "first": "Brant",
+    "last": "Hurter",
     "num": 48,
     "personId": "676428",
     "team": "DET",
@@ -5536,6 +6116,8 @@ export const pitchers = [
   },
   {
     "name": "Will Vest",
+    "first": "Will",
+    "last": "Vest",
     "num": 19,
     "personId": "676684",
     "team": "DET",
@@ -5556,6 +6138,8 @@ export const pitchers = [
   },
   {
     "name": "Beau Brieske",
+    "first": "Beau",
+    "last": "Brieske",
     "num": 4,
     "personId": "689225",
     "team": "DET",
@@ -5574,6 +6158,8 @@ export const pitchers = [
   },
   {
     "name": "Brenan Hanifee",
+    "first": "Brenan",
+    "last": "Hanifee",
     "num": 75,
     "personId": "669724",
     "team": "DET",
@@ -5594,6 +6180,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Sears",
+    "first": "Andrew",
+    "last": "Sears",
     "num": 64,
     "personId": "808825",
     "team": "DET",
@@ -5612,6 +6200,8 @@ export const pitchers = [
   },
   {
     "name": "Burch Smith",
+    "first": "Burch",
+    "last": "Smith",
     "num": 65,
     "personId": "572143",
     "team": "DET",
@@ -5632,6 +6222,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Verlander",
+    "first": "Justin",
+    "last": "Verlander",
     "num": 35,
     "personId": "434378",
     "team": "DET",
@@ -5650,6 +6242,8 @@ export const pitchers = [
   },
   {
     "name": "Tanner Rainey",
+    "first": "Tanner",
+    "last": "Rainey",
     "num": 56,
     "personId": "663432",
     "team": "DET",
@@ -5668,6 +6262,8 @@ export const pitchers = [
   },
   {
     "name": "Ricky Vanasco",
+    "first": "Ricky",
+    "last": "Vanasco",
     "num": 1,
     "personId": "676568",
     "team": "DET",
@@ -5686,6 +6282,8 @@ export const pitchers = [
   },
   {
     "name": "Yilber Díaz",
+    "first": "Yilber",
+    "last": "Díaz",
     "num": 62,
     "personId": "700270",
     "team": "DET",
@@ -5704,6 +6302,8 @@ export const pitchers = [
   },
   {
     "name": "River Ryan",
+    "first": "River",
+    "last": "Ryan",
     "num": 77,
     "personId": "689981",
     "team": "DET",
@@ -5722,6 +6322,8 @@ export const pitchers = [
   },
   {
     "name": "Peter Lambert",
+    "first": "Peter",
+    "last": "Lambert",
     "num": 38,
     "personId": "663567",
     "team": "HOU",
@@ -5740,6 +6342,8 @@ export const pitchers = [
   },
   {
     "name": "Hunter Brown",
+    "first": "Hunter",
+    "last": "Brown",
     "num": 58,
     "personId": "686613",
     "team": "HOU",
@@ -5762,6 +6366,8 @@ export const pitchers = [
   },
   {
     "name": "AJ Blubaugh",
+    "first": "AJ",
+    "last": "Blubaugh",
     "num": 69,
     "personId": "805123",
     "team": "HOU",
@@ -5782,6 +6388,8 @@ export const pitchers = [
   },
   {
     "name": "Mike Burrows",
+    "first": "Mike",
+    "last": "Burrows",
     "num": 50,
     "personId": "681347",
     "team": "HOU",
@@ -5800,6 +6408,8 @@ export const pitchers = [
   },
   {
     "name": "Tatsuya Imai",
+    "first": "Tatsuya",
+    "last": "Imai",
     "num": 45,
     "personId": "837227",
     "team": "HOU",
@@ -5821,6 +6431,8 @@ export const pitchers = [
   },
   {
     "name": "Kai-Wei Teng",
+    "first": "Kai-Wei",
+    "last": "Teng",
     "num": 17,
     "personId": "678906",
     "team": "HOU",
@@ -5842,6 +6454,8 @@ export const pitchers = [
   },
   {
     "name": "Enyel De Los Santos",
+    "first": "Enyel",
+    "last": "De Los Santos",
     "num": 65,
     "personId": "660853",
     "team": "HOU",
@@ -5862,6 +6476,8 @@ export const pitchers = [
   },
   {
     "name": "Steven Okert",
+    "first": "Steven",
+    "last": "Okert",
     "num": 48,
     "personId": "595345",
     "team": "HOU",
@@ -5882,6 +6498,8 @@ export const pitchers = [
   },
   {
     "name": "Cristian Javier",
+    "first": "Cristian",
+    "last": "Javier",
     "num": 53,
     "personId": "664299",
     "team": "HOU",
@@ -5902,6 +6520,8 @@ export const pitchers = [
   },
   {
     "name": "Bryan Abreu",
+    "first": "Bryan",
+    "last": "Abreu",
     "num": 52,
     "personId": "650556",
     "team": "HOU",
@@ -5923,6 +6543,8 @@ export const pitchers = [
   },
   {
     "name": "Hayden Wesneski",
+    "first": "Hayden",
+    "last": "Wesneski",
     "num": 39,
     "personId": "669713",
     "team": "HOU",
@@ -5941,6 +6563,8 @@ export const pitchers = [
   },
   {
     "name": "Bryan King",
+    "first": "Bryan",
+    "last": "King",
     "num": 74,
     "personId": "687911",
     "team": "HOU",
@@ -5959,6 +6583,8 @@ export const pitchers = [
   },
   {
     "name": "Josh Hader",
+    "first": "Josh",
+    "last": "Hader",
     "num": 71,
     "personId": "623352",
     "team": "HOU",
@@ -5979,6 +6605,8 @@ export const pitchers = [
   },
   {
     "name": "Ethan Pecko",
+    "first": "Ethan",
+    "last": "Pecko",
     "num": 70,
     "personId": "814490",
     "team": "HOU",
@@ -5997,6 +6625,8 @@ export const pitchers = [
   },
   {
     "name": "Ronel Blanco",
+    "first": "Ronel",
+    "last": "Blanco",
     "num": 56,
     "personId": "669854",
     "team": "HOU",
@@ -6017,6 +6647,8 @@ export const pitchers = [
   },
   {
     "name": "Bennett Sousa",
+    "first": "Bennett",
+    "last": "Sousa",
     "num": 62,
     "personId": "656986",
     "team": "HOU",
@@ -6037,6 +6669,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Weiss",
+    "first": "Ryan",
+    "last": "Weiss",
     "num": 51,
     "personId": "680802",
     "team": "HOU",
@@ -6058,6 +6692,8 @@ export const pitchers = [
   },
   {
     "name": "Cody Bolton",
+    "first": "Cody",
+    "last": "Bolton",
     "num": 67,
     "personId": "675989",
     "team": "HOU",
@@ -6078,6 +6714,8 @@ export const pitchers = [
   },
   {
     "name": "Jason Alexander",
+    "first": "Jason",
+    "last": "Alexander",
     "num": 54,
     "personId": "669920",
     "team": "HOU",
@@ -6096,6 +6734,8 @@ export const pitchers = [
   },
   {
     "name": "Miguel Ullola",
+    "first": "Miguel",
+    "last": "Ullola",
     "num": 66,
     "personId": "699044",
     "team": "HOU",
@@ -6114,6 +6754,8 @@ export const pitchers = [
   },
   {
     "name": "Alimber Santa",
+    "first": "Alimber",
+    "last": "Santa",
     "num": 72,
     "personId": "695001",
     "team": "HOU",
@@ -6132,6 +6774,8 @@ export const pitchers = [
   },
   {
     "name": "Logan VanWey",
+    "first": "Logan",
+    "last": "VanWey",
     "num": 64,
     "personId": "701121",
     "team": "HOU",
@@ -6152,6 +6796,8 @@ export const pitchers = [
   },
   {
     "name": "Christian Roa",
+    "first": "Christian",
+    "last": "Roa",
     "num": 4,
     "personId": "685005",
     "team": "HOU",
@@ -6170,6 +6816,8 @@ export const pitchers = [
   },
   {
     "name": "J.P. France",
+    "first": "J.P.",
+    "last": "France",
     "num": 5,
     "personId": "641585",
     "team": "HOU",
@@ -6188,6 +6836,8 @@ export const pitchers = [
   },
   {
     "name": "Roddery Muñoz",
+    "first": "Roddery",
+    "last": "Muñoz",
     "num": 46,
     "personId": "682610",
     "team": "HOU",
@@ -6206,6 +6856,8 @@ export const pitchers = [
   },
   {
     "name": "Josh Hendrickson",
+    "first": "Josh",
+    "last": "Hendrickson",
     "num": 61,
     "personId": "681973",
     "team": "HOU",
@@ -6224,6 +6876,8 @@ export const pitchers = [
   },
   {
     "name": "Michael Wacha",
+    "first": "Michael",
+    "last": "Wacha",
     "num": 52,
     "personId": "608379",
     "team": "KCR",
@@ -6244,6 +6898,8 @@ export const pitchers = [
   },
   {
     "name": "Noah Cameron",
+    "first": "Noah",
+    "last": "Cameron",
     "num": 65,
     "personId": "702070",
     "team": "KCR",
@@ -6262,6 +6918,8 @@ export const pitchers = [
   },
   {
     "name": "Seth Lugo",
+    "first": "Seth",
+    "last": "Lugo",
     "num": 67,
     "personId": "607625",
     "team": "KCR",
@@ -6280,6 +6938,8 @@ export const pitchers = [
   },
   {
     "name": "Daniel Lynch IV",
+    "first": "Daniel",
+    "last": "Lynch IV",
     "num": 41,
     "personId": "663738",
     "team": "KCR",
@@ -6300,6 +6960,8 @@ export const pitchers = [
   },
   {
     "name": "Randy Dobnak",
+    "first": "Randy",
+    "last": "Dobnak",
     "num": 62,
     "personId": "677976",
     "team": "KCR",
@@ -6318,6 +6980,8 @@ export const pitchers = [
   },
   {
     "name": "Luinder Avila",
+    "first": "Luinder",
+    "last": "Avila",
     "num": 58,
     "personId": "679883",
     "team": "KCR",
@@ -6338,6 +7002,8 @@ export const pitchers = [
   },
   {
     "name": "Alex Lange",
+    "first": "Alex",
+    "last": "Lange",
     "num": 56,
     "personId": "656638",
     "team": "KCR",
@@ -6358,6 +7024,8 @@ export const pitchers = [
   },
   {
     "name": "Steven Cruz",
+    "first": "Steven",
+    "last": "Cruz",
     "num": 64,
     "personId": "674444",
     "team": "KCR",
@@ -6378,6 +7046,8 @@ export const pitchers = [
   },
   {
     "name": "Stephen Kolek",
+    "first": "Stephen",
+    "last": "Kolek",
     "num": 32,
     "personId": "663568",
     "team": "KCR",
@@ -6396,6 +7066,8 @@ export const pitchers = [
   },
   {
     "name": "Lucas Erceg",
+    "first": "Lucas",
+    "last": "Erceg",
     "num": 60,
     "personId": "668674",
     "team": "KCR",
@@ -6416,6 +7088,8 @@ export const pitchers = [
   },
   {
     "name": "Nate Pearson",
+    "first": "Nate",
+    "last": "Pearson",
     "num": 61,
     "personId": "663878",
     "team": "KCR",
@@ -6436,6 +7110,8 @@ export const pitchers = [
   },
   {
     "name": "Craig Kimbrel",
+    "first": "Craig",
+    "last": "Kimbrel",
     "num": 26,
     "personId": "518886",
     "team": "KCR",
@@ -6456,6 +7132,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Strahm",
+    "first": "Matt",
+    "last": "Strahm",
     "num": 25,
     "personId": "621381",
     "team": "KCR",
@@ -6474,6 +7152,8 @@ export const pitchers = [
   },
   {
     "name": "Cole Ragans",
+    "first": "Cole",
+    "last": "Ragans",
     "num": 55,
     "personId": "666142",
     "team": "KCR",
@@ -6495,6 +7175,8 @@ export const pitchers = [
   },
   {
     "name": "Mason Black",
+    "first": "Mason",
+    "last": "Black",
     "num": 47,
     "personId": "696131",
     "team": "KCR",
@@ -6515,6 +7197,8 @@ export const pitchers = [
   },
   {
     "name": "Connor Thomas",
+    "first": "Connor",
+    "last": "Thomas",
     "num": 50,
     "personId": "671162",
     "team": "KCR",
@@ -6535,6 +7219,8 @@ export const pitchers = [
   },
   {
     "name": "Connor Seabold",
+    "first": "Connor",
+    "last": "Seabold",
     "num": 43,
     "personId": "657756",
     "team": "KCR",
@@ -6555,6 +7241,8 @@ export const pitchers = [
   },
   {
     "name": "José Cuas",
+    "first": "José",
+    "last": "Cuas",
     "num": 74,
     "personId": "621016",
     "team": "KCR",
@@ -6575,6 +7263,8 @@ export const pitchers = [
   },
   {
     "name": "Beck Way",
+    "first": "Beck",
+    "last": "Way",
     "num": 44,
     "personId": "694360",
     "team": "KCR",
@@ -6593,6 +7283,8 @@ export const pitchers = [
   },
   {
     "name": "Eli Morgan",
+    "first": "Eli",
+    "last": "Morgan",
     "num": 3,
     "personId": "669212",
     "team": "KCR",
@@ -6613,6 +7305,8 @@ export const pitchers = [
   },
   {
     "name": "Nick Mears",
+    "first": "Nick",
+    "last": "Mears",
     "num": 31,
     "personId": "683232",
     "team": "KCR",
@@ -6633,6 +7327,8 @@ export const pitchers = [
   },
   {
     "name": "Aaron Bummer",
+    "first": "Aaron",
+    "last": "Bummer",
     "num": 36,
     "personId": "607481",
     "team": "KCR",
@@ -6653,6 +7349,8 @@ export const pitchers = [
   },
   {
     "name": "Nolan Hoffman",
+    "first": "Nolan",
+    "last": "Hoffman",
     "num": 35,
     "personId": "676510",
     "team": "KCR",
@@ -6671,6 +7369,8 @@ export const pitchers = [
   },
   {
     "name": "Anthony Gose",
+    "first": "Anthony",
+    "last": "Gose",
     "num": 34,
     "personId": "543238",
     "team": "KCR",
@@ -6691,6 +7391,8 @@ export const pitchers = [
   },
   {
     "name": "Easton McGee",
+    "first": "Easton",
+    "last": "McGee",
     "num": 51,
     "personId": "668834",
     "team": "KCR",
@@ -6711,6 +7413,8 @@ export const pitchers = [
   },
   {
     "name": "Mitch Spence",
+    "first": "Mitch",
+    "last": "Spence",
     "num": 54,
     "personId": "687765",
     "team": "KCR",
@@ -6729,6 +7433,8 @@ export const pitchers = [
   },
   {
     "name": "Spencer Bivens",
+    "first": "Spencer",
+    "last": "Bivens",
     "num": 76,
     "personId": "702352",
     "team": "KCR",
@@ -6747,6 +7453,8 @@ export const pitchers = [
   },
   {
     "name": "Eric Cerantola",
+    "first": "Eric",
+    "last": "Cerantola",
     "num": 4,
     "personId": "672021",
     "team": "KCR",
@@ -6765,6 +7473,8 @@ export const pitchers = [
   },
   {
     "name": "Tony Gonsolin",
+    "first": "Tony",
+    "last": "Gonsolin",
     "num": 36,
     "personId": "664062",
     "team": "KCR",
@@ -6783,6 +7493,8 @@ export const pitchers = [
   },
   {
     "name": "Carlos Durán",
+    "first": "Carlos",
+    "last": "Durán",
     "num": 45,
     "personId": "679922",
     "team": "KCR",
@@ -6801,6 +7513,8 @@ export const pitchers = [
   },
   {
     "name": "Carlos Estévez",
+    "first": "Carlos",
+    "last": "Estévez",
     "num": 53,
     "personId": "608032",
     "team": "KCR",
@@ -6819,6 +7533,8 @@ export const pitchers = [
   },
   {
     "name": "Reid Detmers",
+    "first": "Reid",
+    "last": "Detmers",
     "num": 48,
     "personId": "672282",
     "team": "LAA",
@@ -6839,6 +7555,8 @@ export const pitchers = [
   },
   {
     "name": "Walbert Ureña",
+    "first": "Walbert",
+    "last": "Ureña",
     "num": 57,
     "personId": "700712",
     "team": "LAA",
@@ -6860,6 +7578,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Johnson",
+    "first": "Ryan",
+    "last": "Johnson",
     "num": 32,
     "personId": "696270",
     "team": "LAA",
@@ -6878,6 +7598,8 @@ export const pitchers = [
   },
   {
     "name": "Grayson Rodriguez",
+    "first": "Grayson",
+    "last": "Rodriguez",
     "num": 21,
     "personId": "680570",
     "team": "LAA",
@@ -6896,6 +7618,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Watson",
+    "first": "Ryan",
+    "last": "Watson",
     "num": 56,
     "personId": "670245",
     "team": "LAA",
@@ -6916,6 +7640,8 @@ export const pitchers = [
   },
   {
     "name": "Yusei Kikuchi",
+    "first": "Yusei",
+    "last": "Kikuchi",
     "num": 16,
     "personId": "579328",
     "team": "LAA",
@@ -6936,6 +7662,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Kochanowicz",
+    "first": "Jack",
+    "last": "Kochanowicz",
     "num": 41,
     "personId": "686799",
     "team": "LAA",
@@ -6957,6 +7685,8 @@ export const pitchers = [
   },
   {
     "name": "Mitch Farris",
+    "first": "Mitch",
+    "last": "Farris",
     "num": 70,
     "personId": "815083",
     "team": "LAA",
@@ -6977,6 +7707,8 @@ export const pitchers = [
   },
   {
     "name": "José Fermin",
+    "first": "José",
+    "last": "Fermin",
     "num": 65,
     "personId": "820862",
     "team": "LAA",
@@ -6998,6 +7730,8 @@ export const pitchers = [
   },
   {
     "name": "Sam Bachman",
+    "first": "Sam",
+    "last": "Bachman",
     "num": 40,
     "personId": "696147",
     "team": "LAA",
@@ -7018,6 +7752,8 @@ export const pitchers = [
   },
   {
     "name": "Sam Aldegheri",
+    "first": "Sam",
+    "last": "Aldegheri",
     "num": 61,
     "personId": "691951",
     "team": "LAA",
@@ -7038,6 +7774,8 @@ export const pitchers = [
   },
   {
     "name": "Samy Natera",
+    "first": "Samy",
+    "last": "Natera",
     "num": 52,
     "personId": "696519",
     "team": "LAA",
@@ -7058,6 +7796,8 @@ export const pitchers = [
   },
   {
     "name": "George Klassen",
+    "first": "George",
+    "last": "Klassen",
     "num": 58,
     "personId": "691946",
     "team": "LAA",
@@ -7078,6 +7818,8 @@ export const pitchers = [
   },
   {
     "name": "Sammy Peralta",
+    "first": "Sammy",
+    "last": "Peralta",
     "num": 67,
     "personId": "671111",
     "team": "LAA",
@@ -7096,6 +7838,8 @@ export const pitchers = [
   },
   {
     "name": "Tayler Saucedo",
+    "first": "Tayler",
+    "last": "Saucedo",
     "num": 55,
     "personId": "642048",
     "team": "LAA",
@@ -7116,6 +7860,8 @@ export const pitchers = [
   },
   {
     "name": "Shaun Anderson",
+    "first": "Shaun",
+    "last": "Anderson",
     "num": 1,
     "personId": "641312",
     "team": "LAA",
@@ -7136,6 +7882,8 @@ export const pitchers = [
   },
   {
     "name": "Luke Murphy",
+    "first": "Luke",
+    "last": "Murphy",
     "num": 72,
     "personId": "684665",
     "team": "LAA",
@@ -7156,6 +7904,8 @@ export const pitchers = [
   },
   {
     "name": "Blake Weiman",
+    "first": "Blake",
+    "last": "Weiman",
     "num": 68,
     "personId": "676620",
     "team": "LAA",
@@ -7176,6 +7926,8 @@ export const pitchers = [
   },
   {
     "name": "Trevor Martin",
+    "first": "Trevor",
+    "last": "Martin",
     "num": 54,
     "personId": "694680",
     "team": "LAA",
@@ -7196,6 +7948,8 @@ export const pitchers = [
   },
   {
     "name": "Ben Joyce",
+    "first": "Ben",
+    "last": "Joyce",
     "num": 44,
     "personId": "690829",
     "team": "LAA",
@@ -7217,6 +7971,8 @@ export const pitchers = [
   },
   {
     "name": "Brett Kerry",
+    "first": "Brett",
+    "last": "Kerry",
     "num": 71,
     "personId": "695049",
     "team": "LAA",
@@ -7237,6 +7993,8 @@ export const pitchers = [
   },
   {
     "name": "Nick Sandlin",
+    "first": "Nick",
+    "last": "Sandlin",
     "num": 6,
     "personId": "680704",
     "team": "LAA",
@@ -7255,6 +8013,8 @@ export const pitchers = [
   },
   {
     "name": "Alek Manoah",
+    "first": "Alek",
+    "last": "Manoah",
     "num": 47,
     "personId": "666201",
     "team": "LAA",
@@ -7273,6 +8033,8 @@ export const pitchers = [
   },
   {
     "name": "Joey Lucchesi",
+    "first": "Joey",
+    "last": "Lucchesi",
     "num": 7,
     "personId": "664192",
     "team": "LAA",
@@ -7291,6 +8053,8 @@ export const pitchers = [
   },
   {
     "name": "Yoshinobu Yamamoto",
+    "first": "Yoshinobu",
+    "last": "Yamamoto",
     "num": 18,
     "personId": "808967",
     "team": "LAD",
@@ -7309,6 +8073,8 @@ export const pitchers = [
   },
   {
     "name": "Tarik Skubal",
+    "first": "Tarik",
+    "last": "Skubal",
     "num": 29,
     "personId": "669373",
     "team": "LAD",
@@ -7330,6 +8096,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Wrobleski",
+    "first": "Justin",
+    "last": "Wrobleski",
     "num": 70,
     "personId": "680736",
     "team": "LAD",
@@ -7348,6 +8116,8 @@ export const pitchers = [
   },
   {
     "name": "Roki Sasaki",
+    "first": "Roki",
+    "last": "Sasaki",
     "num": 11,
     "personId": "808963",
     "team": "LAD",
@@ -7366,6 +8136,8 @@ export const pitchers = [
   },
   {
     "name": "Emmet Sheehan",
+    "first": "Emmet",
+    "last": "Sheehan",
     "num": 80,
     "personId": "686218",
     "team": "LAD",
@@ -7386,6 +8158,8 @@ export const pitchers = [
   },
   {
     "name": "Eric Lauer",
+    "first": "Eric",
+    "last": "Lauer",
     "num": 33,
     "personId": "641778",
     "team": "LAD",
@@ -7404,6 +8178,8 @@ export const pitchers = [
   },
   {
     "name": "Shohei Ohtani",
+    "first": "Shohei",
+    "last": "Ohtani",
     "num": 17,
     "personId": "660271",
     "team": "LAD",
@@ -7424,6 +8200,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Glasnow",
+    "first": "Tyler",
+    "last": "Glasnow",
     "num": 31,
     "personId": "607192",
     "team": "LAD",
@@ -7444,6 +8222,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Dreyer",
+    "first": "Jack",
+    "last": "Dreyer",
     "num": 86,
     "personId": "676263",
     "team": "LAD",
@@ -7464,6 +8244,8 @@ export const pitchers = [
   },
   {
     "name": "Tanner Scott",
+    "first": "Tanner",
+    "last": "Scott",
     "num": 66,
     "personId": "656945",
     "team": "LAD",
@@ -7484,6 +8266,8 @@ export const pitchers = [
   },
   {
     "name": "Edgardo Henriquez",
+    "first": "Edgardo",
+    "last": "Henriquez",
     "num": 60,
     "personId": "683618",
     "team": "LAD",
@@ -7504,6 +8288,8 @@ export const pitchers = [
   },
   {
     "name": "Alex Vesia",
+    "first": "Alex",
+    "last": "Vesia",
     "num": 51,
     "personId": "681911",
     "team": "LAD",
@@ -7525,6 +8311,8 @@ export const pitchers = [
   },
   {
     "name": "Kris Bubic",
+    "first": "Kris",
+    "last": "Bubic",
     "num": 40,
     "personId": "663460",
     "team": "LAD",
@@ -7545,6 +8333,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Hurt",
+    "first": "Kyle",
+    "last": "Hurt",
     "num": 63,
     "personId": "669165",
     "team": "LAD",
@@ -7566,6 +8356,8 @@ export const pitchers = [
   },
   {
     "name": "Blake Snell",
+    "first": "Blake",
+    "last": "Snell",
     "num": 7,
     "personId": "605483",
     "team": "LAD",
@@ -7586,6 +8378,8 @@ export const pitchers = [
   },
   {
     "name": "Will Klein",
+    "first": "Will",
+    "last": "Klein",
     "num": 61,
     "personId": "694361",
     "team": "LAD",
@@ -7608,6 +8402,8 @@ export const pitchers = [
   },
   {
     "name": "Blake Treinen",
+    "first": "Blake",
+    "last": "Treinen",
     "num": 49,
     "personId": "595014",
     "team": "LAD",
@@ -7626,6 +8422,8 @@ export const pitchers = [
   },
   {
     "name": "Seth Halvorsen",
+    "first": "Seth",
+    "last": "Halvorsen",
     "num": 56,
     "personId": "678020",
     "team": "LAD",
@@ -7646,6 +8444,8 @@ export const pitchers = [
   },
   {
     "name": "Brock Stewart",
+    "first": "Brock",
+    "last": "Stewart",
     "num": 41,
     "personId": "592779",
     "team": "LAD",
@@ -7666,6 +8466,8 @@ export const pitchers = [
   },
   {
     "name": "Evan Phillips",
+    "first": "Evan",
+    "last": "Phillips",
     "num": 59,
     "personId": "623465",
     "team": "LAD",
@@ -7686,6 +8488,8 @@ export const pitchers = [
   },
   {
     "name": "Jonathan Hernández",
+    "first": "Jonathan",
+    "last": "Hernández",
     "num": 26,
     "personId": "642546",
     "team": "LAD",
@@ -7706,6 +8510,8 @@ export const pitchers = [
   },
   {
     "name": "Edwin Díaz",
+    "first": "Edwin",
+    "last": "Díaz",
     "num": 3,
     "personId": "621242",
     "team": "LAD",
@@ -7727,6 +8533,8 @@ export const pitchers = [
   },
   {
     "name": "Charlie Barnes",
+    "first": "Charlie",
+    "last": "Barnes",
     "num": 2,
     "personId": "656212",
     "team": "LAD",
@@ -7747,6 +8555,8 @@ export const pitchers = [
   },
   {
     "name": "Landon Knack",
+    "first": "Landon",
+    "last": "Knack",
     "num": 96,
     "personId": "689017",
     "team": "LAD",
@@ -7767,6 +8577,8 @@ export const pitchers = [
   },
   {
     "name": "Paul Gervase",
+    "first": "Paul",
+    "last": "Gervase",
     "num": 65,
     "personId": "801434",
     "team": "LAD",
@@ -7785,6 +8597,8 @@ export const pitchers = [
   },
   {
     "name": "Bobby Miller",
+    "first": "Bobby",
+    "last": "Miller",
     "num": 28,
     "personId": "676272",
     "team": "LAD",
@@ -7803,6 +8617,8 @@ export const pitchers = [
   },
   {
     "name": "Wyatt Mills",
+    "first": "Wyatt",
+    "last": "Mills",
     "num": 4,
     "personId": "670090",
     "team": "LAD",
@@ -7821,6 +8637,8 @@ export const pitchers = [
   },
   {
     "name": "Cole Irvin",
+    "first": "Cole",
+    "last": "Irvin",
     "num": 38,
     "personId": "608344",
     "team": "LAD",
@@ -7839,6 +8657,8 @@ export const pitchers = [
   },
   {
     "name": "Ben Casparius",
+    "first": "Ben",
+    "last": "Casparius",
     "num": 78,
     "personId": "676508",
     "team": "LAD",
@@ -7857,6 +8677,8 @@ export const pitchers = [
   },
   {
     "name": "Jake Eder",
+    "first": "Jake",
+    "last": "Eder",
     "num": 56,
     "personId": "671109",
     "team": "LAD",
@@ -7875,6 +8697,8 @@ export const pitchers = [
   },
   {
     "name": "Sandy Alcantara",
+    "first": "Sandy",
+    "last": "Alcantara",
     "num": 22,
     "personId": "645261",
     "team": "MIA",
@@ -7895,6 +8719,8 @@ export const pitchers = [
   },
   {
     "name": "Eury Pérez",
+    "first": "Eury",
+    "last": "Pérez",
     "num": 39,
     "personId": "691587",
     "team": "MIA",
@@ -7913,6 +8739,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Phillips",
+    "first": "Tyler",
+    "last": "Phillips",
     "num": 30,
     "personId": "663969",
     "team": "MIA",
@@ -7933,6 +8761,8 @@ export const pitchers = [
   },
   {
     "name": "Janson Junk",
+    "first": "Janson",
+    "last": "Junk",
     "num": 26,
     "personId": "676083",
     "team": "MIA",
@@ -7951,6 +8781,8 @@ export const pitchers = [
   },
   {
     "name": "Max Meyer",
+    "first": "Max",
+    "last": "Meyer",
     "num": 23,
     "personId": "676974",
     "team": "MIA",
@@ -7969,6 +8801,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Gusto",
+    "first": "Ryan",
+    "last": "Gusto",
     "num": 65,
     "personId": "687473",
     "team": "MIA",
@@ -7987,6 +8821,8 @@ export const pitchers = [
   },
   {
     "name": "Calvin Faucher",
+    "first": "Calvin",
+    "last": "Faucher",
     "num": 53,
     "personId": "676534",
     "team": "MIA",
@@ -8007,6 +8843,8 @@ export const pitchers = [
   },
   {
     "name": "Michael Petersen",
+    "first": "Michael",
+    "last": "Petersen",
     "num": 49,
     "personId": "656848",
     "team": "MIA",
@@ -8028,6 +8866,8 @@ export const pitchers = [
   },
   {
     "name": "Victor Vodnik",
+    "first": "Victor",
+    "last": "Vodnik",
     "num": 38,
     "personId": "680767",
     "team": "MIA",
@@ -8049,6 +8889,8 @@ export const pitchers = [
   },
   {
     "name": "Cade Gibson",
+    "first": "Cade",
+    "last": "Gibson",
     "num": 58,
     "personId": "806188",
     "team": "MIA",
@@ -8067,6 +8909,8 @@ export const pitchers = [
   },
   {
     "name": "John King",
+    "first": "John",
+    "last": "King",
     "num": 1,
     "personId": "667463",
     "team": "MIA",
@@ -8085,6 +8929,8 @@ export const pitchers = [
   },
   {
     "name": "Pete Fairbanks",
+    "first": "Pete",
+    "last": "Fairbanks",
     "num": 29,
     "personId": "664126",
     "team": "MIA",
@@ -8106,6 +8952,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Zuber",
+    "first": "Tyler",
+    "last": "Zuber",
     "num": 55,
     "personId": "676604",
     "team": "MIA",
@@ -8124,6 +8972,8 @@ export const pitchers = [
   },
   {
     "name": "Anthony Bender",
+    "first": "Anthony",
+    "last": "Bender",
     "num": 37,
     "personId": "669622",
     "team": "MIA",
@@ -8144,6 +8994,8 @@ export const pitchers = [
   },
   {
     "name": "Josh Ekness",
+    "first": "Josh",
+    "last": "Ekness",
     "num": 95,
     "personId": "694795",
     "team": "MIA",
@@ -8164,6 +9016,8 @@ export const pitchers = [
   },
   {
     "name": "Dax Fulton",
+    "first": "Dax",
+    "last": "Fulton",
     "num": 90,
     "personId": "690978",
     "team": "MIA",
@@ -8185,6 +9039,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Nardi",
+    "first": "Andrew",
+    "last": "Nardi",
     "num": 43,
     "personId": "677053",
     "team": "MIA",
@@ -8206,6 +9062,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Ralston",
+    "first": "Jack",
+    "last": "Ralston",
     "num": 79,
     "personId": "667652",
     "team": "MIA",
@@ -8226,6 +9084,8 @@ export const pitchers = [
   },
   {
     "name": "William Kempner",
+    "first": "William",
+    "last": "Kempner",
     "num": 71,
     "personId": "687531",
     "team": "MIA",
@@ -8246,6 +9106,8 @@ export const pitchers = [
   },
   {
     "name": "Bradley Blalock",
+    "first": "Bradley",
+    "last": "Blalock",
     "num": 31,
     "personId": "687134",
     "team": "MIA",
@@ -8264,6 +9126,8 @@ export const pitchers = [
   },
   {
     "name": "Braxton Garrett",
+    "first": "Braxton",
+    "last": "Garrett",
     "num": 60,
     "personId": "666129",
     "team": "MIA",
@@ -8282,6 +9146,8 @@ export const pitchers = [
   },
   {
     "name": "Robby Snelling",
+    "first": "Robby",
+    "last": "Snelling",
     "num": 61,
     "personId": "702281",
     "team": "MIA",
@@ -8300,6 +9166,8 @@ export const pitchers = [
   },
   {
     "name": "Patrick Monteverde",
+    "first": "Patrick",
+    "last": "Monteverde",
     "num": 44,
     "personId": "687287",
     "team": "MIA",
@@ -8318,6 +9186,8 @@ export const pitchers = [
   },
   {
     "name": "Zach Brzykcy",
+    "first": "Zach",
+    "last": "Brzykcy",
     "num": 62,
     "personId": "694350",
     "team": "MIA",
@@ -8336,6 +9206,8 @@ export const pitchers = [
   },
   {
     "name": "Josh White",
+    "first": "Josh",
+    "last": "White",
     "num": 59,
     "personId": "687985",
     "team": "MIA",
@@ -8354,6 +9226,8 @@ export const pitchers = [
   },
   {
     "name": "Jacob Misiorowski",
+    "first": "Jacob",
+    "last": "Misiorowski",
     "num": 32,
     "personId": "694819",
     "team": "MIL",
@@ -8374,6 +9248,8 @@ export const pitchers = [
   },
   {
     "name": "Dustin May",
+    "first": "Dustin",
+    "last": "May",
     "num": 21,
     "personId": "669160",
     "team": "MIL",
@@ -8392,6 +9268,8 @@ export const pitchers = [
   },
   {
     "name": "Shane Drohan",
+    "first": "Shane",
+    "last": "Drohan",
     "num": 55,
     "personId": "675660",
     "team": "MIL",
@@ -8410,6 +9288,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Harrison",
+    "first": "Kyle",
+    "last": "Harrison",
     "num": 52,
     "personId": "690986",
     "team": "MIL",
@@ -8430,6 +9310,8 @@ export const pitchers = [
   },
   {
     "name": "Robert Gasser",
+    "first": "Robert",
+    "last": "Gasser",
     "num": 54,
     "personId": "688107",
     "team": "MIL",
@@ -8448,6 +9330,8 @@ export const pitchers = [
   },
   {
     "name": "Chad Patrick",
+    "first": "Chad",
+    "last": "Patrick",
     "num": 39,
     "personId": "694477",
     "team": "MIL",
@@ -8469,6 +9353,8 @@ export const pitchers = [
   },
   {
     "name": "Logan Henderson",
+    "first": "Logan",
+    "last": "Henderson",
     "num": 43,
     "personId": "701656",
     "team": "MIL",
@@ -8490,6 +9376,8 @@ export const pitchers = [
   },
   {
     "name": "Brandon Sproat",
+    "first": "Brandon",
+    "last": "Sproat",
     "num": 23,
     "personId": "687075",
     "team": "MIL",
@@ -8510,6 +9398,8 @@ export const pitchers = [
   },
   {
     "name": "Aaron Ashby",
+    "first": "Aaron",
+    "last": "Ashby",
     "num": 26,
     "personId": "676879",
     "team": "MIL",
@@ -8533,6 +9423,8 @@ export const pitchers = [
   },
   {
     "name": "Antonio Senzatela",
+    "first": "Antonio",
+    "last": "Senzatela",
     "num": 49,
     "personId": "622608",
     "team": "MIL",
@@ -8553,6 +9445,8 @@ export const pitchers = [
   },
   {
     "name": "Trevor Megill",
+    "first": "Trevor",
+    "last": "Megill",
     "num": 29,
     "personId": "656730",
     "team": "MIL",
@@ -8573,6 +9467,8 @@ export const pitchers = [
   },
   {
     "name": "DL Hall",
+    "first": "DL",
+    "last": "Hall",
     "num": 37,
     "personId": "669084",
     "team": "MIL",
@@ -8593,6 +9489,8 @@ export const pitchers = [
   },
   {
     "name": "Abner Uribe",
+    "first": "Abner",
+    "last": "Uribe",
     "num": 45,
     "personId": "682842",
     "team": "MIL",
@@ -8611,6 +9509,8 @@ export const pitchers = [
   },
   {
     "name": "Grant Anderson",
+    "first": "Grant",
+    "last": "Anderson",
     "num": 56,
     "personId": "681982",
     "team": "MIL",
@@ -8629,6 +9529,8 @@ export const pitchers = [
   },
   {
     "name": "JoJo Romero",
+    "first": "JoJo",
+    "last": "Romero",
     "num": 33,
     "personId": "668941",
     "team": "MIL",
@@ -8647,6 +9549,8 @@ export const pitchers = [
   },
   {
     "name": "Brandon Woodruff",
+    "first": "Brandon",
+    "last": "Woodruff",
     "num": 53,
     "personId": "605540",
     "team": "MIL",
@@ -8665,6 +9569,8 @@ export const pitchers = [
   },
   {
     "name": "Lance McCullers Jr.",
+    "first": "Lance",
+    "last": "McCullers Jr.",
     "num": 50,
     "personId": "621121",
     "team": "MIL",
@@ -8685,6 +9591,8 @@ export const pitchers = [
   },
   {
     "name": "Bryse Wilson",
+    "first": "Bryse",
+    "last": "Wilson",
     "num": 41,
     "personId": "669060",
     "team": "MIL",
@@ -8705,6 +9613,8 @@ export const pitchers = [
   },
   {
     "name": "Coleman Crow",
+    "first": "Coleman",
+    "last": "Crow",
     "num": 57,
     "personId": "689441",
     "team": "MIL",
@@ -8723,6 +9633,8 @@ export const pitchers = [
   },
   {
     "name": "Colton Gordon",
+    "first": "Colton",
+    "last": "Gordon",
     "num": 36,
     "personId": "676467",
     "team": "MIL",
@@ -8741,6 +9653,8 @@ export const pitchers = [
   },
   {
     "name": "Garrett Stallings",
+    "first": "Garrett",
+    "last": "Stallings",
     "num": 31,
     "personId": "668831",
     "team": "MIL",
@@ -8761,6 +9675,8 @@ export const pitchers = [
   },
   {
     "name": "Angel Zerpa",
+    "first": "Angel",
+    "last": "Zerpa",
     "num": 61,
     "personId": "672582",
     "team": "MIL",
@@ -8782,6 +9698,8 @@ export const pitchers = [
   },
   {
     "name": "Carlos Rodriguez",
+    "first": "Carlos",
+    "last": "Rodriguez",
     "num": 27,
     "personId": "692230",
     "team": "MIL",
@@ -8800,6 +9718,8 @@ export const pitchers = [
   },
   {
     "name": "Jared Koenig",
+    "first": "Jared",
+    "last": "Koenig",
     "num": 47,
     "personId": "657649",
     "team": "MIL",
@@ -8818,6 +9738,8 @@ export const pitchers = [
   },
   {
     "name": "Brian Fitzpatrick",
+    "first": "Brian",
+    "last": "Fitzpatrick",
     "num": 35,
     "personId": "702153",
     "team": "MIL",
@@ -8836,6 +9758,8 @@ export const pitchers = [
   },
   {
     "name": "Lyon Richardson",
+    "first": "Lyon",
+    "last": "Richardson",
     "num": 48,
     "personId": "680689",
     "team": "MIL",
@@ -8854,6 +9778,8 @@ export const pitchers = [
   },
   {
     "name": "Thomas Pannone",
+    "first": "Thomas",
+    "last": "Pannone",
     "num": 33,
     "personId": "623381",
     "team": "MIL",
@@ -8872,6 +9798,8 @@ export const pitchers = [
   },
   {
     "name": "Taj Bradley",
+    "first": "Taj",
+    "last": "Bradley",
     "num": 26,
     "personId": "671737",
     "team": "MIN",
@@ -8892,6 +9820,8 @@ export const pitchers = [
   },
   {
     "name": "Joe Ryan",
+    "first": "Joe",
+    "last": "Ryan",
     "num": 41,
     "personId": "657746",
     "team": "MIN",
@@ -8912,6 +9842,8 @@ export const pitchers = [
   },
   {
     "name": "Bailey Ober",
+    "first": "Bailey",
+    "last": "Ober",
     "num": 17,
     "personId": "641927",
     "team": "MIN",
@@ -8930,6 +9862,8 @@ export const pitchers = [
   },
   {
     "name": "Zebby Matthews",
+    "first": "Zebby",
+    "last": "Matthews",
     "num": 52,
     "personId": "805673",
     "team": "MIN",
@@ -8948,6 +9882,8 @@ export const pitchers = [
   },
   {
     "name": "Connor Prielipp",
+    "first": "Connor",
+    "last": "Prielipp",
     "num": 61,
     "personId": "687570",
     "team": "MIN",
@@ -8966,6 +9902,8 @@ export const pitchers = [
   },
   {
     "name": "Dean Kremer",
+    "first": "Dean",
+    "last": "Kremer",
     "num": 13,
     "personId": "665152",
     "team": "MIN",
@@ -8984,6 +9922,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Morris",
+    "first": "Andrew",
+    "last": "Morris",
     "num": 78,
     "personId": "702193",
     "team": "MIN",
@@ -9004,6 +9944,8 @@ export const pitchers = [
   },
   {
     "name": "Yoendrys Gómez",
+    "first": "Yoendrys",
+    "last": "Gómez",
     "num": 94,
     "personId": "672782",
     "team": "MIN",
@@ -9024,6 +9966,8 @@ export const pitchers = [
   },
   {
     "name": "Jeff Hoffman",
+    "first": "Jeff",
+    "last": "Hoffman",
     "num": 24,
     "personId": "656546",
     "team": "MIN",
@@ -9045,6 +9989,8 @@ export const pitchers = [
   },
   {
     "name": "Taylor Rogers",
+    "first": "Taylor",
+    "last": "Rogers",
     "num": 55,
     "personId": "573124",
     "team": "MIN",
@@ -9065,6 +10011,8 @@ export const pitchers = [
   },
   {
     "name": "Tommy Nance",
+    "first": "Tommy",
+    "last": "Nance",
     "num": 35,
     "personId": "667297",
     "team": "MIN",
@@ -9085,6 +10033,8 @@ export const pitchers = [
   },
   {
     "name": "Travis Adams",
+    "first": "Travis",
+    "last": "Adams",
     "num": 45,
     "personId": "701519",
     "team": "MIN",
@@ -9103,6 +10053,8 @@ export const pitchers = [
   },
   {
     "name": "Kody Funderburk",
+    "first": "Kody",
+    "last": "Funderburk",
     "num": 57,
     "personId": "681892",
     "team": "MIN",
@@ -9123,6 +10075,8 @@ export const pitchers = [
   },
   {
     "name": "A.J. Minter",
+    "first": "A.J.",
+    "last": "Minter",
     "num": 33,
     "personId": "621345",
     "team": "MIN",
@@ -9143,6 +10097,8 @@ export const pitchers = [
   },
   {
     "name": "Eric Orze",
+    "first": "Eric",
+    "last": "Orze",
     "num": 19,
     "personId": "679358",
     "team": "MIN",
@@ -9163,6 +10119,8 @@ export const pitchers = [
   },
   {
     "name": "Anthony Banda",
+    "first": "Anthony",
+    "last": "Banda",
     "num": 43,
     "personId": "607455",
     "team": "MIN",
@@ -9181,6 +10139,8 @@ export const pitchers = [
   },
   {
     "name": "Mike Paredes",
+    "first": "Mike",
+    "last": "Paredes",
     "num": 53,
     "personId": "702474",
     "team": "MIN",
@@ -9199,6 +10159,8 @@ export const pitchers = [
   },
   {
     "name": "Kendry Rojas",
+    "first": "Kendry",
+    "last": "Rojas",
     "num": 60,
     "personId": "696070",
     "team": "MIN",
@@ -9220,6 +10182,8 @@ export const pitchers = [
   },
   {
     "name": "Mick Abel",
+    "first": "Mick",
+    "last": "Abel",
     "num": 20,
     "personId": "690953",
     "team": "MIN",
@@ -9241,6 +10205,8 @@ export const pitchers = [
   },
   {
     "name": "Cody Laweryson",
+    "first": "Cody",
+    "last": "Laweryson",
     "num": 6,
     "personId": "689520",
     "team": "MIN",
@@ -9261,6 +10227,8 @@ export const pitchers = [
   },
   {
     "name": "Luis García",
+    "first": "Luis",
+    "last": "García",
     "num": 40,
     "personId": "472610",
     "team": "MIN",
@@ -9279,6 +10247,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Anderson",
+    "first": "Jack",
+    "last": "Anderson",
     "num": 30,
     "personId": "681252",
     "team": "MIN",
@@ -9297,6 +10267,8 @@ export const pitchers = [
   },
   {
     "name": "Cole Sands",
+    "first": "Cole",
+    "last": "Sands",
     "num": 44,
     "personId": "663485",
     "team": "MIN",
@@ -9315,6 +10287,8 @@ export const pitchers = [
   },
   {
     "name": "Garrett Acton",
+    "first": "Garrett",
+    "last": "Acton",
     "num": 50,
     "personId": "670183",
     "team": "MIN",
@@ -9336,6 +10310,8 @@ export const pitchers = [
   },
   {
     "name": "Austin Voth",
+    "first": "Austin",
+    "last": "Voth",
     "num": 7,
     "personId": "608723",
     "team": "MIN",
@@ -9356,6 +10332,8 @@ export const pitchers = [
   },
   {
     "name": "Marco Raya",
+    "first": "Marco",
+    "last": "Raya",
     "num": 54,
     "personId": "694397",
     "team": "MIN",
@@ -9374,6 +10352,8 @@ export const pitchers = [
   },
   {
     "name": "Woo-Suk Go",
+    "first": "Woo-Suk",
+    "last": "Go",
     "num": 1,
     "personId": "808970",
     "team": "MIN",
@@ -9392,6 +10372,8 @@ export const pitchers = [
   },
   {
     "name": "Nolan McLean",
+    "first": "Nolan",
+    "last": "McLean",
     "num": 26,
     "personId": "690997",
     "team": "NYM",
@@ -9410,6 +10392,8 @@ export const pitchers = [
   },
   {
     "name": "Sean Manaea",
+    "first": "Sean",
+    "last": "Manaea",
     "num": 59,
     "personId": "640455",
     "team": "NYM",
@@ -9428,6 +10412,8 @@ export const pitchers = [
   },
   {
     "name": "Christian Scott",
+    "first": "Christian",
+    "last": "Scott",
     "num": 45,
     "personId": "681035",
     "team": "NYM",
@@ -9448,6 +10434,8 @@ export const pitchers = [
   },
   {
     "name": "Zac Thornton",
+    "first": "Zac",
+    "last": "Thornton",
     "num": 49,
     "personId": "804267",
     "team": "NYM",
@@ -9468,6 +10456,8 @@ export const pitchers = [
   },
   {
     "name": "Kodai Senga",
+    "first": "Kodai",
+    "last": "Senga",
     "num": 34,
     "personId": "673540",
     "team": "NYM",
@@ -9489,6 +10479,8 @@ export const pitchers = [
   },
   {
     "name": "Tobias Myers",
+    "first": "Tobias",
+    "last": "Myers",
     "num": 32,
     "personId": "668964",
     "team": "NYM",
@@ -9507,6 +10499,8 @@ export const pitchers = [
   },
   {
     "name": "Austin Warren",
+    "first": "Austin",
+    "last": "Warren",
     "num": 44,
     "personId": "681810",
     "team": "NYM",
@@ -9527,6 +10521,8 @@ export const pitchers = [
   },
   {
     "name": "Cionel Pérez",
+    "first": "Cionel",
+    "last": "Pérez",
     "num": 52,
     "personId": "672335",
     "team": "NYM",
@@ -9547,6 +10543,8 @@ export const pitchers = [
   },
   {
     "name": "Devin Williams",
+    "first": "Devin",
+    "last": "Williams",
     "num": 38,
     "personId": "642207",
     "team": "NYM",
@@ -9568,6 +10566,8 @@ export const pitchers = [
   },
   {
     "name": "Jonathan Pintaro",
+    "first": "Jonathan",
+    "last": "Pintaro",
     "num": 91,
     "personId": "702752",
     "team": "NYM",
@@ -9588,6 +10588,8 @@ export const pitchers = [
   },
   {
     "name": "Jonah Tong",
+    "first": "Jonah",
+    "last": "Tong",
     "num": 21,
     "personId": "804636",
     "team": "NYM",
@@ -9609,6 +10611,8 @@ export const pitchers = [
   },
   {
     "name": "Robert Stock",
+    "first": "Robert",
+    "last": "Stock",
     "num": 89,
     "personId": "476594",
     "team": "NYM",
@@ -9629,6 +10633,8 @@ export const pitchers = [
   },
   {
     "name": "Daniel Duarte",
+    "first": "Daniel",
+    "last": "Duarte",
     "num": 54,
     "personId": "650960",
     "team": "NYM",
@@ -9647,6 +10653,8 @@ export const pitchers = [
   },
   {
     "name": "Nate Lavender",
+    "first": "Nate",
+    "last": "Lavender",
     "num": 94,
     "personId": "681320",
     "team": "NYM",
@@ -9668,6 +10676,8 @@ export const pitchers = [
   },
   {
     "name": "Xzavion Curry",
+    "first": "Xzavion",
+    "last": "Curry",
     "num": 53,
     "personId": "675540",
     "team": "NYM",
@@ -9686,6 +10696,8 @@ export const pitchers = [
   },
   {
     "name": "Jefry Yan",
+    "first": "Jefry",
+    "last": "Yan",
     "num": 84,
     "personId": "642376",
     "team": "NYM",
@@ -9707,6 +10719,8 @@ export const pitchers = [
   },
   {
     "name": "Dedniel Núñez",
+    "first": "Dedniel",
+    "last": "Núñez",
     "num": 72,
     "personId": "673380",
     "team": "NYM",
@@ -9727,6 +10741,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Weisenburger",
+    "first": "Jack",
+    "last": "Weisenburger",
     "num": 82,
     "personId": "674073",
     "team": "NYM",
@@ -9745,6 +10761,8 @@ export const pitchers = [
   },
   {
     "name": "Joey Gerber",
+    "first": "Joey",
+    "last": "Gerber",
     "num": 56,
     "personId": "680702",
     "team": "NYM",
@@ -9763,6 +10781,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Hagenman",
+    "first": "Justin",
+    "last": "Hagenman",
     "num": 47,
     "personId": "663795",
     "team": "NYM",
@@ -9781,6 +10801,8 @@ export const pitchers = [
   },
   {
     "name": "Chris Devenski",
+    "first": "Chris",
+    "last": "Devenski",
     "num": 56,
     "personId": "606965",
     "team": "NYM",
@@ -9799,6 +10821,8 @@ export const pitchers = [
   },
   {
     "name": "Chayce McDermott",
+    "first": "Chayce",
+    "last": "McDermott",
     "num": 43,
     "personId": "694646",
     "team": "NYM",
@@ -9817,6 +10841,8 @@ export const pitchers = [
   },
   {
     "name": "Carl Edwards Jr.",
+    "first": "Carl",
+    "last": "Edwards Jr.",
     "num": 79,
     "personId": "605218",
     "team": "NYM",
@@ -9835,6 +10861,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Seelinger",
+    "first": "Matt",
+    "last": "Seelinger",
     "num": 73,
     "personId": "676910",
     "team": "NYM",
@@ -9853,6 +10881,8 @@ export const pitchers = [
   },
   {
     "name": "Guillo Zuñiga",
+    "first": "Guillo",
+    "last": "Zuñiga",
     "num": 46,
     "personId": "670871",
     "team": "NYM",
@@ -9871,6 +10901,8 @@ export const pitchers = [
   },
   {
     "name": "Kevin Herget",
+    "first": "Kevin",
+    "last": "Herget",
     "num": 57,
     "personId": "643361",
     "team": "NYM",
@@ -9889,6 +10921,8 @@ export const pitchers = [
   },
   {
     "name": "Dylan Ross",
+    "first": "Dylan",
+    "last": "Ross",
     "num": 66,
     "personId": "697811",
     "team": "NYM",
@@ -9907,6 +10941,8 @@ export const pitchers = [
   },
   {
     "name": "Cam Schlittler",
+    "first": "Cam",
+    "last": "Schlittler",
     "num": 31,
     "personId": "693645",
     "team": "NYY",
@@ -9927,6 +10963,8 @@ export const pitchers = [
   },
   {
     "name": "Will Warren",
+    "first": "Will",
+    "last": "Warren",
     "num": 29,
     "personId": "701542",
     "team": "NYY",
@@ -9945,6 +10983,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Weathers",
+    "first": "Ryan",
+    "last": "Weathers",
     "num": 40,
     "personId": "677960",
     "team": "NYY",
@@ -9963,6 +11003,8 @@ export const pitchers = [
   },
   {
     "name": "Gerrit Cole",
+    "first": "Gerrit",
+    "last": "Cole",
     "num": 45,
     "personId": "543037",
     "team": "NYY",
@@ -9983,6 +11025,8 @@ export const pitchers = [
   },
   {
     "name": "Max Fried",
+    "first": "Max",
+    "last": "Fried",
     "num": 54,
     "personId": "608331",
     "team": "NYY",
@@ -10001,6 +11045,8 @@ export const pitchers = [
   },
   {
     "name": "Paul Blackburn",
+    "first": "Paul",
+    "last": "Blackburn",
     "num": 58,
     "personId": "621112",
     "team": "NYY",
@@ -10021,6 +11067,8 @@ export const pitchers = [
   },
   {
     "name": "Carlos Rodón",
+    "first": "Carlos",
+    "last": "Rodón",
     "num": 55,
     "personId": "607074",
     "team": "NYY",
@@ -10041,6 +11089,8 @@ export const pitchers = [
   },
   {
     "name": "Brent Headrick",
+    "first": "Brent",
+    "last": "Headrick",
     "num": 47,
     "personId": "687396",
     "team": "NYY",
@@ -10062,6 +11112,8 @@ export const pitchers = [
   },
   {
     "name": "David Bednar",
+    "first": "David",
+    "last": "Bednar",
     "num": 53,
     "personId": "670280",
     "team": "NYY",
@@ -10080,6 +11132,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Yarbrough",
+    "first": "Ryan",
+    "last": "Yarbrough",
     "num": 33,
     "personId": "642232",
     "team": "NYY",
@@ -10098,6 +11152,8 @@ export const pitchers = [
   },
   {
     "name": "John Schreiber",
+    "first": "John",
+    "last": "Schreiber",
     "num": 56,
     "personId": "670167",
     "team": "NYY",
@@ -10116,6 +11172,8 @@ export const pitchers = [
   },
   {
     "name": "Tim Hill",
+    "first": "Tim",
+    "last": "Hill",
     "num": 41,
     "personId": "657612",
     "team": "NYY",
@@ -10136,6 +11194,8 @@ export const pitchers = [
   },
   {
     "name": "Fernando Cruz",
+    "first": "Fernando",
+    "last": "Cruz",
     "num": 63,
     "personId": "518585",
     "team": "NYY",
@@ -10157,6 +11217,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Gil",
+    "first": "Luis",
+    "last": "Gil",
     "num": 81,
     "personId": "661563",
     "team": "NYY",
@@ -10177,6 +11239,8 @@ export const pitchers = [
   },
   {
     "name": "Elmer Rodríguez",
+    "first": "Elmer",
+    "last": "Rodríguez",
     "num": 71,
     "personId": "695684",
     "team": "NYY",
@@ -10197,6 +11261,8 @@ export const pitchers = [
   },
   {
     "name": "Yerry de los Santos",
+    "first": "Yerry",
+    "last": "de los Santos",
     "num": 73,
     "personId": "660787",
     "team": "NYY",
@@ -10215,6 +11281,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Topa",
+    "first": "Justin",
+    "last": "Topa",
     "num": 48,
     "personId": "623437",
     "team": "NYY",
@@ -10235,6 +11303,8 @@ export const pitchers = [
   },
   {
     "name": "Angel Chivilli",
+    "first": "Angel",
+    "last": "Chivilli",
     "num": 57,
     "personId": "683409",
     "team": "NYY",
@@ -10253,6 +11323,8 @@ export const pitchers = [
   },
   {
     "name": "Michael Fulmer",
+    "first": "Michael",
+    "last": "Fulmer",
     "num": 43,
     "personId": "605242",
     "team": "NYY",
@@ -10274,6 +11346,8 @@ export const pitchers = [
   },
   {
     "name": "Brendan Beck",
+    "first": "Brendan",
+    "last": "Beck",
     "num": 89,
     "personId": "694341",
     "team": "NYY",
@@ -10294,6 +11368,8 @@ export const pitchers = [
   },
   {
     "name": "Bradley Hanner",
+    "first": "Bradley",
+    "last": "Hanner",
     "num": 93,
     "personId": "690440",
     "team": "NYY",
@@ -10312,6 +11388,8 @@ export const pitchers = [
   },
   {
     "name": "Kervin Castro",
+    "first": "Kervin",
+    "last": "Castro",
     "num": 74,
     "personId": "665645",
     "team": "NYY",
@@ -10330,6 +11408,8 @@ export const pitchers = [
   },
   {
     "name": "Alexander Cornielle",
+    "first": "Alexander",
+    "last": "Cornielle",
     "num": 97,
     "personId": "529017",
     "team": "NYY",
@@ -10348,6 +11428,8 @@ export const pitchers = [
   },
   {
     "name": "Clarke Schmidt",
+    "first": "Clarke",
+    "last": "Schmidt",
     "num": 36,
     "personId": "657376",
     "team": "NYY",
@@ -10366,6 +11448,8 @@ export const pitchers = [
   },
   {
     "name": "Cristopher Sánchez",
+    "first": "Cristopher",
+    "last": "Sánchez",
     "num": 61,
     "personId": "650911",
     "team": "PHI",
@@ -10388,6 +11472,8 @@ export const pitchers = [
   },
   {
     "name": "Jesús Luzardo",
+    "first": "Jesús",
+    "last": "Luzardo",
     "num": 44,
     "personId": "666200",
     "team": "PHI",
@@ -10408,6 +11494,8 @@ export const pitchers = [
   },
   {
     "name": "Aaron Nola",
+    "first": "Aaron",
+    "last": "Nola",
     "num": 27,
     "personId": "605400",
     "team": "PHI",
@@ -10426,6 +11514,8 @@ export const pitchers = [
   },
   {
     "name": "Zack Wheeler",
+    "first": "Zack",
+    "last": "Wheeler",
     "num": 45,
     "personId": "554430",
     "team": "PHI",
@@ -10446,6 +11536,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Painter",
+    "first": "Andrew",
+    "last": "Painter",
     "num": 24,
     "personId": "691725",
     "team": "PHI",
@@ -10464,6 +11556,8 @@ export const pitchers = [
   },
   {
     "name": "Tim Mayza",
+    "first": "Tim",
+    "last": "Mayza",
     "num": 37,
     "personId": "641835",
     "team": "PHI",
@@ -10482,6 +11576,8 @@ export const pitchers = [
   },
   {
     "name": "Jhoan Duran",
+    "first": "Jhoan",
+    "last": "Duran",
     "num": 59,
     "personId": "661395",
     "team": "PHI",
@@ -10504,6 +11600,8 @@ export const pitchers = [
   },
   {
     "name": "José Alvarado",
+    "first": "José",
+    "last": "Alvarado",
     "num": 46,
     "personId": "621237",
     "team": "PHI",
@@ -10525,6 +11623,8 @@ export const pitchers = [
   },
   {
     "name": "Orion Kerkering",
+    "first": "Orion",
+    "last": "Kerkering",
     "num": 50,
     "personId": "689147",
     "team": "PHI",
@@ -10545,6 +11645,8 @@ export const pitchers = [
   },
   {
     "name": "Jonathan Bowlan",
+    "first": "Jonathan",
+    "last": "Bowlan",
     "num": 52,
     "personId": "680742",
     "team": "PHI",
@@ -10565,6 +11667,8 @@ export const pitchers = [
   },
   {
     "name": "Chase Shugart",
+    "first": "Chase",
+    "last": "Shugart",
     "num": 55,
     "personId": "663767",
     "team": "PHI",
@@ -10583,6 +11687,8 @@ export const pitchers = [
   },
   {
     "name": "Brooks Raley",
+    "first": "Brooks",
+    "last": "Raley",
     "num": 30,
     "personId": "548384",
     "team": "PHI",
@@ -10601,6 +11707,8 @@ export const pitchers = [
   },
   {
     "name": "Caleb Kilian",
+    "first": "Caleb",
+    "last": "Kilian",
     "num": 56,
     "personId": "668873",
     "team": "PHI",
@@ -10622,6 +11730,8 @@ export const pitchers = [
   },
   {
     "name": "Tanner Banks",
+    "first": "Tanner",
+    "last": "Banks",
     "num": 58,
     "personId": "621383",
     "team": "PHI",
@@ -10640,6 +11750,8 @@ export const pitchers = [
   },
   {
     "name": "José Urquidy",
+    "first": "José",
+    "last": "Urquidy",
     "num": 70,
     "personId": "664353",
     "team": "PHI",
@@ -10660,6 +11772,8 @@ export const pitchers = [
   },
   {
     "name": "Brad Keller",
+    "first": "Brad",
+    "last": "Keller",
     "num": 40,
     "personId": "641745",
     "team": "PHI",
@@ -10678,6 +11792,8 @@ export const pitchers = [
   },
   {
     "name": "Alan Rangel",
+    "first": "Alan",
+    "last": "Rangel",
     "num": 57,
     "personId": "660604",
     "team": "PHI",
@@ -10699,6 +11815,8 @@ export const pitchers = [
   },
   {
     "name": "Taijuan Walker",
+    "first": "Taijuan",
+    "last": "Walker",
     "num": 32,
     "personId": "592836",
     "team": "PHI",
@@ -10719,6 +11837,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Backhus",
+    "first": "Kyle",
+    "last": "Backhus",
     "num": 19,
     "personId": "679775",
     "team": "PHI",
@@ -10737,6 +11857,8 @@ export const pitchers = [
   },
   {
     "name": "Alex McFarlane",
+    "first": "Alex",
+    "last": "McFarlane",
     "num": 71,
     "personId": "686934",
     "team": "PHI",
@@ -10755,6 +11877,8 @@ export const pitchers = [
   },
   {
     "name": "Max Lazar",
+    "first": "Max",
+    "last": "Lazar",
     "num": 60,
     "personId": "676661",
     "team": "PHI",
@@ -10775,6 +11899,8 @@ export const pitchers = [
   },
   {
     "name": "Zach Pop",
+    "first": "Zach",
+    "last": "Pop",
     "num": 1,
     "personId": "647315",
     "team": "PHI",
@@ -10793,6 +11919,8 @@ export const pitchers = [
   },
   {
     "name": "Lou Trivino",
+    "first": "Lou",
+    "last": "Trivino",
     "num": 6,
     "personId": "642152",
     "team": "PHI",
@@ -10811,6 +11939,8 @@ export const pitchers = [
   },
   {
     "name": "Brian Keller",
+    "first": "Brian",
+    "last": "Keller",
     "num": 8,
     "personId": "662144",
     "team": "PHI",
@@ -10829,6 +11959,8 @@ export const pitchers = [
   },
   {
     "name": "Dylan Moore",
+    "first": "Dylan",
+    "last": "Moore",
     "num": 25,
     "personId": "664238",
     "team": "PHI",
@@ -10847,6 +11979,8 @@ export const pitchers = [
   },
   {
     "name": "Grant Holman",
+    "first": "Grant",
+    "last": "Holman",
     "num": 51,
     "personId": "680880",
     "team": "PHI",
@@ -10865,6 +11999,8 @@ export const pitchers = [
   },
   {
     "name": "Paul Skenes",
+    "first": "Paul",
+    "last": "Skenes",
     "num": 30,
     "personId": "694973",
     "team": "PIT",
@@ -10885,6 +12021,8 @@ export const pitchers = [
   },
   {
     "name": "Braxton Ashcraft",
+    "first": "Braxton",
+    "last": "Ashcraft",
     "num": 35,
     "personId": "677952",
     "team": "PIT",
@@ -10905,6 +12043,8 @@ export const pitchers = [
   },
   {
     "name": "Bubba Chandler",
+    "first": "Bubba",
+    "last": "Chandler",
     "num": 36,
     "personId": "696149",
     "team": "PIT",
@@ -10925,6 +12065,8 @@ export const pitchers = [
   },
   {
     "name": "Carmen Mlodzinski",
+    "first": "Carmen",
+    "last": "Mlodzinski",
     "num": 50,
     "personId": "669387",
     "team": "PIT",
@@ -10945,6 +12087,8 @@ export const pitchers = [
   },
   {
     "name": "Mitch Keller",
+    "first": "Mitch",
+    "last": "Keller",
     "num": 23,
     "personId": "656605",
     "team": "PIT",
@@ -10963,6 +12107,8 @@ export const pitchers = [
   },
   {
     "name": "Jared Jones",
+    "first": "Jared",
+    "last": "Jones",
     "num": 17,
     "personId": "683003",
     "team": "PIT",
@@ -10983,6 +12129,8 @@ export const pitchers = [
   },
   {
     "name": "Lake Bachar",
+    "first": "Lake",
+    "last": "Bachar",
     "num": 71,
     "personId": "669199",
     "team": "PIT",
@@ -11003,6 +12151,8 @@ export const pitchers = [
   },
   {
     "name": "Yohan Ramírez",
+    "first": "Yohan",
+    "last": "Ramírez",
     "num": 49,
     "personId": "670990",
     "team": "PIT",
@@ -11025,6 +12175,8 @@ export const pitchers = [
   },
   {
     "name": "Mason Montgomery",
+    "first": "Mason",
+    "last": "Montgomery",
     "num": 46,
     "personId": "682254",
     "team": "PIT",
@@ -11045,6 +12197,8 @@ export const pitchers = [
   },
   {
     "name": "Gregory Soto",
+    "first": "Gregory",
+    "last": "Soto",
     "num": 31,
     "personId": "642397",
     "team": "PIT",
@@ -11065,6 +12219,8 @@ export const pitchers = [
   },
   {
     "name": "Luke Weaver",
+    "first": "Luke",
+    "last": "Weaver",
     "num": 18,
     "personId": "596133",
     "team": "PIT",
@@ -11083,6 +12239,8 @@ export const pitchers = [
   },
   {
     "name": "Evan Sisk",
+    "first": "Evan",
+    "last": "Sisk",
     "num": 48,
     "personId": "681895",
     "team": "PIT",
@@ -11104,6 +12262,8 @@ export const pitchers = [
   },
   {
     "name": "Brandon Eisert",
+    "first": "Brandon",
+    "last": "Eisert",
     "num": 14,
     "personId": "685126",
     "team": "PIT",
@@ -11124,6 +12284,8 @@ export const pitchers = [
   },
   {
     "name": "Wilber Dotel",
+    "first": "Wilber",
+    "last": "Dotel",
     "num": 66,
     "personId": "696062",
     "team": "PIT",
@@ -11142,6 +12304,8 @@ export const pitchers = [
   },
   {
     "name": "Kirby Yates",
+    "first": "Kirby",
+    "last": "Yates",
     "num": 54,
     "personId": "489446",
     "team": "PIT",
@@ -11162,6 +12326,8 @@ export const pitchers = [
   },
   {
     "name": "Isaac Mattson",
+    "first": "Isaac",
+    "last": "Mattson",
     "num": 72,
     "personId": "676755",
     "team": "PIT",
@@ -11182,6 +12348,8 @@ export const pitchers = [
   },
   {
     "name": "Khristian Curtis",
+    "first": "Khristian",
+    "last": "Curtis",
     "num": 64,
     "personId": "694753",
     "team": "PIT",
@@ -11202,6 +12370,8 @@ export const pitchers = [
   },
   {
     "name": "Antwone Kelly",
+    "first": "Antwone",
+    "last": "Kelly",
     "num": 62,
     "personId": "699008",
     "team": "PIT",
@@ -11220,6 +12390,8 @@ export const pitchers = [
   },
   {
     "name": "Hunter Barco",
+    "first": "Hunter",
+    "last": "Barco",
     "num": 45,
     "personId": "682995",
     "team": "PIT",
@@ -11240,6 +12412,8 @@ export const pitchers = [
   },
   {
     "name": "Brandan Bidois",
+    "first": "Brandan",
+    "last": "Bidois",
     "num": 1,
     "personId": "684049",
     "team": "PIT",
@@ -11261,6 +12435,8 @@ export const pitchers = [
   },
   {
     "name": "Noah Murdock",
+    "first": "Noah",
+    "last": "Murdock",
     "num": 58,
     "personId": "668716",
     "team": "PIT",
@@ -11279,6 +12455,8 @@ export const pitchers = [
   },
   {
     "name": "Hunter Stratton",
+    "first": "Hunter",
+    "last": "Stratton",
     "num": 63,
     "personId": "676702",
     "team": "PIT",
@@ -11297,6 +12475,8 @@ export const pitchers = [
   },
   {
     "name": "Michael King",
+    "first": "Michael",
+    "last": "King",
     "num": 34,
     "personId": "650633",
     "team": "SDP",
@@ -11315,6 +12495,8 @@ export const pitchers = [
   },
   {
     "name": "Robbie Ray",
+    "first": "Robbie",
+    "last": "Ray",
     "num": 38,
     "personId": "592662",
     "team": "SDP",
@@ -11335,6 +12517,8 @@ export const pitchers = [
   },
   {
     "name": "Walker Buehler",
+    "first": "Walker",
+    "last": "Buehler",
     "num": 10,
     "personId": "621111",
     "team": "SDP",
@@ -11353,6 +12537,8 @@ export const pitchers = [
   },
   {
     "name": "Randy Vásquez",
+    "first": "Randy",
+    "last": "Vásquez",
     "num": 98,
     "personId": "681190",
     "team": "SDP",
@@ -11371,6 +12557,8 @@ export const pitchers = [
   },
   {
     "name": "Casey Mize",
+    "first": "Casey",
+    "last": "Mize",
     "num": 32,
     "personId": "663554",
     "team": "SDP",
@@ -11389,6 +12577,8 @@ export const pitchers = [
   },
   {
     "name": "Griffin Canning",
+    "first": "Griffin",
+    "last": "Canning",
     "num": 17,
     "personId": "656288",
     "team": "SDP",
@@ -11410,6 +12600,8 @@ export const pitchers = [
   },
   {
     "name": "Adrián Morejón",
+    "first": "Adrián",
+    "last": "Morejón",
     "num": 50,
     "personId": "670970",
     "team": "SDP",
@@ -11432,6 +12624,8 @@ export const pitchers = [
   },
   {
     "name": "Wandy Peralta",
+    "first": "Wandy",
+    "last": "Peralta",
     "num": 58,
     "personId": "593974",
     "team": "SDP",
@@ -11452,6 +12646,8 @@ export const pitchers = [
   },
   {
     "name": "Bradgley Rodriguez",
+    "first": "Bradgley",
+    "last": "Rodriguez",
     "num": 72,
     "personId": "699134",
     "team": "SDP",
@@ -11472,6 +12668,8 @@ export const pitchers = [
   },
   {
     "name": "Mason Miller",
+    "first": "Mason",
+    "last": "Miller",
     "num": 22,
     "personId": "695243",
     "team": "SDP",
@@ -11493,6 +12691,8 @@ export const pitchers = [
   },
   {
     "name": "Yuki Matsui",
+    "first": "Yuki",
+    "last": "Matsui",
     "num": 1,
     "personId": "673513",
     "team": "SDP",
@@ -11513,6 +12713,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Hart",
+    "first": "Kyle",
+    "last": "Hart",
     "num": 68,
     "personId": "606996",
     "team": "SDP",
@@ -11531,6 +12733,8 @@ export const pitchers = [
   },
   {
     "name": "Germán Márquez",
+    "first": "Germán",
+    "last": "Márquez",
     "num": 6,
     "personId": "608566",
     "team": "SDP",
@@ -11551,6 +12755,8 @@ export const pitchers = [
   },
   {
     "name": "Nick Pivetta",
+    "first": "Nick",
+    "last": "Pivetta",
     "num": 27,
     "personId": "601713",
     "team": "SDP",
@@ -11571,6 +12777,8 @@ export const pitchers = [
   },
   {
     "name": "Jason Adam",
+    "first": "Jason",
+    "last": "Adam",
     "num": 40,
     "personId": "592094",
     "team": "SDP",
@@ -11589,6 +12797,8 @@ export const pitchers = [
   },
   {
     "name": "David Morgan",
+    "first": "David",
+    "last": "Morgan",
     "num": 66,
     "personId": "688158",
     "team": "SDP",
@@ -11610,6 +12820,8 @@ export const pitchers = [
   },
   {
     "name": "JP Sears",
+    "first": "JP",
+    "last": "Sears",
     "num": 39,
     "personId": "676664",
     "team": "SDP",
@@ -11628,6 +12840,8 @@ export const pitchers = [
   },
   {
     "name": "Jeremiah Estrada",
+    "first": "Jeremiah",
+    "last": "Estrada",
     "num": 56,
     "personId": "669093",
     "team": "SDP",
@@ -11649,6 +12863,8 @@ export const pitchers = [
   },
   {
     "name": "Lucas Giolito",
+    "first": "Lucas",
+    "last": "Giolito",
     "num": 55,
     "personId": "608337",
     "team": "SDP",
@@ -11669,6 +12885,8 @@ export const pitchers = [
   },
   {
     "name": "Jhony Brito",
+    "first": "Jhony",
+    "last": "Brito",
     "num": 76,
     "personId": "666745",
     "team": "SDP",
@@ -11687,6 +12905,8 @@ export const pitchers = [
   },
   {
     "name": "Alek Jacob",
+    "first": "Alek",
+    "last": "Jacob",
     "num": 37,
     "personId": "689690",
     "team": "SDP",
@@ -11705,6 +12925,8 @@ export const pitchers = [
   },
   {
     "name": "Logan Gilbert",
+    "first": "Logan",
+    "last": "Gilbert",
     "num": 36,
     "personId": "669302",
     "team": "SEA",
@@ -11723,6 +12945,8 @@ export const pitchers = [
   },
   {
     "name": "George Kirby",
+    "first": "George",
+    "last": "Kirby",
     "num": 68,
     "personId": "669923",
     "team": "SEA",
@@ -11741,6 +12965,8 @@ export const pitchers = [
   },
   {
     "name": "Bryan Woo",
+    "first": "Bryan",
+    "last": "Woo",
     "num": 22,
     "personId": "693433",
     "team": "SEA",
@@ -11759,6 +12985,8 @@ export const pitchers = [
   },
   {
     "name": "Emerson Hancock",
+    "first": "Emerson",
+    "last": "Hancock",
     "num": 26,
     "personId": "676106",
     "team": "SEA",
@@ -11777,6 +13005,8 @@ export const pitchers = [
   },
   {
     "name": "Bryce Miller",
+    "first": "Bryce",
+    "last": "Miller",
     "num": 50,
     "personId": "682243",
     "team": "SEA",
@@ -11795,6 +13025,8 @@ export const pitchers = [
   },
   {
     "name": "Eduard Bazardo",
+    "first": "Eduard",
+    "last": "Bazardo",
     "num": 83,
     "personId": "660825",
     "team": "SEA",
@@ -11813,6 +13045,8 @@ export const pitchers = [
   },
   {
     "name": "Jose A. Ferrer",
+    "first": "Jose",
+    "last": "A. Ferrer",
     "num": 45,
     "personId": "678606",
     "team": "SEA",
@@ -11831,6 +13065,8 @@ export const pitchers = [
   },
   {
     "name": "Seranthony Domínguez",
+    "first": "Seranthony",
+    "last": "Domínguez",
     "num": 58,
     "personId": "622554",
     "team": "SEA",
@@ -11851,6 +13087,8 @@ export const pitchers = [
   },
   {
     "name": "Andrés Muñoz",
+    "first": "Andrés",
+    "last": "Muñoz",
     "num": 75,
     "personId": "662253",
     "team": "SEA",
@@ -11871,6 +13109,8 @@ export const pitchers = [
   },
   {
     "name": "Gabe Speier",
+    "first": "Gabe",
+    "last": "Speier",
     "num": 55,
     "personId": "642100",
     "team": "SEA",
@@ -11889,6 +13129,8 @@ export const pitchers = [
   },
   {
     "name": "Michael Rucker",
+    "first": "Michael",
+    "last": "Rucker",
     "num": 38,
     "personId": "621074",
     "team": "SEA",
@@ -11909,6 +13151,8 @@ export const pitchers = [
   },
   {
     "name": "Hoby Milner",
+    "first": "Hoby",
+    "last": "Milner",
     "num": 41,
     "personId": "571948",
     "team": "SEA",
@@ -11927,6 +13171,8 @@ export const pitchers = [
   },
   {
     "name": "Cooper Criswell",
+    "first": "Cooper",
+    "last": "Criswell",
     "num": 88,
     "personId": "681867",
     "team": "SEA",
@@ -11947,6 +13193,8 @@ export const pitchers = [
   },
   {
     "name": "Kade Anderson",
+    "first": "Kade",
+    "last": "Anderson",
     "num": 13,
     "personId": "807739",
     "team": "SEA",
@@ -11965,6 +13213,8 @@ export const pitchers = [
   },
   {
     "name": "Nick Davila",
+    "first": "Nick",
+    "last": "Davila",
     "num": 82,
     "personId": "689546",
     "team": "SEA",
@@ -11985,6 +13235,8 @@ export const pitchers = [
   },
   {
     "name": "Cole Wilcox",
+    "first": "Cole",
+    "last": "Wilcox",
     "num": 43,
     "personId": "677961",
     "team": "SEA",
@@ -12005,6 +13257,8 @@ export const pitchers = [
   },
   {
     "name": "Carlos Vargas",
+    "first": "Carlos",
+    "last": "Vargas",
     "num": 54,
     "personId": "672841",
     "team": "SEA",
@@ -12025,6 +13279,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Brash",
+    "first": "Matt",
+    "last": "Brash",
     "num": 47,
     "personId": "666374",
     "team": "SEA",
@@ -12043,6 +13299,8 @@ export const pitchers = [
   },
   {
     "name": "Domingo González",
+    "first": "Domingo",
+    "last": "González",
     "num": 46,
     "personId": "682445",
     "team": "SEA",
@@ -12061,6 +13319,8 @@ export const pitchers = [
   },
   {
     "name": "Josh Simpson",
+    "first": "Josh",
+    "last": "Simpson",
     "num": 37,
     "personId": "681006",
     "team": "SEA",
@@ -12079,6 +13339,8 @@ export const pitchers = [
   },
   {
     "name": "Troy Taylor",
+    "first": "Troy",
+    "last": "Taylor",
     "num": 59,
     "personId": "700187",
     "team": "SEA",
@@ -12097,6 +13359,8 @@ export const pitchers = [
   },
   {
     "name": "Jhonathan Díaz",
+    "first": "Jhonathan",
+    "last": "Díaz",
     "num": 74,
     "personId": "646242",
     "team": "SEA",
@@ -12115,6 +13379,8 @@ export const pitchers = [
   },
   {
     "name": "Logan Webb",
+    "first": "Logan",
+    "last": "Webb",
     "num": 62,
     "personId": "657277",
     "team": "SFG",
@@ -12133,6 +13399,8 @@ export const pitchers = [
   },
   {
     "name": "Landen Roupp",
+    "first": "Landen",
+    "last": "Roupp",
     "num": 65,
     "personId": "694738",
     "team": "SFG",
@@ -12153,6 +13421,8 @@ export const pitchers = [
   },
   {
     "name": "Adrian Houser",
+    "first": "Adrian",
+    "last": "Houser",
     "num": 12,
     "personId": "605288",
     "team": "SFG",
@@ -12171,6 +13441,8 @@ export const pitchers = [
   },
   {
     "name": "Trevor McDonald",
+    "first": "Trevor",
+    "last": "McDonald",
     "num": 72,
     "personId": "686790",
     "team": "SFG",
@@ -12189,6 +13461,8 @@ export const pitchers = [
   },
   {
     "name": "Camilo Doval",
+    "first": "Camilo",
+    "last": "Doval",
     "num": 57,
     "personId": "666808",
     "team": "SFG",
@@ -12209,6 +13483,8 @@ export const pitchers = [
   },
   {
     "name": "JT Brubaker",
+    "first": "JT",
+    "last": "Brubaker",
     "num": 34,
     "personId": "664141",
     "team": "SFG",
@@ -12227,6 +13503,8 @@ export const pitchers = [
   },
   {
     "name": "Blade Tidwell",
+    "first": "Blade",
+    "last": "Tidwell",
     "num": 46,
     "personId": "694918",
     "team": "SFG",
@@ -12245,6 +13523,8 @@ export const pitchers = [
   },
   {
     "name": "Joel Kuhnel",
+    "first": "Joel",
+    "last": "Kuhnel",
     "num": 54,
     "personId": "669270",
     "team": "SFG",
@@ -12263,6 +13543,8 @@ export const pitchers = [
   },
   {
     "name": "Keaton Winn",
+    "first": "Keaton",
+    "last": "Winn",
     "num": 67,
     "personId": "676775",
     "team": "SFG",
@@ -12281,6 +13563,8 @@ export const pitchers = [
   },
   {
     "name": "Dylan Smith",
+    "first": "Dylan",
+    "last": "Smith",
     "num": 66,
     "personId": "681916",
     "team": "SFG",
@@ -12302,6 +13586,8 @@ export const pitchers = [
   },
   {
     "name": "Sam Hentges",
+    "first": "Sam",
+    "last": "Hentges",
     "num": 31,
     "personId": "656529",
     "team": "SFG",
@@ -12323,6 +13609,8 @@ export const pitchers = [
   },
   {
     "name": "Carson Whisenhunt",
+    "first": "Carson",
+    "last": "Whisenhunt",
     "num": 88,
     "personId": "687931",
     "team": "SFG",
@@ -12343,6 +13631,8 @@ export const pitchers = [
   },
   {
     "name": "Anthony Molina",
+    "first": "Anthony",
+    "last": "Molina",
     "num": 45,
     "personId": "683627",
     "team": "SFG",
@@ -12363,6 +13653,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Walker",
+    "first": "Ryan",
+    "last": "Walker",
     "num": 74,
     "personId": "676254",
     "team": "SFG",
@@ -12383,6 +13675,8 @@ export const pitchers = [
   },
   {
     "name": "Carson Seymour",
+    "first": "Carson",
+    "last": "Seymour",
     "num": 77,
     "personId": "693313",
     "team": "SFG",
@@ -12403,6 +13697,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Wilkinson",
+    "first": "Matt",
+    "last": "Wilkinson",
     "num": 71,
     "personId": "683363",
     "team": "SFG",
@@ -12423,6 +13719,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Gage",
+    "first": "Matt",
+    "last": "Gage",
     "num": 93,
     "personId": "657424",
     "team": "SFG",
@@ -12443,6 +13741,8 @@ export const pitchers = [
   },
   {
     "name": "Jason Foley",
+    "first": "Jason",
+    "last": "Foley",
     "num": 64,
     "personId": "671345",
     "team": "SFG",
@@ -12461,6 +13761,8 @@ export const pitchers = [
   },
   {
     "name": "César Perdomo",
+    "first": "César",
+    "last": "Perdomo",
     "num": 83,
     "personId": "702885",
     "team": "SFG",
@@ -12479,6 +13781,8 @@ export const pitchers = [
   },
   {
     "name": "Yunior Marté",
+    "first": "Yunior",
+    "last": "Marté",
     "num": 87,
     "personId": "805074",
     "team": "SFG",
@@ -12497,6 +13801,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Borucki",
+    "first": "Ryan",
+    "last": "Borucki",
     "num": 3,
     "personId": "621366",
     "team": "SFG",
@@ -12515,6 +13821,8 @@ export const pitchers = [
   },
   {
     "name": "Trent Harris",
+    "first": "Trent",
+    "last": "Harris",
     "num": 68,
     "personId": "805345",
     "team": "SFG",
@@ -12535,6 +13843,8 @@ export const pitchers = [
   },
   {
     "name": "Reiver Sanmartín",
+    "first": "Reiver",
+    "last": "Sanmartín",
     "num": 48,
     "personId": "665665",
     "team": "SFG",
@@ -12555,6 +13865,8 @@ export const pitchers = [
   },
   {
     "name": "Philip Abner",
+    "first": "Philip",
+    "last": "Abner",
     "num": 4,
     "personId": "691769",
     "team": "SFG",
@@ -12575,6 +13887,8 @@ export const pitchers = [
   },
   {
     "name": "Tristan Beck",
+    "first": "Tristan",
+    "last": "Beck",
     "num": 43,
     "personId": "663941",
     "team": "SFG",
@@ -12593,6 +13907,8 @@ export const pitchers = [
   },
   {
     "name": "Joel Peguero",
+    "first": "Joel",
+    "last": "Peguero",
     "num": 63,
     "personId": "666711",
     "team": "SFG",
@@ -12613,6 +13929,8 @@ export const pitchers = [
   },
   {
     "name": "Duncan Davitt",
+    "first": "Duncan",
+    "last": "Davitt",
     "num": 76,
     "personId": "701474",
     "team": "SFG",
@@ -12631,6 +13949,8 @@ export const pitchers = [
   },
   {
     "name": "Braxton Roxby",
+    "first": "Braxton",
+    "last": "Roxby",
     "num": 90,
     "personId": "694820",
     "team": "SFG",
@@ -12649,6 +13969,8 @@ export const pitchers = [
   },
   {
     "name": "Gregory Santos",
+    "first": "Gregory",
+    "last": "Santos",
     "num": 57,
     "personId": "666619",
     "team": "SFG",
@@ -12667,6 +13989,8 @@ export const pitchers = [
   },
   {
     "name": "Seth Lonsway",
+    "first": "Seth",
+    "last": "Lonsway",
     "num": 86,
     "personId": "675920",
     "team": "SFG",
@@ -12685,6 +14009,8 @@ export const pitchers = [
   },
   {
     "name": "José Buttó",
+    "first": "José",
+    "last": "Buttó",
     "num": 70,
     "personId": "676130",
     "team": "SFG",
@@ -12703,6 +14029,8 @@ export const pitchers = [
   },
   {
     "name": "Wilkin Ramos",
+    "first": "Wilkin",
+    "last": "Ramos",
     "num": 71,
     "personId": "678576",
     "team": "SFG",
@@ -12721,6 +14049,8 @@ export const pitchers = [
   },
   {
     "name": "Michael McGreevy",
+    "first": "Michael",
+    "last": "McGreevy",
     "num": 36,
     "personId": "700241",
     "team": "STL",
@@ -12739,6 +14069,8 @@ export const pitchers = [
   },
   {
     "name": "Andre Pallante",
+    "first": "Andre",
+    "last": "Pallante",
     "num": 53,
     "personId": "669467",
     "team": "STL",
@@ -12759,6 +14091,8 @@ export const pitchers = [
   },
   {
     "name": "Matthew Liberatore",
+    "first": "Matthew",
+    "last": "Liberatore",
     "num": 32,
     "personId": "669461",
     "team": "STL",
@@ -12777,6 +14111,8 @@ export const pitchers = [
   },
   {
     "name": "Kyle Leahy",
+    "first": "Kyle",
+    "last": "Leahy",
     "num": 62,
     "personId": "681517",
     "team": "STL",
@@ -12795,6 +14131,8 @@ export const pitchers = [
   },
   {
     "name": "Gordon Graceffo",
+    "first": "Gordon",
+    "last": "Graceffo",
     "num": 44,
     "personId": "700669",
     "team": "STL",
@@ -12816,6 +14154,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Bruihl",
+    "first": "Justin",
+    "last": "Bruihl",
     "num": 47,
     "personId": "677865",
     "team": "STL",
@@ -12836,6 +14176,8 @@ export const pitchers = [
   },
   {
     "name": "George Soriano",
+    "first": "George",
+    "last": "Soriano",
     "num": 65,
     "personId": "666277",
     "team": "STL",
@@ -12856,6 +14198,8 @@ export const pitchers = [
   },
   {
     "name": "Riley O'Brien",
+    "first": "Riley",
+    "last": "O'Brien",
     "num": 61,
     "personId": "676617",
     "team": "STL",
@@ -12876,6 +14220,8 @@ export const pitchers = [
   },
   {
     "name": "Ryne Stanek",
+    "first": "Ryne",
+    "last": "Stanek",
     "num": 55,
     "personId": "592773",
     "team": "STL",
@@ -12896,6 +14242,8 @@ export const pitchers = [
   },
   {
     "name": "Hunter Dobbins",
+    "first": "Hunter",
+    "last": "Dobbins",
     "num": 40,
     "personId": "690928",
     "team": "STL",
@@ -12916,6 +14264,8 @@ export const pitchers = [
   },
   {
     "name": "Quinn Mathews",
+    "first": "Quinn",
+    "last": "Mathews",
     "num": 60,
     "personId": "687273",
     "team": "STL",
@@ -12934,6 +14284,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Svanson",
+    "first": "Matt",
+    "last": "Svanson",
     "num": 49,
     "personId": "694335",
     "team": "STL",
@@ -12954,6 +14306,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Gastelum",
+    "first": "Luis",
+    "last": "Gastelum",
     "num": 72,
     "personId": "703725",
     "team": "STL",
@@ -12974,6 +14328,8 @@ export const pitchers = [
   },
   {
     "name": "Caleb Ferguson",
+    "first": "Caleb",
+    "last": "Ferguson",
     "num": 54,
     "personId": "657571",
     "team": "STL",
@@ -12994,6 +14350,8 @@ export const pitchers = [
   },
   {
     "name": "Ryan Fernandez",
+    "first": "Ryan",
+    "last": "Fernandez",
     "num": 64,
     "personId": "681676",
     "team": "STL",
@@ -13015,6 +14373,8 @@ export const pitchers = [
   },
   {
     "name": "Brycen Mautz",
+    "first": "Brycen",
+    "last": "Mautz",
     "num": 52,
     "personId": "802408",
     "team": "STL",
@@ -13036,6 +14396,8 @@ export const pitchers = [
   },
   {
     "name": "Peter Strzelecki",
+    "first": "Peter",
+    "last": "Strzelecki",
     "num": 58,
     "personId": "657265",
     "team": "STL",
@@ -13054,6 +14416,8 @@ export const pitchers = [
   },
   {
     "name": "Cade Winquest",
+    "first": "Cade",
+    "last": "Winquest",
     "num": 63,
     "personId": "685464",
     "team": "STL",
@@ -13075,6 +14439,8 @@ export const pitchers = [
   },
   {
     "name": "Cooper Hjerpe",
+    "first": "Cooper",
+    "last": "Hjerpe",
     "num": 56,
     "personId": "687309",
     "team": "STL",
@@ -13096,6 +14462,8 @@ export const pitchers = [
   },
   {
     "name": "Jared Shuster",
+    "first": "Jared",
+    "last": "Shuster",
     "num": 68,
     "personId": "694363",
     "team": "STL",
@@ -13114,6 +14482,8 @@ export const pitchers = [
   },
   {
     "name": "Max Rajcic",
+    "first": "Max",
+    "last": "Rajcic",
     "num": 71,
     "personId": "691008",
     "team": "STL",
@@ -13132,6 +14502,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Pushard",
+    "first": "Matt",
+    "last": "Pushard",
     "num": 1,
     "personId": "690155",
     "team": "STL",
@@ -13150,6 +14522,8 @@ export const pitchers = [
   },
   {
     "name": "Bruce Zimmermann",
+    "first": "Bruce",
+    "last": "Zimmermann",
     "num": 54,
     "personId": "669145",
     "team": "STL",
@@ -13168,6 +14542,8 @@ export const pitchers = [
   },
   {
     "name": "Hancel Rincón",
+    "first": "Hancel",
+    "last": "Rincón",
     "num": 66,
     "personId": "684516",
     "team": "STL",
@@ -13186,6 +14562,8 @@ export const pitchers = [
   },
   {
     "name": "Nick Martinez",
+    "first": "Nick",
+    "last": "Martinez",
     "num": 28,
     "personId": "607259",
     "team": "TBR",
@@ -13206,6 +14584,8 @@ export const pitchers = [
   },
   {
     "name": "Drew Rasmussen",
+    "first": "Drew",
+    "last": "Rasmussen",
     "num": 57,
     "personId": "656876",
     "team": "TBR",
@@ -13226,6 +14606,8 @@ export const pitchers = [
   },
   {
     "name": "Freddy Peralta",
+    "first": "Freddy",
+    "last": "Peralta",
     "num": 51,
     "personId": "642547",
     "team": "TBR",
@@ -13244,6 +14626,8 @@ export const pitchers = [
   },
   {
     "name": "Ian Seymour",
+    "first": "Ian",
+    "last": "Seymour",
     "num": 61,
     "personId": "693855",
     "team": "TBR",
@@ -13265,6 +14649,8 @@ export const pitchers = [
   },
   {
     "name": "Shane McClanahan",
+    "first": "Shane",
+    "last": "McClanahan",
     "num": 18,
     "personId": "663556",
     "team": "TBR",
@@ -13283,6 +14669,8 @@ export const pitchers = [
   },
   {
     "name": "Griffin Jax",
+    "first": "Griffin",
+    "last": "Jax",
     "num": 22,
     "personId": "643377",
     "team": "TBR",
@@ -13301,6 +14689,8 @@ export const pitchers = [
   },
   {
     "name": "Steven Matz",
+    "first": "Steven",
+    "last": "Matz",
     "num": 32,
     "personId": "571927",
     "team": "TBR",
@@ -13321,6 +14711,8 @@ export const pitchers = [
   },
   {
     "name": "Kevin Kelly",
+    "first": "Kevin",
+    "last": "Kelly",
     "num": 49,
     "personId": "687330",
     "team": "TBR",
@@ -13343,6 +14735,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Wells",
+    "first": "Tyler",
+    "last": "Wells",
     "num": 68,
     "personId": "669330",
     "team": "TBR",
@@ -13363,6 +14757,8 @@ export const pitchers = [
   },
   {
     "name": "Casey Legumina",
+    "first": "Casey",
+    "last": "Legumina",
     "num": 67,
     "personId": "668984",
     "team": "TBR",
@@ -13383,6 +14779,8 @@ export const pitchers = [
   },
   {
     "name": "Bryan Baker",
+    "first": "Bryan",
+    "last": "Baker",
     "num": 47,
     "personId": "641329",
     "team": "TBR",
@@ -13401,6 +14799,8 @@ export const pitchers = [
   },
   {
     "name": "Cole Sulser",
+    "first": "Cole",
+    "last": "Sulser",
     "num": 71,
     "personId": "642121",
     "team": "TBR",
@@ -13419,6 +14819,8 @@ export const pitchers = [
   },
   {
     "name": "Jesse Scholtens",
+    "first": "Jesse",
+    "last": "Scholtens",
     "num": 65,
     "personId": "669947",
     "team": "TBR",
@@ -13437,6 +14839,8 @@ export const pitchers = [
   },
   {
     "name": "Garrett Cleavinger",
+    "first": "Garrett",
+    "last": "Cleavinger",
     "num": 60,
     "personId": "664076",
     "team": "TBR",
@@ -13458,6 +14862,8 @@ export const pitchers = [
   },
   {
     "name": "Cam Booser",
+    "first": "Cam",
+    "last": "Booser",
     "num": 62,
     "personId": "592155",
     "team": "TBR",
@@ -13478,6 +14884,8 @@ export const pitchers = [
   },
   {
     "name": "Mason Englert",
+    "first": "Mason",
+    "last": "Englert",
     "num": 59,
     "personId": "669438",
     "team": "TBR",
@@ -13496,6 +14904,8 @@ export const pitchers = [
   },
   {
     "name": "Jake Woodford",
+    "first": "Jake",
+    "last": "Woodford",
     "num": 41,
     "personId": "663765",
     "team": "TBR",
@@ -13514,6 +14924,8 @@ export const pitchers = [
   },
   {
     "name": "Hunter Bigge",
+    "first": "Hunter",
+    "last": "Bigge",
     "num": 4,
     "personId": "685801",
     "team": "TBR",
@@ -13534,6 +14946,8 @@ export const pitchers = [
   },
   {
     "name": "Joe Boyle",
+    "first": "Joe",
+    "last": "Boyle",
     "num": 36,
     "personId": "671212",
     "team": "TBR",
@@ -13554,6 +14968,8 @@ export const pitchers = [
   },
   {
     "name": "Ty Johnson",
+    "first": "Ty",
+    "last": "Johnson",
     "num": 55,
     "personId": "694494",
     "team": "TBR",
@@ -13572,6 +14988,8 @@ export const pitchers = [
   },
   {
     "name": "Michael Grove",
+    "first": "Michael",
+    "last": "Grove",
     "num": 5,
     "personId": "675627",
     "team": "TBR",
@@ -13590,6 +15008,8 @@ export const pitchers = [
   },
   {
     "name": "Manuel Rodríguez",
+    "first": "Manuel",
+    "last": "Rodríguez",
     "num": 39,
     "personId": "655889",
     "team": "TBR",
@@ -13608,6 +15028,8 @@ export const pitchers = [
   },
   {
     "name": "Alex Cook",
+    "first": "Alex",
+    "last": "Cook",
     "num": 54,
     "personId": "702047",
     "team": "TBR",
@@ -13626,6 +15048,8 @@ export const pitchers = [
   },
   {
     "name": "Brody Hopkins",
+    "first": "Brody",
+    "last": "Hopkins",
     "num": 88,
     "personId": "811315",
     "team": "TBR",
@@ -13644,6 +15068,8 @@ export const pitchers = [
   },
   {
     "name": "Jonathan Heasley",
+    "first": "Jonathan",
+    "last": "Heasley",
     "num": 68,
     "personId": "669169",
     "team": "TBR",
@@ -13662,6 +15088,8 @@ export const pitchers = [
   },
   {
     "name": "Chase Solesky",
+    "first": "Chase",
+    "last": "Solesky",
     "num": 10,
     "personId": "686678",
     "team": "TBR",
@@ -13680,6 +15108,8 @@ export const pitchers = [
   },
   {
     "name": "Aaron Brooks",
+    "first": "Aaron",
+    "last": "Brooks",
     "num": 62,
     "personId": "605156",
     "team": "TBR",
@@ -13698,6 +15128,8 @@ export const pitchers = [
   },
   {
     "name": "MacKenzie Gore",
+    "first": "MacKenzie",
+    "last": "Gore",
     "num": 1,
     "personId": "669022",
     "team": "TEX",
@@ -13716,6 +15148,8 @@ export const pitchers = [
   },
   {
     "name": "Jacob deGrom",
+    "first": "Jacob",
+    "last": "deGrom",
     "num": 48,
     "personId": "594798",
     "team": "TEX",
@@ -13736,6 +15170,8 @@ export const pitchers = [
   },
   {
     "name": "Kumar Rocker",
+    "first": "Kumar",
+    "last": "Rocker",
     "num": 80,
     "personId": "677958",
     "team": "TEX",
@@ -13754,6 +15190,8 @@ export const pitchers = [
   },
   {
     "name": "Nathan Eovaldi",
+    "first": "Nathan",
+    "last": "Eovaldi",
     "num": 17,
     "personId": "543135",
     "team": "TEX",
@@ -13772,6 +15210,8 @@ export const pitchers = [
   },
   {
     "name": "Cal Quantrill",
+    "first": "Cal",
+    "last": "Quantrill",
     "num": 44,
     "personId": "615698",
     "team": "TEX",
@@ -13792,6 +15232,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Leiter",
+    "first": "Jack",
+    "last": "Leiter",
     "num": 22,
     "personId": "683004",
     "team": "TEX",
@@ -13810,6 +15252,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Alexander",
+    "first": "Tyler",
+    "last": "Alexander",
     "num": 13,
     "personId": "641302",
     "team": "TEX",
@@ -13830,6 +15274,8 @@ export const pitchers = [
   },
   {
     "name": "Jacob Latz",
+    "first": "Jacob",
+    "last": "Latz",
     "num": 67,
     "personId": "656641",
     "team": "TEX",
@@ -13851,6 +15297,8 @@ export const pitchers = [
   },
   {
     "name": "Chase Silseth",
+    "first": "Chase",
+    "last": "Silseth",
     "num": 63,
     "personId": "681217",
     "team": "TEX",
@@ -13872,6 +15320,8 @@ export const pitchers = [
   },
   {
     "name": "Chris Paddack",
+    "first": "Chris",
+    "last": "Paddack",
     "num": 40,
     "personId": "663978",
     "team": "TEX",
@@ -13890,6 +15340,8 @@ export const pitchers = [
   },
   {
     "name": "Peyton Gray",
+    "first": "Peyton",
+    "last": "Gray",
     "num": 75,
     "personId": "682608",
     "team": "TEX",
@@ -13908,6 +15360,8 @@ export const pitchers = [
   },
   {
     "name": "Jakob Junis",
+    "first": "Jakob",
+    "last": "Junis",
     "num": 16,
     "personId": "596001",
     "team": "TEX",
@@ -13926,6 +15380,8 @@ export const pitchers = [
   },
   {
     "name": "Cole Winn",
+    "first": "Cole",
+    "last": "Winn",
     "num": 60,
     "personId": "668390",
     "team": "TEX",
@@ -13944,6 +15400,8 @@ export const pitchers = [
   },
   {
     "name": "Cody Bradford",
+    "first": "Cody",
+    "last": "Bradford",
     "num": 61,
     "personId": "674003",
     "team": "TEX",
@@ -13962,6 +15420,8 @@ export const pitchers = [
   },
   {
     "name": "Robby Ahlstrom",
+    "first": "Robby",
+    "last": "Ahlstrom",
     "num": 54,
     "personId": "695239",
     "team": "TEX",
@@ -13980,6 +15440,8 @@ export const pitchers = [
   },
   {
     "name": "Adam Macko",
+    "first": "Adam",
+    "last": "Macko",
     "num": 71,
     "personId": "671936",
     "team": "TEX",
@@ -14000,6 +15462,8 @@ export const pitchers = [
   },
   {
     "name": "Trevor Williams",
+    "first": "Trevor",
+    "last": "Williams",
     "num": 51,
     "personId": "592866",
     "team": "TEX",
@@ -14020,6 +15484,8 @@ export const pitchers = [
   },
   {
     "name": "Jalen Beeks",
+    "first": "Jalen",
+    "last": "Beeks",
     "num": 68,
     "personId": "656222",
     "team": "TEX",
@@ -14038,6 +15504,8 @@ export const pitchers = [
   },
   {
     "name": "Jordan Montgomery",
+    "first": "Jordan",
+    "last": "Montgomery",
     "num": 52,
     "personId": "656756",
     "team": "TEX",
@@ -14058,6 +15526,8 @@ export const pitchers = [
   },
   {
     "name": "Gavin Collyer",
+    "first": "Gavin",
+    "last": "Collyer",
     "num": 65,
     "personId": "686560",
     "team": "TEX",
@@ -14078,6 +15548,8 @@ export const pitchers = [
   },
   {
     "name": "Robert Garcia",
+    "first": "Robert",
+    "last": "Garcia",
     "num": 62,
     "personId": "676395",
     "team": "TEX",
@@ -14098,6 +15570,8 @@ export const pitchers = [
   },
   {
     "name": "Ben Peoples",
+    "first": "Ben",
+    "last": "Peoples",
     "num": 70,
     "personId": "687239",
     "team": "TEX",
@@ -14118,6 +15592,8 @@ export const pitchers = [
   },
   {
     "name": "Chris Martin",
+    "first": "Chris",
+    "last": "Martin",
     "num": 31,
     "personId": "455119",
     "team": "TEX",
@@ -14138,6 +15614,8 @@ export const pitchers = [
   },
   {
     "name": "Joe Ross",
+    "first": "Joe",
+    "last": "Ross",
     "num": 41,
     "personId": "605452",
     "team": "TEX",
@@ -14158,6 +15636,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Curvelo",
+    "first": "Luis",
+    "last": "Curvelo",
     "num": 57,
     "personId": "681168",
     "team": "TEX",
@@ -14178,6 +15658,8 @@ export const pitchers = [
   },
   {
     "name": "Marco Gonzales",
+    "first": "Marco",
+    "last": "Gonzales",
     "num": 50,
     "personId": "594835",
     "team": "TEX",
@@ -14196,6 +15678,8 @@ export const pitchers = [
   },
   {
     "name": "Carter Baumler",
+    "first": "Carter",
+    "last": "Baumler",
     "num": 45,
     "personId": "691945",
     "team": "TEX",
@@ -14214,6 +15698,8 @@ export const pitchers = [
   },
   {
     "name": "José Corniell",
+    "first": "José",
+    "last": "Corniell",
     "num": 59,
     "personId": "692030",
     "team": "TEX",
@@ -14232,6 +15718,8 @@ export const pitchers = [
   },
   {
     "name": "Winston Santos",
+    "first": "Winston",
+    "last": "Santos",
     "num": 47,
     "personId": "692437",
     "team": "TEX",
@@ -14250,6 +15738,8 @@ export const pitchers = [
   },
   {
     "name": "Emiliano Teodo",
+    "first": "Emiliano",
+    "last": "Teodo",
     "num": 56,
     "personId": "693713",
     "team": "TEX",
@@ -14268,6 +15758,8 @@ export const pitchers = [
   },
   {
     "name": "Nolan Kingham",
+    "first": "Nolan",
+    "last": "Kingham",
     "num": 7,
     "personId": "663884",
     "team": "TEX",
@@ -14286,6 +15778,8 @@ export const pitchers = [
   },
   {
     "name": "José Soriano",
+    "first": "José",
+    "last": "Soriano",
     "num": 40,
     "personId": "667755",
     "team": "TOR",
@@ -14304,6 +15798,8 @@ export const pitchers = [
   },
   {
     "name": "Dylan Cease",
+    "first": "Dylan",
+    "last": "Cease",
     "num": 84,
     "personId": "656302",
     "team": "TOR",
@@ -14325,6 +15821,8 @@ export const pitchers = [
   },
   {
     "name": "Michael Lorenzen",
+    "first": "Michael",
+    "last": "Lorenzen",
     "num": 55,
     "personId": "547179",
     "team": "TOR",
@@ -14343,6 +15841,8 @@ export const pitchers = [
   },
   {
     "name": "Spencer Arrighetti",
+    "first": "Spencer",
+    "last": "Arrighetti",
     "num": 45,
     "personId": "681293",
     "team": "TOR",
@@ -14363,6 +15863,8 @@ export const pitchers = [
   },
   {
     "name": "Trey Yesavage",
+    "first": "Trey",
+    "last": "Yesavage",
     "num": 39,
     "personId": "702056",
     "team": "TOR",
@@ -14383,6 +15885,8 @@ export const pitchers = [
   },
   {
     "name": "Spencer Miles",
+    "first": "Spencer",
+    "last": "Miles",
     "num": 62,
     "personId": "693686",
     "team": "TOR",
@@ -14403,6 +15907,8 @@ export const pitchers = [
   },
   {
     "name": "Jameson Taillon",
+    "first": "Jameson",
+    "last": "Taillon",
     "num": 56,
     "personId": "592791",
     "team": "TOR",
@@ -14421,6 +15927,8 @@ export const pitchers = [
   },
   {
     "name": "Max Scherzer",
+    "first": "Max",
+    "last": "Scherzer",
     "num": 31,
     "personId": "453286",
     "team": "TOR",
@@ -14439,6 +15947,8 @@ export const pitchers = [
   },
   {
     "name": "Patrick Corbin",
+    "first": "Patrick",
+    "last": "Corbin",
     "num": 46,
     "personId": "571578",
     "team": "TOR",
@@ -14457,6 +15967,8 @@ export const pitchers = [
   },
   {
     "name": "Louis Varland",
+    "first": "Louis",
+    "last": "Varland",
     "num": 77,
     "personId": "686973",
     "team": "TOR",
@@ -14478,6 +15990,8 @@ export const pitchers = [
   },
   {
     "name": "Braydon Fisher",
+    "first": "Braydon",
+    "last": "Fisher",
     "num": 63,
     "personId": "680755",
     "team": "TOR",
@@ -14499,6 +16013,8 @@ export const pitchers = [
   },
   {
     "name": "Tyler Rogers",
+    "first": "Tyler",
+    "last": "Rogers",
     "num": 71,
     "personId": "643511",
     "team": "TOR",
@@ -14520,6 +16036,8 @@ export const pitchers = [
   },
   {
     "name": "Simeon Woods Richardson",
+    "first": "Simeon",
+    "last": "Woods Richardson",
     "num": 1,
     "personId": "680573",
     "team": "TOR",
@@ -14540,6 +16058,8 @@ export const pitchers = [
   },
   {
     "name": "Mason Fluharty",
+    "first": "Mason",
+    "last": "Fluharty",
     "num": 68,
     "personId": "689254",
     "team": "TOR",
@@ -14560,6 +16080,8 @@ export const pitchers = [
   },
   {
     "name": "Shane Bieber",
+    "first": "Shane",
+    "last": "Bieber",
     "num": 57,
     "personId": "669456",
     "team": "TOR",
@@ -14578,6 +16100,8 @@ export const pitchers = [
   },
   {
     "name": "Paul Sewald",
+    "first": "Paul",
+    "last": "Sewald",
     "num": 43,
     "personId": "623149",
     "team": "TOR",
@@ -14596,6 +16120,8 @@ export const pitchers = [
   },
   {
     "name": "Brendon Little",
+    "first": "Brendon",
+    "last": "Little",
     "num": 54,
     "personId": "663893",
     "team": "TOR",
@@ -14618,6 +16144,8 @@ export const pitchers = [
   },
   {
     "name": "Joe Mantiply",
+    "first": "Joe",
+    "last": "Mantiply",
     "num": 35,
     "personId": "573009",
     "team": "TOR",
@@ -14638,6 +16166,8 @@ export const pitchers = [
   },
   {
     "name": "Chad Dallas",
+    "first": "Chad",
+    "last": "Dallas",
     "num": 37,
     "personId": "689149",
     "team": "TOR",
@@ -14659,6 +16189,8 @@ export const pitchers = [
   },
   {
     "name": "Lázaro Estrada",
+    "first": "Lázaro",
+    "last": "Estrada",
     "num": 60,
     "personId": "681751",
     "team": "TOR",
@@ -14679,6 +16211,8 @@ export const pitchers = [
   },
   {
     "name": "CJ Van Eyk",
+    "first": "CJ",
+    "last": "Van Eyk",
     "num": 58,
     "personId": "669310",
     "team": "TOR",
@@ -14699,6 +16233,8 @@ export const pitchers = [
   },
   {
     "name": "Chase Lee",
+    "first": "Chase",
+    "last": "Lee",
     "num": 52,
     "personId": "695445",
     "team": "TOR",
@@ -14717,6 +16253,8 @@ export const pitchers = [
   },
   {
     "name": "Yariel Rodríguez",
+    "first": "Yariel",
+    "last": "Rodríguez",
     "num": 29,
     "personId": "684320",
     "team": "TOR",
@@ -14735,6 +16273,8 @@ export const pitchers = [
   },
   {
     "name": "Brendan Cellucci",
+    "first": "Brendan",
+    "last": "Cellucci",
     "num": 70,
     "personId": "676454",
     "team": "TOR",
@@ -14753,6 +16293,8 @@ export const pitchers = [
   },
   {
     "name": "John Klein",
+    "first": "John",
+    "last": "Klein",
     "num": 65,
     "personId": "804619",
     "team": "TOR",
@@ -14771,6 +16313,8 @@ export const pitchers = [
   },
   {
     "name": "Ricky Tiedemann",
+    "first": "Ricky",
+    "last": "Tiedemann",
     "num": 33,
     "personId": "694357",
     "team": "TOR",
@@ -14789,6 +16333,8 @@ export const pitchers = [
   },
   {
     "name": "José Rodríguez",
+    "first": "José",
+    "last": "Rodríguez",
     "num": 64,
     "personId": "692064",
     "team": "TOR",
@@ -14807,6 +16353,8 @@ export const pitchers = [
   },
   {
     "name": "Tanner Andrews",
+    "first": "Tanner",
+    "last": "Andrews",
     "num": 43,
     "personId": "681084",
     "team": "TOR",
@@ -14825,6 +16373,8 @@ export const pitchers = [
   },
   {
     "name": "Josh Fleming",
+    "first": "Josh",
+    "last": "Fleming",
     "num": 19,
     "personId": "676596",
     "team": "TOR",
@@ -14843,6 +16393,8 @@ export const pitchers = [
   },
   {
     "name": "Cody Ponce",
+    "first": "Cody",
+    "last": "Ponce",
     "num": 66,
     "personId": "664074",
     "team": "TOR",
@@ -14861,6 +16413,8 @@ export const pitchers = [
   },
   {
     "name": "Cade Cavalli",
+    "first": "Cade",
+    "last": "Cavalli",
     "num": 24,
     "personId": "676917",
     "team": "WSN",
@@ -14881,6 +16435,8 @@ export const pitchers = [
   },
   {
     "name": "Miles Mikolas",
+    "first": "Miles",
+    "last": "Mikolas",
     "num": 36,
     "personId": "571945",
     "team": "WSN",
@@ -14902,6 +16458,8 @@ export const pitchers = [
   },
   {
     "name": "Andrew Alvarez",
+    "first": "Andrew",
+    "last": "Alvarez",
     "num": 54,
     "personId": "674841",
     "team": "WSN",
@@ -14922,6 +16480,8 @@ export const pitchers = [
   },
   {
     "name": "Jake Irvin",
+    "first": "Jake",
+    "last": "Irvin",
     "num": 27,
     "personId": "663623",
     "team": "WSN",
@@ -14942,6 +16502,8 @@ export const pitchers = [
   },
   {
     "name": "Connelly Early",
+    "first": "Connelly",
+    "last": "Early",
     "num": 19,
     "personId": "813349",
     "team": "WSN",
@@ -14960,6 +16522,8 @@ export const pitchers = [
   },
   {
     "name": "Brad Lord",
+    "first": "Brad",
+    "last": "Lord",
     "num": 41,
     "personId": "695418",
     "team": "WSN",
@@ -14980,6 +16544,8 @@ export const pitchers = [
   },
   {
     "name": "Will Dion",
+    "first": "Will",
+    "last": "Dion",
     "num": 76,
     "personId": "702021",
     "team": "WSN",
@@ -15000,6 +16566,8 @@ export const pitchers = [
   },
   {
     "name": "Clayton Beeter",
+    "first": "Clayton",
+    "last": "Beeter",
     "num": 39,
     "personId": "690925",
     "team": "WSN",
@@ -15020,6 +16588,8 @@ export const pitchers = [
   },
   {
     "name": "Orlando Ribalta",
+    "first": "Orlando",
+    "last": "Ribalta",
     "num": 64,
     "personId": "687377",
     "team": "WSN",
@@ -15038,6 +16608,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Waldron",
+    "first": "Matt",
+    "last": "Waldron",
     "num": 56,
     "personId": "663362",
     "team": "WSN",
@@ -15056,6 +16628,8 @@ export const pitchers = [
   },
   {
     "name": "Mitchell Parker",
+    "first": "Mitchell",
+    "last": "Parker",
     "num": 70,
     "personId": "680730",
     "team": "WSN",
@@ -15074,6 +16648,8 @@ export const pitchers = [
   },
   {
     "name": "Jake Bird",
+    "first": "Jake",
+    "last": "Bird",
     "num": 59,
     "personId": "656234",
     "team": "WSN",
@@ -15092,6 +16668,8 @@ export const pitchers = [
   },
   {
     "name": "Riley Cornelio",
+    "first": "Riley",
+    "last": "Cornelio",
     "num": 74,
     "personId": "683000",
     "team": "WSN",
@@ -15112,6 +16690,8 @@ export const pitchers = [
   },
   {
     "name": "PJ Poulin",
+    "first": "PJ",
+    "last": "Poulin",
     "num": 50,
     "personId": "676571",
     "team": "WSN",
@@ -15132,6 +16712,8 @@ export const pitchers = [
   },
   {
     "name": "Jackson Kent",
+    "first": "Jackson",
+    "last": "Kent",
     "num": 25,
     "personId": "800600",
     "team": "WSN",
@@ -15152,6 +16734,8 @@ export const pitchers = [
   },
   {
     "name": "Richard Lovelady",
+    "first": "Richard",
+    "last": "Lovelady",
     "num": 55,
     "personId": "663992",
     "team": "WSN",
@@ -15172,6 +16756,8 @@ export const pitchers = [
   },
   {
     "name": "Justin Lawrence",
+    "first": "Justin",
+    "last": "Lawrence",
     "num": 44,
     "personId": "664875",
     "team": "WSN",
@@ -15193,6 +16779,8 @@ export const pitchers = [
   },
   {
     "name": "Gus Varland",
+    "first": "Gus",
+    "last": "Varland",
     "num": 47,
     "personId": "681402",
     "team": "WSN",
@@ -15213,6 +16801,8 @@ export const pitchers = [
   },
   {
     "name": "Paxton Schultz",
+    "first": "Paxton",
+    "last": "Schultz",
     "num": 75,
     "personId": "687606",
     "team": "WSN",
@@ -15231,6 +16821,8 @@ export const pitchers = [
   },
   {
     "name": "Max Kranick",
+    "first": "Max",
+    "last": "Kranick",
     "num": 35,
     "personId": "668820",
     "team": "WSN",
@@ -15251,6 +16843,8 @@ export const pitchers = [
   },
   {
     "name": "Carson Palmquist",
+    "first": "Carson",
+    "last": "Palmquist",
     "num": 51,
     "personId": "687223",
     "team": "WSN",
@@ -15271,6 +16865,8 @@ export const pitchers = [
   },
   {
     "name": "Zak Kent",
+    "first": "Zak",
+    "last": "Kent",
     "num": 57,
     "personId": "687849",
     "team": "WSN",
@@ -15291,6 +16887,8 @@ export const pitchers = [
   },
   {
     "name": "Tom Cosgrove",
+    "first": "Tom",
+    "last": "Cosgrove",
     "num": 34,
     "personId": "676680",
     "team": "WSN",
@@ -15309,6 +16907,8 @@ export const pitchers = [
   },
   {
     "name": "Yovanny Cruz",
+    "first": "Yovanny",
+    "last": "Cruz",
     "num": 48,
     "personId": "672442",
     "team": "WSN",
@@ -15329,6 +16929,8 @@ export const pitchers = [
   },
   {
     "name": "Erik Tolman",
+    "first": "Erik",
+    "last": "Tolman",
     "num": 73,
     "personId": "680899",
     "team": "WSN",
@@ -15350,6 +16952,8 @@ export const pitchers = [
   },
   {
     "name": "Cole Henry",
+    "first": "Cole",
+    "last": "Henry",
     "num": 99,
     "personId": "669371",
     "team": "WSN",
@@ -15370,6 +16974,8 @@ export const pitchers = [
   },
   {
     "name": "Luis Perales",
+    "first": "Luis",
+    "last": "Perales",
     "num": 43,
     "personId": "691384",
     "team": "WSN",
@@ -15391,6 +16997,8 @@ export const pitchers = [
   },
   {
     "name": "Jack Sinclair",
+    "first": "Jack",
+    "last": "Sinclair",
     "num": 49,
     "personId": "695378",
     "team": "WSN",
@@ -15409,6 +17017,8 @@ export const pitchers = [
   },
   {
     "name": "Eddy Yean",
+    "first": "Eddy",
+    "last": "Yean",
     "num": 46,
     "personId": "678868",
     "team": "WSN",
@@ -15430,6 +17040,8 @@ export const pitchers = [
   },
   {
     "name": "Andre Granillo",
+    "first": "Andre",
+    "last": "Granillo",
     "num": 2,
     "personId": "701552",
     "team": "WSN",
@@ -15448,6 +17060,8 @@ export const pitchers = [
   },
   {
     "name": "Ken Waldichuk",
+    "first": "Ken",
+    "last": "Waldichuk",
     "num": 52,
     "personId": "686610",
     "team": "WSN",
@@ -15466,6 +17080,8 @@ export const pitchers = [
   },
   {
     "name": "Matt Krook",
+    "first": "Matt",
+    "last": "Krook",
     "num": 6,
     "personId": "640454",
     "team": "WSN",
@@ -15484,6 +17100,8 @@ export const pitchers = [
   },
   {
     "name": "DJ Herz",
+    "first": "DJ",
+    "last": "Herz",
     "num": 77,
     "personId": "687792",
     "team": "WSN",
@@ -15502,6 +17120,8 @@ export const pitchers = [
   },
   {
     "name": "Jared Simpson",
+    "first": "Jared",
+    "last": "Simpson",
     "num": 72,
     "personId": "688692",
     "team": "WSN",
@@ -15520,6 +17140,8 @@ export const pitchers = [
   },
   {
     "name": "Julian Fernández",
+    "first": "Julian",
+    "last": "Fernández",
     "num": 65,
     "personId": "642759",
     "team": "WSN",
@@ -15538,6 +17160,8 @@ export const pitchers = [
   },
   {
     "name": "Josiah Gray",
+    "first": "Josiah",
+    "last": "Gray",
     "num": 40,
     "personId": "680686",
     "team": "WSN",
@@ -15556,6 +17180,8 @@ export const pitchers = [
   },
   {
     "name": "Jackson Rutledge",
+    "first": "Jackson",
+    "last": "Rutledge",
     "num": 79,
     "personId": "671131",
     "team": "WSN",
