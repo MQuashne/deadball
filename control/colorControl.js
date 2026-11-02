@@ -1,12 +1,12 @@
 import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
 import { DICE } from '../dice/dice.js'
 import { G } from '../model/game.js'
-import { renderSpringTraining } from '../render/renderSpringTraining.js'
-import { renderCover } from '../render/renderGameday.js'
-import { allPlayers } from '../control/setup.js'
-import { buildCard } from '../render/buildCard.js'
+//import { renderSpringTraining } from '../render/renderSpringTraining.js'
+//import { renderCover } from '../render/renderGameday.js'
+//import { allPlayers } from '../control/setup.js'
+//import { buildCard } from '../render/buildCard.js'
 import { $n, $t, $c, $a, $cl, on, randInt, findKey } from '../util.js'
-import { opponents } from '../model/opponents.js'
+//import { opponents } from '../model/opponents.js'
 import { teams, leagues } from '../model/teams.js'
 
 const _option = (val, text) => {
@@ -16,15 +16,22 @@ const _option = (val, text) => {
   return o
 };
 
-const leagueSelect = $t("league-select")
-const teamSelect = $t("team-select");
-const uniSelect = $t("uni-select");
-const uniSelectGD = $t("uni-select-gameday");
-const uniSelects = [uniSelect, uniSelectGD];
+//const leagueSelect = $t("league-select")
+//const teamSelect = $t("team-select");
+//const uniSelect = $t("uni-select");
+//const uniSelectGD = $t("uni-select-gameday");
+//const uniSelects = [uniSelect, uniSelectGD];
 
 
 export function colorSetup(box) {
-  const replacements = adjustTeams();
+  console.log(G.myTeam)
+  let uni = evergreenJerseys["MLB"][G.myTeam]["Home"];
+  
+  
+  setColors(uni,box);
+}
+
+  /*const replacements = adjustTeams();
   
   leagues.forEach((league) => {
     const leagueOpt = _option(league.code, league.name);
@@ -78,7 +85,9 @@ export function colorSetup(box) {
   })
   
 }
+*/
 
+/*
 function popTeamPicker(league, box) {
   teamSelect.innerHTML = "";
   
@@ -135,10 +144,10 @@ function showUniPalette() {
     $t("uniform-palette").appendChild(dieShow);
   });
 }
-
+*/
 function setColors(uni, box) {
   const empty = "";
-  showUniPalette();
+  //showUniPalette();
   if (uni.stripe === "" || uni.stripe === uni.jersey) {
     document.documentElement.style.setProperty('--die-bg-color', uni.jersey);
   } else {
@@ -153,22 +162,22 @@ function setColors(uni, box) {
   document.documentElement.style.setProperty('--tl-text', G.thisTeam.tlText);
   
   
-  $t("game-header-logo").src = `./public/assets/logos/${G.thisTeam.tpLogo}.svg`;
-  $t("hero-spot").src = `./public/assets/spot/${G.thisTeam.code}.svg`;
+  //$t("game-header-logo").src = `./public/assets/logos/${G.thisTeam.tpLogo}.svg`;
+  //$t("hero-spot").src = `./public/assets/spot/${G.thisTeam.code}.svg`;
   
   
   
   //console.log($t("game-header-logo").getBBox());
   
-  G.thisTeam.uni = uniSelect.value;
+  G.thisTeam.uni ="Home";
   DICE.set_color('dice', uni.jersey);
   DICE.set_color('label', uni.text);
   DICE.set_color('stripe', uni.stripe ||= uni.jersey);
   DICE.set_color('outline', uni.outline ||= uni.jersey);
-  box.start_throw((notation) => [1, 2, 3, 4, 5, 6]);
+  //box.start_throw((notation) => [1, 2, 3, 4, 5, 6]);
 }
 
-
+/*
 function adjustTeams() {
   //look for selected team in opponents list 
   G.league = [...opponents];
@@ -190,3 +199,4 @@ function adjustTeams() {
   }
   
 }
+*/

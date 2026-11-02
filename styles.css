@@ -70,11 +70,19 @@
     --shadow-md: 0 4px 14px rgba(0, 0, 0, 0.45), 0 1px 3px rgba(0, 0, 0, 0.3);
     --shadow-wood: 0 6px 24px rgba(0, 0, 0, 0.55);
     --shadow-inset: inset 0 3px 10px rgba(0, 0, 0, 0.6);
-    --td: #000000;
-    --tl: #ffffff;
-    --tl-text: #000000;
+    --td: #020731;
+    --tl: #c20c31;
+    --tl-text: #ffffff;
     --tl-dark: oklch(from var(--tl) calc(l - 0.12) c h);
     box-sizing: border-box;
+    --field-tp: #0c2340;
+    --field-ts: #ba0c2f;
+    --field-td: #0c2340;
+    --field-tl: #ba0c2f;
+    --field-tp-text: #ffffff;
+--field-ts-text: #ffffff;
+--field-td-text: #ffffff;
+--field-tl-text: #ffffff;
     
 }
 
@@ -91,6 +99,21 @@
 @font-face {
     font-family: 'Proxima Nova Bold';
     src: url("https://www.mlbstatic.com/mlb.com/fonts/proxima-nova-bold.woff2")
+}
+
+@font-face {
+    font-family: 'Proxima Nova Light';
+    src: url("https://www.mlbstatic.com/mlb.com/fonts/proxima-nova-light.woff2")
+}
+
+@font-face {
+    font-family: 'Proxima Nova Thin';
+    src: url("https://www.mlbstatic.com/mlb.com/fonts/proxima-nova-thin.woff2")
+}
+
+@font-face {
+    font-family: 'Proxima Nova Semibold';
+    src: url("https://www.mlbstatic.com/mlb.com/fonts/proxima-nova-semibold.woff2")
 }
 
 * {
@@ -1485,13 +1508,15 @@ h3 {
 }
 
 .last-name {
-    font-weight: 600;
+    font-weight: 800;
     font-size: 0.9rem;
+    font-family:"Proxima Nova";
 }
 
 .first-name {
     font-size: 0.9rem;
     margin-right: 0.3rem;
+    font-family:"Proxima Nova";
 }
 
 
@@ -1643,7 +1668,7 @@ GAME BOARD
         "resources field field"
         "dice dice dice"
         "buttons buttons buttons"
-        "batter lineup lineup";
+        "batter lineup card";
     z-index: 100;
     background-image: repeating-linear-gradient(25deg, #B0864Ca0, #995D27a0, #754414a0, #B0864Ca0, #A37236a0), url("public/assets/planks.jpeg");
     background-size: contain;
@@ -1787,68 +1812,121 @@ GAME BOARD
 }
 
 #scoreboard-surface {
-    display: grid;
-    grid-template-columns: 1fr 1fr 2fr;
-    grid-template-rows: 1fr repeat(3, 2fr);
-    grid-template-areas: "title title title"
-        "dice dice-count inning"
-        "reroll reroll-count inning"
-        "mod mod-count outs";
-    align-items: center;
-}
-
-#scoreboard-title {
-    font-size: 1rem;
-    font-family: "Oswald";
-    color: var(--tp-text);
-    font-size: 1.1rem;
-    grid-area: title;
-    text-align: center;
-}
-
-.scoreboard-resource-symbol {
     display: flex;
+    flex-direction: row;
+    align-items: start;
+    align-content:flex-start;
+    justify-content: start;
+    flex-wrap:wrap;
+    background:var(--field-td);
+}
+
+.board-name {
+    /*color: var(--td-text);*/
+    font-family: "Proxima Nova";
+    display: flex;
+    flex-direction: row;
     align-items: center;
-    justify-content: center;
-    width: 70%;
-    height: 70%;
-    aspect-ratio: 1 / 1;
-    justify-self: center;
-    align-self: center;
+    padding-left: 0.5rem;
+    max-width:80%;
+    min-width:51%;
+    text-wrap:balance;
 }
 
-.scoreboard-resource-count {
-    color: var(--tp-text);
-    font-size: 1.3rem;
-    font-family: "Oswald";
+.board-name.pitcher{
+    color: white;
+}
+
+.board-name.batter{
+    color: white;
+}
+
+.board-last-name {
+    font-size: 1rem;
+    text-transform:uppercase;
+    font-family: "Proxima Nova Semibold" !important;
+   
+}
+
+.board-first-name {
+    font-size: 0.8rem;
+   text-transform:uppercase;
+    font-family: "Proxima Nova Light";
+    margin: 0.6rem 0.3rem -0.3rem 0;
+}
+
+.stat-head{
+    color:var(--tl-text);
+    font-family:Oswald;
+    font-size:0.9rem;
+    width:90%;
+    background:var(--tl);
+    text-align:center;
+    margin:0.3rem 5%;
+    clip-path:polygon(0% 0%,93% 0%,100% 30%,100% 100%,7% 100%, 0% 70%, 0% 0%);
+}
+.stat-head.pitcher{
+    background:var(--field-tl);
+    color:var(--field-tl-text);
+}
+
+.stat-head-half {
+    color: var(--tl-text);
+    font-family: Oswald;
+    font-size: 0.9rem;
+    width: 45%;
+    background: var(--tl);
     text-align: center;
-    
+    margin: 0.3rem 2.2%;
+    clip-path: polygon(0% 0%, 93% 0%, 100% 30%, 100% 100%, 7% 100%, 0% 70%, 0% 0%);
 }
 
-#scoreboard-dice-count {
-    grid-area: dice-count;
+.stat-value{
+    color:white;
+    font-family:"Proxima Nova Bold";
+    font-size:1.2rem;
+    width:100%;
+    text-align:center;
+}
+.stat-value-half {
+    color: white;
+    font-family: "Proxima Nova Bold";
+    font-size: 1.2rem;
+    width: 45%;
+    text-align: center;
+    margin:0 2.2%;
+}
+.stat-value.old{
+    text-decoration:line-through;
+    color:#A5A5A5;
 }
 
-#scoreboard-reroll-count {
-    grid-area: reroll-count;
+.stat-trait{
+    color:white;
+font-family:"Proxima Nova";
+font-size:0.6rem;
+width:50%;
+text-align:center;
+font-style:italic;
 }
 
-#scoreboard-mod-count {
-    grid-area: mod-count;
+.stat-logo{
+   width:20%;
+    height:20%;
+    position:absolute;
+    top:3%;
+    right:1%;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+   
 }
 
-#scoreboard-dice {
-    grid-area: dice;
+.stat-logo img{
+    max-width:80%;
+    max-height:80%;
+    object-fit:contain;
 }
-
-#scoreboard-reroll {
-    grid-area: reroll;
-}
-
-#scoreboard-mod {
-    grid-area: mod;
-}
-
 
 
 .inning-off {
@@ -1940,6 +2018,16 @@ GAME BOARD
     transform-origin: top left;
 }
 
+#fielders {
+    height: 100%;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    grid-area: control;
+    position: relative;
+    transform: scale(var(--runner-scale, 1));
+    transform-origin: top left;
+}
+
 .base-path-def {
     position: absolute;
     inset: 0;
@@ -1968,6 +2056,68 @@ GAME BOARD
     offset-distance: 0%;
     offset-rotate: 0deg;
     transition: offset-distance 500ms ease;
+}
+.fielder {
+    width: 7.5%;
+    height: 7.5%;
+    border-radius: 50%;
+    background: var(--die-bg-color);
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--die-font-color);
+    -webkit-text-stroke: 0.75px var(--die-outline-color);
+    paint-order: stroke fill;
+    font-family: "BaseballClubSolid";
+    font-size: 0.6rem;
+    text-align: center;
+    transform: translate(-50%, -50%);
+}
+
+#field-P{
+    top:64.9%;
+    left:49.6%;
+}
+
+#field-C {
+    top: 94%;
+    left: 49.6%;
+}
+
+#field-1B {
+    top: 55%;
+    left: 76%;
+}
+
+#field-2B {
+    top: 41%;
+    left: 64%;
+}
+
+#field-SS {
+    top: 41%;
+    left: 36%;
+}
+
+#field-3B {
+    top: 55%;
+    left: 24%;
+}
+
+#field-LF {
+    top: 25%;
+    left: 10%;
+}
+
+#field-RF {
+    top: 25%;
+    left: 90%;
+}
+
+#field-CF {
+    top: 10%;
+    left: 49.6%;
 }
 
 .runner.off {
@@ -2150,6 +2300,44 @@ GAME BOARD
     min-width: 0;
 }
 
+#order-surface {
+    display: flex;
+    flex-direction:column;
+    justify-content: start;
+    align-items: center;
+    min-width: 0;
+    width: 100%;
+    overflow-x: scroll;
+}
+
+#order-surface .board-lineup-line{
+    height:11%;
+    width:100%;
+    font-size:0.7rem;
+    color:white;
+    display:flex;
+    justify-content:start;
+    align-items:center;
+    line-height:1;
+}
+
+.board-lineup-num{
+    width:17.5%;
+    padding-left:0.4rem;
+    font-size:0.5rem;
+    font-family:"Proxima Nova";
+    font-weight:bold;
+}
+
+.board-lineup-name {
+    font-size: 0.7rem;
+    font-family:"Proxima Nova Light";
+}
+
+.board-lineup-name.active, .board-lineup-num.active{
+    font-family:"Proxima Nova Bold" !important;
+}
+
 #batter-zone {
     grid-area: batter;
     width: 100%;
@@ -2161,31 +2349,65 @@ GAME BOARD
 
 #batter-surface {
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: row;
+    align-items: start;
+    align-content: flex-start;
+    justify-content: start;
+    flex-wrap: wrap;
 }
+
+#batter-demo{
+    font-family:"Proxima Nova";
+    font-size:0.6rem;
+    color:#AAAAAA;
+    width:100%;
+    padding: 0 0.5rem;
+}
+
 
 #batter-surface .lineup-card {
     height: 90%;
     
 }
 
-#order-surface {
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    gap: 0.3rem;
-    min-width: 0;
+#table-zone {
+    grid-area: card;
     width: 100%;
-    overflow-x: scroll;
-    scroll-snap-type: x mandatory;
-    scroll-behavior: smooth;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-#order-surface .lineup-card {
-    height: 90%;
-    scroll-snap-align: start;
-    scroll-margin: 0.25em;
+#swing-table{
+    color:white;
+    font-size:0.7rem;
+    width:100%;
+}
+
+th{
+    font-family:"Proxima Nova Bold";
+    text-align:left;
+}
+
+tr{
+    font-family:"Proxima Nova";
+}
+
+.roll-col{
+    text-align:left;
+    padding-left:0.3rem;
+    width: 30%;
+    font-family:"Proxima Nova Semibold";
+}
+
+#table-surface {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    align-content: flex-start;
+    justify-content: start;
+    flex-wrap: wrap;
 }
 
 

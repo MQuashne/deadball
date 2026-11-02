@@ -2,14 +2,12 @@ import { $n, $t, $c, $a, $cl, on, randInt, hide, show, enable, disable, notifyBo
 import { modal } from '../main.js'
 import { G } from '../model/game.js'
 import { store } from '../model/store.js'
+/*
 import { buildCard, buildDie, buildReRoll, buildMod } from './buildCard.js'
 import { buildOpp } from './buildOpp.js'
 import { viewCard, viewOpp } from './modals/viewCard.js'
 import { playerOut, allRunnersOut, startOffHalf, startDefHalf, endOffHalf, firstBatter, endOffenseRoll, endDefenseRoll, getBatterOutcome, getOpponentOutcome, advanceRunners, nextBatter, runScored, endDefHalf, endGame, changeMode, changeProcess, changeProcessMode, applyMods, specialBatterThrow, fatiguePitcher, addCoachDie, setLeadoff } from '../actions/game.js'
-import { DICE } from '../dice/dice.js'
-import { teams } from '../model/teams.js'
 import { allPlayers, renderApp } from '../control/setup.js'
-import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
 import { initMods, modScreen, modResult, modsUsed } from './renderGameMods.js'
 import { initReroll, rerollScreen, remainingDice, remainingPlay } from './renderGameReroll.js'
 import { initOpp, defenseHalf, opponentThrow } from './renderGameOpp.js'
@@ -17,13 +15,94 @@ import { initPitcher } from './renderGamePitcher.js'
 import { subCard } from './renderGameSub.js'
 import { buildBar } from './buildLineupBar.js'
 import { scoreboardTable } from './renderScoreboard.js'
-
+*/
+import { batters } from '../model/batters.js'
+import { pitchers } from '../model/pitchers.js'
+import { DICE } from '../dice/dice.js'
+import { teams } from '../model/teams.js'
+import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
 
 //=============================
 // DOM AND CONSTANTS
 //=============================
+//
 
+// --score bug
+const logoAwayDiv = $t("game-away-logo");
+const logoHomeDiv = $t("game-home-logo");
+const scoreHomeDiv = $t("game-home-score");
+const scoreAwayDiv = $t("game-away-score");
+const runnerLayer = $t("runners");
+const fielderLayer = $t("fielders");
+const awayScoreLogo = $t("away-score-logo");
+const homeScoreLogo = $t("home-score-logo");
 
+//=============================
+// RENDERERS
+//=============================
+
+function renderScorebug() {
+  logoHomeDiv.style.background = homeTeam.tp;
+  homeScoreLogo.src = `public/assets/logos/${homeTeam.tpLogo}.svg`
+  logoAwayDiv.style.background = awayTeam.tp;
+  awayScoreLogo.src = `public/assets/logos/${awayTeam.tpLogo}.svg`;
+  scoreAwayDiv.style.background = awayTeam.tp;
+  scoreAwayDiv.style.color = awayTeam.tpText;
+  scoreHomeDiv.style.background = homeTeam.tp;
+  scoreHomeDiv.style.color = homeTeam.tpText;
+  scoreAwayDiv.textContent = G.game.score[0];
+  scoreHomeDiv.textContent = G.game.score[1];
+}
+
+function renderInning() {
+  
+}
+
+function renderOuts() {
+  
+}
+
+function renderPitcher() {
+  
+}
+
+function renderFielders() {
+  
+}
+
+function renderRunners() {
+  
+}
+
+function renderRoller() {
+  
+}
+
+function renderBatter() {
+  
+}
+
+function renderBoardLineup() {
+  
+}
+
+function renderResultTable() {
+  
+}
+
+function renderBoard() {
+  renderScorebug()
+  renderInning()
+  renderOuts()
+  renderPitcher()
+  renderFielders()
+  renderRunners()
+  renderRoller()
+  renderBatter()
+  renderBoardLineup()
+  renderResultTable()
+}
+/*
 //STARTING
 const leadoffCover = $t("lead-off-cover");
 const scoreboardCover = $t("scoreboard-cover");
@@ -41,14 +120,7 @@ const processMode = $t("process-mode");
 // --due up
 const dueUp = $t("due-up");
 
-// --score bug
-const logoAwayDiv = $t("game-away-logo");
-const logoHomeDiv = $t("game-home-logo");
-const scoreHomeDiv = $t("game-home-score");
-const scoreAwayDiv = $t("game-away-score");
-const runnerLayer = $t("runners");
-const awayScoreLogo = $t("away-score-logo");
-const homeScoreLogo = $t("home-score-logo");
+
 
 
 // --scoreboard
@@ -610,16 +682,7 @@ export function renderGame() {
 }
 
 function renderScorebug() {
-  logoHomeDiv.style.background = homeTeam.tp;
-  homeScoreLogo.src = `public/assets/logos/${homeTeam.tpLogo}.svg`
-  logoAwayDiv.style.background = awayTeam.tp;
-  awayScoreLogo.src = `public/assets/logos/${awayTeam.tpLogo}.svg`;
-  scoreAwayDiv.style.background = awayTeam.tp;
-  scoreAwayDiv.style.color = awayTeam.tpText;
-  scoreHomeDiv.style.background = homeTeam.tp;
-  scoreHomeDiv.style.color = homeTeam.tpText;
-  scoreAwayDiv.textContent = G.game.score[0];
-  scoreHomeDiv.textContent = G.game.score[1];
+  
 }
 
 function renderScoreboard() {

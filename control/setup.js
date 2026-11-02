@@ -1,6 +1,8 @@
+/*
 import { players } from '../model/players.js'
 import { pitchers } from '../model/pitchers.js'
 import { opponents } from '../model/opponents.js'
+
 import { G } from '../model/game.js'
 import { initCalendar, renderCalendar } from '../render/renderCalendarEvents.js'
 
@@ -25,6 +27,13 @@ import { setTest } from './testState.js'
 //import { initModScreen } from '../render/modals/modScreen.js'
 
 export const allPlayers = [...players, ...pitchers];
+*/
+import { G } from '../model/game.js'
+import { $n, $t, $c, $a, on, findKey, loadCard, randInt, hide, show } from '../util.js'
+import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
+import { teams, leagues } from '../model/teams.js'
+import { colorSetup } from './colorControl.js'
+
 
 function shuffle(array) {
   
@@ -35,11 +44,14 @@ function shuffle(array) {
 };
 
 export function gameSetup(slot) {
-  
   console.log("setting up")
-  document.documentElement.dataset.team = teams[Math.floor(Math.random() * teams.length)].code;
+  document.documentElement.dataset.team = teams[Math.floor(Math.random() * 30/*teams.length*/)].code;
+  G.game.thisOpp=teams.find((t) => t.code ===teams[Math.floor(Math.random() * 30/*teams.length*/)].code);
   G.myTeam = document.documentElement.dataset.team;
   G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team)
+  colorSetup($t("gameroller"));
+}
+/*
   $t('header-team-name').textContent = `${G.thisTeam.city} ${G.thisTeam.name}`;
   
   const root = document.documentElement;
@@ -121,3 +133,4 @@ export function renderApp() {
   renderNav();
   renderCover();
 }
+*/

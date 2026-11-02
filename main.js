@@ -2,7 +2,8 @@
 import {colorSetup} from './control/colorControl.js'
 */
 import { DICE } from './dice/dice.js'
-/*import { gameSetup } from './control/setup.js'
+import { gameSetup } from './control/setup.js'
+/*
 import Modal from './render/modal.js'
 import {renderStart} from './render/renderStart.js'
 */
@@ -31,6 +32,7 @@ const sacButton = $t('sac-btn');
 on(sacButton, 'click', () => {
   box.start_throw();
 });
+gameSetup(0);
 
 /*console.log(players.length)
 let result = players[12].bat([1, 6, 3, 4]);
