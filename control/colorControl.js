@@ -24,7 +24,6 @@ const _option = (val, text) => {
 
 
 export function colorSetup(box) {
-  console.log(G.myTeam)
   let uni = evergreenJerseys["MLB"][G.myTeam]["Home"];
   
   

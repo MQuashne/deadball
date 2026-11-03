@@ -1,6 +1,13 @@
 import { store } from '../model/store.js'
 import { G } from '../model/game.js'
+import { teams } from '../model/teams.js'
+import { batters } from '../model/batters.js'
+import { pitchers } from '../model/pitchers.js'
 
+export function defaultLineup(team) {
+  
+}
+/*
 export function benchPlayer(player){
   store.update(state => {
     state.lineup.bench.push(player)
@@ -39,3 +46,4 @@ export function swapPlayers(p1,p2){
     [state.lineup.order[i1],state.lineup.order[i2]] = [state.lineup.order[i2],state.lineup.order[i1]];
   },[["order:reordered",{p1,p2}],"lineup:changed"]);
 }
+*/

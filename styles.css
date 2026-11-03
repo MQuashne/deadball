@@ -80,9 +80,9 @@
     --field-td: #0c2340;
     --field-tl: #ba0c2f;
     --field-tp-text: #ffffff;
---field-ts-text: #ffffff;
---field-td-text: #ffffff;
---field-tl-text: #ffffff;
+    --field-ts-text: #ffffff;
+    --field-td-text: #ffffff;
+    --field-tl-text: #ffffff;
     
 }
 
@@ -1510,13 +1510,13 @@ h3 {
 .last-name {
     font-weight: 800;
     font-size: 0.9rem;
-    font-family:"Proxima Nova";
+    font-family: "Proxima Nova";
 }
 
 .first-name {
     font-size: 0.9rem;
     margin-right: 0.3rem;
-    font-family:"Proxima Nova";
+    font-family: "Proxima Nova";
 }
 
 
@@ -1815,10 +1815,10 @@ GAME BOARD
     display: flex;
     flex-direction: row;
     align-items: start;
-    align-content:flex-start;
+    align-content: flex-start;
     justify-content: start;
-    flex-wrap:wrap;
-    background:var(--field-td);
+    flex-wrap: wrap;
+    background: var(--field-td);
 }
 
 .board-name {
@@ -1828,104 +1828,107 @@ GAME BOARD
     flex-direction: row;
     align-items: center;
     padding-left: 0.5rem;
-    max-width:80%;
-    min-width:51%;
-    text-wrap:balance;
+    max-width: 80%;
+    min-width: 51%;
+    text-wrap: balance;
 }
 
-.board-name.pitcher{
+.board-name.pitcher {
     color: white;
 }
 
-.board-name.batter{
+.board-name.batter {
     color: white;
 }
 
 .board-last-name {
     font-size: 1rem;
-    text-transform:uppercase;
+    text-transform: uppercase;
     font-family: "Proxima Nova Semibold" !important;
-   
+    
 }
 
 .board-first-name {
     font-size: 0.8rem;
-   text-transform:uppercase;
+    text-transform: uppercase;
     font-family: "Proxima Nova Light";
     margin: 0.6rem 0.3rem -0.3rem 0;
 }
 
-.stat-head{
-    color:var(--tl-text);
-    font-family:Oswald;
-    font-size:0.9rem;
-    width:90%;
-    background:var(--tl);
-    text-align:center;
-    margin:0.3rem 5%;
-    clip-path:polygon(0% 0%,93% 0%,100% 30%,100% 100%,7% 100%, 0% 70%, 0% 0%);
-}
-.stat-head.pitcher{
-    background:var(--field-tl);
-    color:var(--field-tl-text);
-}
-
-.stat-head-half {
+.stat-head {
     color: var(--tl-text);
     font-family: Oswald;
     font-size: 0.9rem;
-    width: 45%;
+    width: 90%;
     background: var(--tl);
+    text-align: center;
+    margin: 0.3rem 5%;
+    clip-path: polygon(0% 0%, 93% 0%, 100% 30%, 100% 100%, 7% 100%, 0% 70%, 0% 0%);
+}
+
+.stat-head.pitcher {
+    background: var(--field-tl);
+    color: var(--field-tl-text);
+}
+
+.stat-head-half {
+    color: var(--bat-tl-text);
+    font-family: Oswald;
+    font-size: 0.9rem;
+    width: 45%;
+    background: var(--bat-tl);
     text-align: center;
     margin: 0.3rem 2.2%;
     clip-path: polygon(0% 0%, 93% 0%, 100% 30%, 100% 100%, 7% 100%, 0% 70%, 0% 0%);
 }
 
-.stat-value{
-    color:white;
-    font-family:"Proxima Nova Bold";
-    font-size:1.2rem;
-    width:100%;
-    text-align:center;
+.stat-value {
+    color: white;
+    font-family: "Proxima Nova Bold";
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
 }
+
 .stat-value-half {
     color: white;
     font-family: "Proxima Nova Bold";
     font-size: 1.2rem;
     width: 45%;
     text-align: center;
-    margin:0 2.2%;
-}
-.stat-value.old{
-    text-decoration:line-through;
-    color:#A5A5A5;
+    margin: 0 2.2%;
 }
 
-.stat-trait{
-    color:white;
-font-family:"Proxima Nova";
-font-size:0.6rem;
-width:50%;
-text-align:center;
-font-style:italic;
+.stat-value.old {
+    text-decoration: line-through;
+    color: #A5A5A5;
 }
 
-.stat-logo{
-   width:20%;
-    height:20%;
-    position:absolute;
-    top:3%;
-    right:1%;
-    display:flex;
-    align-items:center;
+.stat-trait {
+    color: white;
+    font-family: "Proxima Nova";
+    font-size: 0.6rem;
+    width: 50%;
+    text-align: center;
+    font-style: italic;
+}
+
+.stat-logo {
+    width: 20%;
+    height: 20%;
+    position: absolute;
+    top: 3%;
+    right: 1%;
+    display: flex;
+    align-items: center;
     justify-content: center;
-   
+    
 }
 
-.stat-logo img{
-    max-width:80%;
-    max-height:80%;
-    object-fit:contain;
+.stat-logo img {
+    max-width: 80%;
+    max-height: 80%;
+    object-fit: contain;
 }
 
 
@@ -2057,17 +2060,18 @@ font-style:italic;
     offset-rotate: 0deg;
     transition: offset-distance 500ms ease;
 }
+
 .fielder {
     width: 7.5%;
     height: 7.5%;
     border-radius: 50%;
-    background: var(--die-bg-color);
+    background: var(--field-die-bg-color);
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--die-font-color);
-    -webkit-text-stroke: 0.75px var(--die-outline-color);
+    color: var(--field-die-font-color);
+    -webkit-text-stroke: 0.75px var(--field-die-outline-color);
     paint-order: stroke fill;
     font-family: "BaseballClubSolid";
     font-size: 0.6rem;
@@ -2075,9 +2079,9 @@ font-style:italic;
     transform: translate(-50%, -50%);
 }
 
-#field-P{
-    top:64.9%;
-    left:49.6%;
+#field-P {
+    top: 64.9%;
+    left: 49.6%;
 }
 
 #field-C {
@@ -2302,7 +2306,7 @@ font-style:italic;
 
 #order-surface {
     display: flex;
-    flex-direction:column;
+    flex-direction: column;
     justify-content: start;
     align-items: center;
     min-width: 0;
@@ -2310,32 +2314,33 @@ font-style:italic;
     overflow-x: scroll;
 }
 
-#order-surface .board-lineup-line{
-    height:11%;
-    width:100%;
-    font-size:0.7rem;
-    color:white;
-    display:flex;
-    justify-content:start;
-    align-items:center;
-    line-height:1;
+#order-surface .board-lineup-line {
+    height: 11%;
+    width: 100%;
+    font-size: 0.7rem;
+    color: white;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    line-height: 1;
 }
 
-.board-lineup-num{
-    width:17.5%;
-    padding-left:0.4rem;
-    font-size:0.5rem;
-    font-family:"Proxima Nova";
-    font-weight:bold;
+.board-lineup-num {
+    width: 17.5%;
+    padding-left: 0.4rem;
+    font-size: 0.5rem;
+    font-family: "Proxima Nova";
+    font-weight: bold;
 }
 
 .board-lineup-name {
     font-size: 0.7rem;
-    font-family:"Proxima Nova Light";
+    font-family: "Proxima Nova Light";
 }
 
-.board-lineup-name.active, .board-lineup-num.active{
-    font-family:"Proxima Nova Bold" !important;
+.board-lineup-name.active,
+.board-lineup-num.active {
+    font-family: "Proxima Nova Bold" !important;
 }
 
 #batter-zone {
@@ -2356,11 +2361,11 @@ font-style:italic;
     flex-wrap: wrap;
 }
 
-#batter-demo{
-    font-family:"Proxima Nova";
-    font-size:0.6rem;
-    color:#AAAAAA;
-    width:100%;
+#batter-demo {
+    font-family: "Proxima Nova";
+    font-size: 0.6rem;
+    color: #AAAAAA;
+    width: 100%;
     padding: 0 0.5rem;
 }
 
@@ -2379,26 +2384,26 @@ font-style:italic;
     align-items: center;
 }
 
-#swing-table{
-    color:white;
-    font-size:0.7rem;
-    width:100%;
+#swing-table {
+    color: white;
+    font-size: 0.7rem;
+    width: 100%;
 }
 
-th{
-    font-family:"Proxima Nova Bold";
-    text-align:left;
+th {
+    font-family: "Proxima Nova Bold";
+    text-align: left;
 }
 
-tr{
-    font-family:"Proxima Nova";
+tr {
+    font-family: "Proxima Nova";
 }
 
-.roll-col{
-    text-align:left;
-    padding-left:0.3rem;
+.roll-col {
+    text-align: left;
+    padding-left: 0.3rem;
     width: 30%;
-    font-family:"Proxima Nova Semibold";
+    font-family: "Proxima Nova Semibold";
 }
 
 #table-surface {

@@ -32,7 +32,10 @@ import { G } from '../model/game.js'
 import { $n, $t, $c, $a, on, findKey, loadCard, randInt, hide, show } from '../util.js'
 import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
 import { teams, leagues } from '../model/teams.js'
+import { batters } from '../model/batters.js'
+import { pitchers } from '../model/pitchers.js'
 import { colorSetup } from './colorControl.js'
+import { initBoard, renderBoard } from '../render/renderGame.js'
 
 
 function shuffle(array) {
@@ -45,11 +48,29 @@ function shuffle(array) {
 
 export function gameSetup(slot) {
   console.log("setting up")
-  document.documentElement.dataset.team = teams[Math.floor(Math.random() * 30/*teams.length*/)].code;
-  G.game.thisOpp=teams.find((t) => t.code ===teams[Math.floor(Math.random() * 30/*teams.length*/)].code);
+  document.documentElement.dataset.team = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
+  let opp = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
+  G.game.opponent = teams.find((t) => t.code === opp);
   G.myTeam = document.documentElement.dataset.team;
-  G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team)
+  G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team);
   colorSetup($t("gameroller"));
+  
+  G.lineup.order = batters.filter((b) => b.team === G.thisTeam.code && b.defaultOrder !== "B" && b.defaultOrder !== "R").sort((a, b) => a.defaultOrder - b.defaultOrder);
+  
+  G.lineup.bench = batters.filter((b) => b.team === G.thisTeam.code && b.defaultOrder === "B");
+  
+  G.lineup.batterReserve = batters.filter((b) => b.team === G.thisTeam.code && b.defaultOrder === "R");
+  
+  G.lineup.rotation = pitchers.filter((p) => p.team === G.thisTeam.code && p.defaultStartingRotation !== "B" && p.defaultStartingRotation !== "R").sort((a, b) => a.defaultStartingRotation - b.defaultStartingRotation);
+  
+  G.lineup.bullpen = pitchers.filter((p) => p.team === G.thisTeam.code && p.defaultReliefRotation !== "S" && p.defaultReliefRotation !== "R").sort((a, b) => a.defaultReliefRotation - b.defaultReliefRotation);
+  
+  G.lineup.pitcherReserve = pitchers.filter((p) => p.team === G.thisTeam.code && p.defaultReliefRotation === "R");
+  
+  G.lineup.pitcher = G.lineup.rotation[0];
+  
+  initBoard();
+  renderBoard();
 }
 /*
   $t('header-team-name').textContent = `${G.thisTeam.city} ${G.thisTeam.name}`;

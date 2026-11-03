@@ -1,5 +1,5 @@
 import { $n, $t, $c, $a, $cl, on, randInt, hide, show, enable, disable, notifyBox } from '../util.js'
-import { modal } from '../main.js'
+//import { modal } from '../main.js'
 import { G } from '../model/game.js'
 import { store } from '../model/store.js'
 /*
@@ -37,11 +37,68 @@ const fielderLayer = $t("fielders");
 const awayScoreLogo = $t("away-score-logo");
 const homeScoreLogo = $t("home-score-logo");
 
+const hrButton = $t('hr-btn');
+
 //=============================
 // RENDERERS
 //=============================
+/*let homeTeam = G.thisTeam;
+let awayTeam = G.game.opponent;
+let battingTeam = G.thisTeam;
+let fieldingTeam = G.game.opponent;
+*/
+
+export function initBoard(){
+  on(hrButton,"click",() => console.log(G));
+}
+
+function renderSideColors() {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const cssVariables = {
+    '--field-tp': fieldTeam.tp,
+    '--field-ts': fieldTeam.ts,
+    '--field-td': fieldTeam.td,
+    '--field-tl': fieldTeam.tl,
+    '--field-tp-text': fieldTeam.tpText,
+    '--field-ts-text': fieldTeam.tsText,
+    '--field-td-text': fieldTeam.tdText,
+    '--field-tl-text': fieldTeam.tlText,
+    '--bat-tp': batTeam.tp,
+    '--bat-ts': batTeam.ts,
+    '--bat-td': batTeam.td,
+    '--bat-tl': batTeam.tl,
+    '--bat-tp-text': batTeam.tpText,
+    '--bat-ts-text': batTeam.tsText,
+    '--bat-td-text': batTeam.tdText,
+    '--bat-tl-text': batTeam.tlText,
+  }
+  
+  Object.entries(cssVariables).forEach(([key, value]) => {
+    document.documentElement.style.setProperty(key, value);
+  });
+  
+  [batTeam, fieldTeam].forEach((t) => {
+    const side = t === batTeam ? "bat" : "field";
+    
+    const uni = evergreenJerseys["MLB"][batTeam.code][t === homeTeam ? "Home" : "Away"]
+    
+    if (uni.stripe === "" || uni.stripe === uni.jersey) {
+      document.documentElement.style.setProperty(`--${side}-die-bg-color`, uni.jersey);
+    } else {
+      document.documentElement.style.setProperty(`--${side}-die-bg-color`, `linear-gradient(90deg,${uni.jersey} 0%, ${uni.jersey} 5%, ${uni.stripe}a0 6%, ${uni.jersey} 7%, ${uni.jersey} 35%, ${uni.stripe}a0 36%, ${uni.jersey} 37%, ${uni.jersey} 65%, ${uni.stripe}a0 66%, ${uni.jersey} 67%, ${uni.jersey} 95%, ${uni.stripe}a0 96%, ${uni.jersey} 97%, ${uni.jersey} 100%)`)
+    }
+    
+  document.documentElement.style.setProperty(`--${side}-die-font-color`, uni.text);
+  document.documentElement.style.setProperty(`--${side}-die-outline-color`, uni.outline ||= "#ffffff00");
+  })
+}
 
 function renderScorebug() {
+  let homeTeam = G.thisTeam;
+  let awayTeam = G.game.opponent;
+  let battingTeam = G.thisTeam;
+  let fieldingTeam = G.game.opponent;
+  
   logoHomeDiv.style.background = homeTeam.tp;
   homeScoreLogo.src = `public/assets/logos/${homeTeam.tpLogo}.svg`
   logoAwayDiv.style.background = awayTeam.tp;
@@ -90,17 +147,26 @@ function renderResultTable() {
   
 }
 
-function renderBoard() {
-  renderScorebug()
-  renderInning()
-  renderOuts()
-  renderPitcher()
-  renderFielders()
-  renderRunners()
-  renderRoller()
-  renderBatter()
-  renderBoardLineup()
-  renderResultTable()
+export function renderBoard() {
+  renderSideColors();
+  renderScorebug();
+  renderInning();
+  renderOuts();
+  renderPitcher();
+  renderFielders();
+  renderRunners();
+  renderRoller();
+  renderBatter();
+  renderBoardLineup();
+  renderResultTable();
+}
+
+function getTeams() {
+  const homeTeam = G.game.home ? G.thisTeam : G.game.opponent;
+  const awayTeam = G.game.home ? G.game.opponent : G.thisTeam;
+  const fieldTeam = ((G.game.home && G.game.half === 1) || (G.game.away && G.game.half === 2)) ? G.thisTeam : G.game.opponent;
+  const batTeam = fieldTeam === G.thisTeam ? G.game.opponent : G.thisTeam;
+  return [homeTeam, awayTeam, fieldTeam, batTeam]
 }
 /*
 //STARTING
@@ -1053,3 +1119,4 @@ function showDueUp() {
   });
   show(dueUp);
 }
+*/
