@@ -21,11 +21,13 @@ import { pitchers } from '../model/pitchers.js'
 import { DICE } from '../dice/dice.js'
 import { teams } from '../model/teams.js'
 import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
+import { swingTable } from '../model/tables.js'
+import { buildPitchDie, buildBatterSkill, batterUp, advanceRunners, processSwingOutcome } from '../actions/game.js'
 
 //=============================
 // DOM AND CONSTANTS
 //=============================
-//
+
 
 // --score bug
 const logoAwayDiv = $t("game-away-logo");
@@ -37,7 +39,60 @@ const fielderLayer = $t("fielders");
 const awayScoreLogo = $t("away-score-logo");
 const homeScoreLogo = $t("home-score-logo");
 
+const gameRoller = $t("gameRoller");
+export const box = new DICE.dice_box(gameRoller);
+
 const hrButton = $t('hr-btn');
+const mainRollBtn = $t("main-roll-btn");
+const rollResult = $t('roll-result');
+const rollCalc = $t("roll-calc");
+const rollOutcome = $t("roll-outcome");
+const swingTableEl = $t("swing-table");
+
+const ball = $t("ball");
+
+const trait_map = {
+  "P+": "Power Hitter",
+  "P++": "Elite Power Hitter",
+  "C+": "Contact Hitter",
+  "S+": "Speedy Runner",
+  "D+": "Great Defender",
+  "T+": "Tough Player",
+  "P-": "Weak Hitter",
+  "P--": "Extra Weak Hitter",
+  "C-": "Free Swinger",
+  "S-": "Slow Runner",
+  "D-": "Poor Defender",
+  "K+": "Strikeout Artist",
+  "GB+": "Ground Ball Machine",
+  "CN+": "Control Pitcher",
+  "ST+": "Great Stamina",
+  "CN-": "Wild"
+}
+
+const pd_map = {
+  0: "-D20",
+  1: "-D12",
+  2: "-D8",
+  3: "-D4",
+  4: "D4",
+  5: "D8",
+  6: "D12",
+  7: "D20"
+}
+
+const roll_text_map = {
+  swing: "SWING",
+  hit: "RUN",
+  def: "PLAY",
+  steal: "STEAL",
+  oddity: "EVENT",
+  injury: "INJURY"
+}
+
+const outcome_map = {
+  swing: () => processSwingOutcome(),
+}
 
 //=============================
 // RENDERERS
@@ -48,12 +103,31 @@ let battingTeam = G.thisTeam;
 let fieldingTeam = G.game.opponent;
 */
 
-export function initBoard(){
-  on(hrButton,"click",() => console.log(G));
+export function initBoard() {
+  on(hrButton, "click", () => console.log(G));
+  //const sacButton = $t('sac-btn');
+  on(mainRollBtn, 'click', () => {
+    box.start_throw(() => { hide(mainRollBtn) }, (notation) => {
+      swingResult(notation.result);
+    });
+  });
+  //-------------------
+  // DOM SETUP
+  //-------------------
+  //----- RESIZING OBSERVER FOR DICE BOX 
+  const ro = new ResizeObserver(entries => {
+    for (const entry of entries) {
+      const width = entry.contentRect.width;
+      runnerLayer.style.setProperty('--runner-scale', width / 100);
+    }
+  });
+  ro.observe(runnerLayer);
+  batterUp();
 }
 
 function renderSideColors() {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  console.log(fieldTeam.code)
   const cssVariables = {
     '--field-tp': fieldTeam.tp,
     '--field-ts': fieldTeam.ts,
@@ -79,25 +153,23 @@ function renderSideColors() {
   
   [batTeam, fieldTeam].forEach((t) => {
     const side = t === batTeam ? "bat" : "field";
-    
-    const uni = evergreenJerseys["MLB"][batTeam.code][t === homeTeam ? "Home" : "Away"]
-    
+    const uni = evergreenJerseys["MLB"][t.code][t === homeTeam ? "Home" : "Away"]
     if (uni.stripe === "" || uni.stripe === uni.jersey) {
       document.documentElement.style.setProperty(`--${side}-die-bg-color`, uni.jersey);
     } else {
       document.documentElement.style.setProperty(`--${side}-die-bg-color`, `linear-gradient(90deg,${uni.jersey} 0%, ${uni.jersey} 5%, ${uni.stripe}a0 6%, ${uni.jersey} 7%, ${uni.jersey} 35%, ${uni.stripe}a0 36%, ${uni.jersey} 37%, ${uni.jersey} 65%, ${uni.stripe}a0 66%, ${uni.jersey} 67%, ${uni.jersey} 95%, ${uni.stripe}a0 96%, ${uni.jersey} 97%, ${uni.jersey} 100%)`)
     }
     
-  document.documentElement.style.setProperty(`--${side}-die-font-color`, uni.text);
-  document.documentElement.style.setProperty(`--${side}-die-outline-color`, uni.outline ||= "#ffffff00");
-  })
+    document.documentElement.style.setProperty(`--${side}-die-font-color`, uni.text);
+    document.documentElement.style.setProperty(`--${side}-die-outline-color`, uni.outline ||= "#ffffff00");
+  });
+  homeTeam.uni = evergreenJerseys["MLB"][homeTeam.code]["Home"];
+  awayTeam.uni = evergreenJerseys["MLB"][awayTeam.code]["Away"];
+  
 }
 
 function renderScorebug() {
-  let homeTeam = G.thisTeam;
-  let awayTeam = G.game.opponent;
-  let battingTeam = G.thisTeam;
-  let fieldingTeam = G.game.opponent;
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
   
   logoHomeDiv.style.background = homeTeam.tp;
   homeScoreLogo.src = `public/assets/logos/${homeTeam.tpLogo}.svg`
@@ -112,39 +184,177 @@ function renderScorebug() {
 }
 
 function renderInning() {
-  
+  const inningNum = $t("inning-num");
+  const inningTop = $t("inning-top");
+  const inningBottom = $t("inning-bottom");
+  inningNum.textContent = G.game.inning;
+  if (G.game.half === 1) {
+    show(inningTop);
+    hide(inningBottom);
+  } else {
+    hide(inningTop);
+    show(inningBottom);
+  }
 }
 
 function renderOuts() {
-  
+  for (let i = 0; i < 2; i++) {
+  const outPips = $a("out-pip");
+  G.game.outs >= i + 1 ? outPips[i].classList.add("out-on") : outPips[i].classList.remove("out-on");
+}
 }
 
 function renderPitcher() {
-  
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const pitcher = fieldTeam.lineup.pitcher;
+  buildPitchDie(pitcher);
+  $t("pitcher-last").textContent = pitcher.last;
+  $t("pitcher-first").textContent = pitcher.first;
+  $t("pitch-logo").src = `public/assets/logos/${fieldTeam.tpLogo}.svg`;
+  $t("pitcher-num").textContent = `#${pitcher.num}`;
+  $t("pitcher-pos").textContent = pitcher.type;
+  $t("pitcher-hand").textContent = pitcher.hand;
+  $t("pitcher-ip").textContent = `${pitcher.ip} IP`;
+  $t("pd-value").textContent = pitcher.tempPD;
+  $t("pd-old").textContent = pitcher.PD === pitcher.tempPD ? "" : pitcher.PD;
+  $t("pitcher-traits").replaceChildren();
+  pitcher.traitsLong.forEach((tr) => {
+    const trait = $n("div", "stat-trait", $t("pitcher-traits"));
+    trait.textContent = tr
+  });
+  $t(`field-P`).textContent = pitcher.num;
+  box.setDice(`1d100+1d10+1${pitcher.tempPD.toLowerCase()}`);
 }
 
 function renderFielders() {
-  
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  fieldTeam.lineup.order.forEach((fi) => {
+    if (fi.fieldPos !== "DH") {
+      $t(`field-${fi.fieldPos}`).textContent = fi.num;
+      $t(`field-${fi.fieldPos}`).style.border = fi.D === "D+" ? "1.5px solid #FFD800" : "none";
+    }
+  })
 }
 
 function renderRunners() {
+  const elements = document.querySelectorAll('.runner');
+  const transitionPromises = Array.from(elements).flatMap(element =>
+    element.getAnimations().map(animation => animation.finished)
+  );
   
+  //UPDATE RUNNERS
+  const existingMap = new Map();
+  for (const child of runnerLayer.children) {
+    existingMap.set(child.dataset.pid, child);
+  }
+  G.game.runners.forEach((runner) => {
+    let el = existingMap.get(String(runner.player.personId));
+    
+    if (!el) {
+      // Create new element if it does not exist
+      const runDot = $n("div", ["runner"], runnerLayer);
+      runDot.dataset.pid = runner.player.personId;
+      runDot.dataset.location = runner.location;
+      runDot.textContent = runner.player.num;
+      runDot.style.offsetDistance = `${runner.location*100/4}%`;
+      
+    } else {
+      // Remove from map so we know it was kept
+      existingMap.delete(String(runner.player.personId));
+      const lastLoc = Number(el.dataset.location);
+      const newLoc = runner.location;
+      el.style.transitionDuration = `${(newLoc-lastLoc) * 500}ms`
+      el.dataset.location = newLoc;
+      if (newLoc === 4) {
+        el.addEventListener('transitionend', () => {
+          if (event.target !== el) return;
+          el.remove();
+          //runScored(runner)
+        }, { once: true });
+      }
+      // Update content if needed
+      el.style.offsetDistance = `${newLoc*100/4}%`;
+    }
+  });
+  // Delete elements that are no longer in the array
+  
+  Promise.all(transitionPromises).then(() => {
+    for (const el of existingMap.values()) {
+      if (el.dataset.pid) {
+        el.remove();
+      }
+    }
+  });
 }
 
 function renderRoller() {
-  
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  mainRollBtn.textContent = roll_text_map[`${G.game.process}:${G.game.mode}`];
+  if (G.game.process === "swing") {
+    show($t("main-roll-btn"));
+    box.setPalettes([batTeam.uni, batTeam.uni, fieldTeam.uni]);
+  }
 }
 
 function renderBatter() {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
+  buildBatterSkill(batter);
+  
+  
+  const pitcher = fieldTeam.lineup.pitcher;
+  $t("batter-last").textContent = batter.last;
+  $t("batter-first").textContent = batter.first;
+  $t("bat-logo").src = `public/assets/logos/${batTeam.tpLogo}.svg`;
+  $t("batter-num").textContent = `#${batter.num}`;
+  $t("batter-pos").textContent = batter.fieldPos;
+  $t("batter-hand").textContent = batter.hand;
+  $t("bt-value").textContent = batter.tempBT;
+  $t("obt-value").textContent = batter.tempOBT;
+  $t("bt-old").textContent = batter.BT === batter.tempBT ? "" : batter.BT;
+  $t("obt-old").textContent = batter.OBT === batter.tempOBT ? "" : batter.OBT;
+  $t("batter-traits").replaceChildren();
+  batter.traitsLong.forEach((tr) => {
+    const trait = $n("div", "stat-trait", $t("batter-traits"));
+    trait.textContent = [tr]
+  })
   
 }
 
 function renderBoardLineup() {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  for (let i = 1; i <= 9; i++) {
+    document.querySelector(`.board-lineup-name[data-order="${i}"]`).textContent = `${batTeam.lineup.order[i - 1].last} • ${batTeam.lineup.order[i - 1].hand}`;
+  }
+}
+
+function renderSwingTable() {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
+  const pitcher = fieldTeam.lineup.pitcher;
+  swingTable[3].max = batter.tempBT;
+  
+  swingTable[4].min = batter.tempBT + 1;
+  swingTable[4].max = batter.tempOBT;
+  
+  swingTable[5].min = batter.tempOBT + 1;
+  swingTable[5].max = batter.tempOBT + 5;
+  
+  swingTable[6].min = batter.tempOBT + 6;
+  
+  
+  const swingRows = swingTableEl.querySelectorAll("tr");
+  
+  swingTable.forEach((res, index) => {
+    if (index > 0 && index < 10) {
+      swingRows[index + 1].querySelector("td").textContent = `${res.min}${res.max-res.min>0 ? `-${res.max}` : ""}`
+    }
+  })
   
 }
 
 function renderResultTable() {
-  
+  if (G.game.process === "swing") renderSwingTable();
 }
 
 export function renderBoard() {
@@ -167,6 +377,25 @@ function getTeams() {
   const fieldTeam = ((G.game.home && G.game.half === 1) || (G.game.away && G.game.half === 2)) ? G.thisTeam : G.game.opponent;
   const batTeam = fieldTeam === G.thisTeam ? G.game.opponent : G.thisTeam;
   return [homeTeam, awayTeam, fieldTeam, batTeam]
+}
+
+function swingResult(roll) {
+  //RUN AT BEGINNING OF swing:outcome
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const mss = roll[0] + roll[1] + (fieldTeam.lineup.pitcher.tempPdValue > 3 ? 1 : -1) * roll[2];
+  rollCalc.textContent = `MSS: ${roll[0]} + ${roll[1]} ${fieldTeam.lineup.pitcher.tempPdValue>3 ? "+" : "-"} ${roll[2]} = ${mss}`;
+  rollOutcome.textContent = swingTable.find(res => res.min <= mss & res.max >= mss).outcome;
+  const resultRow = swingTable.findIndex(res => res.min <= mss & res.max >= mss);
+  //const highlightRow = 
+  swingTableEl.querySelectorAll("tr")[resultRow + 1].classList.add("result");
+  // highlightRow.style.fontWeight="bold";
+  // highlightRow.style.background="#FFFFFF40";
+  show(rollResult);
+  show(mainRollBtn);
+  advanceRunners("BB");
+  ball.classList.remove("hidden");
+  renderBoard();
+  //ball.className="g1";
 }
 /*
 //STARTING
@@ -760,10 +989,7 @@ function renderScoreboard() {
   
   G.game.half === 1 ? scInningBottom.classList.add("hidden") : scInningBottom.classList.remove("hidden")
   
-  for (let i = 0; i < 2; i++) {
-    const outPips = $a("out-pip");
-    G.game.outs >= i + 1 ? outPips[i].classList.add("out-on") : outPips[i].classList.remove("out-on");
-  }
+  
   if (G.game.atBat) {
     hide(pitcherCard, oppCard);
   } else {
@@ -771,56 +997,7 @@ function renderScoreboard() {
   }
 }
 
-function renderRunners() {
-  const elements = document.querySelectorAll('.runner');
-  const transitionPromises = Array.from(elements).flatMap(element =>
-    element.getAnimations().map(animation => animation.finished)
-  );
-  
-  //UPDATE RUNNERS
-  const existingMap = new Map();
-  for (const child of runnerLayer.children) {
-    existingMap.set(child.dataset.pid, child);
-  }
-  G.game.runners.forEach((runner) => {
-    let el = existingMap.get(String(runner.player.id));
-    
-    if (!el) {
-      // Create new element if it does not exist
-      const runDot = $n("div", ["runner"], runnerLayer);
-      runDot.dataset.pid = runner.player.id;
-      runDot.dataset.location = runner.location;
-      runDot.textContent = runner.player.number;
-      runDot.style.offsetDistance = `${runner.location*100/4}%`;
-      
-    } else {
-      // Remove from map so we know it was kept
-      existingMap.delete(String(runner.player.id));
-      const lastLoc = Number(el.dataset.location);
-      const newLoc = runner.location;
-      el.style.transitionDuration = `${(newLoc-lastLoc) * 500}ms`
-      el.dataset.location = newLoc;
-      if (newLoc === 4) {
-        el.addEventListener('transitionend', () => {
-          if (event.target !== el) return;
-          el.remove();
-          runScored(runner)
-        }, { once: true });
-      }
-      // Update content if needed
-      el.style.offsetDistance = `${newLoc*100/4}%`;
-    }
-  });
-  // Delete elements that are no longer in the array
-  
-  Promise.all(transitionPromises).then(() => {
-    for (const el of existingMap.values()) {
-      if (el.dataset.pid) {
-        el.remove();
-      }
-    }
-  });
-}
+
 
 function renderRoller() {
   //Eddie Campbell just rolls, only looks strange. 

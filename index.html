@@ -264,17 +264,19 @@
               <div id="game-home-logo" class="game-logo game-home">
                 <img id="home-score-logo">
               </div>
-              <div id="scoreboard-inning">
-                <div class="inning-arrow" id="inning-top">▲</div>
-                <div class="inning-arrow" id="inning-bottom">▼</div>
-                <div id="inning-num">7</div>
-                
-              </div>
-              <div id="out-count">
-                <div id="out-label">OUTS</div>
-                <div id="out-pips">
-                  <div class="out-pip out-on"></div>
-                  <div class="out-pip out-off"></div>
+              <div id="scoreboard-inning-outs">
+                <div id="scoreboard-inning">
+                  <div class="inning-arrow" id="inning-top">▲</div>
+                  <div class="inning-arrow" id="inning-bottom">▼</div>
+                  <div id="inning-num">7</div>
+                  
+                </div>
+                <div id="out-count">
+                  <div id="out-label">OUTS</div>
+                  <div id="out-pips">
+                    <div class="out-pip out-on"></div>
+                    <div class="out-pip out-off"></div>
+                  </div>
                 </div>
               </div>
               <div id="process-mode"></div>
@@ -282,17 +284,15 @@
           </div>
           <div id="scoreboard-zone" class="board-zone">
             <div id="scoreboard-surface" class="game-surface">
-              <div id="pitcher-first" class="board-name board-first-name pitcher">Chris</div>
-              <div id="pitch-logo" class="stat-logo"><img src="public/assets/logos/ATL-D.svg"></div>
-              <div id="pitcher-last" class="board-name board-last-name pitcher">Sale</div>
+              <div id="pitcher-first" class="board-name board-first-name pitcher"></div>
+              <div class="stat-logo"><img id="pitch-logo"></div>
+              <div id="pitcher-last" class="board-name board-last-name pitcher"></div>
+              <div id="pitcher-demo"><span id=pitcher-num></span> • <span id="pitcher-pos"></span> • <span id="pitcher-hand"></span> • <span id="pitcher-ip"></span></div>
               <div class="stat-head pitcher">Pitch Die</div>
-              <div id="pd-value" class="stat-value pitcher">+D20</div>
+              <div class="stat-value pitcher"><span id="pd-old" class="stat-value old"></span><span id="pd-value"></span></div>
               <div class="stat-head pitcher">Traits</div>
-              <div class="stat-trait pitcher">Strikeout Artist</div>
-              <div class="stat-trait pitcher">Ground Ball Machine</div>
-              <div class="stat-trait pitcher">Control Pitcher</div>
-              <div class="stat-trait pitcher">Great Stamina</div>
-              
+              <div id="pitcher-traits">
+              </div>
             </div>
           </div>
           <div id="field-zone" class="board-zone">
@@ -315,6 +315,7 @@
                   <div id="field-LF" class="fielder">7</div>
                   <div id="field-CF" class="fielder">88</div>
                   <div id="field-RF" class="fielder">9</div>
+                  <div id="ball" class="home hidden"></div>
                 </div>
               </div>
             </div>
@@ -336,8 +337,10 @@
                     </div>
                   </button>
                   
-                  <button id="roll-outcome" class="roll-play btn-glass btn-pulse off-outcome display-shift roll-el hidden">x</button>
+                  <div id="roll-result" class="roller-message hidden"><span id="roll-outcome">OUTCOME</span><span id="roll-calc"></span></div>
                   <button id="main-roll-btn" class="btn btn-glass roll-btn btn-pulse main-roll roll-el hidden">ROLL</button>
+                  
+
                   
                   <button id="main-out-btn" class="btn btn-glass roll-btn main-roll roll-el hidden">OUT</button>
                   
@@ -382,20 +385,18 @@
           </div>
           <div id="batter-zone" class="board-zone">
             <div id="batter-surface" class="game-surface">
-              <div id="batter-first" class="board-name board-first-name batter">Bryson</div>
-              <div class="stat-logo"><img id="bat-logo" src="public/assets/logos/PHI-D.svg"></div>
-              <div id="batter-last" class="board-name board-last-name batter">Stott</div>
-              <div id="batter-demo"><span id=batter-num>#5</span> • <span id="batter-pos">3B</span></div>
+              <div id="batter-first" class="board-name board-first-name batter"></div>
+              <div class="stat-logo"><img id="bat-logo"></div>
+              <div id="batter-last" class="board-name board-last-name batter"></div>
+              <div id="batter-demo"><span id=batter-num></span> • <span id="batter-pos"></span> • <span id="batter-hand"></span></div>
               <div class="stat-head-half">BT</div>
               <div class="stat-head-half">OBT</div>
               
-              <div id="bt-value" class="stat-value-half"><span id="bt-old" class="stat-value old"></span>27</div>
-              <div id="obt-value" class="stat-value-half"><span id="obt-old" class="stat-value old"></span>34</div>
+              <div id="bt-value-block" class="stat-value-half"><span id="bt-old" class="stat-value old"></span><span id="bt-value"></span></div>
+              <div id="obt-value-block" class="stat-value-half"><span id="obt-old" class="stat-value old"></span><span id="obt-value"></span></div>
               <div class="stat-head">Traits</div>
-              <div class="stat-trait">Elite Power Hitter</div>
-              <div class="stat-trait">Contact Hitter</div>
-              <div class="stat-trait">Speedy Runner</div>
-              <div class="stat-trait">Tough Player</div>
+              <div id="batter-traits">
+              </div>
             </div>
           </div>
           <div id="order-zone" class="board-zone">
@@ -405,7 +406,6 @@
                   1.
                 </div>
                 <div class="board-lineup-name" data-order="1">
-                  Schwarber
                 </div>
               </div>
               <div class="board-lineup-line" data-order="2">
@@ -413,7 +413,6 @@
                   2.
                 </div>
                 <div class="board-lineup-name" data-order="2">
-                  Turner
                 </div>
               </div>
               <div class="board-lineup-line" data-order="3">
@@ -421,7 +420,6 @@
                   3.
                 </div>
                 <div class="board-lineup-name" data-order="3">
-                  Harper
                 </div>
               </div>
               <div class="board-lineup-line" data-order="4">
@@ -429,7 +427,6 @@
                   4.
                 </div>
                 <div class="board-lineup-name" data-order="4">
-                  Bohm
                 </div>
               </div>
               <div class="board-lineup-line" data-order="5">
@@ -437,7 +434,6 @@
                   5.
                 </div>
                 <div class="board-lineup-name" data-order="5">
-                  Stott
                 </div>
               </div>
               <div class="board-lineup-line" data-order="6">
@@ -445,7 +441,6 @@
                   6.
                 </div>
                 <div class="board-lineup-name" data-order="6">
-                  Marsh
                 </div>
               </div>
               <div class="board-lineup-line" data-order="7">
@@ -453,7 +448,6 @@
                   7.
                 </div>
                 <div class="board-lineup-name" data-order="7">
-                  Realmuto
                 </div>
               </div>
               <div class="board-lineup-line" data-order="8">
@@ -461,7 +455,6 @@
                   8.
                 </div>
                 <div class="board-lineup-name" data-order="8">
-                  Hill
                 </div>
               </div>
               <div class="board-lineup-line" data-order="9">
@@ -469,7 +462,6 @@
                   9.
                 </div>
                 <div class="board-lineup-name" data-order="9">
-                  Crawford
                 </div>
               </div>
             </div>
@@ -477,16 +469,52 @@
           <div id="table-zone" class="board-zone">
             <div id="table-surface" class="game-surface">
               <table id="swing-table" class="result-table">
-                <th class="roll-col">MSS</th><th class="result-col">Result</th>
-                <tr><td class="roll-col">1</td><td>Oddity</td></tr>
-                <tr><td class="roll-col">2-5</td><td>Critical Hit</td></tr>
-                <tr><td class="roll-col">6-27</td><td>Hit</td></tr>
-                <tr><td class="roll-col">28-34</td><td>Walk</td></tr>
-                <tr><td class="roll-col">35-39</td><td>Possible Error</td></tr>
-                <tr><td class="roll-col">40-49</td><td>Sacrifice</td></tr>
-                <tr><td class="roll-col">50-69</td><td>Fielder's Choice</td></tr>
-               <tr><td class="roll-col">70+</td><td>Out</td></tr>
-               <tr><td class="roll-col">99</td><td>Oddity</td></tr>
+                <th class="roll-col">MSS</th>
+                <th class="result-col">Result</th>
+                <tr>
+                  <td class="roll-col"><1</td>
+                  <td>Critical Hit</td>
+                </tr>
+                <tr>
+                  <td class="roll-col">1</td>
+                  <td>Oddity</td>
+                </tr>
+                <tr>
+                  <td class="roll-col">2-5</td>
+                  <td>Critical Hit</td>
+                </tr>
+                <tr>
+                  <td id="swing-hit" class="roll-col">6-27</td>
+                  <td>Hit</td>
+                </tr>
+                <tr>
+                  <td id="swing-walk" class="roll-col">28-34</td>
+                  <td>Walk</td>
+                </tr>
+                <tr>
+                  <td id="swing-error" class="roll-col">35-39</td>
+                  <td>Possible Error</td>
+                </tr>
+                <tr>
+                  <td id="swing-sac" class="roll-col">40-49</td>
+                  <td>Sacrifice</td>
+                </tr>
+                <tr>
+                  <td class="roll-col">50-69</td>
+                  <td>Fielder's Choice</td>
+                </tr>
+                <tr>
+                  <td class="roll-col">70+</td>
+                  <td>Out</td>
+                </tr>
+                <tr>
+                  <td class="roll-col">99</td>
+                  <td>Oddity</td>
+                </tr>
+                                <tr>
+                  <td class="roll-col">100+</td>
+                  <td>Critical Out</td>
+                </tr>
               </table>
             </div>
           </div>

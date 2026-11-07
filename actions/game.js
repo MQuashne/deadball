@@ -1,10 +1,345 @@
 //back from pitcher to roll button won't move 
 
 import { store } from '../model/store.js'
+import { teams } from '../model/teams.js'
 import { G } from '../model/game.js'
-import { rollTests } from '../control/rollTest.js'
-import { oppTests } from '../control/oppTest.js'
+import {swingTable} from '../model/tables.js'
 import { $n, $t, $c, $a, $cl, on, randInt, hide, show, enable, disable, notifyBox } from '../util.js'
+
+const pd_map = {
+  0: "-D20",
+  1: "-D12",
+  2: "-D8",
+  3: "-D4",
+  4: "D4",
+  5: "D8",
+  6: "D12",
+  7: "D20"
+}
+
+export function resetField() {
+  //pitchers:
+  //ip =0;
+  //stats=0;
+  
+  let opp = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
+  store.update((state) => {
+    state.game = {
+      opponent: teams.find((t) => t.code === opp),
+      home: true,
+      process: "swing",
+      mode: "roll",
+      roll: [],
+      outcome: "",
+      inning: 1,
+      half: 1,
+      atBat: false,
+      inProgress: true,
+      outs: 0,
+      score: [0, 0],
+      runners: [],
+      scoreboard: [
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ],
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ],
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ],
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ],
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ],
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ],
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ],
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ],
+        [
+          { hits: 0, runs: 0, errors: 0 },
+          { hits: 0, runs: 0, errors: 0 }
+        ]
+      ]
+    }
+    resetTeams();
+  }, ["field:reset"]);
+}
+
+function resetTeams() {
+  store.update((state) => {
+    console.log(state);
+    [...state.thisTeam.lineup.rotation, ...state.thisTeam.lineup.bullpen, ...state.thisTeam.lineup.pitcherReserve, ...state.game.opponent.lineup.rotation, ...state.game.opponent.lineup.bullpen, ...state.game.opponent.lineup.pitcherReserve].forEach((pi) => {
+      pi.ip = 0;
+      pi.handBonus = false;
+      pi.gameStats = [];
+      pi.scoreless = 0;
+      pi.inningK = 0;
+      pi.jamEscape = false;
+      pi.threeRunInning = false;
+      pi.fourRunTwoInning = false;
+      pi.inningsOverSix = 0;
+      pi.threeUpDown = false;
+      pi.threeScoreless = false;
+      pi.rpRuns = 0;
+      pi.rpInningsOverOne = 0;
+    });
+    
+    state.thisTeam.lineup.pitcher = state.thisTeam.lineup.rotation[state.thisTeam.currentRotationIndex];
+    state.thisTeam.lineup.pitcher.gameStats.push(addPitcherInning(1));
+    
+    state.game.opponent.lineup.pitcher = state.game.opponent.lineup.rotation[state.game.opponent.currentRotationIndex];
+    state.game.opponent.lineup.pitcher.gameStats.push(addPitcherInning(1));
+    
+  }, ["players:reset"])
+}
+
+function addPitcherInning(inn) {
+  const stats = {
+    inning: inn,
+    outs: 0,
+    K: 0,
+    R: 0,
+    ER: 0,
+    BB: 0,
+    BF: 0,
+    H: 0,
+    "1B": 0,
+    "2B": 0,
+    "3B": 0,
+    HR: 0,
+    WP: 0,
+    BK: 0,
+    GB: 0,
+    FB: 0,
+    E: 0,
+  };
+  
+  return stats;
+}
+
+function addBatterInning(inn) {
+  const stats = {
+    inning: inn,
+    PA: 0,
+    AB: 0,
+    H: 0,
+    R: 0,
+    K: 0,
+    BB: 0,
+    HBP: 0,
+    IBB: 0,
+    "1B": 0,
+    "2B": 0,
+    "3B": 0,
+    HR: 0,
+    RBI: 0,
+    SB: 0,
+    CS: 0,
+    PO: 0,
+    A: 0,
+    E: 0
+  };
+  return stats;
+}
+
+export function buildPitchDie(pitcher) {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  //const pitcher = fieldTeam.lineup.pitcher;
+  
+  //pitcher will have stats bu inning,
+  pitcher.tempPdValue = pitcher.pdValue;
+  pitcher.tempPD = pd_map[pitcher.pdValue];
+  //Handedness
+  if (pitcher.hand === batTeam.lineup.order[batTeam.currentBatterIndex].hand && pitcher.type === "SP" && pitcher.tempPdValue < 6) {
+    pitcher.tempPdValue++;
+    //pitcher.tempPD = pd_map[pitcher.tempPdValue];
+  }
+  
+  if (pitcher.jamEscape && pitcher.tempPdValue < 7) pitcher.tempPdValue++;
+  if (pitcher.threeRunInning && pitcher.tempPdValue < 7) pitcher.tempPdValue++;
+  if (pitcher.fourRunTwoInning && pitcher.tempPdValue < 7) pitcher.tempPdValue++;
+  if (pitcher.threeUpDown && pitcher.tempPdValue < 7) pitcher.tempPdValue++;
+  if (pitcher.threeScoreless && pitcher.tempPdValue < 7) pitcher.tempPdValue++;
+  
+  Math.max(pitcher.tempPdValue - pitcher.inningsOverSix, 0)
+  
+  if (pitcher.type === "RP") Math.max(pitcher.tempPdValue - pitcher.rpRuns - pitcher.rpInningsOverOne, 0);
+  pitcher.tempPD = pd_map[pitcher.tempPdValue];
+}
+
+export function batterUp() {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
+  G.game.runners.push({
+    player: batter,
+    location: 0
+  });
+}
+
+export function buildBatterSkill(batter) {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const pitcher = fieldTeam.lineup.pitcher;
+  [batter.tempBT, batter.tempOBT] = [batter.BT, batter.OBT];
+  if (pitcher.K === "K+") batter.tempBT--;
+  if (pitcher.CN === "CN+") batter.tempOBT -= 2;
+  if (pitcher.CN === "CN-") batter.tempOBT += 3;
+  if (G.game.runners.find(r => r.location > 1) && batter.C === "C-") {
+    batter.tempOBT -= 3;
+    batter.tempBT -= 3;
+  }
+}
+
+//=============================
+// RUNNER ADVANCEMENT
+//=============================
+
+export function advanceRunners(lastPlay) {
+  store.update((state) => {
+    const runners = state.game.runners;
+    const batter = runners.find(r => r.location === 0);
+    
+    if (lastPlay === "BB") {
+      advanceOnWalk(runners, batter);
+    } else if (lastPlay === "SAC") {
+      advanceOnSac(runners);
+    } else {
+      //It's a hit or we're in running mode 
+      advanceOnHit(state, runners, lastPlay);
+    }
+  }, [
+    ["runners:advanced", { lastPlay }]
+  ]);
+}
+
+function advanceOnWalk(runners, batter) {
+  const FB = runners.find(r => r.location === 1);
+  const SB = runners.find(r => r.location === 2);
+  const TB = runners.find(r => r.location === 3);
+  
+  batter.location = 1;
+  if (FB) {
+    FB.location = 2;
+    if (SB) {
+      SB.location = 3;
+      if (TB) TB.location = 4;
+    }
+  }
+}
+
+function advanceOnSac(runners) {
+  if (runners.length === 1) {
+    //playerOut(getBatter())
+  } else {
+    if (G.game.outs < 2) {
+      runners.forEach((r) => {
+        if (r.location > 0) r.location++;
+      });
+    }
+    // setTimeout(() => playerOut(getBatter()), 1200);
+  }
+}
+
+const ADVANCE_BY = { "1B": 1, "2B": 2, "3B": 3, "HR": 4, extraBases: 1 };
+
+function advanceOnHit(state, runners, lastPlay) {
+  const advanceBy = ADVANCE_BY[lastPlay];
+  
+  runners.forEach((rn) => {
+    rn.location = Math.min(rn.location + advanceBy, 4);
+  });
+  
+  if (lastPlay === "extraBases") {
+    runners[runners.length - 1].location -= 1;
+    state.game.process = "hit";
+  }
+}
+
+
+
+//=============================
+// MODE/PROCESS STATE
+//=============================
+
+export function changeMode(mode) {
+  store.update(state => {
+    state.game.mode = mode;
+  }, ["mode:changed"]);
+}
+export function changeProcess(process) {
+  store.update(state => {
+    state.game.process = process;
+  }, ["process:changed"]);
+}
+export function changeProcessMode(process, mode) {
+  store.update(state => {
+    state.game.process = process;
+    state.game.mode = mode;
+  }, [
+    ["process:changed"],
+    ["mode:changed"]
+  ]);
+}
+
+export function processSwingOutcome(roll) {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const mss = roll[0] + roll[1] + (fieldTeam.lineup.pitcher.tempPdValue > 3 ? 1 : -1) * roll[2];
+  const outcome = swingTable.find(res => res.min <= mss & res.max >= mss).outcome;
+  store.update((state) => {
+    state.game.roll=roll;
+    state.game.outcome=outcome;
+  })
+}
+
+function getTeams() {
+  const homeTeam = G.game.home ? G.thisTeam : G.game.opponent;
+  const awayTeam = G.game.home ? G.game.opponent : G.thisTeam;
+  const fieldTeam = ((G.game.home && G.game.half === 1) || (G.game.away && G.game.half === 2)) ? G.thisTeam : G.game.opponent;
+  const batTeam = fieldTeam === G.thisTeam ? G.game.opponent : G.thisTeam;
+  return [homeTeam, awayTeam, fieldTeam, batTeam]
+}
+
+/* PITCH DIE ADJUSTMENTS
+Handed: +1 up to d12 for sp, d20 for rp
+
+add for...
+3  consecutive scoreless
+3K inning
+escape bases loaded no out with no runs
+
+subtract for...
+3+ run inning
+4+ run 2 innings
+every run over 4
+every inning past 6
+
+RELIEVERS:
+subtract for...
+every run
+every 3 outs
+
+
+*/
+
+
+
+
+
 
 /*
 PROCESSES 
@@ -28,7 +363,7 @@ handling:
  batter gives 1, have 2. use 2, 1 remains. batter gives 3, have 4. batter gives 2, have 6. use 5, have 1. that die is only used when the whole pool is.
  3) 1 die discount on everything and start with 1... [first used]
  start with 1, batter gives 1, have 2. use 2, have 1. batter gives 3, have 4. batter gives 2, have 6. use 5, have 2. 
-*/
+
 let win;
 //=============================
 // GAME LIFECYCLE
@@ -126,7 +461,7 @@ export function playBall() {
   } else {
     store.emit("inning:defense");
   }
-  */
+  
 }
 
 export function checkGameEnd(inningEnd = true) {
@@ -265,7 +600,7 @@ export function firstBatter(player) {
      state.game.rerolls += player.reroll;
      state.game.mods += player.modifier;
      state.game.mode = "roll";
-   });*/
+   });
 }
 
 export function subBatter(subOut, subIn) {
@@ -299,73 +634,7 @@ function getBatter() {
   return G.lineup.order[G.game.currentBatterIndex]
 }
 
-//=============================
-// RUNNER ADVANCEMENT
-//=============================
 
-export function advanceRunners(lastPlay) {
-  store.update((state) => {
-    const runners = state.game.runners;
-    const batter = runners.find(r => r.location === 0);
-    
-    if (lastPlay === "BB") {
-      advanceOnWalk(runners, batter);
-    } else if (lastPlay === "SAC") {
-      advanceOnSac(runners);
-    } else {
-      //It's a hit or we're in running mode 
-      advanceOnHit(state, runners, lastPlay);
-    }
-    
-    maybeEnterRunMode(state, lastPlay);
-  }, [
-    ["runners:advanced", { lastPlay }]
-  ]);
-}
-
-function advanceOnWalk(runners, batter) {
-  const FB = runners.find(r => r.location === 1);
-  const SB = runners.find(r => r.location === 2);
-  const TB = runners.find(r => r.location === 3);
-  
-  batter.location = 1;
-  if (FB) {
-    FB.location = 2;
-    if (SB) {
-      SB.location = 3;
-      if (TB) TB.location = 4;
-    }
-  }
-  //setTimeout(() => nextBatter(),1000);
-}
-
-function advanceOnSac(runners) {
-  if (runners.length === 1) {
-    playerOut(getBatter())
-  } else {
-    if (G.game.outs < 2) {
-      runners.forEach((r) => {
-        if (r.location > 0) r.location++;
-      });
-    }
-    setTimeout(() => playerOut(getBatter()), 1200);
-  }
-}
-
-const ADVANCE_BY = { "1B": 1, "2B": 2, "3B": 3, "HR": 4, extraBases: 1 };
-
-function advanceOnHit(state, runners, lastPlay) {
-  const advanceBy = ADVANCE_BY[lastPlay];
-  
-  runners.forEach((rn) => {
-    rn.location = Math.min(rn.location + advanceBy, 4);
-  });
-  
-  if (lastPlay === "extraBases") {
-    runners[runners.length - 1].location -= 1;
-    state.game.process = "hit";
-  }
-}
 
 function maybeEnterRunMode(state, lastPlay) {
   const isHit = lastPlay !== "extraBases" && lastPlay !== "BB" && lastPlay !== "SAC";
@@ -621,4 +890,4 @@ export const specialBatterThrow = {
     });
     advanceRunners("1B");
   }
-}
+}*/

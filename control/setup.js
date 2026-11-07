@@ -36,6 +36,8 @@ import { batters } from '../model/batters.js'
 import { pitchers } from '../model/pitchers.js'
 import { colorSetup } from './colorControl.js'
 import { initBoard, renderBoard } from '../render/renderGame.js'
+import { resetField } from '../actions/game.js'
+import { defaultLineup, rosterTeams } from '../actions/lineup.js'
 
 
 function shuffle(array) {
@@ -47,28 +49,15 @@ function shuffle(array) {
 };
 
 export function gameSetup(slot) {
-  console.log("setting up")
+  rosterTeams();
   document.documentElement.dataset.team = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
   let opp = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
   G.game.opponent = teams.find((t) => t.code === opp);
   G.myTeam = document.documentElement.dataset.team;
   G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team);
   colorSetup($t("gameroller"));
-  
-  G.lineup.order = batters.filter((b) => b.team === G.thisTeam.code && b.defaultOrder !== "B" && b.defaultOrder !== "R").sort((a, b) => a.defaultOrder - b.defaultOrder);
-  
-  G.lineup.bench = batters.filter((b) => b.team === G.thisTeam.code && b.defaultOrder === "B");
-  
-  G.lineup.batterReserve = batters.filter((b) => b.team === G.thisTeam.code && b.defaultOrder === "R");
-  
-  G.lineup.rotation = pitchers.filter((p) => p.team === G.thisTeam.code && p.defaultStartingRotation !== "B" && p.defaultStartingRotation !== "R").sort((a, b) => a.defaultStartingRotation - b.defaultStartingRotation);
-  
-  G.lineup.bullpen = pitchers.filter((p) => p.team === G.thisTeam.code && p.defaultReliefRotation !== "S" && p.defaultReliefRotation !== "R").sort((a, b) => a.defaultReliefRotation - b.defaultReliefRotation);
-  
-  G.lineup.pitcherReserve = pitchers.filter((p) => p.team === G.thisTeam.code && p.defaultReliefRotation === "R");
-  
-  G.lineup.pitcher = G.lineup.rotation[0];
-  
+  //G.lineup=defaultLineup(G.thisTeam.code);
+  resetField();
   initBoard();
   renderBoard();
 }

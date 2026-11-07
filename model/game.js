@@ -22,6 +22,17 @@ export const G = {
     { id: "playoffs", type: "notion", title: "Playoffs?", description: " Playoffs, baby!", status: "future" }
   ],
   currentEventIndex:0,
+  rules:{
+    advancedFatigue:true,
+    rest:true,
+    oddities:true,
+    injury:true,
+    hotCold:false,
+    outOfPosition:false,
+    prospects:false,
+    qualityOnBench:false
+    
+  },
   game: { //single game
     home: true,
     process: "swing",

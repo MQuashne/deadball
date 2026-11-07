@@ -24,14 +24,7 @@ const phi_home = {
   "outline": "#F5F5F5"
 }
 
-const gameRoller = $t("gameRoller");
-const box = new DICE.dice_box(gameRoller);
-box.setDice("1d100+1d10+1d8");
-box.setPalettes([phi_home, phi_home, ari_away]);
-const sacButton = $t('sac-btn');
-on(sacButton, 'click', () => {
-  box.start_throw();
-});
+
 gameSetup(0);
 
 /*console.log(players.length)

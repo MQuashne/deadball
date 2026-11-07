@@ -130,7 +130,7 @@ export const DICE = (function() {
         // half-height/half-width (0 = center, 1 = edge/barrier). y_fraction > 0 is
         // the upper half of the desk, < 0 is the lower half.
         lineup_enabled: true,
-        lineup_y_fraction: 0.72,
+        lineup_y_fraction: 0.6,
         lineup_max_spacing_scale: 2.5, //cap spacing at N * vars.scale so few dice don't spread edge-to-edge
         // Floor on center-to-center spacing, as a multiple of vars.scale (the
         // die's world-space size). This is the actual knob for "dice overlap
