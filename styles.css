@@ -83,6 +83,8 @@
     --field-ts-text: #ffffff;
     --field-td-text: #ffffff;
     --field-tl-text: #ffffff;
+    --randX:50%;
+    --randY:50%;
     
 }
 
@@ -1677,7 +1679,7 @@ GAME BOARD
 .game-surface {
     height: calc(100% - 0.3rem);
     width: calc(100% - 0.3rem);
-    background: var(--td);
+    background-image: linear-gradient(90deg,oklch(from var(--td) calc(l - 0.12) c h / 0.75),oklch(from var(--td) calc(l - 0.12) c h / 0.75)),url("public/assets/felt.jpeg");
     background-clip: padding-box;
     overflow: hidden;
     position: relative;
@@ -1866,11 +1868,11 @@ GAME BOARD
 }
 
 .stat-head {
-    color: var(--tl-text);
+    color: var(--bat-tl-text);
     font-family: Oswald;
     font-size: 0.9rem;
     width: 90%;
-    background: var(--tl);
+    background: var(--bat-tl);
     text-align: center;
     margin: 0.3rem 5%;
     clip-path: polygon(0% 0%, 93% 0%, 100% 30%, 100% 100%, 7% 100%, 0% 70%, 0% 0%);
@@ -2045,8 +2047,10 @@ GAME BOARD
 }
 
 #runners {
-    height: 100%;
-    width: 100%;
+    height: 80%;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 20%;
     aspect-ratio: 1 / 1;
     grid-area: control;
     position: relative;
@@ -2074,8 +2078,8 @@ GAME BOARD
 }
 
 .runner {
-    width: 4.8%;
-    height: 4.8%;
+    width: 6.2%;
+    height: 6.2%;
     border-radius: 50%;
     background: var(--bat-die-bg-color);
     position: absolute;
@@ -2091,7 +2095,7 @@ GAME BOARD
     offset-path: url(#basePath);
     offset-distance: 0%;
     offset-rotate: 0deg;
-    transition: offset-distance 500ms ease;
+    transition: offset-distance 1s ease;
 }
 
 .fielder {
@@ -2112,7 +2116,7 @@ GAME BOARD
     transform: translate(-50%, -50%);
 }
 
-#ball {
+#ball2 {
     width: 3%;
     height: 3%;
     border-radius: 50%;
@@ -2121,20 +2125,98 @@ GAME BOARD
     transform: translate(-50%, -50%);
 }
 
-#field-P {
+#ball {
+    position: absolute;
+    width: 6%;
+    height: 6%;
+    border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #fff, #e8e8e8);
+    box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
+        0px 0px 2px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    /* clips the seams to the ball */
+    transform: translate(-50%, -50%);
+    transition: all 1s ease-in-out;
+}
+
+#ball.spin {
+    animation: spin 0.2s linear infinite;
+    transform: translate(-50%, -50%);
+}
+
+#ball::before,
+#ball::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    border: 1px solid #c8102e;
+    border-radius: 50%;
+}
+
+#ball::before {
+    left: -65%;
+}
+
+/* curve bulging in from the left */
+#ball::after {
+    right: -65%;
+}
+
+/* curve bulging in from the right */
+
+#ball.home {
+    left: 49.6%;
+    top: 90%;
+}
+
+.loc-deep {
+    left: var(--randX);
+    top: var(--randY);
+    
+}
+
+.loc-g2 {
+    left: 49.6%;
+    top: 83%;
+}
+
+.loc-g3 {
+    left: 72%;
+    top: 52%;
+}
+
+.loc-g4 {
+    left: 56%;
+    top: 40%;
+}
+
+.loc-g6 {
+    left: 44%;
+    top: 40%;
+}
+
+.loc-g7 {
+    left: 28%;
+    top: 52%;
+}
+
+.loc-P {
     top: 64.9%;
     left: 49.6%;
 }
 
-#field-C, #ball.home{
+.loc-C {
     top: 94%;
     left: 49.6%;
 }
 
-#field-1B, #ball.g1{
-    top: 55%;
+.loc-1B {
+    top: 57%;
     left: 76%;
-    transition:all 0.5s;
+    transition: all 0.5s;
 }
 
 #field-2B {
@@ -2286,11 +2368,13 @@ GAME BOARD
     align-items: center;
 }
 
+/*
 #roll-calc {
     font-size: 0.7rem;
     margin-top: 0.3rem;
     margin-bottom: -0.6rem;
 }
+*/
 
 @keyframes pulse {
     0% {
@@ -2303,6 +2387,16 @@ GAME BOARD
     
     100% {
         transform: scale(0.98);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    
+    100% {
+        transform: translate(-50%, -50%) rotate(180deg);
     }
 }
 
@@ -2371,6 +2465,7 @@ GAME BOARD
     min-width: 0;
     width: 100%;
     overflow-x: scroll;
+    background:var(--bat-td);
 }
 
 #order-surface .board-lineup-line {
@@ -2418,6 +2513,7 @@ GAME BOARD
     align-content: flex-start;
     justify-content: start;
     flex-wrap: wrap;
+    background:var(--bat-td);
 }
 
 #batter-demo {
@@ -2473,13 +2569,47 @@ tr.result {
 
 #table-surface {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     align-items: start;
     align-content: flex-start;
     justify-content: start;
     flex-wrap: wrap;
+    min-height: 0;
+    
 }
 
+.table-box {
+    overflow: scroll;
+    width: 100%;
+    flex: 1;
+    background:var(--td);
+}
+
+#table-tabs {
+    display: flex;
+    justify-content: space-around;
+    font-family: "Proxima Nova";
+    font-size: 0.8rem;
+    color: white;
+    line-height: 1;
+    width: 100%;
+    box-shadow: inset 5px 5px 50px #000000a0;
+}
+
+.table-tab {
+    margin-top: 0.2rem;
+    padding: 0.2rem 1rem;
+    clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
+    border-top: 3px solid var(--tl);
+    border-top-right-radius: 1rem;
+    border-top-left-radius: 1rem;
+    background:var(--td);
+    
+}
+
+.table-tab.inactive {
+    opacity: 60%;
+}
 
 #gameRoller {
     width: 100%;

@@ -11001,7 +11001,7 @@ export const batters = [
     "name": "Luis Arraez",
     "first": "Luis",
     "last": "Arraez",
-    "num": 2,
+    "num": 4,
     "personId": "650333",
     "team": "PHI",
     "age": 29,

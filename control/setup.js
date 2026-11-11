@@ -50,11 +50,20 @@ function shuffle(array) {
 
 export function gameSetup(slot) {
   rosterTeams();
-  document.documentElement.dataset.team = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
+  document.documentElement.dataset.team = "PHI";
+  G.myTeam = document.documentElement.dataset.team
+  G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team);
+  
   let opp = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
   G.game.opponent = teams.find((t) => t.code === opp);
-  G.myTeam = document.documentElement.dataset.team;
-  G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team);
+  
+  while (G.game.opponent === G.thisTeam) {
+    let opp = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
+    G.game.opponent = teams.find((t) => t.code === opp);
+  }
+  
+  
+  
   colorSetup($t("gameroller"));
   //G.lineup=defaultLineup(G.thisTeam.code);
   resetField();

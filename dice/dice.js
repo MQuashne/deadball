@@ -355,7 +355,7 @@ export const DICE = (function() {
             this.renderer.domElement.parentNode.removeChild(this.renderer.domElement);
         }
         this.camera = undefined; // so nothing tries to render mid-rebuild
-        clear_material_cache(); 
+        clear_material_cache();
         this._build(this.container);
     }
     
@@ -1291,7 +1291,7 @@ export const DICE = (function() {
     threeD_dice.create_d4 = function(p) {
         var geom = cached_geometry('d4', function() { return create_d4_geometry(vars.scale * 1.2); });
         var mat = cached_materials('d4|0|' + palette_key(p), function() {
-            return create_d4_materials(vars.scale / 2, vars.scale * 2, CONSTS.d4_labels[0], p);
+            return create_d4_materials(vars.scale / 2, vars.scale * 3, CONSTS.d4_labels[0], p);
         });
         return new THREE.Mesh(geom, mat);
     };
@@ -1367,17 +1367,19 @@ export const DICE = (function() {
         function create_d4_text(text, color, back_color) {
             var canvas = document.createElement("canvas");
             var context = canvas.getContext("2d");
-            // Bumped from *2 to *4, and decoupled from vars.scale via
-            // calc_label_resolution — same fix as create_text_texture.
             var ts = calc_label_resolution(size + margin, 4);
             canvas.width = canvas.height = ts;
-            context.font = (ts - margin) * 0.5 + "pt BaseballClubSolid";
-            context.fillStyle = p.dice;
-            context.fillRect(0, 0, canvas.width, canvas.height);
+            context.font = (ts - margin) * 0.25 + "pt BaseballClubSolid"; // was * 0.5
+            draw_pinstripes(context, canvas.width, p.dice, p.stripe);
             context.textAlign = "center";
             context.textBaseline = "middle";
             context.fillStyle = p.label;
+            context.strokeStyle = p.outline;
+            context.lineWidth = Math.max(4, ts / 56);
+            context.lineJoin = "round"; // avoids spiky corners on the stroke
             for (var i in text) {
+                context.strokeText(text[i], canvas.width / 2,
+                    canvas.height / 2 - ts * 0.3);
                 context.fillText(text[i], canvas.width / 2,
                     canvas.height / 2 - ts * 0.3);
                 context.translate(canvas.width / 2, canvas.height / 2);
@@ -1389,6 +1391,7 @@ export const DICE = (function() {
             texture.needsUpdate = true;
             return texture;
         }
+        
         var materials = [];
         for (var i = 0; i < labels.length; ++i)
             materials.push(new THREE.MeshPhongMaterial($t.copyto(vars.material_options, {
@@ -1778,9 +1781,12 @@ export const DICE = (function() {
     // scales it up for HiDPI screens instead, independent of vars.scale.
     function calc_label_resolution(approx, multiplier) {
         var target = calc_texture_size(approx) * multiplier;
+        
         target = Math.max(target, 256); // floor: never go below a reasonably crisp size
-        target *= (window.devicePixelRatio || 1);
+               target *= (window.devicePixelRatio || 1);
+        
         target = Math.min(target, 1024); // cap: avoid excessive texture memory per face
+        
         // Multiplying by a non-integer/odd devicePixelRatio (e.g. 3) can knock
         // the result off power-of-two (256 * 3 = 768). This renderer's texture
         // path requires POT and otherwise silently resizes + warns on every

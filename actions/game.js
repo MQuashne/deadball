@@ -3,7 +3,8 @@
 import { store } from '../model/store.js'
 import { teams } from '../model/teams.js'
 import { G } from '../model/game.js'
-import {swingTable} from '../model/tables.js'
+import { calculateSwingTable, calculateCritHitTable ,calculateTable} from '../actions/tables.js'
+//import {swingTable} from '../model/tables.js'
 import { $n, $t, $c, $a, $cl, on, randInt, hide, show, enable, disable, notifyBox } from '../util.js'
 
 const pd_map = {
@@ -15,20 +16,21 @@ const pd_map = {
   5: "D8",
   6: "D12",
   7: "D20"
-}
+};
+
+const ADVANCE_BY = { "1B": 1, "2B": 2, "3B": 3, "HR": 4 };
+
 
 export function resetField() {
-  //pitchers:
-  //ip =0;
-  //stats=0;
   
-  let opp = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
+  let opp = teams[Math.floor(Math.random() * 30)].code;
   store.update((state) => {
     state.game = {
       opponent: teams.find((t) => t.code === opp),
       home: true,
       process: "swing",
       mode: "roll",
+      lastProcess: "",
       roll: [],
       outcome: "",
       inning: 1,
@@ -83,7 +85,6 @@ export function resetField() {
 
 function resetTeams() {
   store.update((state) => {
-    console.log(state);
     [...state.thisTeam.lineup.rotation, ...state.thisTeam.lineup.bullpen, ...state.thisTeam.lineup.pitcherReserve, ...state.game.opponent.lineup.rotation, ...state.game.opponent.lineup.bullpen, ...state.game.opponent.lineup.pitcherReserve].forEach((pi) => {
       pi.ip = 0;
       pi.handBonus = false;
@@ -109,6 +110,8 @@ function resetTeams() {
   }, ["players:reset"])
 }
 
+
+
 function addPitcherInning(inn) {
   const stats = {
     inning: inn,
@@ -133,6 +136,8 @@ function addPitcherInning(inn) {
   return stats;
 }
 
+
+
 function addBatterInning(inn) {
   const stats = {
     inning: inn,
@@ -153,10 +158,20 @@ function addBatterInning(inn) {
     CS: 0,
     PO: 0,
     A: 0,
-    E: 0
+    E: 0,
+    play:"",
+    lastBase:0,
+    basePlayers:{
+      2:"",
+      3:"",
+      4:""
+    },
+    hitLoc:""
   };
   return stats;
 }
+
+
 
 export function buildPitchDie(pitcher) {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
@@ -209,7 +224,7 @@ export function buildBatterSkill(batter) {
 // RUNNER ADVANCEMENT
 //=============================
 
-export function advanceRunners(lastPlay) {
+export function advanceRunners(lastPlay,runAdvance=null) {
   store.update((state) => {
     const runners = state.game.runners;
     const batter = runners.find(r => r.location === 0);
@@ -220,7 +235,7 @@ export function advanceRunners(lastPlay) {
       advanceOnSac(runners);
     } else {
       //It's a hit or we're in running mode 
-      advanceOnHit(state, runners, lastPlay);
+      advanceOnHit(state, runners, lastPlay,runAdvance);
     }
   }, [
     ["runners:advanced", { lastPlay }]
@@ -255,22 +270,19 @@ function advanceOnSac(runners) {
   }
 }
 
-const ADVANCE_BY = { "1B": 1, "2B": 2, "3B": 3, "HR": 4, extraBases: 1 };
 
-function advanceOnHit(state, runners, lastPlay) {
-  const advanceBy = ADVANCE_BY[lastPlay];
-  
+
+function advanceOnHit(state, runners, lastPlay,runAdvance=null) {
+  const batterAdvanceBy = ADVANCE_BY[lastPlay];
+
   runners.forEach((rn) => {
-    rn.location = Math.min(rn.location + advanceBy, 4);
+    if (rn.location === 0) {
+      rn.location = Math.min(rn.location + batterAdvanceBy, 4);
+    } else {
+      rn.location = Math.min(rn.location + runAdvance, 4);
+    }
   });
-  
-  if (lastPlay === "extraBases") {
-    runners[runners.length - 1].location -= 1;
-    state.game.process = "hit";
-  }
 }
-
-
 
 //=============================
 // MODE/PROCESS STATE
@@ -281,11 +293,17 @@ export function changeMode(mode) {
     state.game.mode = mode;
   }, ["mode:changed"]);
 }
+
+
+
 export function changeProcess(process) {
   store.update(state => {
     state.game.process = process;
   }, ["process:changed"]);
 }
+
+
+
 export function changeProcessMode(process, mode) {
   store.update(state => {
     state.game.process = process;
@@ -296,15 +314,49 @@ export function changeProcessMode(process, mode) {
   ]);
 }
 
+
+
 export function processSwingOutcome(roll) {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
   const mss = roll[0] + roll[1] + (fieldTeam.lineup.pitcher.tempPdValue > 3 ? 1 : -1) * roll[2];
-  const outcome = swingTable.find(res => res.min <= mss & res.max >= mss).outcome;
+  const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
+  const swingTable = calculateSwingTable(batter);
+  const outcome = swingTable.find(res => res.min <= mss & res.max >= mss).code;
+  
   store.update((state) => {
-    state.game.roll=roll;
-    state.game.outcome=outcome;
-  })
+    state.game.lastProcess = "swing";
+    state.game.roll = roll;
+    state.game.result = mss;
+    state.game.outcome = outcome;
+    changeProcess(outcome);
+  }, [
+    [`process:${outcome}`],
+    [`swing:outcome`]
+  ]);
 }
+
+
+
+export function processCritHitOutcome(roll) {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
+  const resultTable = calculateTable[G.game.process](batter);
+  const resultRow = resultTable.find(res => res.min <= roll[0] & res.max >= roll[0]);
+ advanceRunners(resultRow.stat,resultRow.runAdvance);
+
+  store.update((state) => {
+    state.game.lastProcess = G.game.process;
+    state.game.roll = roll;
+    state.game.result = roll[0];
+    state.game.outcome = resultRow.stat;
+    changeProcess("endAB");
+  }, [
+    [`process:endAB`],
+    [`critHit:outcome`]
+  ]);
+}
+
+
 
 function getTeams() {
   const homeTeam = G.game.home ? G.thisTeam : G.game.opponent;

@@ -38,6 +38,7 @@ export const G = {
     process: "swing",
     roll: [],
     outcome: "",
+    result:0,
     inning: 1,
     half: 2,
     atBat: false,

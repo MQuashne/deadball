@@ -1,3 +1,11 @@
+//need an initial swing render state
+
+//then each subsequent button will do the next roll and show the next card at the same time
+
+
+
+
+
 import { $n, $t, $c, $a, $cl, on, randInt, hide, show, enable, disable, notifyBox } from '../util.js'
 //import { modal } from '../main.js'
 import { G } from '../model/game.js'
@@ -21,8 +29,10 @@ import { pitchers } from '../model/pitchers.js'
 import { DICE } from '../dice/dice.js'
 import { teams } from '../model/teams.js'
 import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/assets/teamColors.js'
-import { swingTable } from '../model/tables.js'
-import { buildPitchDie, buildBatterSkill, batterUp, advanceRunners, processSwingOutcome } from '../actions/game.js'
+//import { swingTable } from '../model/tables.js'
+import { buildPitchDie, buildBatterSkill, batterUp, advanceRunners, processSwingOutcome, processCritHitOutcome } from '../actions/game.js'
+import { calculateTable, calculateSwingTable, calculateCritHitTable } from '../actions/tables.js'
+import { renderTable, renderSwingTable, renderCritHitTable } from './renderTables.js'
 
 //=============================
 // DOM AND CONSTANTS
@@ -44,10 +54,19 @@ export const box = new DICE.dice_box(gameRoller);
 
 const hrButton = $t('hr-btn');
 const mainRollBtn = $t("main-roll-btn");
+const continueBtn = $t("continue-btn");
+
+const nextTableBox = $t("table-box-next");
+const nowTableBox = $t("table-box-now");
+const nextTableTab = $t("table-tab-next");
+const nowTableTab = $t("table-tab-now");
+
 const rollResult = $t('roll-result');
+
 const rollCalc = $t("roll-calc");
-const rollOutcome = $t("roll-outcome");
-const swingTableEl = $t("swing-table");
+//const rollOutcome = $t("roll-outcome");
+
+const nowTable = $t("table-box-now");
 
 const ball = $t("ball");
 
@@ -81,6 +100,11 @@ const pd_map = {
   7: "D20"
 }
 
+const visible_map = {
+  "swing:roll": [mainRollBtn],
+  "swing:outcome": [rollCalc, continueBtn]
+}
+
 const roll_text_map = {
   swing: "SWING",
   hit: "RUN",
@@ -91,7 +115,8 @@ const roll_text_map = {
 }
 
 const outcome_map = {
-  swing: () => processSwingOutcome(),
+  swing: (roll) => processSwingOutcome(roll),
+  critHit: (roll) => processCritHitOutcome(roll)
 }
 
 //=============================
@@ -104,13 +129,35 @@ let fieldingTeam = G.game.opponent;
 */
 
 export function initBoard() {
+  
+  //Buttons
   on(hrButton, "click", () => console.log(G));
-  //const sacButton = $t('sac-btn');
+  
   on(mainRollBtn, 'click', () => {
-    box.start_throw(() => { hide(mainRollBtn) }, (notation) => {
-      swingResult(notation.result);
-    });
+    box.clear();
+    box.start_throw(() => {
+      hide(mainRollBtn);
+      hide(rollCalc);
+      return [0, 1, 1];
+    }, (notation) => outcome_map[G.game.process](notation.result));
   });
+  
+  on(nextTableTab, 'click', () => {
+    hide(nowTableBox);
+    nowTableTab.classList.add("inactive");
+    show(nextTableBox);
+    nextTableTab.classList.remove("inactive");
+  });
+  
+  on(nowTableTab, 'click', () => {
+    hide(nextTableBox);
+    nextTableTab.classList.add("inactive");
+    show(nowTableBox);
+    nowTableTab.classList.remove("inactive");
+  });
+  
+  //Subscribers
+  store.on("process:changed", () => { renderBoard(); })
   //-------------------
   // DOM SETUP
   //-------------------
@@ -118,16 +165,20 @@ export function initBoard() {
   const ro = new ResizeObserver(entries => {
     for (const entry of entries) {
       const width = entry.contentRect.width;
+      const height = entry.contentRect.height;
       runnerLayer.style.setProperty('--runner-scale', width / 100);
     }
   });
   ro.observe(runnerLayer);
+  
+  //Start Game (temp)
   batterUp();
 }
 
+
+
 function renderSideColors() {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
-  console.log(fieldTeam.code)
   const cssVariables = {
     '--field-tp': fieldTeam.tp,
     '--field-ts': fieldTeam.ts,
@@ -163,10 +214,12 @@ function renderSideColors() {
     document.documentElement.style.setProperty(`--${side}-die-font-color`, uni.text);
     document.documentElement.style.setProperty(`--${side}-die-outline-color`, uni.outline ||= "#ffffff00");
   });
+  
   homeTeam.uni = evergreenJerseys["MLB"][homeTeam.code]["Home"];
   awayTeam.uni = evergreenJerseys["MLB"][awayTeam.code]["Away"];
-  
 }
+
+
 
 function renderScorebug() {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
@@ -183,10 +236,13 @@ function renderScorebug() {
   scoreHomeDiv.textContent = G.game.score[1];
 }
 
+
+
 function renderInning() {
   const inningNum = $t("inning-num");
   const inningTop = $t("inning-top");
   const inningBottom = $t("inning-bottom");
+  
   inningNum.textContent = G.game.inning;
   if (G.game.half === 1) {
     show(inningTop);
@@ -197,16 +253,22 @@ function renderInning() {
   }
 }
 
+
+
 function renderOuts() {
   for (let i = 0; i < 2; i++) {
-  const outPips = $a("out-pip");
-  G.game.outs >= i + 1 ? outPips[i].classList.add("out-on") : outPips[i].classList.remove("out-on");
+    const outPips = $a("out-pip");
+    
+    G.game.outs >= i + 1 ? outPips[i].classList.add("out-on") : outPips[i].classList.remove("out-on");
+  }
 }
-}
+
+
 
 function renderPitcher() {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
   const pitcher = fieldTeam.lineup.pitcher;
+  
   buildPitchDie(pitcher);
   $t("pitcher-last").textContent = pitcher.last;
   $t("pitcher-first").textContent = pitcher.first;
@@ -223,18 +285,22 @@ function renderPitcher() {
     trait.textContent = tr
   });
   $t(`field-P`).textContent = pitcher.num;
-  box.setDice(`1d100+1d10+1${pitcher.tempPD.toLowerCase()}`);
 }
+
+
 
 function renderFielders() {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  
   fieldTeam.lineup.order.forEach((fi) => {
     if (fi.fieldPos !== "DH") {
       $t(`field-${fi.fieldPos}`).textContent = fi.num;
-      $t(`field-${fi.fieldPos}`).style.border = fi.D === "D+" ? "1.5px solid #FFD800" : "none";
+      $t(`field-${fi.fieldPos}`).style.boxShadow = fi.D === "D+" ? "0px 0px 1px 2px #FFD000" : "none";
     }
   })
 }
+
+
 
 function renderRunners() {
   const elements = document.querySelectorAll('.runner');
@@ -277,7 +343,6 @@ function renderRunners() {
     }
   });
   // Delete elements that are no longer in the array
-  
   Promise.all(transitionPromises).then(() => {
     for (const el of existingMap.values()) {
       if (el.dataset.pid) {
@@ -287,22 +352,82 @@ function renderRunners() {
   });
 }
 
+
+
 function renderRoller() {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
-  mainRollBtn.textContent = roll_text_map[`${G.game.process}:${G.game.mode}`];
-  if (G.game.process === "swing") {
-    show($t("main-roll-btn"));
-    box.setPalettes([batTeam.uni, batTeam.uni, fieldTeam.uni]);
+  
+  //mainRollBtn.textContent = roll_text_map[`${G.game.process}`];
+  renderRoll();
+  if (G.game.process !== "swing") renderOutcome();
+  
+  $t("roll-surface").style.backgroundImage = `linear-gradient(90deg,oklch(from ${homeTeam.td} calc(l - 0.12) c h / 0.75),oklch(from ${homeTeam.td} calc(l - 0.12) c h / 0.75)),url("public/assets/logos/${homeTeam.tpLogo}.svg"), url("public/assets/felt.jpeg")`;
+}
+
+
+
+function renderRoll() {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const pitcher = fieldTeam.lineup.pitcher;
+  
+  show($t("main-roll-btn"));
+  switch (G.game.process) {
+    case "swing":
+      box.setDice(`1d100+1d10+1${pitcher.tempPD.toLowerCase()}`);
+      box.setPalettes([batTeam.uni, batTeam.uni, fieldTeam.uni]);
+      break;
+    case "critHit":
+    case "hit":
+      box.setDice(`1d20`);
+      box.setPalettes([batTeam.uni]);
+      break;
+    case "def":
+    case "error":
+      box.setDice(`1d12`);
+      box.setPalettes([fieldTeam.uni]);
+      break;
+    case "steal":
+      box.setDice(`1d8`);
+      box.setPalettes([batTeam.uni]);
+      break;
+    default:
+      box.setDice(`1d20`);
+      box.setPalettes([batTeam.uni]);
+      break;
   }
 }
+
+
+
+function renderOutcome() {
+  //RUN AT BEGINNING OF swing:outcome
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  if (G.game.lastProcess === "swing") {
+    const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
+    const roll = G.game.roll;
+    const resultTable = calculateTable[G.game.lastProcess](batter);
+    rollCalc.textContent = `MSS: ${roll[0]} + ${roll[1]} ${fieldTeam.lineup.pitcher.tempPdValue>3 ? "+" : "-"} ${roll[2]} = ${G.game.result}`;
+    mainRollBtn.textContent = resultTable.find(res => res.min <= G.game.result & res.max >= G.game.result).outcome;
+    const resultRow = resultTable.findIndex(res => res.min <= G.game.result & res.max >= G.game.result);
+  }
+  if (G.game.lastProcess === "critHit") {
+    document.documentElement.style.setProperty('--randX', `${Math.random() * 75 + 12.5}%`);
+    document.documentElement.style.setProperty('--randY', `${G.game.outcome==="HR" ? "-5%" : Math.random() * 25 }%`);
+    ball.className = "loc-deep"
+  }
+  show(rollResult);
+  show(mainRollBtn);
+  ball.classList.remove("hidden");
+}
+
+
 
 function renderBatter() {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
   const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
-  buildBatterSkill(batter);
-  
-  
   const pitcher = fieldTeam.lineup.pitcher;
+  
+  buildBatterSkill(batter);
   $t("batter-last").textContent = batter.last;
   $t("batter-first").textContent = batter.first;
   $t("bat-logo").src = `public/assets/logos/${batTeam.tpLogo}.svg`;
@@ -318,8 +443,9 @@ function renderBatter() {
     const trait = $n("div", "stat-trait", $t("batter-traits"));
     trait.textContent = [tr]
   })
-  
 }
+
+
 
 function renderBoardLineup() {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
@@ -328,34 +454,47 @@ function renderBoardLineup() {
   }
 }
 
-function renderSwingTable() {
+
+
+function renderResultTable(result = null) {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
   const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
   const pitcher = fieldTeam.lineup.pitcher;
-  swingTable[3].max = batter.tempBT;
   
-  swingTable[4].min = batter.tempBT + 1;
-  swingTable[4].max = batter.tempOBT;
-  
-  swingTable[5].min = batter.tempOBT + 1;
-  swingTable[5].max = batter.tempOBT + 5;
-  
-  swingTable[6].min = batter.tempOBT + 6;
-  
-  
-  const swingRows = swingTableEl.querySelectorAll("tr");
-  
-  swingTable.forEach((res, index) => {
-    if (index > 0 && index < 10) {
-      swingRows[index + 1].querySelector("td").textContent = `${res.min}${res.max-res.min>0 ? `-${res.max}` : ""}`
+  function updateTables(nowTabName, nowTabTable, nextTabName = null, nextTabTable = null) {
+    $t('table-box-now').replaceChildren(nowTabTable);
+    $t('table-box-now').classList.remove("hidden");
+    $t("table-tab-now").textContent = nowTabName;
+    $t("table-tab-now").classList.remove("inactive", "hidden");
+    
+    $t('table-box-next').classList.add("hidden");
+    $t("table-tab-next").classList.add("inactive", "hidden");
+    
+    if (nextTabTable && nextTabName) {
+      $t('table-box-next').replaceChildren(nextTabTable);
+      $t("table-tab-next").textContent = nextTabName;
+      $t('table-tab-next').classList.remove("hidden");
     }
-  })
+  }
   
+  
+  function highlightResult() {
+    const resultRow = calculateTable[G.game.lastProcess](batter).findIndex(res => res.min <= G.game.result & res.max >= G.game.result);
+    nowTable.querySelectorAll("tr")[resultRow + 1].classList.add("result");
+  }
+  
+  if (G.game.process === "swing") {
+    updateTables("Swing", renderTable.swing.build(batter));
+  } else if (G.game.process === "endAB") {
+    updateTables(renderTable[G.game.lastProcess].label, renderTable[G.game.lastProcess].build(batter));
+    highlightResult();
+  } else {
+    updateTables(renderTable[G.game.lastProcess].label, renderTable[G.game.lastProcess].build(batter), renderTable[G.game.process].label, renderTable[G.game.process].build(batter))
+    highlightResult();
+  }
 }
 
-function renderResultTable() {
-  if (G.game.process === "swing") renderSwingTable();
-}
+
 
 export function renderBoard() {
   renderSideColors();
@@ -371,6 +510,8 @@ export function renderBoard() {
   renderResultTable();
 }
 
+
+
 function getTeams() {
   const homeTeam = G.game.home ? G.thisTeam : G.game.opponent;
   const awayTeam = G.game.home ? G.game.opponent : G.thisTeam;
@@ -379,24 +520,12 @@ function getTeams() {
   return [homeTeam, awayTeam, fieldTeam, batTeam]
 }
 
-function swingResult(roll) {
-  //RUN AT BEGINNING OF swing:outcome
-  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
-  const mss = roll[0] + roll[1] + (fieldTeam.lineup.pitcher.tempPdValue > 3 ? 1 : -1) * roll[2];
-  rollCalc.textContent = `MSS: ${roll[0]} + ${roll[1]} ${fieldTeam.lineup.pitcher.tempPdValue>3 ? "+" : "-"} ${roll[2]} = ${mss}`;
-  rollOutcome.textContent = swingTable.find(res => res.min <= mss & res.max >= mss).outcome;
-  const resultRow = swingTable.findIndex(res => res.min <= mss & res.max >= mss);
-  //const highlightRow = 
-  swingTableEl.querySelectorAll("tr")[resultRow + 1].classList.add("result");
-  // highlightRow.style.fontWeight="bold";
-  // highlightRow.style.background="#FFFFFF40";
-  show(rollResult);
-  show(mainRollBtn);
-  advanceRunners("BB");
-  ball.classList.remove("hidden");
-  renderBoard();
-  //ball.className="g1";
-}
+
+
+
+
+
+
 /*
 //STARTING
 const leadoffCover = $t("lead-off-cover");

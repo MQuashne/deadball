@@ -306,16 +306,16 @@
                   </svg>
                 </div>
                 <div id="fielders">
-                  <div id="field-P" class="fielder">1</div>
-                  <div id="field-C" class="fielder">2</div>
-                  <div id="field-1B" class="fielder">3</div>
+                  <div id="field-P" class="fielder loc-P">1</div>
+                  <div id="field-C" class="fielder loc-C">2</div>
+                  <div id="field-1B" class="fielder loc-1B">3</div>
                   <div id="field-2B" class="fielder">4</div>
                   <div id="field-3B" class="fielder">5</div>
                   <div id="field-SS" class="fielder">6</div>
                   <div id="field-LF" class="fielder">7</div>
                   <div id="field-CF" class="fielder">88</div>
                   <div id="field-RF" class="fielder">9</div>
-                  <div id="ball" class="home hidden"></div>
+                  <div id="ball" class="loc-g2 spin hidden"></div>
                 </div>
               </div>
             </div>
@@ -337,30 +337,10 @@
                     </div>
                   </button>
                   
-                  <div id="roll-result" class="roller-message hidden"><span id="roll-outcome">OUTCOME</span><span id="roll-calc"></span></div>
+                  <div id="roll-result" class="roller-message roll-el hidden"><span id="roll-calc"></span></div>
                   <button id="main-roll-btn" class="btn btn-glass roll-btn btn-pulse main-roll roll-el hidden">ROLL</button>
-                  
-
-                  
-                  <button id="main-out-btn" class="btn btn-glass roll-btn main-roll roll-el hidden">OUT</button>
-                  
-                  <button id="opp-roll-btn" class="btn btn-glass roll-btn btn-pulse opp-roll roll-el hidden">ROLL</button>
-                  
-                  
-                  <button id="offer-bases" class="btn btn-glass roll-btn btn-pulse main-roll roll-el hidden">EXTRA BASES</button>
-                  
+                  <button id="continue-btn" class="btn btn-glass roll-btn btn-pulse main-roll roll-el hidden">OK</button>
                   <button id="continue-btn" class="btn btn-glass roll-btn roll-el hidden">NEXT BATTER</button>
-                  
-                  <!--               <button id="reroll-confirm" class="btn-glass btn-pulse roll-el hidden reroll-roll">Reroll</button>
-                  <button id="mod-play" class="btn-glass btn-pulse mod-roll roll-el hidden">X</button>
-                  -->
-                  <button id="defense-outcome" class="roll-play btn-glass btn-pulse def-outcome roll-el hidden">Roll</button>
-                </div>
-                
-                <div id="roll-options" class="roll-options">
-                  <button id="offer-reroll" class="roll-option btn-glass off-outcome roll-el hidden">Reroll</button>
-                  <button id="offer-modifier" class="roll-option btn-glass off-outcome roll-el hidden">Modify</button>
-                  <button id="offer-pitcher" class="roll-option btn-glass def-outcome main-roll roll-el hidden">Pitcher</button>
                 </div>
               </div>
               <div id="mod-overlay" class="roll-el hidden">
@@ -468,81 +448,40 @@
           </div>
           <div id="table-zone" class="board-zone">
             <div id="table-surface" class="game-surface">
-              <table id="swing-table" class="result-table">
-                <th class="roll-col">MSS</th>
-                <th class="result-col">Result</th>
-                <tr>
-                  <td class="roll-col"><1</td>
-                  <td>Critical Hit</td>
-                </tr>
-                <tr>
-                  <td class="roll-col">1</td>
-                  <td>Oddity</td>
-                </tr>
-                <tr>
-                  <td class="roll-col">2-5</td>
-                  <td>Critical Hit</td>
-                </tr>
-                <tr>
-                  <td id="swing-hit" class="roll-col">6-27</td>
-                  <td>Hit</td>
-                </tr>
-                <tr>
-                  <td id="swing-walk" class="roll-col">28-34</td>
-                  <td>Walk</td>
-                </tr>
-                <tr>
-                  <td id="swing-error" class="roll-col">35-39</td>
-                  <td>Possible Error</td>
-                </tr>
-                <tr>
-                  <td id="swing-sac" class="roll-col">40-49</td>
-                  <td>Sacrifice</td>
-                </tr>
-                <tr>
-                  <td class="roll-col">50-69</td>
-                  <td>Fielder's Choice</td>
-                </tr>
-                <tr>
-                  <td class="roll-col">70+</td>
-                  <td>Out</td>
-                </tr>
-                <tr>
-                  <td class="roll-col">99</td>
-                  <td>Oddity</td>
-                </tr>
-                                <tr>
-                  <td class="roll-col">100+</td>
-                  <td>Critical Out</td>
-                </tr>
-              </table>
+              <div id="table-tabs">
+                <div id="table-tab-now" class="table-tab"></div>
+                <div id="table-tab-next" class="table-tab inactive"></div>
+              </div>
+              <div id="table-box-now" class="table-box"></div>
+              <div id="table-box-next" class="table-box"></div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    
-    
-    
-    
-    <!-- FOOTER -->
-    
-    <div id="game-footer">
-      <nav id="game-nav">
-        <div id="schedule-nav" class="nav-item active" data-section="cal-content"><span class="material-symbols-outlined">
-            calendar_month
-          </span><span class="menu-label">CALENDAR</span></div>
-        <div id="lineup-nav" class="nav-item" data-section="lineup-content"><span class="material-symbols-outlined">
-            recent_actors
-          </span><span class="menu-label">LINEUP</span></div>
-        <div id="team-nav" class="nav-item" data-section="team-setup-content"><span class="material-symbols-outlined">
-            apparel
-          </span><span class="menu-label">TEAM</span></div>
-        <div id="event-nav" class="nav-item" data-section="content"><span class="material-symbols-outlined" id="event-symbol">
-            content_paste
-          </span><span class="menu-label" id="event-nav-label"> SPRING TRAINING</span></div>
-      </nav>
-    </div>
+  </div>
+  
+  
+  
+  
+  <!-- FOOTER -->
+  
+  <div id="game-footer">
+    <nav id="game-nav">
+      <div id="schedule-nav" class="nav-item active" data-section="cal-content"><span class="material-symbols-outlined">
+          calendar_month
+        </span><span class="menu-label">CALENDAR</span></div>
+      <div id="lineup-nav" class="nav-item" data-section="lineup-content"><span class="material-symbols-outlined">
+          recent_actors
+        </span><span class="menu-label">LINEUP</span></div>
+      <div id="team-nav" class="nav-item" data-section="team-setup-content"><span class="material-symbols-outlined">
+          apparel
+        </span><span class="menu-label">TEAM</span></div>
+      <div id="event-nav" class="nav-item" data-section="content"><span class="material-symbols-outlined" id="event-symbol">
+          content_paste
+        </span><span class="menu-label" id="event-nav-label"> SPRING TRAINING</span></div>
+    </nav>
+  </div>
   </div>
   
   
