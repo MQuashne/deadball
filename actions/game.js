@@ -3,7 +3,7 @@
 import { store } from '../model/store.js'
 import { teams } from '../model/teams.js'
 import { G } from '../model/game.js'
-import { calculateSwingTable, calculateCritHitTable ,calculateTable} from '../actions/tables.js'
+import { calculateSwingTable, calculateCritHitTable, calculateTable } from '../actions/tables.js'
 //import {swingTable} from '../model/tables.js'
 import { $n, $t, $c, $a, $cl, on, randInt, hide, show, enable, disable, notifyBox } from '../util.js'
 
@@ -159,14 +159,14 @@ function addBatterInning(inn) {
     PO: 0,
     A: 0,
     E: 0,
-    play:"",
-    lastBase:0,
-    basePlayers:{
-      2:"",
-      3:"",
-      4:""
+    play: "",
+    lastBase: 0,
+    basePlayers: {
+      2: "",
+      3: "",
+      4: ""
     },
-    hitLoc:""
+    hitLoc: ""
   };
   return stats;
 }
@@ -217,14 +217,23 @@ export function buildBatterSkill(batter) {
   if (G.game.runners.find(r => r.location > 1) && batter.C === "C-") {
     batter.tempOBT -= 3;
     batter.tempBT -= 3;
-  }
+  };
+}
+
+export function nextBatter() {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+
+  batTeam.currentBatterIndex = batTeam.currentBatterIndex === 8 ? 0 : batTeam.currentBatterIndex + 1;
+  batterUp();
+  changeMode("roll");
+  changeProcess("swing");
 }
 
 //=============================
 // RUNNER ADVANCEMENT
 //=============================
 
-export function advanceRunners(lastPlay,runAdvance=null) {
+export function advanceRunners(lastPlay, runAdvance = null) {
   store.update((state) => {
     const runners = state.game.runners;
     const batter = runners.find(r => r.location === 0);
@@ -235,7 +244,7 @@ export function advanceRunners(lastPlay,runAdvance=null) {
       advanceOnSac(runners);
     } else {
       //It's a hit or we're in running mode 
-      advanceOnHit(state, runners, lastPlay,runAdvance);
+      advanceOnHit(state, runners, lastPlay, runAdvance);
     }
   }, [
     ["runners:advanced", { lastPlay }]
@@ -272,9 +281,9 @@ function advanceOnSac(runners) {
 
 
 
-function advanceOnHit(state, runners, lastPlay,runAdvance=null) {
+function advanceOnHit(state, runners, lastPlay, runAdvance = null) {
   const batterAdvanceBy = ADVANCE_BY[lastPlay];
-
+  
   runners.forEach((rn) => {
     if (rn.location === 0) {
       rn.location = Math.min(rn.location + batterAdvanceBy, 4);
@@ -282,6 +291,45 @@ function advanceOnHit(state, runners, lastPlay,runAdvance=null) {
       rn.location = Math.min(rn.location + runAdvance, 4);
     }
   });
+}
+
+export function runScored(runner) {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const runnerIndex = G.game.runners.findIndex(r => r === runner);
+  if (runnerIndex < 0) return;
+  store.update(state => {
+    state.game.runners.splice(runnerIndex, 1);
+    if (state.game.half === 2) {
+      state.game.scoreboard[G.game.inning - 1][1].runs++;
+      state.game.score[1]++
+    } else {
+      state.game.scoreboard[G.game.inning - 1][0].runs++;
+      state.game.score[0]++
+    }
+  }, ["run:scored"]);
+  //const gameEnd = checkGameEnd(false);
+  //if (gameEnd) { return; }
+}
+
+
+
+export function playerOut(outPlayer) {
+  const runnerIndex = G.game.runners.findIndex(r => r.player === outPlayer);
+  const runnerLocation = G.game.runners[runnerIndex].location;
+  store.update(state => {
+    state.game.runners.splice(runnerIndex, 1);
+    state.game.outs++;
+  }, ["player:out", outPlayer]);
+  if (runnerLocation === 0) {
+    store.emit("batter:out", outPlayer);
+    if (G.game.outs <= 3) {
+      //nextBatter();
+      changeProcess("endAB");
+    }
+  }
+  if (G.game.outs >= 3) {
+    //endOffHalf();
+  }
 }
 
 //=============================
@@ -337,23 +385,53 @@ export function processSwingOutcome(roll) {
 
 
 
-export function processCritHitOutcome(roll) {
+export function processHitOutcome(roll) {
   const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
   const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
   const resultTable = calculateTable[G.game.process](batter);
   const resultRow = resultTable.find(res => res.min <= roll[0] & res.max >= roll[0]);
- advanceRunners(resultRow.stat,resultRow.runAdvance);
-
+  
+  if (resultRow.code !== "def") {
+    advanceRunners(resultRow.stat, resultRow.runAdvance);
+  }
+  
   store.update((state) => {
     state.game.lastProcess = G.game.process;
     state.game.roll = roll;
     state.game.result = roll[0];
     state.game.outcome = resultRow.stat;
-    changeProcess("endAB");
+    if (resultRow.def) {
+      state.game.fielder = fieldTeam.lineup.order.find((f) => f.fieldPos === resultRow.def);
+      state.game.runAdvance = resultRow.runAdvance;
+    }
+    changeProcess(resultRow.code);
   }, [
-    [`process:endAB`],
+    [`process:${resultRow.code}`],
     [`critHit:outcome`]
   ]);
+}
+
+export function processDefOutcome(roll) {
+  const [homeTeam, awayTeam, fieldTeam, batTeam] = getTeams();
+  const batter = batTeam.lineup.order[batTeam.currentBatterIndex];
+  const resultTable = calculateTable[G.game.process](G.game.fielder,G.game.outcome,G.game.runAdvance);
+  const resultRow = resultTable.find(res => res.min <= roll[0] & res.max >= roll[0]);
+  
+  store.update((state) => {
+      state.game.lastProcess = G.game.process;
+      state.game.roll = roll;
+      state.game.result = roll[0];
+      state.game.lastStat = state.game.outcome
+      state.game.outcome = resultRow.stat;
+  });
+  
+  if (resultRow.stat !== "out") {
+    advanceRunners(resultRow.stat, resultRow.runAdvance);
+    changeProcess(resultRow.code);
+  } else {
+    playerOut(batter);
+  }
+  
 }
 
 
@@ -702,29 +780,7 @@ function maybeEnterRunMode(state, lastPlay) {
 // OUTS AND SCORING
 //=============================
 
-export function playerOut(outPlayer) {
-  const runnerIndex = G.game.runners.findIndex(r => r.player === outPlayer);
-  const runnerLocation = G.game.runners[runnerIndex].location;
-  console.log(G.game.runners)
-  store.update(state => {
-    state.game.runners.splice(runnerIndex, 1);
-    
-    state.game.outs++;
-    state.game.process = "hit";
-    state.game.mode = "roll";
-  }, ["player:out", outPlayer]);
-  console.log(G.game.runners)
-  if (runnerLocation === 0) {
-    store.emit("batter:out", outPlayer);
-    if (G.game.outs <= 3) {
-      nextBatter();
-    }
-  }
-  
-  if (G.game.outs >= 3) {
-    endOffHalf();
-  }
-}
+
 
 export function allRunnersOut() {
   const playerCount = G.game.runners.length;
@@ -740,22 +796,7 @@ export function allRunnersOut() {
   }
 }
 
-export function runScored(runner) {
-  const runnerIndex = G.game.runners.findIndex(r => r === runner);
-  if (runnerIndex < 0) return;
-  store.update(state => {
-    state.game.runners.splice(runnerIndex, 1);
-    if (state.game.home) {
-      state.game.scoreboard[G.game.inning-1][1].runs++;
-      state.game.score[1]++
-    } else {
-      state.game.scoreboard[G.game.inning-1][0].runs++;
-      state.game.score[0]++
-    }
-  }, ["run:scored"]);
-  const gameEnd = checkGameEnd(false);
-  if (gameEnd) { return; }
-}
+
 
 //=============================
 // ROLLS AND OUTCOMES

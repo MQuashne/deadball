@@ -8,7 +8,7 @@ class Store {
   }
   emit(event, payload) {
     (this.listeners[event] || []).forEach(cb => cb(payload));
-    console.log(event);
+   // console.log(event);
   }
   update(mutator, events = []) {
     mutator(this.state);

@@ -50,7 +50,8 @@ function shuffle(array) {
 
 export function gameSetup(slot) {
   rosterTeams();
-  document.documentElement.dataset.team = "PHI";
+  document.documentElement.dataset.team = teams[Math.floor(Math.random() * 30 /*teams.length*/ )].code;
+  
   G.myTeam = document.documentElement.dataset.team
   G.thisTeam = teams.find((t) => t.code === document.documentElement.dataset.team);
   

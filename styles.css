@@ -83,8 +83,8 @@
     --field-ts-text: #ffffff;
     --field-td-text: #ffffff;
     --field-tl-text: #ffffff;
-    --randX:50%;
-    --randY:50%;
+    --randX: 50%;
+    --randY: 50%;
     
 }
 
@@ -1679,7 +1679,7 @@ GAME BOARD
 .game-surface {
     height: calc(100% - 0.3rem);
     width: calc(100% - 0.3rem);
-    background-image: linear-gradient(90deg,oklch(from var(--td) calc(l - 0.12) c h / 0.75),oklch(from var(--td) calc(l - 0.12) c h / 0.75)),url("public/assets/felt.jpeg");
+    background-image: linear-gradient(90deg, oklch(from var(--td) calc(l - 0.12) c h / 0.75), oklch(from var(--td) calc(l - 0.12) c h / 0.75)), url("public/assets/felt.jpeg");
     background-clip: padding-box;
     overflow: hidden;
     position: relative;
@@ -1807,13 +1807,13 @@ GAME BOARD
 
 
 /* SCOREBOARD (RESOURCES) */
-#scoreboard-zone {
+#pitcher-zone {
     grid-area: resources;
     width: 100%;
     height: 100%;
 }
 
-#scoreboard-surface {
+#pitcher-surface {
     display: flex;
     flex-direction: row;
     align-items: start;
@@ -2016,10 +2016,10 @@ GAME BOARD
 #field-surface {
     background-image: url("public/assets/grassBG.jpg");
     background-size: 50%;
+    aspect-ratio: 1 / 1;
     background-position-y: 90%;
     background-position-x: 50%;
     background-clip: padding-box;
-    object-fit: contain;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -2037,20 +2037,17 @@ GAME BOARD
 }
 
 #infield {
-    height: 80%;
-    width: 80%;
+    position: relative;
+    width: 100%;
     aspect-ratio: 1 / 1;
-    object-fit: contain;
     grid-area: control;
-    margin-top: 20%;
-    margin-left: 10%;
+    object-fit: contain;
+    
 }
 
 #runners {
-    height: 80%;
-    width: 80%;
-    margin-left: 10%;
-    margin-top: 20%;
+    height: 100%;
+    width: 100%;
     aspect-ratio: 1 / 1;
     grid-area: control;
     position: relative;
@@ -2078,8 +2075,8 @@ GAME BOARD
 }
 
 .runner {
-    width: 6.2%;
-    height: 6.2%;
+    width: 4.5%;
+    height: 4.5%;
     border-radius: 50%;
     background: var(--bat-die-bg-color);
     position: absolute;
@@ -2090,12 +2087,12 @@ GAME BOARD
     -webkit-text-stroke: 0.7px var(--bat-die-outline-color);
     paint-order: stroke fill;
     font-family: "BaseballClubSolid";
-    font-size: 0.4rem;
+    font-size: 0.32rem;
     text-align: center;
     offset-path: url(#basePath);
     offset-distance: 0%;
     offset-rotate: 0deg;
-    transition: offset-distance 1s ease;
+    transition: offset-distance 2s ease-in-out;
 }
 
 .fielder {
@@ -2116,6 +2113,10 @@ GAME BOARD
     transform: translate(-50%, -50%);
 }
 
+.fielder.def{
+    animation: pulseLarge 1s infinite;;
+}
+
 #ball2 {
     width: 3%;
     height: 3%;
@@ -2127,14 +2128,14 @@ GAME BOARD
 
 #ball {
     position: absolute;
-    width: 6%;
-    height: 6%;
+    width: 5%;
+    height: 5%;
     border-radius: 50%;
     background: radial-gradient(circle at 35% 30%, #fff, #e8e8e8);
     box-shadow: inset -1px -1px 2px rgba(0, 0, 0, 0.2),
         0px 0px 2px rgba(0, 0, 0, 0.5);
     overflow: hidden;
-    /* clips the seams to the ball */
+    
     transform: translate(-50%, -50%);
     transition: all 1s ease-in-out;
 }
@@ -2160,93 +2161,84 @@ GAME BOARD
     left: -65%;
 }
 
-/* curve bulging in from the left */
 #ball::after {
     right: -65%;
 }
 
 /* curve bulging in from the right */
 
+
 #ball.home {
-    left: 49.6%;
-    top: 90%;
+    /*left: calc(50% + (sin(29deg) * 73%));
+    top: calc( 90.824% - (cos(29deg) * 73%));*/
+    left: 50%;
+    top: 90.824%;
+    z-index: 400;
 }
 
-.loc-deep {
-    left: var(--randX);
-    top: var(--randY);
-    
+.bas-2B {
+    left: 50%;
+    top: 31.294%;
 }
 
-.loc-g2 {
-    left: 49.6%;
-    top: 83%;
+.bas-home {
+    left: 50%;
+    top: 90.824%;
 }
 
-.loc-g3 {
-    left: 72%;
-    top: 52%;
+.bas-1B {
+    left: 79.529%;
+    top: 61.059%;
 }
 
-.loc-g4 {
-    left: 56%;
-    top: 40%;
-}
-
-.loc-g6 {
-    left: 44%;
-    top: 40%;
-}
-
-.loc-g7 {
-    left: 28%;
-    top: 52%;
+.bas-3B {
+    left: 20.471%;
+    top: 61.059%;
 }
 
 .loc-P {
-    top: 64.9%;
-    left: 49.6%;
+    left: 50%;
+    top: 62.588%;
 }
 
 .loc-C {
-    top: 94%;
-    left: 49.6%;
+    left: 50%;
+    top: 96.176%;
 }
 
 .loc-1B {
-    top: 57%;
-    left: 76%;
-    transition: all 0.5s;
+    left: 80.59%;
+    top: 55.44%;
 }
 
 #field-2B {
-    top: 41%;
-    left: 64%;
+    left: 70%;
+    top: 35%;
 }
 
 #field-SS {
-    top: 41%;
-    left: 36%;
+    left: 30%;
+    top: 35%;
 }
 
 #field-3B {
-    top: 55%;
-    left: 24%;
+    left: 19.41%;
+    top: 55.44%;
 }
 
 #field-LF {
-    top: 25%;
     left: 10%;
+    top: 20%;
 }
 
 #field-RF {
-    top: 25%;
+    top: 20%;
     left: 90%;
 }
 
 #field-CF {
+    left: 50%;
     top: 10%;
-    left: 49.6%;
 }
 
 .runner.off {
@@ -2368,13 +2360,11 @@ GAME BOARD
     align-items: center;
 }
 
-/*
 #roll-calc {
     font-size: 0.7rem;
     margin-top: 0.3rem;
     margin-bottom: -0.6rem;
 }
-*/
 
 @keyframes pulse {
     0% {
@@ -2411,6 +2401,20 @@ GAME BOARD
     
     100% {
         transform: scale(0.99);
+    }
+}
+
+@keyframes pulseLarge {
+    0% {
+        transform: scale(0.98);
+    }
+    
+    50% {
+        transform: scale(1.5);
+    }
+    
+    100% {
+        transform: scale(0.98);
     }
 }
 
@@ -2465,7 +2469,7 @@ GAME BOARD
     min-width: 0;
     width: 100%;
     overflow-x: scroll;
-    background:var(--bat-td);
+    background: var(--bat-td);
 }
 
 #order-surface .board-lineup-line {
@@ -2513,7 +2517,7 @@ GAME BOARD
     align-content: flex-start;
     justify-content: start;
     flex-wrap: wrap;
-    background:var(--bat-td);
+    background: var(--bat-td);
 }
 
 #batter-demo {
@@ -2582,7 +2586,9 @@ tr.result {
     overflow: scroll;
     width: 100%;
     flex: 1;
-    background:var(--td);
+    background: var(--td);
+    border-top: 0.1rem solid var(--tl);
+    z-index: 4;
 }
 
 #table-tabs {
@@ -2598,17 +2604,22 @@ tr.result {
 
 .table-tab {
     margin-top: 0.2rem;
-    padding: 0.2rem 1rem;
-    clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);
-    border-top: 3px solid var(--tl);
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
-    background:var(--td);
+    padding: 0.22rem 1rem;
+    /*clip-path: polygon(8% 0%, 92% 0%, 100% 100%, 0% 100%);*/
+    border-top: 0.1rem solid var(--tl);
+    border-left: 0.1rem solid var(--tl);
+    border-right: 0.1rem solid var(--tl);
+    border-top-right-radius: 0.6rem;
+    border-top-left-radius: 0.6rem;
+    background: var(--td);
+    margin-bottom: -0.09rem;
+    z-index: 5;
     
 }
 
 .table-tab.inactive {
     opacity: 60%;
+    z-index: 3;
 }
 
 #gameRoller {
@@ -3294,4 +3305,22 @@ tr.result {
     border: none;
     color: var(--start-blue);
     
+}
+
+#popup-box {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url('./public/assets/planks.jpeg');
+    background-size: cover;
+    z-index: 150;
+}
+
+#popup-surface {
+    padding: 0.5rem;
+    width: 100%;
+    margin: .2rem;
 }

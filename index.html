@@ -241,7 +241,11 @@
           <button class="btn btn-team" id="btn-play-ball">SUBMIT LINEUP & PLAY BALL</button>
         </div>
         -->
+                  
         <div id="gameplay-content">
+<div id="popup-box" class="hidden">
+  <div id="popup-surface" class="game-surface">Content</div>
+</div>
           <!--
           <div id="lead-off-cover" class="screen-cover">Roll to determine your lead-off batter</div>
           <div id="sub-cover" class="hidden"> Select a player to substitute
@@ -282,14 +286,14 @@
               <div id="process-mode"></div>
             </div>
           </div>
-          <div id="scoreboard-zone" class="board-zone">
-            <div id="scoreboard-surface" class="game-surface">
+          <div id="pitcher-zone" class="board-zone">
+            <div id="pitcher-surface" class="game-surface">
               <div id="pitcher-first" class="board-name board-first-name pitcher"></div>
               <div class="stat-logo"><img id="pitch-logo"></div>
               <div id="pitcher-last" class="board-name board-last-name pitcher"></div>
               <div id="pitcher-demo"><span id=pitcher-num></span> • <span id="pitcher-pos"></span> • <span id="pitcher-hand"></span> • <span id="pitcher-ip"></span></div>
               <div class="stat-head pitcher">Pitch Die</div>
-              <div class="stat-value pitcher"><span id="pd-old" class="stat-value old"></span><span id="pd-value"></span></div>
+              <div class="stat-value pitcher"><span id="pd-old" class="stat-value old popup"></span><span id="pd-value"></span></div>
               <div class="stat-head pitcher">Traits</div>
               <div id="pitcher-traits">
               </div>
@@ -299,12 +303,8 @@
             <div id="field-surface" class="game-surface">
               <div id="opp-card" class="roll-el hidden"></div>
               <div id="field-box">
-                <img id="infield" src="public/assets/Infield.png" />
-                <div id="runners">
-                  <svg viewBox="0 0 100 100" class="base-path-def">
-                    <path id="basePath" d="M 49.45 88 L 82.4 54.4 L 49.45 21.25 L 16.1 54.4 Z" />
-                  </svg>
-                </div>
+                <img id="infield" src="public/assets/infield.png" />
+                
                 <div id="fielders">
                   <div id="field-P" class="fielder loc-P">1</div>
                   <div id="field-C" class="fielder loc-C">2</div>
@@ -315,8 +315,13 @@
                   <div id="field-LF" class="fielder">7</div>
                   <div id="field-CF" class="fielder">88</div>
                   <div id="field-RF" class="fielder">9</div>
-                  <div id="ball" class="loc-g2 spin hidden"></div>
+                  <div id="ball" class="home hidden"></div>
                 </div>
+                <div id="runners">
+  <svg viewBox="0 0 100 100" class="base-path-def">
+    <path id="basePath" d="M 50 90.824 L 79.529 61.059 L 50 31.294 L 20.471 61.059 Z" />
+  </svg>
+</div>
               </div>
             </div>
           </div>
@@ -337,7 +342,7 @@
                     </div>
                   </button>
                   
-                  <div id="roll-result" class="roller-message roll-el hidden"><span id="roll-calc"></span></div>
+                  <div id="roll-result" class="roller-message roll-el hidden"><span id="roll-result-text"></span><span id="roll-calc"></span></div>
                   <button id="main-roll-btn" class="btn btn-glass roll-btn btn-pulse main-roll roll-el hidden">ROLL</button>
                   <button id="continue-btn" class="btn btn-glass roll-btn btn-pulse main-roll roll-el hidden">OK</button>
                   <button id="continue-btn" class="btn btn-glass roll-btn roll-el hidden">NEXT BATTER</button>
@@ -507,6 +512,9 @@
   
   -->
   
+  <template id="popup-template">
+    
+  </template>
   
   <template id="saved-game-template">
     <div class="load-slot">
