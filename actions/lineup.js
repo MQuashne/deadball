@@ -23,6 +23,25 @@ const trait_map = {
   "CN-": "Wild"
 }
 
+const trait_values = {
+  "P+": 1,
+  "P++": 2,
+  "C+": 1,
+  "S+": 1,
+  "D+": 0,
+  "T+": 0,
+  "P-": -1,
+  "P--": -2,
+  "C-": -1,
+  "S-": -1,
+  "D-": 0,
+  "K+": 1,
+  "GB+": 1,
+  "CN+": 1,
+  "ST+": 0,
+  "CN-": -1
+}
+
 const pd_map = {
   "-D20": 0,
   "-D12": 1,
@@ -33,6 +52,19 @@ const pd_map = {
   "D12": 6,
   "D20": 7
 }
+
+const pd_value = {
+    "-D20": 0,
+  "-D12": 7,
+  "-D8": 11,
+  "-D4": 15,
+  "D4": 23,
+  "D8": 26,
+  "D12": 31,
+  "D20": 38
+}
+
+
 
 export function defaultLineup(team) {
   const order = batters.filter((b) => b.team === team && b.defaultOrder !== "B" && b.defaultOrder !== "R").sort((a, b) => a.defaultOrder - b.defaultOrder);
@@ -52,8 +84,9 @@ export function defaultLineup(team) {
   order.forEach(pl => {
     pl.fieldPos = pl.defaultPos;
   });
-  
+  console.log([...rotation, ...bullpen, ...pitcherReserve, pitcher]);
   [...rotation, ...bullpen, ...pitcherReserve, pitcher].forEach((pi) => {
+    //console.log(pi)
     pi.ip = 0;
     pi.handBonus = false;
     pi.pdValue = pd_map[pi.PD];
@@ -61,10 +94,17 @@ export function defaultLineup(team) {
     pi.tempPdValue = pd_map[pi.tempPD];
     pi.traitsLong = [];
     pi.gameStats=[];
+    let val=pd_value[pi.PD];
     pi.traits.forEach((tr) => {
-      pi.traitsLong.push(trait_map[tr])
+      pi.traitsLong.push(trait_map[tr]);
+      val+=trait_values[tr]*5;
     });
     pi.restNeeded = 0;
+    if (pi.type === "SP") {
+      pi.PV = val>=31 ? "PV+" : val<=11 ? "PV-" : "";
+    } else {
+      pi.PV = val>=37 ? "PV+" : val<=2 ? "PV-" : "";
+    }
   });
   
   [...order, ...bench, ...batterReserve].forEach((ba) => {
@@ -72,9 +112,13 @@ export function defaultLineup(team) {
     ba.tempOBT = ba.OBT;
     ba.traitsLong = [];
     ba.gameStats=[];
+    let val = ba.BT;
     ba.traits.forEach((tr) => {
       ba.traitsLong.push(trait_map[tr])
-    })
+      val+=(5*trait_values[tr])
+    });
+    ba.BV = val>=31 ? "BV+" : val<=15 ? "BV-" : "";
+    
   })
   
   return {

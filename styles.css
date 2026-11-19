@@ -2093,13 +2093,14 @@ GAME BOARD
     offset-distance: 0%;
     offset-rotate: 0deg;
     transition: offset-distance 2s ease-in-out;
+    isolation:isolate;
 }
 
 .fielder {
     width: 7.5%;
     height: 7.5%;
     border-radius: 50%;
-    background: var(--field-die-bg-color);
+    background: none;
     position: absolute;
     display: flex;
     align-items: center;
@@ -2111,6 +2112,48 @@ GAME BOARD
     font-size: 0.62rem;
     text-align: center;
     transform: translate(-50%, -50%);
+    isolation:isolate;
+    z-index:1;
+}
+
+.fielder::before{
+    border-radius:50%;
+    width:130%;
+   height:130%;
+    background-image:linear-gradient(random(0deg,359deg),#b1b2b4 0%, #7a7b7f random(15%,35%), #F0F0F0 random(40%,60%), #a7a8ac random(65%,85%), #ededed 100%);
+    position:absolute;
+    content:"";
+    border:.5px solid #ededed;    
+    z-index:-1;
+}
+
+.fielder.badD::before{
+    background-image:linear-gradient(random(0deg,359deg),#c4a588 0%, #895b40 random(23%,43%), #a98a71 random(56%,76%),#8b5d3b 100%);
+    border:.5px solid #8b5d3b;
+}
+
+.fielder.goodD::before {
+    background-image:linear-gradient(random(0deg,359deg),#fff67e 0%, #d59d1c random(15%,35%), #c99a1c random(40%,60%), #ffee76 random(65%,85%), #ffffff 100%);
+    border:.5px solid #ffee76;
+
+    
+}
+
+/*
+    { p: 0, c: "#f6e073", o: 1 },
+    { p: 0.25 + randBt(-.1, .1), c: "#c28f1a", o: 1 },
+    { p: 0.5 + randBt(-.1, .1), c: "#f9e37a", o: 1 },
+    { p: 0.75 + randBt(-.1, .1), c: "#b78c1a", o: 1 },
+    { p: 1, c: "#f0d96c", o: 1 }
+*/
+
+.fielder::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    background: var(--field-die-bg-color);
+    z-index: -1;
 }
 
 .fielder.def{
@@ -2171,8 +2214,8 @@ GAME BOARD
 #ball.home {
     /*left: calc(50% + (sin(29deg) * 73%));
     top: calc( 90.824% - (cos(29deg) * 73%));*/
-    left: 50%;
-    top: 90.824%;
+    left: -10.22%;
+    top: 22.94%;
     z-index: 400;
 }
 

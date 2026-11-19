@@ -16,13 +16,13 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 37,
-    "P": "P-",
-    "C": "",
+    "P": "",
+    "C": "C+",
     "D": "",
     "S": "S+",
     "T": "T+",
     "traits": [
-      "P-",
+      "C+",
       "S+",
       "T+"
     ],
@@ -78,11 +78,13 @@ export const batters = [
     "BT": 25,
     "OBT": 32,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [],
+    "traits": [
+      "C+"
+    ],
     "defaultOrder": "2",
     "defaultPos": "2B"
   },
@@ -105,13 +107,10 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
-    "T": "T+",
-    "traits": [
-      "D-",
-      "T+"
-    ],
+    "T": "",
+    "traits": [],
     "defaultOrder": "5",
     "defaultPos": "3B"
   },
@@ -136,10 +135,9 @@ export const batters = [
     "C": "",
     "D": "D+",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "D+",
-      "T+"
+      "D+"
     ],
     "defaultOrder": "3",
     "defaultPos": "C"
@@ -162,13 +160,12 @@ export const batters = [
     ],
     "BT": 25,
     "OBT": 30,
-    "P": "P-",
+    "P": "",
     "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "C+"
     ],
     "defaultOrder": "B",
@@ -273,13 +270,12 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 33,
-    "P": "P-",
+    "P": "",
     "C": "C-",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "C-"
     ],
     "defaultOrder": "B",
@@ -302,13 +298,13 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 30,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "R",
     "defaultPos": ""
@@ -330,13 +326,13 @@ export const batters = [
     ],
     "BT": 21,
     "OBT": 25,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -358,15 +354,12 @@ export const batters = [
     ],
     "BT": 19,
     "OBT": 25,
-    "P": "P-",
-    "C": "C-",
+    "P": "",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-",
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -374,7 +367,7 @@ export const batters = [
     "name": "James McCann",
     "first": "James",
     "last": "McCann",
-    "num": 1,
+    "num": 8,
     "personId": "543510",
     "team": "ARI",
     "age": 36,
@@ -388,12 +381,11 @@ export const batters = [
     "BT": 28,
     "OBT": 31,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "D-",
     "S": "S-",
     "T": "",
     "traits": [
-      "C-",
       "D-",
       "S-"
     ],
@@ -600,14 +592,12 @@ export const batters = [
     "BT": 24,
     "OBT": 33,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "D-",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "C-",
-      "D-",
-      "T+"
+      "D-"
     ],
     "defaultOrder": "2",
     "defaultPos": "RF"
@@ -630,13 +620,12 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 31,
-    "P": "P-",
+    "P": "",
     "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "C+"
     ],
     "defaultOrder": "4",
@@ -660,12 +649,11 @@ export const batters = [
     "BT": 28,
     "OBT": 36,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S+",
     "T": "",
     "traits": [
-      "C-",
       "S+"
     ],
     "defaultOrder": "1",
@@ -784,7 +772,7 @@ export const batters = [
     "name": "Jonah Heim",
     "first": "Jonah",
     "last": "Heim",
-    "num": 37,
+    "num": 15,
     "personId": "641680",
     "team": "ATH",
     "age": 31,
@@ -855,15 +843,13 @@ export const batters = [
     ],
     "BT": 27,
     "OBT": 30,
-    "P": "P-",
+    "P": "",
     "C": "C+",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
-      "C+",
-      "D-"
+      "C+"
     ],
     "defaultOrder": "R",
     "defaultPos": ""
@@ -916,12 +902,10 @@ export const batters = [
     "OBT": 36,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "6",
     "defaultPos": "2B"
   },
@@ -1027,12 +1011,11 @@ export const batters = [
     "OBT": 32,
     "P": "P--",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "D-"
+      "P--"
     ],
     "defaultOrder": "R",
     "defaultPos": ""
@@ -1299,10 +1282,11 @@ export const batters = [
     "OBT": 32,
     "P": "",
     "C": "",
-    "D": "",
+    "D": "D+",
     "S": "",
     "T": "T+",
     "traits": [
+      "D+",
       "T+"
     ],
     "defaultOrder": "4",
@@ -1326,15 +1310,13 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 32,
-    "P": "P-",
+    "P": "",
     "C": "C+",
     "D": "",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "P-",
-      "C+",
-      "T+"
+      "C+"
     ],
     "defaultOrder": "5",
     "defaultPos": "SS"
@@ -1427,7 +1409,7 @@ export const batters = [
     "name": "Lane Thomas",
     "first": "Lane",
     "last": "Thomas",
-    "num": 35,
+    "num": 20,
     "personId": "657041",
     "team": "ATL",
     "age": 30,
@@ -1483,7 +1465,7 @@ export const batters = [
     "name": "Ha-Seong Kim",
     "first": "Ha-Seong",
     "last": "Kim",
-    "num": 3,
+    "num": 7,
     "personId": "673490",
     "team": "ATL",
     "age": 30,
@@ -1587,7 +1569,7 @@ export const batters = [
     "name": "Sandy León",
     "first": "Sandy",
     "last": "León",
-    "num": 4,
+    "num": 3,
     "personId": "506702",
     "team": "ATL",
     "age": 37,
@@ -1685,14 +1667,11 @@ export const batters = [
     "BT": 22,
     "OBT": 29,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "8",
     "defaultPos": "RF"
   },
@@ -1744,12 +1723,11 @@ export const batters = [
     "BT": 22,
     "OBT": 29,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "C-",
       "S-"
     ],
     "defaultOrder": "B",
@@ -1802,12 +1780,11 @@ export const batters = [
     "BT": 23,
     "OBT": 31,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "C-",
       "D-"
     ],
     "defaultOrder": "1",
@@ -1830,14 +1807,12 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 30,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -1884,14 +1859,12 @@ export const batters = [
     ],
     "BT": 30,
     "OBT": 36,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -1942,13 +1915,11 @@ export const batters = [
     "BT": 21,
     "OBT": 30,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -1996,13 +1967,12 @@ export const batters = [
     "BT": 28,
     "OBT": 33,
     "P": "P+",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P+",
-      "C-"
+      "P+"
     ],
     "defaultOrder": "5",
     "defaultPos": "3B"
@@ -2184,14 +2154,12 @@ export const batters = [
     "BT": 21,
     "OBT": 27,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "C-",
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "7",
     "defaultPos": "CF"
@@ -2214,14 +2182,14 @@ export const batters = [
     "BT": 25,
     "OBT": 33,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "D+",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
+      "C+",
       "D+",
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "6",
     "defaultPos": "3B"
@@ -2272,13 +2240,12 @@ export const batters = [
     "BT": 28,
     "OBT": 39,
     "P": "P+",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P+",
-      "C-"
+      "P+"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -2382,13 +2349,12 @@ export const batters = [
     ],
     "BT": 27,
     "OBT": 35,
-    "P": "P-",
+    "P": "",
     "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "C+"
     ],
     "defaultOrder": "R",
@@ -2437,15 +2403,13 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 27,
-    "P": "P-",
+    "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
-      "C-",
-      "D-"
+      "C-"
     ],
     "defaultOrder": "5",
     "defaultPos": "SS"
@@ -2468,13 +2432,11 @@ export const batters = [
     "BT": 24,
     "OBT": 34,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "1",
     "defaultPos": "LF"
   },
@@ -2495,13 +2457,12 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 31,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "D-"
     ],
     "defaultOrder": "R",
@@ -2554,10 +2515,12 @@ export const batters = [
     "OBT": 29,
     "P": "",
     "C": "",
-    "D": "",
+    "D": "D+",
     "S": "",
     "T": "",
-    "traits": [],
+    "traits": [
+      "D+"
+    ],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -2636,12 +2599,10 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -2741,13 +2702,12 @@ export const batters = [
     "BT": 28,
     "OBT": 37,
     "P": "P++",
-    "C": "C-",
+    "C": "",
     "D": "D+",
     "S": "S+",
     "T": "T+",
     "traits": [
       "P++",
-      "C-",
       "D+",
       "S+",
       "T+"
@@ -2830,13 +2790,13 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 32,
-    "P": "P--",
+    "P": "P-",
     "C": "C+",
     "D": "",
     "S": "S+",
     "T": "T+",
     "traits": [
-      "P--",
+      "P-",
       "C+",
       "S+",
       "T+"
@@ -2863,11 +2823,12 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "C-",
-    "D": "",
+    "D": "D+",
     "S": "",
     "T": "T+",
     "traits": [
       "C-",
+      "D+",
       "T+"
     ],
     "defaultOrder": "5",
@@ -2944,13 +2905,12 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 34,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P-",
       "S-"
     ],
     "defaultOrder": "9",
@@ -2974,13 +2934,12 @@ export const batters = [
     "BT": 24,
     "OBT": 33,
     "P": "P+",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P+",
-      "C-"
+      "P+"
     ],
     "defaultOrder": "6",
     "defaultPos": "DH"
@@ -3029,12 +2988,11 @@ export const batters = [
     "BT": 24,
     "OBT": 34,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "C-",
       "S-"
     ],
     "defaultOrder": "B",
@@ -3044,7 +3002,7 @@ export const batters = [
     "name": "Tyrone Taylor",
     "first": "Tyrone",
     "last": "Taylor",
-    "num": 15,
+    "num": 55,
     "personId": "621438",
     "team": "CHC",
     "age": 32,
@@ -3150,7 +3108,7 @@ export const batters = [
     "last": "Vargas",
     "num": 20,
     "personId": "678246",
-    "team": "CWS",
+    "team": "CHW",
     "age": 26,
     "hand": "R",
     "lowSample": false,
@@ -3179,7 +3137,7 @@ export const batters = [
     "last": "Meidroth",
     "num": 10,
     "personId": "805367",
-    "team": "CWS",
+    "team": "CHW",
     "age": 24,
     "hand": "R",
     "lowSample": false,
@@ -3194,10 +3152,8 @@ export const batters = [
     "C": "",
     "D": "",
     "S": "",
-    "T": "T+",
-    "traits": [
-      "T+"
-    ],
+    "T": "",
+    "traits": [],
     "defaultOrder": "5",
     "defaultPos": "2B"
   },
@@ -3207,7 +3163,7 @@ export const batters = [
     "last": "Montgomery",
     "num": 12,
     "personId": "695657",
-    "team": "CWS",
+    "team": "CHW",
     "age": 24,
     "hand": "L",
     "lowSample": false,
@@ -3223,10 +3179,9 @@ export const batters = [
     "C": "C-",
     "D": "",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "C-",
-      "T+"
+      "C-"
     ],
     "defaultOrder": "7",
     "defaultPos": "SS"
@@ -3237,7 +3192,7 @@ export const batters = [
     "last": "Antonacci",
     "num": 17,
     "personId": "803011",
-    "team": "CWS",
+    "team": "CHW",
     "age": 23,
     "hand": "L",
     "lowSample": false,
@@ -3248,13 +3203,12 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 37,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "D-",
     "S": "S+",
     "T": "",
     "traits": [
-      "P-",
       "D-",
       "S+"
     ],
@@ -3267,7 +3221,7 @@ export const batters = [
     "last": "Murakami",
     "num": 5,
     "personId": "808959",
-    "team": "CWS",
+    "team": "CHW",
     "age": 26,
     "hand": "L",
     "lowSample": false,
@@ -3280,13 +3234,12 @@ export const batters = [
     "OBT": 35,
     "P": "P++",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
       "P++",
-      "C-",
-      "D-"
+      "C-"
     ],
     "defaultOrder": "4",
     "defaultPos": "1B"
@@ -3297,7 +3250,7 @@ export const batters = [
     "last": "Peters",
     "num": 29,
     "personId": "671976",
-    "team": "CWS",
+    "team": "CHW",
     "age": 26,
     "hand": "L",
     "lowSample": false,
@@ -3325,7 +3278,7 @@ export const batters = [
     "last": "Benintendi",
     "num": 23,
     "personId": "643217",
-    "team": "CWS",
+    "team": "CHW",
     "age": 31,
     "hand": "L",
     "lowSample": false,
@@ -3351,7 +3304,7 @@ export const batters = [
     "last": "Montgomery",
     "num": 24,
     "personId": "695731",
-    "team": "CWS",
+    "team": "CHW",
     "age": 23,
     "hand": "S",
     "lowSample": false,
@@ -3362,14 +3315,12 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 31,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "9",
     "defaultPos": "RF"
   },
@@ -3377,9 +3328,9 @@ export const batters = [
     "name": "Randal Grichuk",
     "first": "Randal",
     "last": "Grichuk",
-    "num": 1,
+    "num": 34,
     "personId": "545341",
-    "team": "CWS",
+    "team": "CHW",
     "age": 34,
     "hand": "R",
     "lowSample": false,
@@ -3409,7 +3360,7 @@ export const batters = [
     "last": "Acuña",
     "num": 0,
     "personId": "682668",
-    "team": "CWS",
+    "team": "CHW",
     "age": 24,
     "hand": "R",
     "lowSample": false,
@@ -3437,7 +3388,7 @@ export const batters = [
     "last": "Doyle",
     "num": 7,
     "personId": "686668",
-    "team": "CWS",
+    "team": "CHW",
     "age": 28,
     "hand": "R",
     "lowSample": false,
@@ -3465,7 +3416,7 @@ export const batters = [
     "last": "Quero",
     "num": 26,
     "personId": "700337",
-    "team": "CWS",
+    "team": "CHW",
     "age": 23,
     "hand": "S",
     "lowSample": false,
@@ -3494,7 +3445,7 @@ export const batters = [
     "last": "Romo",
     "num": 36,
     "personId": "691011",
-    "team": "CWS",
+    "team": "CHW",
     "age": 24,
     "hand": "S",
     "lowSample": false,
@@ -3518,9 +3469,9 @@ export const batters = [
     "name": "Jake Rogers",
     "first": "Jake",
     "last": "Rogers",
-    "num": 34,
+    "num": 28,
     "personId": "668670",
-    "team": "CWS",
+    "team": "CHW",
     "age": 31,
     "hand": "R",
     "lowSample": false,
@@ -3548,7 +3499,7 @@ export const batters = [
     "last": "Teel",
     "num": 8,
     "personId": "691019",
-    "team": "CWS",
+    "team": "CHW",
     "age": 24,
     "hand": "L",
     "lowSample": true,
@@ -3574,7 +3525,7 @@ export const batters = [
     "last": "Bart",
     "num": 25,
     "personId": "663698",
-    "team": "CWS",
+    "team": "CHW",
     "age": 29,
     "hand": "R",
     "lowSample": true,
@@ -3598,9 +3549,9 @@ export const batters = [
     "name": "Junior Pérez",
     "first": "Junior",
     "last": "Pérez",
-    "num": 37,
+    "num": 1,
     "personId": "678577",
-    "team": "CWS",
+    "team": "CHW",
     "age": 24,
     "hand": "R",
     "lowSample": true,
@@ -3624,9 +3575,9 @@ export const batters = [
     "name": "Tommy Pham",
     "first": "Tommy",
     "last": "Pham",
-    "num": 28,
+    "num": 21,
     "personId": "502054",
-    "team": "CWS",
+    "team": "CHW",
     "age": 38,
     "hand": "R",
     "lowSample": true,
@@ -3652,7 +3603,7 @@ export const batters = [
     "last": "McGuire",
     "num": 30,
     "personId": "624512",
-    "team": "CWS",
+    "team": "CHW",
     "age": 31,
     "hand": "L",
     "lowSample": true,
@@ -3678,7 +3629,7 @@ export const batters = [
     "last": "Murray",
     "num": 41,
     "personId": "695020",
-    "team": "CWS",
+    "team": "CHW",
     "age": 26,
     "hand": "R",
     "lowSample": true,
@@ -3704,7 +3655,7 @@ export const batters = [
     "last": "Nishida",
     "num": 51,
     "personId": "807747",
-    "team": "CWS",
+    "team": "CHW",
     "age": 25,
     "hand": "L",
     "lowSample": true,
@@ -3771,13 +3722,12 @@ export const batters = [
     "BT": 28,
     "OBT": 36,
     "P": "P+",
-    "C": "C-",
+    "C": "",
     "D": "D-",
     "S": "S+",
     "T": "",
     "traits": [
       "P+",
-      "C-",
       "D-",
       "S+"
     ],
@@ -3830,12 +3780,11 @@ export const batters = [
     "OBT": 31,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "C-",
-      "D-"
+      "C-"
     ],
     "defaultOrder": "6",
     "defaultPos": "DH"
@@ -3858,12 +3807,11 @@ export const batters = [
     "BT": 18,
     "OBT": 27,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "D-",
     "S": "S+",
     "T": "",
     "traits": [
-      "C-",
       "D-",
       "S+"
     ],
@@ -3888,15 +3836,12 @@ export const batters = [
     "BT": 24,
     "OBT": 32,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "S-",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "C-",
-      "D-",
-      "S-",
-      "T+"
+      "S-"
     ],
     "defaultOrder": "4",
     "defaultPos": "C"
@@ -3946,13 +3891,12 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 34,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "D-"
     ],
     "defaultOrder": "B",
@@ -3976,13 +3920,13 @@ export const batters = [
     ],
     "BT": 17,
     "OBT": 26,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "R",
     "defaultPos": ""
@@ -4004,13 +3948,13 @@ export const batters = [
     ],
     "BT": 14,
     "OBT": 19,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -4033,14 +3977,11 @@ export const batters = [
     "BT": 19,
     "OBT": 23,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -4063,12 +4004,11 @@ export const batters = [
     "OBT": 27,
     "P": "P--",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "D-"
+      "P--"
     ],
     "defaultOrder": "R",
     "defaultPos": ""
@@ -4090,13 +4030,12 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 22,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P-",
       "S-"
     ],
     "defaultOrder": "B",
@@ -4119,14 +4058,12 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 34,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -4148,12 +4085,11 @@ export const batters = [
     "BT": 23,
     "OBT": 27,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "C-",
       "S-"
     ],
     "defaultOrder": "8",
@@ -4392,12 +4328,11 @@ export const batters = [
     "C": "C+",
     "D": "D+",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
       "P--",
       "C+",
-      "D+",
-      "T+"
+      "D+"
     ],
     "defaultOrder": "1",
     "defaultPos": "CF"
@@ -4420,13 +4355,13 @@ export const batters = [
     "BT": 25,
     "OBT": 31,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "S+",
-      "T+"
+      "C+",
+      "S+"
     ],
     "defaultOrder": "9",
     "defaultPos": "SS"
@@ -4476,11 +4411,12 @@ export const batters = [
     "BT": 23,
     "OBT": 32,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "",
     "S": "S+",
     "T": "",
     "traits": [
+      "C+",
       "S+"
     ],
     "defaultOrder": "2",
@@ -4616,13 +4552,11 @@ export const batters = [
     "BT": 21,
     "OBT": 27,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "8",
     "defaultPos": "C"
   },
@@ -4672,13 +4606,12 @@ export const batters = [
     ],
     "BT": 21,
     "OBT": 28,
-    "P": "P-",
+    "P": "",
     "C": "C-",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "C-"
     ],
     "defaultOrder": "B",
@@ -4688,7 +4621,7 @@ export const batters = [
     "name": "Austin Hedges",
     "first": "Austin",
     "last": "Hedges",
-    "num": 17,
+    "num": 27,
     "personId": "595978",
     "team": "CLE",
     "age": 33,
@@ -4703,12 +4636,10 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -4730,12 +4661,11 @@ export const batters = [
     "BT": 20,
     "OBT": 31,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "C-",
       "S-"
     ],
     "defaultOrder": "B",
@@ -4758,14 +4688,12 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 27,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -4917,11 +4845,12 @@ export const batters = [
     "BT": 30,
     "OBT": 39,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "",
     "S": "S-",
     "T": "T+",
     "traits": [
+      "C+",
       "S-",
       "T+"
     ],
@@ -4948,11 +4877,10 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "S+",
     "T": "",
     "traits": [
-      "D-",
       "S+"
     ],
     "defaultOrder": "1",
@@ -5006,13 +4934,11 @@ export const batters = [
     "BT": 22,
     "OBT": 26,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "9",
     "defaultPos": "SS"
   },
@@ -5035,14 +4961,11 @@ export const batters = [
     "BT": 26,
     "OBT": 33,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -5065,12 +4988,10 @@ export const batters = [
     "OBT": 35,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "6",
     "defaultPos": "3B"
   },
@@ -5091,13 +5012,12 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 35,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "D-"
     ],
     "defaultOrder": "B",
@@ -5122,13 +5042,12 @@ export const batters = [
     "BT": 24,
     "OBT": 28,
     "P": "P+",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P+",
-      "C-"
+      "P+"
     ],
     "defaultOrder": "8",
     "defaultPos": "RF"
@@ -5151,14 +5070,11 @@ export const batters = [
     "BT": 24,
     "OBT": 34,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "2",
     "defaultPos": "DH"
   },
@@ -5194,7 +5110,7 @@ export const batters = [
     "name": "Tyler Freeman",
     "first": "Tyler",
     "last": "Freeman",
-    "num": 2,
+    "num": 68,
     "personId": "671289",
     "team": "COL",
     "age": 27,
@@ -5237,14 +5153,13 @@ export const batters = [
     ],
     "BT": 21,
     "OBT": 32,
-    "P": "P--",
-    "C": "C-",
+    "P": "P-",
+    "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "C-",
+      "P-",
       "D-"
     ],
     "defaultOrder": "R",
@@ -5293,13 +5208,13 @@ export const batters = [
     ],
     "BT": 20,
     "OBT": 26,
-    "P": "P--",
+    "P": "P-",
     "C": "C-",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "C-"
     ],
     "defaultOrder": "B",
@@ -5480,11 +5395,13 @@ export const batters = [
     "BT": 28,
     "OBT": 38,
     "P": "",
-    "C": "",
-    "D": "",
+    "C": "C+",
+    "D": "D+",
     "S": "",
     "T": "T+",
     "traits": [
+      "C+",
+      "D+",
       "T+"
     ],
     "defaultOrder": "1",
@@ -5509,12 +5426,11 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "T+",
     "traits": [
       "C-",
-      "D-",
       "T+"
     ],
     "defaultOrder": "7",
@@ -5568,12 +5484,11 @@ export const batters = [
     "BT": 28,
     "OBT": 37,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "C-",
       "D-"
     ],
     "defaultOrder": "3",
@@ -5599,12 +5514,10 @@ export const batters = [
     "OBT": 32,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -5626,13 +5539,13 @@ export const batters = [
     ],
     "BT": 20,
     "OBT": 29,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "D+",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "D+"
     ],
     "defaultOrder": "8",
@@ -5655,13 +5568,12 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 36,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P-",
       "S-"
     ],
     "defaultOrder": "B",
@@ -5715,12 +5627,10 @@ export const batters = [
     "OBT": 26,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -5743,12 +5653,11 @@ export const batters = [
     "OBT": 28,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "S-",
     "T": "",
     "traits": [
       "C-",
-      "D-",
       "S-"
     ],
     "defaultOrder": "R",
@@ -5797,15 +5706,12 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 27,
-    "P": "P-",
+    "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -5828,12 +5734,10 @@ export const batters = [
     "OBT": 25,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -6014,12 +5918,11 @@ export const batters = [
     "OBT": 43,
     "P": "P++",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "T+",
     "traits": [
       "P++",
-      "D-",
       "T+"
     ],
     "defaultOrder": "2",
@@ -6043,12 +5946,12 @@ export const batters = [
     "BT": 26,
     "OBT": 36,
     "P": "",
-    "C": "",
-    "D": "D-",
+    "C": "C+",
+    "D": "",
     "S": "S-",
     "T": "T+",
     "traits": [
-      "D-",
+      "C+",
       "S-",
       "T+"
     ],
@@ -6130,12 +6033,11 @@ export const batters = [
     "BT": 21,
     "OBT": 28,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "T+",
     "traits": [
-      "C-",
       "T+"
     ],
     "defaultOrder": "8",
@@ -6145,7 +6047,7 @@ export const batters = [
     "name": "Daulton Varsho",
     "first": "Daulton",
     "last": "Varsho",
-    "num": 12,
+    "num": 18,
     "personId": "662139",
     "team": "HOU",
     "age": 29,
@@ -6186,12 +6088,10 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "1",
     "defaultPos": "SS"
   },
@@ -6269,14 +6169,12 @@ export const batters = [
     ],
     "BT": 21,
     "OBT": 26,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -6326,13 +6224,11 @@ export const batters = [
     "BT": 19,
     "OBT": 28,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -6353,14 +6249,12 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 33,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -6381,14 +6275,12 @@ export const batters = [
     ],
     "BT": 21,
     "OBT": 27,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -6604,7 +6496,7 @@ export const batters = [
     "name": "César Salazar",
     "first": "César",
     "last": "Salazar",
-    "num": 18,
+    "num": 2,
     "personId": "663967",
     "team": "HOU",
     "age": 30,
@@ -6632,7 +6524,7 @@ export const batters = [
     "last": "Witt Jr.",
     "num": 7,
     "personId": "677951",
-    "team": "KC",
+    "team": "KCR",
     "age": 26,
     "hand": "R",
     "lowSample": false,
@@ -6660,7 +6552,7 @@ export const batters = [
     "last": "Perez",
     "num": 13,
     "personId": "521692",
-    "team": "KC",
+    "team": "KCR",
     "age": 36,
     "hand": "R",
     "lowSample": false,
@@ -6674,13 +6566,10 @@ export const batters = [
     "OBT": 27,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
-    "T": "T+",
-    "traits": [
-      "D-",
-      "T+"
-    ],
+    "T": "",
+    "traits": [],
     "defaultOrder": "5",
     "defaultPos": "DH"
   },
@@ -6690,7 +6579,7 @@ export const batters = [
     "last": "Jensen",
     "num": 22,
     "personId": "695600",
-    "team": "KC",
+    "team": "KCR",
     "age": 22,
     "hand": "L",
     "lowSample": false,
@@ -6703,13 +6592,12 @@ export const batters = [
     "BT": 24,
     "OBT": 32,
     "P": "P+",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "T+",
     "traits": [
       "P+",
-      "C-",
       "T+"
     ],
     "defaultOrder": "1",
@@ -6721,7 +6609,7 @@ export const batters = [
     "last": "Caglianone",
     "num": 14,
     "personId": "695506",
-    "team": "KC",
+    "team": "KCR",
     "age": 23,
     "hand": "L",
     "lowSample": false,
@@ -6733,14 +6621,11 @@ export const batters = [
     "BT": 29,
     "OBT": 34,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "3",
     "defaultPos": "RF"
   },
@@ -6750,7 +6635,7 @@ export const batters = [
     "last": "Collins",
     "num": 1,
     "personId": "686555",
-    "team": "KC",
+    "team": "KCR",
     "age": 28,
     "hand": "S",
     "lowSample": false,
@@ -6761,14 +6646,12 @@ export const batters = [
     ],
     "BT": 21,
     "OBT": 32,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "8",
     "defaultPos": "LF"
   },
@@ -6778,7 +6661,7 @@ export const batters = [
     "last": "Pasquantino",
     "num": 9,
     "personId": "686469",
-    "team": "KC",
+    "team": "KCR",
     "age": 28,
     "hand": "L",
     "lowSample": false,
@@ -6804,7 +6687,7 @@ export const batters = [
     "last": "Massey",
     "num": 19,
     "personId": "686681",
-    "team": "KC",
+    "team": "KCR",
     "age": 28,
     "hand": "L",
     "lowSample": false,
@@ -6830,7 +6713,7 @@ export const batters = [
     "last": "Loftin",
     "num": 12,
     "personId": "679845",
-    "team": "KC",
+    "team": "KCR",
     "age": 27,
     "hand": "R",
     "lowSample": false,
@@ -6854,9 +6737,9 @@ export const batters = [
     "name": "Maikel Garcia",
     "first": "Maikel",
     "last": "Garcia",
-    "num": 11,
+    "num": 3,
     "personId": "672580",
-    "team": "KC",
+    "team": "KCR",
     "age": 26,
     "hand": "R",
     "lowSample": false,
@@ -6867,13 +6750,12 @@ export const batters = [
     ],
     "BT": 27,
     "OBT": 33,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "D+",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "D+"
     ],
     "defaultOrder": "B",
@@ -6885,7 +6767,7 @@ export const batters = [
     "last": "Isbel",
     "num": 28,
     "personId": "664728",
-    "team": "KC",
+    "team": "KCR",
     "age": 29,
     "hand": "L",
     "lowSample": false,
@@ -6896,14 +6778,13 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 27,
-    "P": "P--",
+    "P": "P-",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "D-"
+      "P-"
     ],
     "defaultOrder": "9",
     "defaultPos": "CF"
@@ -6914,7 +6795,7 @@ export const batters = [
     "last": "Marte",
     "num": 0,
     "personId": "516782",
-    "team": "KC",
+    "team": "KCR",
     "age": 37,
     "hand": "R",
     "lowSample": false,
@@ -6942,7 +6823,7 @@ export const batters = [
     "last": "Rave",
     "num": 16,
     "personId": "670231",
-    "team": "KC",
+    "team": "KCR",
     "age": 28,
     "hand": "L",
     "lowSample": false,
@@ -6968,7 +6849,7 @@ export const batters = [
     "last": "Tolbert",
     "num": 2,
     "personId": "686475",
-    "team": "KC",
+    "team": "KCR",
     "age": 28,
     "hand": "R",
     "lowSample": true,
@@ -6992,9 +6873,9 @@ export const batters = [
     "name": "Josh Rojas",
     "first": "Josh",
     "last": "Rojas",
-    "num": 3,
+    "num": 4,
     "personId": "668942",
-    "team": "KC",
+    "team": "KCR",
     "age": 32,
     "hand": "L",
     "lowSample": true,
@@ -7020,7 +6901,7 @@ export const batters = [
     "last": "India",
     "num": 6,
     "personId": "663697",
-    "team": "KC",
+    "team": "KCR",
     "age": 29,
     "hand": "R",
     "lowSample": true,
@@ -7044,9 +6925,9 @@ export const batters = [
     "name": "Luke Maile",
     "first": "Luke",
     "last": "Maile",
-    "num": 4,
+    "num": 5,
     "personId": "571912",
-    "team": "KC",
+    "team": "KCR",
     "age": 35,
     "hand": "R",
     "lowSample": true,
@@ -7072,7 +6953,7 @@ export const batters = [
     "last": "Misner",
     "num": 18,
     "personId": "670224",
-    "team": "KC",
+    "team": "KCR",
     "age": 28,
     "hand": "L",
     "lowSample": true,
@@ -7111,11 +6992,12 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "C-",
-    "D": "",
+    "D": "D+",
     "S": "S+",
     "T": "T+",
     "traits": [
       "C-",
+      "D+",
       "S+",
       "T+"
     ],
@@ -7140,12 +7022,11 @@ export const batters = [
     "BT": 24,
     "OBT": 38,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "C-",
       "D-"
     ],
     "defaultOrder": "2",
@@ -7196,13 +7077,13 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 35,
-    "P": "P-",
-    "C": "",
+    "P": "",
+    "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-"
+      "C+"
     ],
     "defaultOrder": "R",
     "defaultPos": ""
@@ -7224,13 +7105,12 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 28,
-    "P": "P-",
+    "P": "",
     "C": "C-",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "C-"
     ],
     "defaultOrder": "B",
@@ -7282,14 +7162,12 @@ export const batters = [
     ],
     "BT": 21,
     "OBT": 28,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "5",
     "defaultPos": "C"
   },
@@ -7339,13 +7217,13 @@ export const batters = [
     ],
     "BT": 30,
     "OBT": 37,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "4",
     "defaultPos": "LF"
@@ -7367,14 +7245,12 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 27,
-    "P": "P-",
-    "C": "C-",
+    "P": "",
+    "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
-      "C-",
       "D-"
     ],
     "defaultOrder": "7",
@@ -7441,7 +7317,7 @@ export const batters = [
     "name": "Adam Frazier",
     "first": "Adam",
     "last": "Frazier",
-    "num": 1,
+    "num": 20,
     "personId": "624428",
     "team": "LAA",
     "age": 34,
@@ -7519,7 +7395,7 @@ export const batters = [
     "name": "Travis d'Arnaud",
     "first": "Travis",
     "last": "d'Arnaud",
-    "num": 16,
+    "num": 25,
     "personId": "518595",
     "team": "LAA",
     "age": 37,
@@ -7640,10 +7516,8 @@ export const batters = [
     "C": "",
     "D": "",
     "S": "",
-    "T": "T+",
-    "traits": [
-      "T+"
-    ],
+    "T": "",
+    "traits": [],
     "defaultOrder": "3",
     "defaultPos": "1B"
   },
@@ -7668,10 +7542,9 @@ export const batters = [
     "C": "",
     "D": "D-",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "D-",
-      "T+"
+      "D-"
     ],
     "defaultOrder": "6",
     "defaultPos": "RF"
@@ -7806,14 +7679,11 @@ export const batters = [
     "BT": 27,
     "OBT": 33,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "5",
     "defaultPos": "LF"
   },
@@ -7888,14 +7758,13 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 33,
-    "P": "P--",
-    "C": "C-",
+    "P": "P-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "C-"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -7919,12 +7788,11 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "S-",
     "T": "",
     "traits": [
       "C-",
-      "D-",
       "S-"
     ],
     "defaultOrder": "R",
@@ -7934,7 +7802,7 @@ export const batters = [
     "name": "Miguel Rojas",
     "first": "Miguel",
     "last": "Rojas",
-    "num": 19,
+    "num": 72,
     "personId": "500743",
     "team": "LAD",
     "age": 37,
@@ -7947,13 +7815,12 @@ export const batters = [
     ],
     "BT": 27,
     "OBT": 31,
-    "P": "P-",
+    "P": "",
     "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "C+"
     ],
     "defaultOrder": "B",
@@ -7976,13 +7843,13 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 31,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "S-"
     ],
     "defaultOrder": "B",
@@ -8072,7 +7939,7 @@ export const batters = [
     "name": "Kiké Hernández",
     "first": "Kiké",
     "last": "Hernández",
-    "num": 5,
+    "num": 8,
     "personId": "571771",
     "team": "LAD",
     "age": 34,
@@ -8268,11 +8135,12 @@ export const batters = [
     "BT": 30,
     "OBT": 35,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "",
     "S": "S+",
     "T": "T+",
     "traits": [
+      "C+",
       "S+",
       "T+"
     ],
@@ -8326,13 +8194,14 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 36,
-    "P": "P--",
-    "C": "",
+    "P": "P-",
+    "C": "C+",
     "D": "",
     "S": "S+",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
+      "C+",
       "S+"
     ],
     "defaultOrder": "B",
@@ -8357,12 +8226,11 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "C-",
-      "D-"
+      "C-"
     ],
     "defaultOrder": "1",
     "defaultPos": "2B"
@@ -8385,13 +8253,11 @@ export const batters = [
     "BT": 23,
     "OBT": 31,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "3",
     "defaultPos": "LF"
   },
@@ -8471,10 +8337,11 @@ export const batters = [
     "OBT": 28,
     "P": "",
     "C": "",
-    "D": "",
+    "D": "D+",
     "S": "S-",
     "T": "",
     "traits": [
+      "D+",
       "S-"
     ],
     "defaultOrder": "9",
@@ -8556,15 +8423,12 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 32,
-    "P": "P-",
+    "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "7",
     "defaultPos": "DH"
   },
@@ -8587,12 +8451,11 @@ export const batters = [
     "OBT": 31,
     "P": "P--",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "D-"
+      "P--"
     ],
     "defaultOrder": "R",
     "defaultPos": ""
@@ -8601,7 +8464,7 @@ export const batters = [
     "name": "Graham Pauley",
     "first": "Graham",
     "last": "Pauley",
-    "num": 21,
+    "num": 1,
     "personId": "688363",
     "team": "MIA",
     "age": 25,
@@ -8627,7 +8490,7 @@ export const batters = [
     "name": "Brian Navarreto",
     "first": "Brian",
     "last": "Navarreto",
-    "num": 64,
+    "num": 2,
     "personId": "640459",
     "team": "MIA",
     "age": 31,
@@ -8719,14 +8582,12 @@ export const batters = [
     "BT": 27,
     "OBT": 37,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "D+",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "C-",
-      "D+",
-      "T+"
+      "D+"
     ],
     "defaultOrder": "2",
     "defaultPos": "2B"
@@ -8763,7 +8624,7 @@ export const batters = [
     "name": "Jake Bauers",
     "first": "Jake",
     "last": "Bauers",
-    "num": 1,
+    "num": 18,
     "personId": "641343",
     "team": "MIL",
     "age": 30,
@@ -8777,14 +8638,11 @@ export const batters = [
     "BT": 27,
     "OBT": 39,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "5",
     "defaultPos": "1B"
   },
@@ -8863,13 +8721,11 @@ export const batters = [
     "BT": 23,
     "OBT": 32,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "6",
     "defaultPos": "DH"
   },
@@ -8917,13 +8773,13 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 31,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "S+",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "S+"
     ],
     "defaultOrder": "B",
@@ -8946,13 +8802,13 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 29,
-    "P": "P--",
+    "P": "P-",
     "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "C+"
     ],
     "defaultOrder": "B",
@@ -9005,11 +8861,10 @@ export const batters = [
     "OBT": 35,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "D-",
       "S-"
     ],
     "defaultOrder": "B",
@@ -9032,13 +8887,13 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 35,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "9",
     "defaultPos": "SS"
@@ -9060,13 +8915,13 @@ export const batters = [
     ],
     "BT": 25,
     "OBT": 31,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "D+",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "D+"
     ],
     "defaultOrder": "7",
@@ -9102,7 +8957,7 @@ export const batters = [
     "name": "Blake Perkins",
     "first": "Blake",
     "last": "Perkins",
-    "num": 4,
+    "num": 1,
     "personId": "663368",
     "team": "MIL",
     "age": 29,
@@ -9154,7 +9009,7 @@ export const batters = [
     "name": "Braden Shewmake",
     "first": "Braden",
     "last": "Shewmake",
-    "num": 8,
+    "num": 4,
     "personId": "669699",
     "team": "MIL",
     "age": 28,
@@ -9206,7 +9061,7 @@ export const batters = [
     "name": "Greg Jones",
     "first": "Greg",
     "last": "Jones",
-    "num": 9,
+    "num": 8,
     "personId": "675659",
     "team": "MIL",
     "age": 28,
@@ -9330,10 +9185,8 @@ export const batters = [
     "C": "",
     "D": "",
     "S": "",
-    "T": "T+",
-    "traits": [
-      "T+"
-    ],
+    "T": "",
+    "traits": [],
     "defaultOrder": "4",
     "defaultPos": "DH"
   },
@@ -9355,16 +9208,15 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 37,
-    "P": "P-",
-    "C": "",
+    "P": "",
+    "C": "C+",
     "D": "D-",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "P-",
+      "C+",
       "D-",
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "1",
     "defaultPos": "RF"
@@ -9415,13 +9267,11 @@ export const batters = [
     "BT": 23,
     "OBT": 29,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "6",
     "defaultPos": "3B"
   },
@@ -9498,13 +9348,13 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 31,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "S-"
     ],
     "defaultOrder": "9",
@@ -9514,7 +9364,7 @@ export const batters = [
     "name": "Ryan Jeffers",
     "first": "Ryan",
     "last": "Jeffers",
-    "num": 6,
+    "num": 27,
     "personId": "680777",
     "team": "MIN",
     "age": 29,
@@ -9554,13 +9404,13 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 34,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -9608,13 +9458,13 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 27,
-    "P": "P--",
+    "P": "P-",
     "C": "C-",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "C-",
       "D-"
     ],
@@ -9931,14 +9781,13 @@ export const batters = [
     ],
     "BT": 25,
     "OBT": 32,
-    "P": "P-",
-    "C": "C-",
-    "D": "",
+    "P": "",
+    "C": "",
+    "D": "D+",
     "S": "S+",
     "T": "",
     "traits": [
-      "P-",
-      "C-",
+      "D+",
       "S+"
     ],
     "defaultOrder": "8",
@@ -9963,13 +9812,13 @@ export const batters = [
     "BT": 28,
     "OBT": 39,
     "P": "P+",
-    "C": "",
-    "D": "D-",
+    "C": "C+",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
       "P+",
-      "D-"
+      "C+"
     ],
     "defaultOrder": "2",
     "defaultPos": "LF"
@@ -9992,13 +9841,11 @@ export const batters = [
     "BT": 24,
     "OBT": 31,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "7",
     "defaultPos": "1B"
   },
@@ -10021,12 +9868,10 @@ export const batters = [
     "OBT": 31,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "1",
     "defaultPos": "SS"
   },
@@ -10049,12 +9894,11 @@ export const batters = [
     "OBT": 31,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "S-",
     "T": "",
     "traits": [
       "C-",
-      "D-",
       "S-"
     ],
     "defaultOrder": "9",
@@ -10372,11 +10216,10 @@ export const batters = [
     "C": "",
     "D": "D-",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
       "P++",
-      "D-",
-      "T+"
+      "D-"
     ],
     "defaultOrder": "1",
     "defaultPos": "DH"
@@ -10456,12 +10299,11 @@ export const batters = [
     "OBT": 31,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "S+",
     "T": "",
     "traits": [
       "C-",
-      "D-",
       "S+"
     ],
     "defaultOrder": "B",
@@ -10471,7 +10313,7 @@ export const batters = [
     "name": "Trent Grisham",
     "first": "Trent",
     "last": "Grisham",
-    "num": 2,
+    "num": 12,
     "personId": "663757",
     "team": "NYY",
     "age": 29,
@@ -10542,14 +10384,11 @@ export const batters = [
     "BT": 24,
     "OBT": 30,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "3",
     "defaultPos": "RF"
   },
@@ -10571,13 +10410,11 @@ export const batters = [
     "BT": 19,
     "OBT": 29,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "8",
     "defaultPos": "C"
   },
@@ -10654,12 +10491,11 @@ export const batters = [
     "OBT": 31,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "C-",
-      "D-"
+      "C-"
     ],
     "defaultOrder": "5",
     "defaultPos": "CF"
@@ -10710,13 +10546,13 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 32,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "7",
     "defaultPos": "2B"
@@ -10725,7 +10561,7 @@ export const batters = [
     "name": "Amed Rosario",
     "first": "Amed",
     "last": "Rosario",
-    "num": 3,
+    "num": 2,
     "personId": "642708",
     "team": "NYY",
     "age": 30,
@@ -10793,13 +10629,11 @@ export const batters = [
     "BT": 24,
     "OBT": 28,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "6",
     "defaultPos": "SS"
   },
@@ -10987,11 +10821,10 @@ export const batters = [
     "OBT": 38,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "T+",
     "traits": [
-      "D-",
       "T+"
     ],
     "defaultOrder": "3",
@@ -11001,7 +10834,7 @@ export const batters = [
     "name": "Luis Arraez",
     "first": "Luis",
     "last": "Arraez",
-    "num": 4,
+    "num": 2,
     "personId": "650333",
     "team": "PHI",
     "age": 29,
@@ -11014,16 +10847,13 @@ export const batters = [
     ],
     "BT": 31,
     "OBT": 34,
-    "P": "P-",
+    "P": "",
     "C": "C+",
-    "D": "D-",
+    "D": "",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "P-",
-      "C+",
-      "D-",
-      "T+"
+      "C+"
     ],
     "defaultOrder": "4",
     "defaultPos": "2B"
@@ -11032,7 +10862,7 @@ export const batters = [
     "name": "Alec Bohm",
     "first": "Alec",
     "last": "Bohm",
-    "num": 1,
+    "num": 28,
     "personId": "664761",
     "team": "PHI",
     "age": 29,
@@ -11047,11 +10877,12 @@ export const batters = [
     "BT": 25,
     "OBT": 32,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "D-",
     "S": "",
     "T": "T+",
     "traits": [
+      "C+",
       "D-",
       "T+"
     ],
@@ -11136,12 +10967,10 @@ export const batters = [
     "OBT": 28,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "8",
     "defaultPos": "C"
   },
@@ -11162,13 +10991,13 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 31,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "D-"
     ],
     "defaultOrder": "9",
@@ -11206,7 +11035,7 @@ export const batters = [
     "name": "Edmundo Sosa",
     "first": "Edmundo",
     "last": "Sosa",
-    "num": 4,
+    "num": 1,
     "personId": "624641",
     "team": "PHI",
     "age": 30,
@@ -11445,7 +11274,7 @@ export const batters = [
     "name": "Brandon Lowe",
     "first": "Brandon",
     "last": "Lowe",
-    "num": 1,
+    "num": 5,
     "personId": "664040",
     "team": "PIT",
     "age": 31,
@@ -11462,12 +11291,11 @@ export const batters = [
     "C": "C-",
     "D": "D+",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
       "P+",
       "C-",
-      "D+",
-      "T+"
+      "D+"
     ],
     "defaultOrder": "2",
     "defaultPos": "2B"
@@ -11489,13 +11317,13 @@ export const batters = [
     ],
     "BT": 30,
     "OBT": 37,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "D-"
     ],
     "defaultOrder": "7",
@@ -11519,13 +11347,13 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 33,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "S+",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "S+"
     ],
     "defaultOrder": "9",
@@ -11548,14 +11376,12 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 34,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "8",
     "defaultPos": "1B"
   },
@@ -11720,13 +11546,12 @@ export const batters = [
     "OBT": 34,
     "P": "P++",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "S-",
     "T": "",
     "traits": [
       "P++",
       "C-",
-      "D-",
       "S-"
     ],
     "defaultOrder": "R",
@@ -11749,13 +11574,12 @@ export const batters = [
     ],
     "BT": 20,
     "OBT": 29,
-    "P": "P-",
+    "P": "",
     "C": "C-",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P-",
       "C-",
       "S-"
     ],
@@ -11806,13 +11630,12 @@ export const batters = [
     "BT": 26,
     "OBT": 33,
     "P": "P++",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
       "P++",
-      "C-",
       "S-"
     ],
     "defaultOrder": "6",
@@ -11836,14 +11659,11 @@ export const batters = [
     "BT": 27,
     "OBT": 37,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -11983,7 +11803,7 @@ export const batters = [
     "last": "Tatis Jr.",
     "num": 23,
     "personId": "665487",
-    "team": "SD",
+    "team": "SDP",
     "age": 27,
     "hand": "R",
     "lowSample": false,
@@ -12013,7 +11833,7 @@ export const batters = [
     "last": "Machado",
     "num": 13,
     "personId": "592518",
-    "team": "SD",
+    "team": "SDP",
     "age": 33,
     "hand": "R",
     "lowSample": false,
@@ -12041,7 +11861,7 @@ export const batters = [
     "last": "Merrill",
     "num": 3,
     "personId": "701538",
-    "team": "SD",
+    "team": "SDP",
     "age": 23,
     "hand": "L",
     "lowSample": false,
@@ -12070,7 +11890,7 @@ export const batters = [
     "last": "Bogaerts",
     "num": 2,
     "personId": "593428",
-    "team": "SD",
+    "team": "SDP",
     "age": 33,
     "hand": "R",
     "lowSample": false,
@@ -12081,16 +11901,13 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 33,
-    "P": "P-",
+    "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "P-",
-      "D-",
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "6",
     "defaultPos": "SS"
@@ -12101,7 +11918,7 @@ export const batters = [
     "last": "France",
     "num": 23,
     "personId": "664034",
-    "team": "SD",
+    "team": "SDP",
     "age": 31,
     "hand": "R",
     "lowSample": false,
@@ -12129,7 +11946,7 @@ export const batters = [
     "last": "Cronenworth",
     "num": 9,
     "personId": "630105",
-    "team": "SD",
+    "team": "SDP",
     "age": 32,
     "hand": "L",
     "lowSample": false,
@@ -12140,13 +11957,13 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 31,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "D-"
     ],
     "defaultOrder": "8",
@@ -12158,7 +11975,7 @@ export const batters = [
     "last": "Sheets",
     "num": 30,
     "personId": "657757",
-    "team": "SD",
+    "team": "SDP",
     "age": 30,
     "hand": "L",
     "lowSample": false,
@@ -12184,7 +12001,7 @@ export const batters = [
     "last": "Rengifo",
     "num": 21,
     "personId": "650859",
-    "team": "SD",
+    "team": "SDP",
     "age": 29,
     "hand": "S",
     "lowSample": false,
@@ -12195,13 +12012,14 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 32,
-    "P": "P--",
-    "C": "",
+    "P": "P-",
+    "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-",
+      "C+"
     ],
     "defaultOrder": "R",
     "defaultPos": ""
@@ -12212,7 +12030,7 @@ export const batters = [
     "last": "Fermin",
     "num": 54,
     "personId": "666023",
-    "team": "SD",
+    "team": "SDP",
     "age": 31,
     "hand": "R",
     "lowSample": false,
@@ -12223,14 +12041,12 @@ export const batters = [
     ],
     "BT": 20,
     "OBT": 27,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -12240,7 +12056,7 @@ export const batters = [
     "last": "Andujar",
     "num": 41,
     "personId": "609280",
-    "team": "SD",
+    "team": "SDP",
     "age": 31,
     "hand": "R",
     "lowSample": false,
@@ -12266,7 +12082,7 @@ export const batters = [
     "last": "Campusano",
     "num": 12,
     "personId": "669134",
-    "team": "SD",
+    "team": "SDP",
     "age": 27,
     "hand": "R",
     "lowSample": false,
@@ -12294,7 +12110,7 @@ export const batters = [
     "last": "Laureano",
     "num": 5,
     "personId": "657656",
-    "team": "SD",
+    "team": "SDP",
     "age": 31,
     "hand": "R",
     "lowSample": false,
@@ -12322,7 +12138,7 @@ export const batters = [
     "last": "Taylor",
     "num": 0,
     "personId": "669392",
-    "team": "SD",
+    "team": "SDP",
     "age": 27,
     "hand": "R",
     "lowSample": false,
@@ -12333,14 +12149,13 @@ export const batters = [
     ],
     "BT": 32,
     "OBT": 39,
-    "P": "P--",
-    "C": "C-",
+    "P": "P-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "C-"
+      "P-"
     ],
     "defaultOrder": "9",
     "defaultPos": "DH"
@@ -12351,7 +12166,7 @@ export const batters = [
     "last": "Song",
     "num": 24,
     "personId": "823550",
-    "team": "SD",
+    "team": "SDP",
     "age": 29,
     "hand": "L",
     "lowSample": false,
@@ -12379,7 +12194,7 @@ export const batters = [
     "last": "Harris",
     "num": 29,
     "personId": "687957",
-    "team": "SD",
+    "team": "SDP",
     "age": 26,
     "hand": "L",
     "lowSample": false,
@@ -12390,13 +12205,14 @@ export const batters = [
     ],
     "BT": 29,
     "OBT": 35,
-    "P": "P--",
-    "C": "",
+    "P": "P-",
+    "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-",
+      "C+"
     ],
     "defaultOrder": "2",
     "defaultPos": "LF"
@@ -12407,7 +12223,7 @@ export const batters = [
     "last": "Castellanos",
     "num": 21,
     "personId": "592206",
-    "team": "SD",
+    "team": "SDP",
     "age": 34,
     "hand": "R",
     "lowSample": true,
@@ -12431,9 +12247,9 @@ export const batters = [
     "name": "Austin Hays",
     "first": "Austin",
     "last": "Hays",
-    "num": 21,
+    "num": 15,
     "personId": "669720",
-    "team": "SD",
+    "team": "SDP",
     "age": 30,
     "hand": "R",
     "lowSample": true,
@@ -12459,7 +12275,7 @@ export const batters = [
     "last": "Bowen",
     "num": 4,
     "personId": "687749",
-    "team": "SD",
+    "team": "SDP",
     "age": 25,
     "hand": "R",
     "lowSample": true,
@@ -12485,8 +12301,8 @@ export const batters = [
     "last": "Durán",
     "num": 48,
     "personId": "660710",
-    "team": "SD",
-    "age": 28,
+    "team": "SDP",
+    "age": 27,
     "hand": "R",
     "lowSample": true,
     "posString": "C (37)",
@@ -12511,7 +12327,7 @@ export const batters = [
     "last": "Johnson",
     "num": 29,
     "personId": "669369",
-    "team": "SD",
+    "team": "SDP",
     "age": 30,
     "hand": "S",
     "lowSample": true,
@@ -12537,7 +12353,7 @@ export const batters = [
     "last": "Wagner",
     "num": 7,
     "personId": "695238",
-    "team": "SD",
+    "team": "SDP",
     "age": 27,
     "hand": "L",
     "lowSample": true,
@@ -12563,7 +12379,7 @@ export const batters = [
     "last": "Workman",
     "num": 99,
     "personId": "669398",
-    "team": "SD",
+    "team": "SDP",
     "age": 26,
     "hand": "L",
     "lowSample": true,
@@ -12589,7 +12405,7 @@ export const batters = [
     "last": "Salas",
     "num": 8,
     "personId": "806956",
-    "team": "SD",
+    "team": "SDP",
     "age": 20,
     "hand": "L",
     "lowSample": true,
@@ -12630,10 +12446,9 @@ export const batters = [
     "C": "",
     "D": "",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "2",
     "defaultPos": "LF"
@@ -12657,13 +12472,11 @@ export const batters = [
     "OBT": 31,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "D-",
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "5",
     "defaultPos": "CF"
@@ -12685,16 +12498,16 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 32,
-    "P": "P--",
-    "C": "",
+    "P": "P-",
+    "C": "C+",
     "D": "D-",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "P--",
+      "P-",
+      "C+",
       "D-",
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "6",
     "defaultPos": "1B"
@@ -12745,13 +12558,13 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 36,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -12802,12 +12615,11 @@ export const batters = [
     "OBT": 30,
     "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "C-",
-      "D-"
+      "C-"
     ],
     "defaultOrder": "4",
     "defaultPos": "C"
@@ -12914,15 +12726,13 @@ export const batters = [
     ],
     "BT": 20,
     "OBT": 28,
-    "P": "P-",
+    "P": "",
     "C": "C-",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
-      "C-",
-      "D-"
+      "C-"
     ],
     "defaultOrder": "9",
     "defaultPos": "3B"
@@ -12946,12 +12756,10 @@ export const batters = [
     "OBT": 37,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -13299,7 +13107,7 @@ export const batters = [
     "last": "Devers",
     "num": 16,
     "personId": "646240",
-    "team": "SF",
+    "team": "SFG",
     "age": 29,
     "hand": "L",
     "lowSample": false,
@@ -13312,13 +13120,12 @@ export const batters = [
     "BT": 26,
     "OBT": 34,
     "P": "P++",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
       "P++",
-      "C-",
       "S-"
     ],
     "defaultOrder": "R",
@@ -13330,7 +13137,7 @@ export const batters = [
     "last": "Lee",
     "num": 51,
     "personId": "808982",
-    "team": "SF",
+    "team": "SFG",
     "age": 27,
     "hand": "L",
     "lowSample": false,
@@ -13343,12 +13150,11 @@ export const batters = [
     "OBT": 32,
     "P": "",
     "C": "C+",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "C+",
-      "D-"
+      "C+"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -13359,7 +13165,7 @@ export const batters = [
     "last": "Adames",
     "num": 2,
     "personId": "642715",
-    "team": "SF",
+    "team": "SFG",
     "age": 30,
     "hand": "R",
     "lowSample": false,
@@ -13371,14 +13177,11 @@ export const batters = [
     "BT": 23,
     "OBT": 29,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "R",
     "defaultPos": ""
   },
@@ -13388,7 +13191,7 @@ export const batters = [
     "last": "Eldridge",
     "num": 8,
     "personId": "805811",
-    "team": "SF",
+    "team": "SFG",
     "age": 21,
     "hand": "L",
     "lowSample": false,
@@ -13401,13 +13204,11 @@ export const batters = [
     "BT": 27,
     "OBT": 36,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -13417,7 +13218,7 @@ export const batters = [
     "last": "Schmitt",
     "num": 10,
     "personId": "669477",
-    "team": "SF",
+    "team": "SFG",
     "age": 27,
     "hand": "R",
     "lowSample": false,
@@ -13443,7 +13244,7 @@ export const batters = [
     "last": "Gilbert",
     "num": 0,
     "personId": "687551",
-    "team": "SF",
+    "team": "SFG",
     "age": 25,
     "hand": "L",
     "lowSample": false,
@@ -13469,7 +13270,7 @@ export const batters = [
     "last": "Chapman",
     "num": 26,
     "personId": "656305",
-    "team": "SF",
+    "team": "SFG",
     "age": 33,
     "hand": "R",
     "lowSample": false,
@@ -13498,7 +13299,7 @@ export const batters = [
     "last": "Mayer",
     "num": 7,
     "personId": "691785",
-    "team": "SF",
+    "team": "SFG",
     "age": 23,
     "hand": "L",
     "lowSample": false,
@@ -13509,13 +13310,13 @@ export const batters = [
     ],
     "BT": 21,
     "OBT": 28,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -13526,7 +13327,7 @@ export const batters = [
     "last": "Koss",
     "num": 50,
     "personId": "683766",
-    "team": "SF",
+    "team": "SFG",
     "age": 28,
     "hand": "R",
     "lowSample": false,
@@ -13537,14 +13338,13 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 26,
-    "P": "P--",
-    "C": "C-",
+    "P": "P-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "C-"
+      "P-"
     ],
     "defaultOrder": "9",
     "defaultPos": "SS"
@@ -13555,7 +13355,7 @@ export const batters = [
     "last": "Cox",
     "num": 53,
     "personId": "813841",
-    "team": "SF",
+    "team": "SFG",
     "age": 24,
     "hand": "R",
     "lowSample": false,
@@ -13583,7 +13383,7 @@ export const batters = [
     "last": "Cavanaugh",
     "num": 61,
     "personId": "701852",
-    "team": "SF",
+    "team": "SFG",
     "age": 24,
     "hand": "L",
     "lowSample": false,
@@ -13612,7 +13412,7 @@ export const batters = [
     "last": "Susac",
     "num": 6,
     "personId": "691740",
-    "team": "SF",
+    "team": "SFG",
     "age": 25,
     "hand": "R",
     "lowSample": false,
@@ -13638,7 +13438,7 @@ export const batters = [
     "last": "Basabe",
     "num": 39,
     "personId": "678545",
-    "team": "SF",
+    "team": "SFG",
     "age": 25,
     "hand": "R",
     "lowSample": true,
@@ -13664,7 +13464,7 @@ export const batters = [
     "last": "Hill",
     "num": 52,
     "personId": "806367",
-    "team": "SF",
+    "team": "SFG",
     "age": 27,
     "hand": "L",
     "lowSample": true,
@@ -13688,9 +13488,9 @@ export const batters = [
     "name": "Shay Whitcomb",
     "first": "Shay",
     "last": "Whitcomb",
-    "num": 13,
+    "num": 1,
     "personId": "694376",
-    "team": "SF",
+    "team": "SFG",
     "age": 27,
     "hand": "R",
     "lowSample": true,
@@ -13716,7 +13516,7 @@ export const batters = [
     "last": "Bericoto",
     "num": 78,
     "personId": "682674",
-    "team": "SF",
+    "team": "SFG",
     "age": 24,
     "hand": "R",
     "lowSample": true,
@@ -13742,7 +13542,7 @@ export const batters = [
     "last": "Bader",
     "num": 9,
     "personId": "664056",
-    "team": "SF",
+    "team": "SFG",
     "age": 32,
     "hand": "R",
     "lowSample": true,
@@ -13766,9 +13566,9 @@ export const batters = [
     "name": "Grant McCray",
     "first": "Grant",
     "last": "McCray",
-    "num": 1,
+    "num": 3,
     "personId": "687529",
-    "team": "SF",
+    "team": "SFG",
     "age": 25,
     "hand": "L",
     "lowSample": true,
@@ -13792,9 +13592,9 @@ export const batters = [
     "name": "Eric Haase",
     "first": "Eric",
     "last": "Haase",
-    "num": 3,
+    "num": 4,
     "personId": "606992",
-    "team": "SF",
+    "team": "SFG",
     "age": 33,
     "hand": "R",
     "lowSample": true,
@@ -13820,7 +13620,7 @@ export const batters = [
     "last": "Knizner",
     "num": 19,
     "personId": "668800",
-    "team": "SF",
+    "team": "SFG",
     "age": 31,
     "hand": "R",
     "lowSample": true,
@@ -13846,7 +13646,7 @@ export const batters = [
     "last": "Rodríguez",
     "num": 79,
     "personId": "683679",
-    "team": "SF",
+    "team": "SFG",
     "age": 24,
     "hand": "R",
     "lowSample": true,
@@ -13870,9 +13670,9 @@ export const batters = [
     "name": "Brett Harris",
     "first": "Brett",
     "last": "Harris",
-    "num": 29,
+    "num": 5,
     "personId": "695391",
-    "team": "SF",
+    "team": "SFG",
     "age": 28,
     "hand": "R",
     "lowSample": true,
@@ -13896,9 +13696,9 @@ export const batters = [
     "name": "Nate Furman",
     "first": "Nate",
     "last": "Furman",
-    "num": 4,
+    "num": 11,
     "personId": "801501",
-    "team": "SF",
+    "team": "SFG",
     "age": 24,
     "hand": "L",
     "lowSample": true,
@@ -13924,7 +13724,7 @@ export const batters = [
     "last": "Encarnacion",
     "num": 19,
     "personId": "666464",
-    "team": "SF",
+    "team": "SFG",
     "age": 28,
     "hand": "R",
     "lowSample": true,
@@ -13950,7 +13750,7 @@ export const batters = [
     "last": "Bandura",
     "num": 91,
     "personId": "814154",
-    "team": "SF",
+    "team": "SFG",
     "age": 24,
     "hand": "L",
     "lowSample": true,
@@ -13976,7 +13776,7 @@ export const batters = [
     "last": "Brennan",
     "num": 7,
     "personId": "686823",
-    "team": "SF",
+    "team": "SFG",
     "age": 28,
     "hand": "L",
     "lowSample": true,
@@ -14002,7 +13802,7 @@ export const batters = [
     "last": "Davidson",
     "num": 94,
     "personId": "815589",
-    "team": "SF",
+    "team": "SFG",
     "age": 23,
     "hand": "L",
     "lowSample": true,
@@ -14042,11 +13842,10 @@ export const batters = [
     "OBT": 35,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "T+",
     "traits": [
-      "D-",
       "T+"
     ],
     "defaultOrder": "2",
@@ -14098,12 +13897,11 @@ export const batters = [
     "BT": 27,
     "OBT": 33,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "D-",
     "S": "S+",
     "T": "T+",
     "traits": [
-      "C-",
       "D-",
       "S+",
       "T+"
@@ -14128,13 +13926,12 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 34,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "D+",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "D+"
     ],
     "defaultOrder": "1",
@@ -14157,13 +13954,14 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 31,
-    "P": "P--",
+    "P": "P-",
     "C": "",
-    "D": "",
+    "D": "D+",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-",
+      "D+"
     ],
     "defaultOrder": "9",
     "defaultPos": "SS"
@@ -14185,14 +13983,12 @@ export const batters = [
     ],
     "BT": 25,
     "OBT": 29,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "8",
     "defaultPos": "CF"
   },
@@ -14213,14 +14009,13 @@ export const batters = [
     ],
     "BT": 25,
     "OBT": 31,
-    "P": "P-",
-    "C": "",
-    "D": "D-",
+    "P": "",
+    "C": "C+",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
-      "D-"
+      "C+"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -14242,13 +14037,12 @@ export const batters = [
     ],
     "BT": 18,
     "OBT": 27,
-    "P": "P-",
+    "P": "",
     "C": "C-",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P-",
       "C-",
       "S-"
     ],
@@ -14272,14 +14066,13 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 28,
-    "P": "P--",
-    "C": "C-",
+    "P": "P-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "C-"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -14357,14 +14150,12 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 31,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-"
-    ],
+    "traits": [],
     "defaultOrder": "6",
     "defaultPos": "LF"
   },
@@ -14385,14 +14176,12 @@ export const batters = [
     ],
     "BT": 23,
     "OBT": 29,
-    "P": "P-",
-    "C": "C-",
+    "P": "",
+    "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
-      "C-",
       "D-"
     ],
     "defaultOrder": "7",
@@ -14560,7 +14349,7 @@ export const batters = [
     "last": "Caminero",
     "num": 13,
     "personId": "691406",
-    "team": "TB",
+    "team": "TBR",
     "age": 22,
     "hand": "R",
     "lowSample": false,
@@ -14589,7 +14378,7 @@ export const batters = [
     "last": "Díaz",
     "num": 2,
     "personId": "650490",
-    "team": "TB",
+    "team": "TBR",
     "age": 34,
     "hand": "R",
     "lowSample": false,
@@ -14601,12 +14390,12 @@ export const batters = [
     "BT": 29,
     "OBT": 36,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "",
     "S": "",
-    "T": "T+",
+    "T": "",
     "traits": [
-      "T+"
+      "C+"
     ],
     "defaultOrder": "1",
     "defaultPos": "DH"
@@ -14617,7 +14406,7 @@ export const batters = [
     "last": "Aranda",
     "num": 8,
     "personId": "666018",
-    "team": "TB",
+    "team": "TBR",
     "age": 28,
     "hand": "L",
     "lowSample": false,
@@ -14630,11 +14419,10 @@ export const batters = [
     "OBT": 36,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "S-",
     "T": "T+",
     "traits": [
-      "D-",
       "S-",
       "T+"
     ],
@@ -14647,7 +14435,7 @@ export const batters = [
     "last": "Simpson",
     "num": 14,
     "personId": "802415",
-    "team": "TB",
+    "team": "TBR",
     "age": 25,
     "hand": "L",
     "lowSample": false,
@@ -14662,12 +14450,11 @@ export const batters = [
     "C": "C+",
     "D": "",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
       "P--",
       "C+",
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "6",
     "defaultPos": "LF"
@@ -14678,7 +14465,7 @@ export const batters = [
     "last": "Hicks",
     "num": 34,
     "personId": "689414",
-    "team": "TB",
+    "team": "TBR",
     "age": 27,
     "hand": "L",
     "lowSample": false,
@@ -14708,7 +14495,7 @@ export const batters = [
     "last": "Mullins",
     "num": 31,
     "personId": "656775",
-    "team": "TB",
+    "team": "TBR",
     "age": 31,
     "hand": "L",
     "lowSample": false,
@@ -14736,7 +14523,7 @@ export const batters = [
     "last": "Walls",
     "num": 6,
     "personId": "670764",
-    "team": "TB",
+    "team": "TBR",
     "age": 29,
     "hand": "S",
     "lowSample": false,
@@ -14747,13 +14534,13 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 31,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "D+",
     "S": "S+",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "D+",
       "S+"
     ],
@@ -14766,7 +14553,7 @@ export const batters = [
     "last": "Palacios",
     "num": 1,
     "personId": "680700",
-    "team": "TB",
+    "team": "TBR",
     "age": 29,
     "hand": "L",
     "lowSample": false,
@@ -14792,7 +14579,7 @@ export const batters = [
     "last": "DeLuca",
     "num": 21,
     "personId": "676356",
-    "team": "TB",
+    "team": "TBR",
     "age": 27,
     "hand": "R",
     "lowSample": false,
@@ -14817,9 +14604,9 @@ export const batters = [
     "name": "Nick Fortes",
     "first": "Nick",
     "last": "Fortes",
-    "num": 40,
+    "num": 4,
     "personId": "663743",
-    "team": "TB",
+    "team": "TBR",
     "age": 29,
     "hand": "R",
     "lowSample": false,
@@ -14830,13 +14617,13 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 30,
-    "P": "P-",
-    "C": "",
+    "P": "",
+    "C": "C+",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P-",
+      "C+",
       "S-"
     ],
     "defaultOrder": "B",
@@ -14848,7 +14635,7 @@ export const batters = [
     "last": "Williamson",
     "num": 15,
     "personId": "810938",
-    "team": "TB",
+    "team": "TBR",
     "age": 25,
     "hand": "R",
     "lowSample": false,
@@ -14859,13 +14646,13 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 30,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -14876,7 +14663,7 @@ export const batters = [
     "last": "Vilade",
     "num": 26,
     "personId": "668723",
-    "team": "TB",
+    "team": "TBR",
     "age": 27,
     "hand": "R",
     "lowSample": false,
@@ -14902,7 +14689,7 @@ export const batters = [
     "last": "Mesa Jr.",
     "num": 25,
     "personId": "683748",
-    "team": "TB",
+    "team": "TBR",
     "age": 24,
     "hand": "L",
     "lowSample": false,
@@ -14931,7 +14718,7 @@ export const batters = [
     "last": "Mateo",
     "num": 3,
     "personId": "622761",
-    "team": "TB",
+    "team": "TBR",
     "age": 31,
     "hand": "R",
     "lowSample": false,
@@ -14942,13 +14729,12 @@ export const batters = [
     ],
     "BT": 20,
     "OBT": 24,
-    "P": "P-",
+    "P": "",
     "C": "C-",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "C-"
     ],
     "defaultOrder": "9",
@@ -14960,7 +14746,7 @@ export const batters = [
     "last": "Fraley",
     "num": 17,
     "personId": "641584",
-    "team": "TB",
+    "team": "TBR",
     "age": 31,
     "hand": "L",
     "lowSample": true,
@@ -14984,9 +14770,9 @@ export const batters = [
     "name": "Austin Slater",
     "first": "Austin",
     "last": "Slater",
-    "num": 4,
+    "num": 5,
     "personId": "596103",
-    "team": "TB",
+    "team": "TBR",
     "age": 33,
     "hand": "R",
     "lowSample": true,
@@ -15012,7 +14798,7 @@ export const batters = [
     "last": "Madrigal",
     "num": 20,
     "personId": "663611",
-    "team": "TB",
+    "team": "TBR",
     "age": 29,
     "hand": "R",
     "lowSample": true,
@@ -15038,7 +14824,7 @@ export const batters = [
     "last": "Williams",
     "num": 7,
     "personId": "700246",
-    "team": "TB",
+    "team": "TBR",
     "age": 23,
     "hand": "R",
     "lowSample": true,
@@ -15105,12 +14891,11 @@ export const batters = [
     "BT": 23,
     "OBT": 30,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "",
     "T": "T+",
     "traits": [
-      "C-",
       "T+"
     ],
     "defaultOrder": "6",
@@ -15138,10 +14923,8 @@ export const batters = [
     "C": "",
     "D": "",
     "S": "",
-    "T": "T+",
-    "traits": [
-      "T+"
-    ],
+    "T": "",
+    "traits": [],
     "defaultOrder": "5",
     "defaultPos": "3B"
   },
@@ -15164,10 +14947,12 @@ export const batters = [
     "OBT": 33,
     "P": "",
     "C": "",
-    "D": "",
+    "D": "D+",
     "S": "",
     "T": "",
-    "traits": [],
+    "traits": [
+      "D+"
+    ],
     "defaultOrder": "4",
     "defaultPos": "LF"
   },
@@ -15188,15 +14973,12 @@ export const batters = [
     ],
     "BT": 19,
     "OBT": 29,
-    "P": "P-",
-    "C": "C-",
+    "P": "",
+    "C": "",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "P-",
-      "C-"
-    ],
+    "traits": [],
     "defaultOrder": "9",
     "defaultPos": "CF"
   },
@@ -15299,13 +15081,13 @@ export const batters = [
     ],
     "BT": 22,
     "OBT": 28,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "D-",
     "S": "S-",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "D-",
       "S-"
     ],
@@ -15331,12 +15113,11 @@ export const batters = [
     "OBT": 32,
     "P": "P--",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "D-"
+      "P--"
     ],
     "defaultOrder": "7",
     "defaultPos": "2B"
@@ -15359,12 +15140,11 @@ export const batters = [
     "BT": 27,
     "OBT": 33,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "C-",
       "S-"
     ],
     "defaultOrder": "B",
@@ -15417,12 +15197,11 @@ export const batters = [
     "OBT": 35,
     "P": "P--",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--",
-      "D-"
+      "P--"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -15471,12 +15250,11 @@ export const batters = [
     "BT": 22,
     "OBT": 31,
     "P": "",
-    "C": "C-",
+    "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "C-",
       "S-"
     ],
     "defaultOrder": "R",
@@ -15642,7 +15420,7 @@ export const batters = [
     "name": "Michael Helman",
     "first": "Michael",
     "last": "Helman",
-    "num": 23,
+    "num": 8,
     "personId": "680737",
     "team": "TEX",
     "age": 30,
@@ -15711,13 +15489,12 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 28,
-    "P": "P-",
+    "P": "",
     "C": "C+",
     "D": "",
     "S": "",
     "T": "T+",
     "traits": [
-      "P-",
       "C+",
       "T+"
     ],
@@ -15741,13 +15518,15 @@ export const batters = [
     ],
     "BT": 26,
     "OBT": 33,
-    "P": "P--",
-    "C": "",
-    "D": "",
+    "P": "P-",
+    "C": "C+",
+    "D": "D+",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-",
+      "C+",
+      "D+"
     ],
     "defaultOrder": "2",
     "defaultPos": "1B"
@@ -15756,7 +15535,7 @@ export const batters = [
     "name": "George Springer",
     "first": "George",
     "last": "Springer",
-    "num": 1,
+    "num": 4,
     "personId": "543807",
     "team": "TOR",
     "age": 36,
@@ -15795,13 +15574,12 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 29,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "",
     "S": "S+",
     "T": "",
     "traits": [
-      "P-",
       "S+"
     ],
     "defaultOrder": "7",
@@ -15824,13 +15602,13 @@ export const batters = [
     ],
     "BT": 28,
     "OBT": 33,
-    "P": "P-",
-    "C": "",
+    "P": "",
+    "C": "C+",
     "D": "D+",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
+      "C+",
       "D+"
     ],
     "defaultOrder": "3",
@@ -15854,13 +15632,13 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 30,
-    "P": "P-",
-    "C": "",
+    "P": "",
+    "C": "C+",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P-"
+      "C+"
     ],
     "defaultOrder": "8",
     "defaultPos": "C"
@@ -15883,11 +15661,13 @@ export const batters = [
     "BT": 28,
     "OBT": 35,
     "P": "",
-    "C": "",
+    "C": "C+",
     "D": "",
     "S": "",
     "T": "",
-    "traits": [],
+    "traits": [
+      "C+"
+    ],
     "defaultOrder": "B",
     "defaultPos": ""
   },
@@ -15906,15 +15686,15 @@ export const batters = [
     "posArray": [
       "C"
     ],
-    "BT": 23,
+    "BT": 22,
     "OBT": 31,
     "P": "",
-    "C": "C-",
-    "D": "",
+    "C": "",
+    "D": "D+",
     "S": "",
     "T": "",
     "traits": [
-      "C-"
+      "D+"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -15936,13 +15716,12 @@ export const batters = [
     ],
     "BT": 20,
     "OBT": 29,
-    "P": "P-",
+    "P": "",
     "C": "",
     "D": "D-",
     "S": "",
     "T": "",
     "traits": [
-      "P-",
       "D-"
     ],
     "defaultOrder": "6",
@@ -15965,13 +15744,13 @@ export const batters = [
     ],
     "BT": 33,
     "OBT": 40,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "1",
     "defaultPos": "CF"
@@ -15995,11 +15774,10 @@ export const batters = [
     "OBT": 31,
     "P": "",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "D-",
       "S-"
     ],
     "defaultOrder": "R",
@@ -16247,7 +16025,7 @@ export const batters = [
     "last": "Lile",
     "num": 4,
     "personId": "695734",
-    "team": "WSH",
+    "team": "WSN",
     "age": 23,
     "hand": "L",
     "lowSample": false,
@@ -16275,7 +16053,7 @@ export const batters = [
     "last": "Abrams",
     "num": 5,
     "personId": "682928",
-    "team": "WSH",
+    "team": "WSN",
     "age": 25,
     "hand": "L",
     "lowSample": false,
@@ -16290,11 +16068,10 @@ export const batters = [
     "C": "",
     "D": "",
     "S": "S+",
-    "T": "T+",
+    "T": "",
     "traits": [
       "P+",
-      "S+",
-      "T+"
+      "S+"
     ],
     "defaultOrder": "4",
     "defaultPos": "2B"
@@ -16305,7 +16082,7 @@ export const batters = [
     "last": "Wood",
     "num": 29,
     "personId": "695578",
-    "team": "WSH",
+    "team": "WSN",
     "age": 23,
     "hand": "L",
     "lowSample": false,
@@ -16336,7 +16113,7 @@ export const batters = [
     "last": "Nuñez",
     "num": 26,
     "personId": "683083",
-    "team": "WSH",
+    "team": "WSN",
     "age": 25,
     "hand": "S",
     "lowSample": false,
@@ -16367,7 +16144,7 @@ export const batters = [
     "last": "Young",
     "num": 30,
     "personId": "696285",
-    "team": "WSH",
+    "team": "WSN",
     "age": 26,
     "hand": "R",
     "lowSample": false,
@@ -16393,7 +16170,7 @@ export const batters = [
     "last": "Crews",
     "num": 3,
     "personId": "686611",
-    "team": "WSH",
+    "team": "WSN",
     "age": 24,
     "hand": "R",
     "lowSample": false,
@@ -16420,7 +16197,7 @@ export const batters = [
     "last": "Vivas",
     "num": 84,
     "personId": "678391",
-    "team": "WSH",
+    "team": "WSN",
     "age": 25,
     "hand": "L",
     "lowSample": false,
@@ -16432,13 +16209,13 @@ export const batters = [
     ],
     "BT": 24,
     "OBT": 33,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "",
     "T": "",
     "traits": [
-      "P--"
+      "P-"
     ],
     "defaultOrder": "B",
     "defaultPos": ""
@@ -16449,7 +16226,7 @@ export const batters = [
     "last": "House",
     "num": 12,
     "personId": "691781",
-    "team": "WSH",
+    "team": "WSN",
     "age": 23,
     "hand": "R",
     "lowSample": false,
@@ -16461,14 +16238,11 @@ export const batters = [
     "BT": 25,
     "OBT": 31,
     "P": "",
-    "C": "C-",
-    "D": "D-",
+    "C": "",
+    "D": "",
     "S": "",
     "T": "",
-    "traits": [
-      "C-",
-      "D-"
-    ],
+    "traits": [],
     "defaultOrder": "3",
     "defaultPos": "3B"
   },
@@ -16478,7 +16252,7 @@ export const batters = [
     "last": "Ruiz",
     "num": 20,
     "personId": "660688",
-    "team": "WSH",
+    "team": "WSN",
     "age": 27,
     "hand": "S",
     "lowSample": false,
@@ -16504,9 +16278,9 @@ export const batters = [
     "name": "José Tena",
     "first": "José",
     "last": "Tena",
-    "num": 8,
+    "num": 1,
     "personId": "677588",
-    "team": "WSH",
+    "team": "WSN",
     "age": 25,
     "hand": "L",
     "lowSample": false,
@@ -16534,7 +16308,7 @@ export const batters = [
     "last": "Chaparro",
     "num": 87,
     "personId": "665953",
-    "team": "WSH",
+    "team": "WSN",
     "age": 27,
     "hand": "R",
     "lowSample": false,
@@ -16543,16 +16317,15 @@ export const batters = [
     "posArray": [
       "1B"
     ],
-    "BT": 27,
+    "BT": 26,
     "OBT": 36,
     "P": "P++",
     "C": "",
-    "D": "D-",
+    "D": "",
     "S": "S-",
     "T": "",
     "traits": [
       "P++",
-      "D-",
       "S-"
     ],
     "defaultOrder": "2",
@@ -16564,7 +16337,7 @@ export const batters = [
     "last": "Millas",
     "num": 14,
     "personId": "686452",
-    "team": "WSH",
+    "team": "WSN",
     "age": 28,
     "hand": "S",
     "lowSample": false,
@@ -16575,13 +16348,13 @@ export const batters = [
     ],
     "BT": 18,
     "OBT": 28,
-    "P": "P--",
+    "P": "P-",
     "C": "",
     "D": "",
     "S": "S-",
     "T": "",
     "traits": [
-      "P--",
+      "P-",
       "S-"
     ],
     "defaultOrder": "R",
@@ -16593,7 +16366,7 @@ export const batters = [
     "last": "Ortiz",
     "num": 81,
     "personId": "694673",
-    "team": "WSH",
+    "team": "WSN",
     "age": 24,
     "hand": "L",
     "lowSample": true,
@@ -16619,7 +16392,7 @@ export const batters = [
     "last": "Ford",
     "num": 17,
     "personId": "695670",
-    "team": "WSH",
+    "team": "WSN",
     "age": 23,
     "hand": "R",
     "lowSample": true,
@@ -16643,9 +16416,9 @@ export const batters = [
     "name": "Joey Wiemer",
     "first": "Joey",
     "last": "Wiemer",
-    "num": 1,
+    "num": 2,
     "personId": "686894",
-    "team": "WSH",
+    "team": "WSN",
     "age": 27,
     "hand": "R",
     "lowSample": true,
@@ -16671,7 +16444,7 @@ export const batters = [
     "last": "Morales",
     "num": 28,
     "personId": "691002",
-    "team": "WSH",
+    "team": "WSN",
     "age": 24,
     "hand": "R",
     "lowSample": true,
@@ -16697,7 +16470,7 @@ export const batters = [
     "last": "Pinckney",
     "num": 45,
     "personId": "687605",
-    "team": "WSH",
+    "team": "WSN",
     "age": 25,
     "hand": "R",
     "lowSample": true,

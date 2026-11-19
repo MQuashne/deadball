@@ -19,7 +19,7 @@ import { teamUnis, teamNames, leagueNames, evergreenJerseys } from '../dice/asse
 import { buildPitchDie, buildBatterSkill, batterUp, advanceRunners, processSwingOutcome, processHitOutcome, processDefOutcome, nextBatter, runScored } from '../actions/game.js'
 import { calculateTable, calculateSwingTable, calculateCritHitTable, calculateHitTable } from '../actions/tables.js'
 import { renderTable, renderSwingTable, renderCritHitTable } from './renderTables.js'
-import { animateHit, resetBall, positions, ballAnim } from '././animateHit.js'
+import { animateHit, resetBall, positions, ballAnim, hitList, hitLocations } from '././animateHit.js'
 
 //=============================
 // DOM AND CONSTANTS
@@ -155,7 +155,7 @@ export function initBoard() {
         return [0, 9, 1];
       } else if (G.game.process === "def") {
         nextTableTab.click();
-        //return [12];
+        return [12];
       } else {
         nextTableTab.click();
         return [4];
@@ -205,10 +205,6 @@ export function initBoard() {
     console.log(stat.getBoundingClientRect());
   })
   
-  on(ball, "animationend", () => {
-    animateHit(positions["P"].x, positions["P"].y, "L");
-    console.log("done")
-  }, { once: true })
   
   //Subscribers
   store.on("process:changed", () => {
@@ -344,7 +340,9 @@ function renderFielders() {
   fieldTeam.lineup.order.forEach((fi) => {
     if (fi.fieldPos !== "DH") {
       $t(`field-${fi.fieldPos}`).textContent = fi.num;
-      $t(`field-${fi.fieldPos}`).style.boxShadow = fi.D === "D+" ? "0px 0px 1px 2px #FFD000" : fi.D === "D-" ? "0px 0px 1px 2px #FF000080" : "none";
+      if (fi.D === "D+") { $t(`field-${fi.fieldPos}`).classList.add("goodD"); }
+      else if (fi.D === "D-") { $t(`field-${fi.fieldPos}`).classList.add("badD") } else { $t(`field-${fi.fieldPos}`).classList.remove("goodD");
+        $t(`field-${fi.fieldPos}`).classList.remove("badD") };
       
       if (G.game.process === "def" && fi.fieldPos === G.game.fielder.fieldPos) {
         $t(`field-${fi.fieldPos}`).classList.add("def");
@@ -508,8 +506,13 @@ function renderOutcome() {
       loc = "right";
     }
     const y = resultRow.outcome === "HOME RUN" ? -20 : (20 - G.game.result) / 2;
+    
     animateHit(x, y, "F");
     notifyBox.show(`${batter.last} flies to deep ${loc} for a ${resultRow.outcome}!`.toUpperCase(), 3500);
+  }
+  
+  if (G.game.lastProcess === "hit" || G.game.lastProcess === "critHit") {
+    
   }
   
   if (G.game.process === "endAB") {
@@ -520,8 +523,14 @@ function renderOutcome() {
       }, { once: true })*/
       animateHit(positions[G.game.fielder.fieldPos].x, positions[G.game.fielder.fieldPos].y, "G");
       ballAnim.finished.then(() => {
-        setTimeout(() => { animateHit(positions["P"].x, positions["P"].y, "L") }, 500);
+        setTimeout(() => { animateHit(positions["1B"].x, positions["3B"].y, "L") }, 250);
       })
+    } else {
+      console.log(resultRow)
+      const chooseHit = hitList[resultRow.stat][G.game.fielder ? G.game.fielder.fieldPos : "x"].find(h => h.p > Math.random());
+      const hitCoords = hitLocations[chooseHit.hitLoc];
+      animateHit(hitCoords.x, hitCoords.y, chooseHit.hitType);
+      console.log(chooseHit);
     }
   }
   ball.classList.remove("hidden");
